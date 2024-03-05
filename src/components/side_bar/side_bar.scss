@@ -1,0 +1,38 @@
+.fc {
+  display: flex;
+}
+
+.sidebar-header{
+  align-items: center;
+  color:#0BF4CC;
+  font-size: 1rem;
+  margin-left: 25px;
+
+  img {
+    height: 60px;
+    margin-right: 10px;
+  }
+
+}
+
+.sidebar-nav {
+
+  a {
+    text-decoration: none;
+    color:black;
+  }
+
+  ul {
+    color: black;
+    list-style: none;
+  }
+
+  p {
+    color:#0BF4CC;
+  }
+
+  li {
+    margin-top: 10px;
+  }
+
+}
