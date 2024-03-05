@@ -1,4 +1,5 @@
 import Header from '../../components/header/header.tsx'
+import './dashboard-page.scss'
 
 export default function DashboardPage() {
 

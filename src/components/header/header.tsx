@@ -20,15 +20,15 @@ export default function Header(props) {
                 <div className="fc fi user-money-container">
                     <div className="user-money-item">
                         <p>Saldo Actual</p>
-                        <p>{props.team.current_balance}</p>
+                        <p>${props.team.current_balance}</p>
                     </div>
                     <div className="user-money-item">
                         <p>Saldo futuro</p>
-                        <p>{props.team.future_balance}</p>
+                        <p>${props.team.future_balance}</p>
                     </div>
                     <div className="user-money-item">
                         <p>Deuda máxima</p>
-                        <p>{props.team.maximum_debt}</p>
+                        <p>${props.team.maximum_debt}</p>
                     </div>
                 </div>
                 <div className="fi">
