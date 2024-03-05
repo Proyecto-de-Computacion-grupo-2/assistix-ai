@@ -1,5 +1,5 @@
 
-export default function NavBar() {
+export default function SideBar() {
 
     return (
         <>
