@@ -1,12 +1,12 @@
-import LoginPage from './pages/login-page/login-page'
+import DashboardPage from './pages/dashboard/dashboard-page.tsx';
 
-function App() {
+export default function App() {
 
-  return (
-    <>
-      <LoginPage />
-    </>
-  )
+    return (
+        <>
+          <DashboardPage/>
+        </>
+    )
 }
 
-export default App
+
