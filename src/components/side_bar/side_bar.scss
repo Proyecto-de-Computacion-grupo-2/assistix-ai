@@ -31,16 +31,20 @@ aside {
 
 .sidebar-header {
   align-items: center;
-  justify-content: space-between;
+  gap: .2vw;
 
-  color: $color_app_name;
   font-size: 0.7rem;
 
   margin: 2vh 0;
 
   img {
-    height: 55px;
-    width: 55px;
+    height: 50px;
+    width: 50px;
+  }
+
+  h2 {
+    color: $color_app_name;
+    font-weight: 800;
   }
 }
 

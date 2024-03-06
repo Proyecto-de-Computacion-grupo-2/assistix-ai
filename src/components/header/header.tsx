@@ -4,7 +4,7 @@ import user_logo from '../../assets/user-logo.png';
 import './header.scss'
 
 
-export default function Header(props) {
+export default function Header({ teamInfo }: { teamInfo: any }) {
     return (
         <header>
             <div className="header-content">
@@ -13,28 +13,28 @@ export default function Header(props) {
                         <img src={home_icon} alt='Home icon' />
                         <p>&gt; Home</p>
                     </div>
-                    <p>Próxima jornada: {props.team.next_gameweek}</p>
+                    <p>Próxima jornada: {teamInfo.next_gameweek}</p>
                 </div>
                 <div className="user-money-container">
                     <div className="user-money-item">
                         <p>Saldo Actual</p>
-                        <span>{props.team.current_balance} €</span>
+                        <span>{teamInfo.current_balance} €</span>
                     </div>
                     <div className="user-money-item">
                         <p>Saldo futuro</p>
-                        <span>{props.team.future_balance} €</span>
+                        <span>{teamInfo.future_balance} €</span>
                     </div>
                     <div className="user-money-item">
                         <p>Deuda máxima</p>
-                        <span>{props.team.maximum_debt} €</span>
+                        <span>{teamInfo.maximum_debt} €</span>
                     </div>
                 </div>
                 <div className="fi info-team">
                     <div className="user-info-team">
-                        <p>{props.team.name}</p>
+                        <p>{teamInfo.name}</p>
                         <div className='points-section'>
                             <img src={star_icon} alt='Star icon' />
-                            <span>{props.team.points}</span>
+                            <span>{teamInfo.points}</span>
                         </div>
                     </div>
                     <img src={user_logo} alt='User logo' />

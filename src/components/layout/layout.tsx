@@ -17,7 +17,7 @@ export default function Layout() {
         <div className='grid-container'>
             <SideBar />
             <div className="main-container">
-                <Header team={teamInfo} />
+                <Header teamInfo={teamInfo} />
             </div>
         </div>
     )
