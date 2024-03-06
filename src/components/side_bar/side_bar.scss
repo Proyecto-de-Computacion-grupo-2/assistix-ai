@@ -2,90 +2,136 @@ $color_app_name: #0BF4CC;
 
 
 aside {
+  width: 100%;
+  height: 100%;
+
   background-color: #fff;
   border-radius: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.top-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
 }
 
 .fc {
   display: flex;
+
+  width: 90%;
 }
 
-.sidebar-header{
+.sidebar-header {
   align-items: center;
-  color:$color_app_name;
+  justify-content: space-between;
+
+  color: $color_app_name;
   font-size: 0.7rem;
-  padding:1rem;
+
+  margin: 2vh 0;
 
   img {
-    height: 60px;
-    margin-right: 1rem;
+    height: 55px;
+    width: 55px;
   }
 }
 
 .sidebar-nav {
 
-  a {
-    text-decoration: none;
-    color:black;
-  }
+  width: 95%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1vh;
 
   ul {
-    color: black;
-    list-style: none;
-  }
+    margin: 1vh 0 0 1vw;
+    padding: 0;
 
-  ul  {
-    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    gap: 2vh;
+
+    list-style: none;
+
+    color: black;
   }
 
   p {
-    color:$color_app_name;
+    color: $color_app_name;
+    margin-bottom: 1vh;
+
+    font-size: 1.2rem;
   }
 
   li {
-    margin-top: 1rem;
+    width: auto;
+
+    display: flex;
+    align-items: center;
   }
 
-  li a{
-    display: flex; /* Enables flexbox layout */
+  li a {
+    display: flex;
     align-items: center;
 
-    img {
-      margin-right: 10px;
-    }
+    gap: .5vw;
+
+    text-decoration: none;
+    color: black;
 
   }
-
 }
 
-
-.know-more-ai{
+.know-more-ai {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   align-items: center;
-  border-radius: 20px;
-  width: 100px;
-  margin: 0 1rem;
-  margin-top: 6rem;
-  padding: 1rem 3rem;
-  background-color: #F1F1F1 ;
+
+  border-radius: 10px;
+
+  width: 90%;
+
+  gap: 1vh;
+
+  margin: 2vh 0;
+  padding: 1vh 0;
+
+  background-color: #f1f1f1;
+
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
   img {
-    height: 100px;
+    width: 80%;
   }
 
-
   p {
-    margin: 10px 0;
+    font-weight: 800;
   }
 
   a {
-    background-color: #000;
-    font-size: 0.8rem;
-    color: #fff;
-    padding: 10px 20px;
+    padding: 1vh 1vw;
+
+    background-color: $color_app_name;
+    color: white;
+
+    font-weight: 700;
+
     border-radius: 10px;
+
+    cursor: pointer;
+
   }
 }

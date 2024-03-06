@@ -15,9 +15,9 @@ export default function Layout() {
 
     return (
         <div className='grid-container'>
-            <Header team={teamInfo}/>
-            <div className="sidebar">
-                <SideBar/>
+            <SideBar />
+            <div className="main-container">
+                <Header team={teamInfo} />
             </div>
         </div>
     )
