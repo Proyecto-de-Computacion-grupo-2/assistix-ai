@@ -5,7 +5,11 @@ export default function DashboardPage() {
 
     return (
         <>
-            <Layout/>
+            <Layout>
+                <div>
+                    <h1>Probando que funcion el layout</h1>
+                </div>
+            </Layout>
         </>
     )
 

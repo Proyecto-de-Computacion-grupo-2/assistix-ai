@@ -2,7 +2,7 @@ import Header from '../../components/header/header.tsx'
 import SideBar from "../../components/side_bar/side-bar.tsx";
 import './layout.scss'
 
-export default function Layout() {
+export default function Layout({ children }: { children: any }) {
 
     const teamInfo = {
         name: "UA2C",
@@ -18,6 +18,7 @@ export default function Layout() {
             <SideBar />
             <div className="main-container">
                 <Header teamInfo={teamInfo} />
+                {children}
             </div>
         </div>
     )
