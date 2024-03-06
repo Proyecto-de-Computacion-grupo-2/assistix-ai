@@ -1,3 +1,6 @@
+$color_app_name: #0BF4CC;
+
+
 aside {
   background-color: #fff;
   border-radius: 20px;
@@ -9,15 +12,14 @@ aside {
 
 .sidebar-header{
   align-items: center;
-  color:#0BF4CC;
-  font-size: 1rem;
-  margin-left: 25px;
+  color:$color_app_name;
+  font-size: 0.7rem;
+  padding:1rem;
 
   img {
     height: 60px;
-    margin-right: 10px;
+    margin-right: 1rem;
   }
-
 }
 
 .sidebar-nav {
@@ -32,15 +34,30 @@ aside {
     list-style: none;
   }
 
+  ul  {
+    align-items: center;
+  }
+
   p {
-    color:#0BF4CC;
+    color:$color_app_name;
   }
 
   li {
-    margin-top: 10px;
+    margin-top: 1.5rem;
+  }
+
+  li a{
+    display: flex; /* Enables flexbox layout */
+    align-items: center;
+
+    img {
+      margin-right: 10px;
+    }
+
   }
 
 }
+
 
 .know-more-ai{
   display: flex;
@@ -49,10 +66,16 @@ aside {
   text-align: center;
   align-items: center;
   border-radius: 10px;
-  width: 170px;
+  width: 100px;
+  margin-top: 6rem;
   margin-left: 25px;
   padding: 20px;
   background-color: #F1F1F1 ;
+
+  img {
+    width: 80px;
+  }
+
 
   p {
     margin: 10px 0;

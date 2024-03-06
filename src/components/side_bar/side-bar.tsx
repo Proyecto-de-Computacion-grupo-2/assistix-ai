@@ -19,10 +19,15 @@ export default function SideBar() {
                 <h2>ASSISTIX AI</h2>
             </div>
 
-            <nav className="sidebar-nav">
+            <nav className="fc sidebar-nav">
                 <ul>
                     <p>Main</p>
-                    <li><a href="#"><img src={home_icon} alt="Home icon"/> Home</a></li>
+                    <li>
+                        <a href="#">
+                            <img src={home_icon} alt="Home icon"/>
+                            Home
+                        </a>
+                    </li>
                     <li><a href="#"><img src={chatbot_icon} alt="Assistant icon"/> Asistente</a></li>
                     <li><a href="#"><img src={mercado_icon} alt="Market icon"/> Mercado</a></li>
                     <li><a href="#"><img src={player_icon} alt="Players icon"/> Jugadores</a></li>
