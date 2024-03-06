@@ -5,6 +5,7 @@ import player_icon from '../../assets/player-icon.svg';
 import team_icon from '../../assets/team-icon.svg';
 import settings_icon from '../../assets/settings-icon.svg';
 import assistix_ai_logo from '../../assets/assistix-ai-logo.png';
+import integrated_ai_logo from '../../assets/integrated-ai-logo.png';
 
 
 import './side_bar.scss'
@@ -30,6 +31,11 @@ export default function SideBar() {
                 </ul>
             </nav>
 
+            <div className="know-more-ai">
+                <img src={integrated_ai_logo} alt="IA Integrada logo"/>
+                <p>IA Integrada</p>
+                <a>Saber más</a>
+            </div>
         </aside>
     )
 }
