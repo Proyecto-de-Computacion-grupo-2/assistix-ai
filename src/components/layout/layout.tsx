@@ -1,6 +1,6 @@
-//import Header from '../../components/header/header.tsx'
+import Header from '../../components/header/header.tsx'
 import SideBar from "../../components/side_bar/side-bar.tsx";
-//import './layout.scss'
+import './layout.scss'
 
 export default function Layout({ children }: { children: any }) {
 
@@ -26,8 +26,8 @@ export default function Layout({ children }: { children: any }) {
     */
 
     return (
-        <div className='container'>
+        <>
             <SideBar/>
-        </div>
+        </>
     )
 }
