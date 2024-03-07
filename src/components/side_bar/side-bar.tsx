@@ -1,13 +1,15 @@
-import home_icon from '../../assets/home-icon.svg';
-import chatbot_icon from '../../assets/chatbot-icon.svg';
-import mercado_icon from '../../assets/market-icon.svg';
-import player_icon from '../../assets/player-icon.svg';
-import settings_icon from '../../assets/settings-icon.svg';
+import home_icon from '../../assets/house.fill.svg';
+import chatbot_icon from '../../assets/sparkles.svg';
+import mercado_icon from '../../assets/arrow.left.arrow.right.svg';
+import player_icon from '../../assets/figure.soccer.svg';
+import settings_icon from '../../assets/gearshape.fill.svg';
 import assistix_ai_logo from '../../assets/assistix-ai-logo.png';
 import integrated_ai_logo from '../../assets/integrated-ai-logo.png';
 
 
-import './side_bar.scss'
+
+
+//import './side_bar.scss'
 
 
 export default function SideBar() {

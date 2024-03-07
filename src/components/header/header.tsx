@@ -1,7 +1,7 @@
 import home_icon from '../../assets/home.svg';
 import star_icon from '../../assets/star.svg';
 import user_logo from '../../assets/user-logo.png';
-import './header.scss'
+//import './header.scss'
 
 
 export default function Header({ teamInfo }: { teamInfo: any }) {

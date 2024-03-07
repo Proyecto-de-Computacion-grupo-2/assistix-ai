@@ -1,6 +1,6 @@
-import Header from '../../components/header/header.tsx'
+//import Header from '../../components/header/header.tsx'
 import SideBar from "../../components/side_bar/side-bar.tsx";
-import './layout.scss'
+//import './layout.scss'
 
 export default function Layout({ children }: { children: any }) {
 
@@ -13,6 +13,7 @@ export default function Layout({ children }: { children: any }) {
         points: "748",
     };
 
+    /*
     return (
         <div className='grid-container'>
             <SideBar />
@@ -22,5 +23,11 @@ export default function Layout({ children }: { children: any }) {
             </div>
         </div>
     )
+    */
 
+    return (
+        <div>
+            <SideBar/>
+        </div>
+    )
 }
