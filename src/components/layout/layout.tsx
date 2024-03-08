@@ -13,21 +13,21 @@ export default function Layout({ children }: { children: any }) {
         points: "748",
     };
 
-    /*
+
     return (
         <div className='grid-container'>
             <SideBar />
-            <div className="main-container">
+            {/* <div className="main-container">
                 <Header teamInfo={teamInfo} />
                 {children}
-            </div>
+            </div> */}
         </div>
     )
-    */
 
-    return (
-        <>
-            <SideBar/>
-        </>
-    )
+
+    // return (
+    //     <>
+    //         <SideBar/>
+    //     </>
+    // )
 }
