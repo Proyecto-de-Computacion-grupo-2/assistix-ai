@@ -1,17 +1,34 @@
 import assistix_ai_logo from '../../assets/assistix-ai-logo.png';
 import integrated_ai_logo from '../../assets/integrated-ai-logo.png';
-import './side_bar.scss'
 import { FigureSoccer, HomeIcon, ChatBotIcon, SettingsIcon, MarketIcon } from '../icons/icons';
+import './side_bar.scss'
 
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Nav, Card, Button } from 'react-bootstrap';
 
 
 export default function SideBar() {
     return (
         <Container fluid style={{ height: '100%', backgroundColor: 'white' }} className='rounded-4'>
             <Row style={{ height: 'auto' }} className='d-flex align-items-center mt-2'>
-                <Col sm={3}><img src={assistix_ai_logo} alt="Logo de assistix AI" className='img-fluid' style={{ width: '40px', height: '40px' }} /></Col>
-                <Col sm={8}><p className='fw-bold'>ASSISTIX AI</p></Col>
+                <Col sm={3}>
+                    <img src={assistix_ai_logo} alt="Logo de assistix AI" className='img-fluid' style={{ width: '40px', height: '40px' }} />
+                </Col>
+                <Col sm={8}><p className='fw-bold aqua-color-highlight'>ASSISTIX AI</p></Col>
+                <Nav defaultActiveKey="/home" className="flex-column mt-5">
+                    <Nav.Link className='aqua-color-highlight'>Main</Nav.Link>
+                    <Nav.Link href="/home" className='mt-3 text-sidebar'><HomeIcon fill='black' className='me-3'/>Home</Nav.Link>
+                    <Nav.Link eventKey="link-1" className='mt-3 text-sidebar'><ChatBotIcon fill='black' className='me-3'/>Assistente</Nav.Link>
+                    <Nav.Link eventKey="link-2" className='mt-3 text-sidebar'><MarketIcon fill='black' className='me-3'/>Mercado</Nav.Link>
+                    <Nav.Link eventKey="link-3" className='mt-3 text-sidebar'><FigureSoccer fill='black' className='me-3'/>Jugadores</Nav.Link>
+                    <Nav.Link eventKey="link-4" className='mt-3 text-sidebar'><SettingsIcon fill='black' className='me-3'/>Configuración</Nav.Link>
+                </Nav>
+                <Card className='pt-3 mt-5 me-2 integrated-ai-color d-flex align-items-center custom-card-size'>
+                    <Card.Img variant="top" src={integrated_ai_logo}/>
+                    <Card.Body>
+                        <Card.Title>IA Integrada</Card.Title>
+                        <Button variant="dark">Saber más</Button>
+                    </Card.Body>
+                </Card>
             </Row>
 
         </Container>
