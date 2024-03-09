@@ -1,11 +1,7 @@
-import home_icon from '../../assets/house.fill.svg';
-import chatbot_icon from '../../assets/sparkles.svg';
-import mercado_icon from '../../assets/arrow.left.arrow.right.svg';
-import settings_icon from '../../assets/gearshape.fill.svg';
 import assistix_ai_logo from '../../assets/assistix-ai-logo.png';
 import integrated_ai_logo from '../../assets/integrated-ai-logo.png';
 import './side_bar.scss'
-import { FigureSoccer } from '../icons/icons';
+import { FigureSoccer, HomeIcon, ChatBotIcon, SettingsIcon, MarketIcon } from '../icons/icons';
 
 import { Container, Row, Col } from 'react-bootstrap';
 
