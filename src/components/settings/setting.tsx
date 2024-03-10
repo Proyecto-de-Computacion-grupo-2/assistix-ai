@@ -6,15 +6,10 @@ import './setting.scss'
 
 export default function Setting() {
 
-    const teamInfo = {
-        email: "uem.ua2c@gmail.com",
-    };
-
     return (
         <main className='p-5 mt-4 ms-1 rounded-4 main'>
             <div>
-                <h2 className='mb-3'>Usuario: {teamInfo.email}</h2>
-                <h5>Configuración de notificaciones</h5>
+                <h3 className='mb-4'>Configuración de notificaciones</h3>
                 <p className='mb-3'>De modo de brindarte una experiencia única como usaurio te ofrecemos la siguiente  configuración de notificaciones en la aplicación:</p>
             </div>
             <Accordion>
