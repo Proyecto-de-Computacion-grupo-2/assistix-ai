@@ -3,39 +3,7 @@ $color_app_name: #0BF4CC;
 
 aside {
   background-color: #fff;
-}
-
-.know-more-ai {
-  width: 90%;
-  gap: 1vh;
-  margin: 2vh 0;
-  padding: 1vh 0;
-
-  background-color: #f1f1f1;
-
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-  img {
-    width: 80%;
-  }
-
-  p {
-    font-weight: 800;
-  }
-
-  a {
-    padding: 1vh 1vw;
-
-    background-color: $color_app_name;
-    color: white;
-
-    font-weight: 700;
-
-    border-radius: 10px;
-
-    cursor: pointer;
-
-  }
+  height: 100%;
 }
 
 .aqua-color-highlight {
