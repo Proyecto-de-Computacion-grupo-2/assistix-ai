@@ -1,10 +1,8 @@
-import { Container, Row, Col } from 'react-bootstrap';
-
-//import './layout.scss'
+import {Container, Row, Col} from 'react-bootstrap';
 import SideBar from '../side_bar/side-bar';
 import Header from '../header/header.tsx';
 
-export default function Layout({ children }: { children: any }) {
+export default function Layout({children}: { children: any }) {
 
     const teamInfo = {
         name: "UA2C",
