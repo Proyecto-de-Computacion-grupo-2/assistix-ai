@@ -1,92 +1,244 @@
-import { Accordion } from 'react-bootstrap';
-import star_icon from '../../assets/star.svg';
-import user_logo from '../../assets/user-logo.png';
-import clock from '../../assets/clock.svg';
+import { Accordion, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import { FigureSoccer, MarketIcon, EmailIcon, BellIcon, MessageIcon, FootballIcon} from '../icons/icons';
+
 import './setting.scss'
 
 
-export default function Setting({ teamInfo }: { teamInfo: any }) {
+export default function Setting() {
+
+    const teamInfo = {
+        email: "uem.ua2c@gmail.com",
+    };
+
     return (
-        <main>
+        <main className='p-5 mt-4 ms-1 rounded-4 main h-100'>
             <div>
-                <h2>Usuario: {teamInfo.email}</h2>
-                <h3>Configuración de notificaciones</h3>
-                <p>De modo de brindarte una experiencia única como usaurio te ofrecemos la siguiente  configuración de notificaciones en la aplicación:</p>
+                <h2 className='mb-3'>Usuario: {teamInfo.email}</h2>
+                <h5>Configuración de notificaciones</h5>
+                <p className='mb-3'>De modo de brindarte una experiencia única como usaurio te ofrecemos la siguiente  configuración de notificaciones en la aplicación:</p>
             </div>
             <Accordion>
                 <Accordion.Item eventKey="0">
-                    <Accordion.Header>Accordion Item #1</Accordion.Header>
+                    <Accordion.Header>
+                        <FigureSoccer fill='black' className='me-2'/>
+                        Jugador
+                    </Accordion.Header>
                     <Accordion.Body>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum.
+                        Notificaciones que recibes cuando un jugador esta lesionado.
+                        <div>
+                            <div className='d-flex align-items-center justify-content-between mb-2'>
+                                <div className='d-flex align-items-center'>
+                                    <BellIcon fill='black' className='me-2'/>
+                                    <p>Aplicación</p>
+                                </div>
+                                <ToggleButtonGroup type="checkbox" className='ms-5'>
+                                    <ToggleButton id="tbg-btn-1" value={0}>
+                                        Si
+                                    </ToggleButton>
+                                </ToggleButtonGroup>
+                            </div>
+                            <div className='d-flex align-items-center justify-content-between mb-2'>
+                                <div className='d-flex align-items-center'>
+                                    <MessageIcon fill='black' className='me-2'/>
+                                    <p>Mensaje</p>
+                                </div>
+                                <ToggleButtonGroup type="checkbox" className='ms-5'>
+                                    <ToggleButton id="tbg-btn-1" value={0}>
+                                        Si
+                                    </ToggleButton>
+                                </ToggleButtonGroup>
+                            </div>
+                            <div className='d-flex align-items-center justify-content-between'>
+                                <div className='d-flex align-items-center'>
+                                    <EmailIcon fill='black' className='me-2'/>
+                                    <p>Correo electrónico</p>
+                                </div>
+                                <ToggleButtonGroup type="checkbox" className='ms-5'>
+                                    <ToggleButton id="tbg-btn-1" value={0}>
+                                        Si
+                                    </ToggleButton>
+                                </ToggleButtonGroup>
+                            </div>
+                        </div>
                     </Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="1">
-                    <Accordion.Header>Accordion Item #2</Accordion.Header>
+                    <Accordion.Header>
+                        <FootballIcon fill='black' className='me-2'/>
+                        Jornada
+                    </Accordion.Header>
                     <Accordion.Body>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                        aliquip ex ea commodo consequat. Duis aute irure dolor in
-                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                        culpa qui officia deserunt mollit anim id est laborum.
+                        Notificaciones que recibes un día antes de empezar la jornada.
+                        <div>
+                            <div className='d-flex align-items-center justify-content-between mb-2'>
+                                <div className='d-flex align-items-center'>
+                                    <BellIcon fill='black' className='me-2'/>
+                                    <p>Aplicación</p>
+                                </div>
+                                <ToggleButtonGroup type="checkbox" className='ms-5'>
+                                    <ToggleButton id="tbg-btn-1" value={0}>
+                                        Si
+                                    </ToggleButton>
+                                </ToggleButtonGroup>
+                            </div>
+                            <div className='d-flex align-items-center justify-content-between mb-2'>
+                                <div className='d-flex align-items-center'>
+                                    <MessageIcon fill='black' className='me-2'/>
+                                    <p>Mensaje</p>
+                                </div>
+                                <ToggleButtonGroup type="checkbox" className='ms-5'>
+                                    <ToggleButton id="tbg-btn-1" value={0}>
+                                        Si
+                                    </ToggleButton>
+                                </ToggleButtonGroup>
+                            </div>
+                            <div className='d-flex align-items-center justify-content-between'>
+                                <div className='d-flex align-items-center'>
+                                    <EmailIcon fill='black' className='me-2'/>
+                                    <p>Correo electrónico</p>
+                                </div>
+                                <ToggleButtonGroup type="checkbox" className='ms-5'>
+                                    <ToggleButton id="tbg-btn-1" value={0}>
+                                        Si
+                                    </ToggleButton>
+                                </ToggleButtonGroup>
+                            </div>
+                        </div>
+                    </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="2">
+                    <Accordion.Header>
+                        <MarketIcon fill='black' className='me-2'/>
+                        Mercado
+                    </Accordion.Header>
+                    <Accordion.Body>
+                        Notificaciones que recibes cuando un jugador sale al mercado.
+                        <div>
+                            <div className='d-flex align-items-center justify-content-between mb-2'>
+                                <div className='d-flex align-items-center'>
+                                    <BellIcon fill='black' className='me-2'/>
+                                    <p>Aplicación</p>
+                                </div>
+                                <ToggleButtonGroup type="checkbox" className='ms-5'>
+                                    <ToggleButton id="tbg-btn-1" value={0}>
+                                        Si
+                                    </ToggleButton>
+                                </ToggleButtonGroup>
+                            </div>
+                            <div className='d-flex align-items-center justify-content-between mb-2'>
+                                <div className='d-flex align-items-center'>
+                                    <MessageIcon fill='black' className='me-2'/>
+                                    <p>Mensaje</p>
+                                </div>
+                                <ToggleButtonGroup type="checkbox" className='ms-5'>
+                                    <ToggleButton id="tbg-btn-1" value={0}>
+                                        Si
+                                    </ToggleButton>
+                                </ToggleButtonGroup>
+                            </div>
+                            <div className='d-flex align-items-center justify-content-between'>
+                                <div className='d-flex align-items-center'>
+                                    <EmailIcon fill='black' className='me-2'/>
+                                    <p>Correo electrónico</p>
+                                </div>
+                                <ToggleButtonGroup type="checkbox" className='ms-5'>
+                                    <ToggleButton id="tbg-btn-1" value={0}>
+                                        Si
+                                    </ToggleButton>
+                                </ToggleButtonGroup>
+                            </div>
+                        </div>
+                    </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="3">
+                    <Accordion.Header>
+                        <FigureSoccer fill='black' className='me-2'/>
+                        Jugador
+                    </Accordion.Header>
+                    <Accordion.Body>
+                        Notificaciones que recibes cuando un jugador esta lesionado.
+                        <div>
+                            <div className='d-flex align-items-center justify-content-between mb-2'>
+                                <div className='d-flex align-items-center'>
+                                    <BellIcon fill='black' className='me-2'/>
+                                    <p>Aplicación</p>
+                                </div>
+                                <ToggleButtonGroup type="checkbox" className='ms-5'>
+                                    <ToggleButton id="tbg-btn-1" value={0}>
+                                        Si
+                                    </ToggleButton>
+                                </ToggleButtonGroup>
+                            </div>
+                            <div className='d-flex align-items-center justify-content-between mb-2'>
+                                <div className='d-flex align-items-center'>
+                                    <MessageIcon fill='black' className='me-2'/>
+                                    <p>Mensaje</p>
+                                </div>
+                                <ToggleButtonGroup type="checkbox" className='ms-5'>
+                                    <ToggleButton id="tbg-btn-1" value={0}>
+                                        Si
+                                    </ToggleButton>
+                                </ToggleButtonGroup>
+                            </div>
+                            <div className='d-flex align-items-center justify-content-between'>
+                                <div className='d-flex align-items-center'>
+                                    <EmailIcon fill='black' className='me-2'/>
+                                    <p>Correo electrónico</p>
+                                </div>
+                                <ToggleButtonGroup type="checkbox" className='ms-5'>
+                                    <ToggleButton id="tbg-btn-1" value={0}>
+                                        Si
+                                    </ToggleButton>
+                                </ToggleButtonGroup>
+                            </div>
+                        </div>
+                    </Accordion.Body>
+                </Accordion.Item>
+                <Accordion.Item eventKey="4">
+                    <Accordion.Header>
+                        <FootballIcon fill='black' className='me-2'/>
+                        Jornada
+                    </Accordion.Header>
+                    <Accordion.Body>
+                        Notificaciones que recibes un día antes de empezar la jornada.
+                        <div>
+                            <div className='d-flex align-items-center justify-content-between mb-2'>
+                                <div className='d-flex align-items-center'>
+                                    <BellIcon fill='black' className='me-2'/>
+                                    <p>Aplicación</p>
+                                </div>
+                                <ToggleButtonGroup type="checkbox" className='ms-5'>
+                                    <ToggleButton id="tbg-btn-1" value={0}>
+                                        Si
+                                    </ToggleButton>
+                                </ToggleButtonGroup>
+                            </div>
+                            <div className='d-flex align-items-center justify-content-between mb-2'>
+                                <div className='d-flex align-items-center'>
+                                    <MessageIcon fill='black' className='me-2'/>
+                                    <p>Mensaje</p>
+                                </div>
+                                <ToggleButtonGroup type="checkbox" className='ms-5'>
+                                    <ToggleButton id="tbg-btn-1" value={0}>
+                                        Si
+                                    </ToggleButton>
+                                </ToggleButtonGroup>
+                            </div>
+                            <div className='d-flex align-items-center justify-content-between'>
+                                <div className='d-flex align-items-center'>
+                                    <EmailIcon fill='black' className='me-2'/>
+                                    <p>Correo electrónico</p>
+                                </div>
+                                <ToggleButtonGroup type="checkbox" className='ms-5'>
+                                    <ToggleButton id="tbg-btn-1" value={0}>
+                                        Si
+                                    </ToggleButton>
+                                </ToggleButtonGroup>
+                            </div>
+                        </div>
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
-
         </main>
-
     )
 }
-
-/*
-<Navbar className="header rounded-4">
-            <Container fluid>
-                <Row className="w-100 d-flex align-items-center">
-                    <Col className="text-center">
-                        <div className="d-flex flex-column align-items-center">
-                            <p>Próxima jornada</p>
-                            <div className='d-flex align-items-center'>
-                                <img className='me-1' src={clock} alt='Clock icon'/>
-                                <p>{teamInfo.next_gameweek}</p>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col className="text-center">
-                        <div>
-                            <p>Saldo Actual</p>
-                            <span>{teamInfo.current_balance} €</span>
-                        </div>
-                    </Col>
-                    <Col className='text-center'>
-                        <div className="">
-                            <p>Saldo futuro</p>
-                            <span>{teamInfo.future_balance} €</span>
-                        </div>
-                    </Col>
-                    <Col className='text-center'>
-                        <div>
-                            <p>Deuda máxima</p>
-                            <span>{teamInfo.maximum_debt} €</span>
-                        </div>
-                    </Col>
-                    <Col className="d-flex align-items-center">
-                        <div>
-                            <p>{teamInfo.name}</p>
-                            <div className="d-flex">
-                                <img src={star_icon} alt='Star icon'/>
-                                <span className='ms-1'>{teamInfo.points}</span>
-                            </div>
-                        </div>
-                        <img src={user_logo} alt='User logo' className="ms-2" />
-                    </Col>
-                </Row>
-            </Container>
-        </Navbar>
- */
