@@ -114,9 +114,9 @@ export default function Setting() {
                         <FigureSoccer fill='black' className='me-2'/>
                         Jugador
                     </Accordion.Header>
-                    <Accordion.Body className='mt-4'>
+                    <Accordion.Body>
                         Notificaciones que recibes cuando un jugador esta lesionado.
-                        <div>
+                        <div className='mt-4'>
                             <div className='d-flex align-items-center justify-content-between mb-2'>
                                 <div className='d-flex align-items-center'>
                                     <BellIcon fill='black' className='me-2'/>
@@ -146,9 +146,9 @@ export default function Setting() {
                         <FootballIcon fill='black' className='me-2'/>
                         Jornada
                     </Accordion.Header>
-                    <Accordion.Body className='mt-4'>
+                    <Accordion.Body>
                         Notificaciones que recibes un día antes de empezar la jornada.
-                        <div>
+                        <div className='mt-4'>
                             <div className='d-flex align-items-center justify-content-between mb-2'>
                                 <div className='d-flex align-items-center'>
                                     <BellIcon fill='black' className='me-2'/>
