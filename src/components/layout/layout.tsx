@@ -18,7 +18,7 @@ export default function Layout({ children }: { children: any }) {
 
     return (
         <Container className='grid-container' fluid>
-            <Row style={{ height: '100%' }}>
+            <Row className="h-100">
                 <Col sm={2}>
                     <SideBar />
                 </Col>
