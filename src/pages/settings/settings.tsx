@@ -4,7 +4,6 @@ import Setting from '../../components/settings/setting.tsx'
 
 export default function Settings() {
 
-
     return (
         <Layout>
             <Setting/>

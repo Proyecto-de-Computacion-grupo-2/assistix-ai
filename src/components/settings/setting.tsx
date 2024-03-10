@@ -1,5 +1,5 @@
-import { Accordion, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
-import { FigureSoccer, MarketIcon, EmailIcon, BellIcon, MessageIcon, FootballIcon} from '../icons/icons';
+import {Accordion, Form} from 'react-bootstrap';
+import {FigureSoccer, MarketIcon, EmailIcon, BellIcon, MessageIcon, FootballIcon} from '../icons/icons';
 
 import './setting.scss'
 
@@ -11,7 +11,7 @@ export default function Setting() {
     };
 
     return (
-        <main className='p-5 mt-4 ms-1 rounded-4 main h-100'>
+        <main className='p-5 mt-4 ms-1 rounded-4 main'>
             <div>
                 <h2 className='mb-3'>Usuario: {teamInfo.email}</h2>
                 <h5>Configuración de notificaciones</h5>
@@ -25,39 +25,27 @@ export default function Setting() {
                     </Accordion.Header>
                     <Accordion.Body>
                         Notificaciones que recibes cuando un jugador esta lesionado.
-                        <div>
+                        <div className='mt-4'>
                             <div className='d-flex align-items-center justify-content-between mb-2'>
                                 <div className='d-flex align-items-center'>
                                     <BellIcon fill='black' className='me-2'/>
                                     <p>Aplicación</p>
                                 </div>
-                                <ToggleButtonGroup type="checkbox" className='ms-5'>
-                                    <ToggleButton id="tbg-btn-1" value={0}>
-                                        Si
-                                    </ToggleButton>
-                                </ToggleButtonGroup>
+                                <Form><Form.Check type="switch"/></Form>
                             </div>
                             <div className='d-flex align-items-center justify-content-between mb-2'>
                                 <div className='d-flex align-items-center'>
                                     <MessageIcon fill='black' className='me-2'/>
                                     <p>Mensaje</p>
                                 </div>
-                                <ToggleButtonGroup type="checkbox" className='ms-5'>
-                                    <ToggleButton id="tbg-btn-1" value={0}>
-                                        Si
-                                    </ToggleButton>
-                                </ToggleButtonGroup>
+                                <Form><Form.Check type="switch"/></Form>
                             </div>
                             <div className='d-flex align-items-center justify-content-between'>
                                 <div className='d-flex align-items-center'>
                                     <EmailIcon fill='black' className='me-2'/>
                                     <p>Correo electrónico</p>
                                 </div>
-                                <ToggleButtonGroup type="checkbox" className='ms-5'>
-                                    <ToggleButton id="tbg-btn-1" value={0}>
-                                        Si
-                                    </ToggleButton>
-                                </ToggleButtonGroup>
+                                <Form><Form.Check type="switch"/></Form>
                             </div>
                         </div>
                     </Accordion.Body>
@@ -69,39 +57,27 @@ export default function Setting() {
                     </Accordion.Header>
                     <Accordion.Body>
                         Notificaciones que recibes un día antes de empezar la jornada.
-                        <div>
+                        <div className='mt-4'>
                             <div className='d-flex align-items-center justify-content-between mb-2'>
                                 <div className='d-flex align-items-center'>
                                     <BellIcon fill='black' className='me-2'/>
                                     <p>Aplicación</p>
                                 </div>
-                                <ToggleButtonGroup type="checkbox" className='ms-5'>
-                                    <ToggleButton id="tbg-btn-1" value={0}>
-                                        Si
-                                    </ToggleButton>
-                                </ToggleButtonGroup>
+                                <Form><Form.Check type="switch"/></Form>
                             </div>
                             <div className='d-flex align-items-center justify-content-between mb-2'>
                                 <div className='d-flex align-items-center'>
                                     <MessageIcon fill='black' className='me-2'/>
                                     <p>Mensaje</p>
                                 </div>
-                                <ToggleButtonGroup type="checkbox" className='ms-5'>
-                                    <ToggleButton id="tbg-btn-1" value={0}>
-                                        Si
-                                    </ToggleButton>
-                                </ToggleButtonGroup>
+                                <Form><Form.Check type="switch"/></Form>
                             </div>
                             <div className='d-flex align-items-center justify-content-between'>
                                 <div className='d-flex align-items-center'>
                                     <EmailIcon fill='black' className='me-2'/>
                                     <p>Correo electrónico</p>
                                 </div>
-                                <ToggleButtonGroup type="checkbox" className='ms-5'>
-                                    <ToggleButton id="tbg-btn-1" value={0}>
-                                        Si
-                                    </ToggleButton>
-                                </ToggleButtonGroup>
+                                <Form><Form.Check type="switch"/></Form>
                             </div>
                         </div>
                     </Accordion.Body>
@@ -113,39 +89,27 @@ export default function Setting() {
                     </Accordion.Header>
                     <Accordion.Body>
                         Notificaciones que recibes cuando un jugador sale al mercado.
-                        <div>
+                        <div className='mt-4'>
                             <div className='d-flex align-items-center justify-content-between mb-2'>
                                 <div className='d-flex align-items-center'>
                                     <BellIcon fill='black' className='me-2'/>
                                     <p>Aplicación</p>
                                 </div>
-                                <ToggleButtonGroup type="checkbox" className='ms-5'>
-                                    <ToggleButton id="tbg-btn-1" value={0}>
-                                        Si
-                                    </ToggleButton>
-                                </ToggleButtonGroup>
+                                <Form><Form.Check type="switch"/></Form>
                             </div>
                             <div className='d-flex align-items-center justify-content-between mb-2'>
                                 <div className='d-flex align-items-center'>
                                     <MessageIcon fill='black' className='me-2'/>
                                     <p>Mensaje</p>
                                 </div>
-                                <ToggleButtonGroup type="checkbox" className='ms-5'>
-                                    <ToggleButton id="tbg-btn-1" value={0}>
-                                        Si
-                                    </ToggleButton>
-                                </ToggleButtonGroup>
+                                <Form><Form.Check type="switch"/></Form>
                             </div>
                             <div className='d-flex align-items-center justify-content-between'>
                                 <div className='d-flex align-items-center'>
                                     <EmailIcon fill='black' className='me-2'/>
                                     <p>Correo electrónico</p>
                                 </div>
-                                <ToggleButtonGroup type="checkbox" className='ms-5'>
-                                    <ToggleButton id="tbg-btn-1" value={0}>
-                                        Si
-                                    </ToggleButton>
-                                </ToggleButtonGroup>
+                                <Form><Form.Check type="switch"/></Form>
                             </div>
                         </div>
                     </Accordion.Body>
@@ -155,7 +119,7 @@ export default function Setting() {
                         <FigureSoccer fill='black' className='me-2'/>
                         Jugador
                     </Accordion.Header>
-                    <Accordion.Body>
+                    <Accordion.Body className='mt-4'>
                         Notificaciones que recibes cuando un jugador esta lesionado.
                         <div>
                             <div className='d-flex align-items-center justify-content-between mb-2'>
@@ -163,33 +127,21 @@ export default function Setting() {
                                     <BellIcon fill='black' className='me-2'/>
                                     <p>Aplicación</p>
                                 </div>
-                                <ToggleButtonGroup type="checkbox" className='ms-5'>
-                                    <ToggleButton id="tbg-btn-1" value={0}>
-                                        Si
-                                    </ToggleButton>
-                                </ToggleButtonGroup>
+                                <Form><Form.Check type="switch"/></Form>
                             </div>
                             <div className='d-flex align-items-center justify-content-between mb-2'>
                                 <div className='d-flex align-items-center'>
                                     <MessageIcon fill='black' className='me-2'/>
                                     <p>Mensaje</p>
                                 </div>
-                                <ToggleButtonGroup type="checkbox" className='ms-5'>
-                                    <ToggleButton id="tbg-btn-1" value={0}>
-                                        Si
-                                    </ToggleButton>
-                                </ToggleButtonGroup>
+                                <Form><Form.Check type="switch"/></Form>
                             </div>
                             <div className='d-flex align-items-center justify-content-between'>
                                 <div className='d-flex align-items-center'>
                                     <EmailIcon fill='black' className='me-2'/>
                                     <p>Correo electrónico</p>
                                 </div>
-                                <ToggleButtonGroup type="checkbox" className='ms-5'>
-                                    <ToggleButton id="tbg-btn-1" value={0}>
-                                        Si
-                                    </ToggleButton>
-                                </ToggleButtonGroup>
+                                <Form><Form.Check type="switch"/></Form>
                             </div>
                         </div>
                     </Accordion.Body>
@@ -199,7 +151,7 @@ export default function Setting() {
                         <FootballIcon fill='black' className='me-2'/>
                         Jornada
                     </Accordion.Header>
-                    <Accordion.Body>
+                    <Accordion.Body className='mt-4'>
                         Notificaciones que recibes un día antes de empezar la jornada.
                         <div>
                             <div className='d-flex align-items-center justify-content-between mb-2'>
@@ -207,33 +159,21 @@ export default function Setting() {
                                     <BellIcon fill='black' className='me-2'/>
                                     <p>Aplicación</p>
                                 </div>
-                                <ToggleButtonGroup type="checkbox" className='ms-5'>
-                                    <ToggleButton id="tbg-btn-1" value={0}>
-                                        Si
-                                    </ToggleButton>
-                                </ToggleButtonGroup>
+                                <Form><Form.Check type="switch"/></Form>
                             </div>
                             <div className='d-flex align-items-center justify-content-between mb-2'>
                                 <div className='d-flex align-items-center'>
                                     <MessageIcon fill='black' className='me-2'/>
                                     <p>Mensaje</p>
                                 </div>
-                                <ToggleButtonGroup type="checkbox" className='ms-5'>
-                                    <ToggleButton id="tbg-btn-1" value={0}>
-                                        Si
-                                    </ToggleButton>
-                                </ToggleButtonGroup>
+                                <Form><Form.Check type="switch"/></Form>
                             </div>
                             <div className='d-flex align-items-center justify-content-between'>
                                 <div className='d-flex align-items-center'>
                                     <EmailIcon fill='black' className='me-2'/>
                                     <p>Correo electrónico</p>
                                 </div>
-                                <ToggleButtonGroup type="checkbox" className='ms-5'>
-                                    <ToggleButton id="tbg-btn-1" value={0}>
-                                        Si
-                                    </ToggleButton>
-                                </ToggleButtonGroup>
+                                <Form><Form.Check type="switch"/></Form>
                             </div>
                         </div>
                     </Accordion.Body>
