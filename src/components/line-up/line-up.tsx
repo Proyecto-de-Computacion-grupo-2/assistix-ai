@@ -51,7 +51,8 @@ export default function LineUp() {
                         <PlayerCard player={player[0]} />
                     </div>
 
-                    <BoxInfo info='5-3-2' icon={<RightArrowIcon fill='black' />} top='' bottom='5px' right='' left='5px' />
+                    <BoxInfo info='5-3-2' icon={<RightArrowIcon fill='black' />} bottom='10px' left='5px' />
+                    <BoxInfo info='93.5 M' icon={<RightArrowIcon fill='black' />} bottom='10px' right='5px' />
                 </div>
                 <div className="container d-flex justify-content-between align-items-center" style={{ width: '100%', height: '8%' }}>
                     <p className='fs-4 fw-medium'>17 Jugadores</p>
