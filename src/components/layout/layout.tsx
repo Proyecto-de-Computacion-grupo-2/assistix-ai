@@ -1,6 +1,8 @@
-import Header from '../../components/header/header.tsx'
-import SideBar from "../../components/side_bar/side-bar.tsx";
-import './layout.scss'
+import { Container, Row, Col } from 'react-bootstrap';
+
+//import './layout.scss'
+import SideBar from '../side_bar/side-bar';
+import Header from '../header/header.tsx';
 
 export default function Layout({ children }: { children: any }) {
 
@@ -15,19 +17,15 @@ export default function Layout({ children }: { children: any }) {
 
 
     return (
-        <div className='grid-container'>
-            <SideBar />
-            {/* <div className="main-container">
-                <Header teamInfo={teamInfo} />
-                {children}
-            </div> */}
-        </div>
+        <Container className='grid-container' fluid>
+            <Row style={{ height: '100%' }}>
+                <Col sm={2}>
+                    <SideBar />
+                </Col>
+                <Col sm={10}>
+                    <Header teamInfo={teamInfo}/>
+                </Col>
+            </Row>
+        </Container>
     )
-
-
-    // return (
-    //     <>
-    //         <SideBar/>
-    //     </>
-    // )
 }
