@@ -1,9 +1,8 @@
+import { Nav, Card, Button } from 'react-bootstrap';
+import { FigureSoccer, HomeIcon, ChatBotIcon, SettingsIcon, MarketIcon } from '../icons/icons';
 import assistix_ai_logo from '../../assets/assistix-ai-logo.png';
 import integrated_ai_logo from '../../assets/integrated-ai-logo.png';
-import { FigureSoccer, HomeIcon, ChatBotIcon, SettingsIcon, MarketIcon } from '../icons/icons';
 import './side_bar.scss'
-
-import { Nav, Card, Button } from 'react-bootstrap';
 
 
 export default function SideBar() {
