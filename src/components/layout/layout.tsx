@@ -22,6 +22,7 @@ export default function Layout({children}: { children: any }) {
                 </Col>
                 <Col sm={10} className='mt-3'>
                     <Header teamInfo={teamInfo}/>
+                    {children}
                 </Col>
             </Row>
         </Container>
