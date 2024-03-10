@@ -8,9 +8,9 @@ export default function BoxInfo({ info, icon, right, bottom, left }: {
     left?: string
 }) {
     return (
-        <div className="info-box bg-light rounded-4 d-flex justify-content-center align-items-center px-3 py-1 gap-3" style={{ position: 'absolute', right: `${right}`, left: `${left}`, bottom: `${bottom}` }}>
+        <div className="info-box bg-light rounded-4 d-flex justify-content-center align-items-center px-3 py-1 gap-3 " style={{ position: 'absolute', right: `${right}`, left: `${left}`, bottom: `${bottom}` }}>
             {icon}
-            <p>{info}</p>
+            <p className='fw-semibold'>{info}</p>
         </div>
     )
 
