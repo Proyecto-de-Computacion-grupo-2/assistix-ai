@@ -7,7 +7,7 @@ import './side_bar.scss'
 
 export default function SideBar() {
     return (
-        <aside className='rounded-4'>
+        <aside className='rounded-4 h-100'>
             <div className='d-flex align-items-center pt-3'>
                 <img className='img-fluid ms-2 me-2' style={{ width: '40px', height: '40px' }} src={assistix_ai_logo} alt="Logo de assistix AI"/>
                 <p className='fw-bold aqua-color-highlight'>ASSISTIX AI</p>

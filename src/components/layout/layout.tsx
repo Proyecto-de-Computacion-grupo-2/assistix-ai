@@ -18,11 +18,11 @@ export default function Layout({ children }: { children: any }) {
 
     return (
         <Container className='grid-container' fluid>
-            <Row className="h-100">
-                <Col sm={2}>
-                    <SideBar />
+            <Row className="h-100 w-100">
+                <Col sm={2} className='mt-3 pe-1'>
+                    <SideBar/>
                 </Col>
-                <Col sm={10}>
+                <Col sm={10} className='mt-3'>
                     <Header teamInfo={teamInfo}/>
                 </Col>
             </Row>
