@@ -221,6 +221,8 @@ export default function LineUp() {
         }
     }
 
+    const formation = data[currentPlantilla].defense.length + '-' + data[currentPlantilla].midfield.length + '-' + data[currentPlantilla].attack.length
+
     return (
         <div className='container my-container p-3 rounded d-flex align-items-center justify-content-center' style={{ width: '49%', height: '98%', backgroundColor: 'white' }}>
             <div className='container d-flex justify-content-between flex-column' style={{ width: '95%', height: '98%' }}>
@@ -259,7 +261,7 @@ export default function LineUp() {
                         <PlayerCard player={data[currentPlantilla].goalkeeper} />
                     </div>
 
-                    <BoxInfo info='5-3-2' icon={<RightArrowIcon fill='black' />} bottom='10px' left='5px' />
+                    <BoxInfo info={formation} icon={<RightArrowIcon fill='black' />} bottom='10px' left='5px' />
                     <BoxInfo info='93.5 M' icon={<RightArrowIcon fill='black' />} bottom='10px' right='5px' />
                 </div>
                 <div className="container d-flex justify-content-between align-items-center" style={{ width: '100%', height: '8%' }}>
