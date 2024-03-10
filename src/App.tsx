@@ -3,11 +3,11 @@ import './index.scss'
 
 export default function App() {
 
-    return (
-        <>
-          <Dashboard/>
-        </>
-    )
+  return (
+    <>
+      <Dashboard />
+    </>
+  )
 }
 
 
