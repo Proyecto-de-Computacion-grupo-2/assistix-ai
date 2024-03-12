@@ -45,8 +45,8 @@ export default function PlayerMarket() {
     return (
         <>
             <div className='mt-3 mb-3 border-top border-bottom'>
-                <p className='mt-3 ms-3'>Libre, termina en PROPS</p>
-                <div className='d-flex align-items-center'>
+                <p className='mt-3 ms-2'>Libre, termina en PROPS</p>
+                <div className='d-flex align-items-center mb-2'>
                     <PlayerData/>
                     <PlayerImage/>
                     <PlayerGameWeeks/>
