@@ -1,55 +1,54 @@
-import player_face from '../../assets/player-face-example.png';
 import './player.scss';
 
-function PlayerData() {
+function PlayerData({label, value}) {
     return (
         <div className='d-flex flex-column align-items-center ms-3 me-3'>
-            <p className='mb-1' style={{fontWeight:'bold'}}>DL</p>
-            <p style={{fontWeight:'bold'}}>118</p>
+            <p className='mb-1 bold'>{label}</p>
+            <p className='bold'>{value}</p>
         </div>
     )
 }
 
-function PlayerImage() {
+function PlayerImage({src}) {
     return (
         <div>
-            <img src={player_face}/>
+            <img src={src}/>
         </div>
     )
 }
 
-function PlayerGameWeeks() {
+function PlayerGameWeek({points, gameWeek}) {
+    return (
+        <div className='d-flex flex-column align-items-center me-2'>
+            <p className='game-week-points'>{points}</p>
+            <p className='game-week-number'>{gameWeek}</p>
+        </div>
+    )
+}
+
+function PlayerGameWeeks({playerName, gameWeeks}) {
     return (
         <div className='d-flex flex-column mt-2 ms-3'>
-            <p style={{fontWeight:'bold'}}>Y. En Nesyri</p>
+            <p className='bold'>{playerName}</p>
             <div className='d-flex'>
-                <PlayerGameWeek/>
-                <PlayerGameWeek/>
-                <PlayerGameWeek/>
-                <PlayerGameWeek/>
+                {gameWeeks.map((week, index) => (
+                    <PlayerGameWeek key={index} points={week.points} gameWeek={week.gameWeek}/>
+                ))}
             </div>
         </div>
     )
 }
 
-function PlayerGameWeek() {
-    return (
-        <div className='d-flex flex-column align-items-center me-2'>
-            <p className='game-week-points'>9</p>
-            <p className='game-week-number' style={{ color: '#4EB3A4' }}>J22</p>
-        </div>
-    )
-}
 
-export default function PlayerMarket() {
+export default function PlayerMarket({player}) {
     return (
         <>
-            <div className='mt-3 mb-3 border-top border-bottom'>
-                <p className='mt-3 ms-2'>Libre, termina en PROPS</p>
+            <div className='border-top border-bottom'>
+                <p className='mt-3 ms-2'>Libre, termina en {player.endTime}</p>
                 <div className='d-flex align-items-center mb-2'>
-                    <PlayerData/>
-                    <PlayerImage/>
-                    <PlayerGameWeeks/>
+                    <PlayerData label={player.label} value={player.value}/>
+                    <PlayerImage src={player.imageSrc}/>
+                    <PlayerGameWeeks playerName={player.name} gameWeeks={player.gameWeeks}/>
                 </div>
             </div>
         </>
