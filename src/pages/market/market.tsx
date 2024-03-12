@@ -10,7 +10,7 @@ export default function Market() {
         <Layout>
             <Container className='mt-4 ms-0 me-0'>
                 <Row>
-                    <Col sm={6}  className='bg-light'>
+                    <Col sm={6}  className='rounded-4' style={{backgroundColor:'white'}}>
                         <PlayerInMarket/>
                     </Col>
                     <Col sm={6}  className='bg-primary'>
