@@ -2,7 +2,7 @@ export default function Chatbot() {
 
     return (
         <iframe className='mt-4'
-            srcDoc="<body><script src='https://cdn.botpress.cloud/webchat/v0/inject.js'></script>
+                srcDoc="<body><script src='https://cdn.botpress.cloud/webchat/v0/inject.js'></script>
             <script>
               window.botpressWebChat.init({
                   'composerPlaceholder': 'Haz tu preguntas sobre la liga fantasy...',
@@ -26,8 +26,8 @@ export default function Chatbot() {
               });
             window.botpressWebChat.onEvent(function () { window.botpressWebChat.sendEvent({ type: 'show' }) }, ['LIFECYCLE.LOADED']);
             </script></body>"
-            width="100%"
-            height="100%"
+                width="100%"
+                height="100%"
         >
         </iframe>
     )
