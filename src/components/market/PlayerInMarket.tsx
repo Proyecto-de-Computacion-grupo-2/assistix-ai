@@ -1,6 +1,6 @@
 import PlayerMarket from '../../components/market/player.tsx'
 import player_face_photo from '../../assets/player-face-example.png';
-
+import './players-in-market.scss'
 
 
 export default function PlayerInMarket() {
@@ -20,8 +20,13 @@ export default function PlayerInMarket() {
     };
 
     return (
-        <div className='pt-4 ps-3'>
+        <div className='scrollable-container'>
             <h5 className='mb-3'>Mercado</h5>
+            <PlayerMarket player={playerData}/>
+            <PlayerMarket player={playerData}/>
+            <PlayerMarket player={playerData}/>
+            <PlayerMarket player={playerData}/>
+            <PlayerMarket player={playerData}/>
             <PlayerMarket player={playerData}/>
             <PlayerMarket player={playerData}/>
             <PlayerMarket player={playerData}/>
