@@ -1,23 +1,36 @@
-import { useEffect } from 'react'
 
-const Chatbot = () => {
-    useEffect(() => {
-        const script = document.createElement('script')
-        script.src = 'https://cdn.botpress.cloud/webchat/v1/inject.js'
-        script.async = true
-        document.body.appendChild(script)
 
-        script.onload = () => {
-            window.botpressWebChat.init({
-                botId: '<botID>',
-                hostUrl: 'https://cdn.botpress.cloud/webchat/v1',
-                messagingUrl: 'https://messaging.botpress.cloud',
-                clientId: '<clientID>',
-            })
-        }
-    }, [])
+export default function Chatbot() {
 
-    return <div id="webchat" />
+    return (
+        <iframe className='mt-4'
+            srcDoc="<body><script src='https://cdn.botpress.cloud/webchat/v0/inject.js'></script>
+            <script>
+              window.botpressWebChat.init({
+                  'composerPlaceholder': 'Haz tu preguntas sobre la liga fantasy...',
+                  'botConversationDescription': 'Inteligencia artificial especializada en ligas fantasy.',
+                  'botName': 'Assistix AI',
+                  'botId': '436fa3fb-f602-46e2-9690-e62622e7fd0b',
+                  'hostUrl': 'https://cdn.botpress.cloud/webchat/v0',
+                  'messagingUrl': 'https://messaging.botpress.cloud',
+                  'clientId': '436fa3fb-f602-46e2-9690-e62622e7fd0b',
+                  'enableConversationDeletion': true,
+                  'showPoweredBy': true,
+                  'className': 'webchatIframe',
+                  'containerWidth': '100%25',
+                  'layoutWidth': '100%25',
+                  'hideWidget': true,
+                  'showCloseButton': false,
+                  'disableAnimations': false,
+                  'closeOnEscape': false,
+                  'showConversationsButton': false,
+                  'enableTranscriptDownload': false
+              });
+            window.botpressWebChat.onEvent(function () { window.botpressWebChat.sendEvent({ type: 'show' }) }, ['LIFECYCLE.LOADED']);
+            </script></body>"
+            width="100%"
+            height="100%"
+        >
+        </iframe>
+    )
 }
-
-export default Chatbot
