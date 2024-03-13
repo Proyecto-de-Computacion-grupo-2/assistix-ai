@@ -12,58 +12,34 @@ export default function DashboardPage() {
     return (
         <>
             <Layout>
-                <Row className='p-0 m-0 h-100 gx-3' fluid>
+                <Row className='p-0 m-0 h-100' fluid>
                     <Col className='p-0 me-2'>
                         <Row className='p-0 m-0'>
-                            <Col sm={6} className='p-0 m-0'>
+                            <Col sm={6} className='p-0'>
                                 <LigaRanking />
                             </Col>
-                            <Col sm={6} className='p-0 m-0'>
+                            <Col sm={6} className='p-0'>
                                 <RecomendationSection />
                             </Col>
                         </Row>
-                        {/* <Row>
-                            <Col className='p-0 m-0'>
+                        <Row className='p-0 m-0'>
+                            <Col sm={6} className='p-0 '>
                                 <PricesComponent />
                             </Col>
-                            <Col className='p-0 m-0'>
+                            <Col sm={6} className='p-0 '>
                                 <PujadosSection />
                             </Col>
                         </Row>
-                        <Row>
-                        </Row> */}
+                        <Row className='p-0 m-0'>
+                            <Col sm={12} className='p-0 bg-white mt-2 rounded-4' style={{ height: '24vh' }}>
+                                En desarrollo
+                            </Col>
+                        </Row>
                     </Col>
-                    <Col className='p-0 m-0 bg-white rounded-4 ms-2'>
-
+                    <Col className='p-0 m-0 ms-2'>
+                        <LineUp />
                     </Col>
                 </Row>
-                {/* <Container className='d-flex flex-grow-1 flex-row align-items-center p-0' fluid>
-                    <div className='container my-container rounded p-0' style={{ width: '49%', height: '98%' }}>
-                        <div className="container d-flex justify-content-between flex-column p-0" style={{ height: '100%' }}>
-                            <div className="row" style={{ height: '33%' }}>
-                                <div className="col p-0 mx-1">
-                                    <LigaRanking />
-                                </div>
-                                <div className="col p-0 mx-1">
-                                    <RecomendationSection />
-                                </div>
-                            </div>
-                            <div className="row" style={{ height: '33%' }} >
-                                <div className="col p-0 mx-1">
-                                    <PricesComponent />
-                                </div>
-                                <div className="col p-0 mx-1">
-                                    <PujadosSection />
-                                </div>
-                            </div>
-                            <div className="row" style={{ height: '33%' }} >
-                                <div className="col p-0 mx-1">Hola</div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <LineUp />
-                </Container > */}
             </Layout >
         </>
     )

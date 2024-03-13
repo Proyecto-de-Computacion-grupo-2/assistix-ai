@@ -1,3 +1,4 @@
+import { Container } from "react-bootstrap";
 import PujadosCard from "./pujados-card/pujados-card";
 
 export default function PujadosSection() {
@@ -5,28 +6,25 @@ export default function PujadosSection() {
     const pujados = true;
 
     return (
-        <div className="container bg-white h-100 p-1 rounded-4 d-flex flex-column">
-            <div className="container py-1 border-bottom">
+        <Container className="w-100 bg-white rounded-4 h-100 d-flex flex-column p-0 ms-1 my-1" style={{ minHeight: '30vh' }} fluid>
+            <Container className="py-1 border-bottom m-0">
                 <strong className="text-secondary">Movimientos pendientes</strong>
-            </div>
+            </Container>
             {
                 pujados ?
-
-                    <div className="container container flex-grow-1 px-1 scroll-section" style={{ maxHeight: '23vh' }}>
+                    <Container className="flex-grow-1 px-1 scroll-section" style={{ maxHeight: '25vh' }}>
                         <PujadosCard />
                         <PujadosCard />
                         <PujadosCard />
                         <PujadosCard />
                         <PujadosCard />
-                    </div>
-
+                    </Container>
                     :
-
-                    <div className="container container flex-grow-1 px-1 scroll-section h-100 d-flex flex-column justify-content-center align-items-center gap-2" style={{ maxHeight: '23vh' }}>
+                    <Container className="flex-grow-1 px-1 scroll-section h-100 d-flex flex-column justify-content-center align-items-center">
                         <p className="text-secondary">No hay movimiento pendientes</p>
                         <button className="btn btn-outline-secondary">Ir al mercado</button>
-                    </div>
+                    </Container>
             }
-        </div>
+        </Container>
     )
 }
