@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 
 import logo from '../../assets/assistix-ai-logo.png'
 import iaImage from '../../assets/integrated-ai-logo.png'
-import { FigureSoccer, HomeIcon, ChatBotIcon, SettingsIcon, MarketIcon } from '../../components/icons/icons';
+import { FigureSoccer, HomeIcon, ChatBotIcon, SettingsIcon, MarketIcon } from '../icons/icons';
 
 export default function SideBar() {
     return (

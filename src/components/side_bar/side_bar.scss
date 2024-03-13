@@ -1,6 +1,13 @@
 $color_app_name: #0BF4CC;
 
+$background_color: #fff;
+
 .integrated-ai-color {
   background-color: #F1F1F1;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.color-white {
+  background-color: $background_color !important;
+  border: white !important;
 }
