@@ -22,7 +22,7 @@ export default function Chatbot() {
                   'disableAnimations': false,
                   'closeOnEscape': false,
                   'showConversationsButton': false,
-                  'enableTranscriptDownload': false
+                  'enableTranscriptDownload': false,
               });
             window.botpressWebChat.onEvent(function () { window.botpressWebChat.sendEvent({ type: 'show' }) }, ['LIFECYCLE.LOADED']);
             </script></body>"

@@ -7,13 +7,14 @@ import './side_bar.scss'
 export default function SideBar() {
     return (
         <aside className='rounded-4 h-100'>
-            <div className='d-flex align-items-center pt-3'>
-                <img className='img-fluid ms-2 me-2' style={{width: '40px', height: '40px'}} src={assistix_ai_logo}
-                     alt="Logo de assistix AI"/>
-                <p className='fw-bold aqua-color-highlight'>ASSISTIX AI</p>
-            </div>
-            <Nav className="flex-column mt-4">
-                <Nav.Link className='aqua-color-highlight'>Main</Nav.Link>
+            <Nav className="flex-column m-0">
+                <Nav.Link href='/'>
+                    <div className='d-flex align-items-center pt-3'>
+                        <img className='img-fluid ms-2 me-2' style={{width: '40px', height: '40px'}} src={assistix_ai_logo} alt="Logo de assistix AI"/>
+                        <p className='fw-bold text-sidebar'>ASSISTIX AI</p>
+                    </div>
+                </Nav.Link>
+                <Nav.Link className='text-sidebar'>Main</Nav.Link>
                 <Nav.Link href='/' className='mt-3 text-sidebar'><HomeIcon fill='black' className='me-3'/>Home</Nav.Link>
                 <Nav.Link href="/assistant" className='mt-3 text-sidebar'><ChatBotIcon fill='black' className='me-3'/>Assistente</Nav.Link>
                 <Nav.Link href="/market" className='mt-3 text-sidebar'><MarketIcon fill='black' className='me-3'/>Mercado</Nav.Link>

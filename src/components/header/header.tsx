@@ -15,34 +15,34 @@ export default function Header({ teamInfo }: { teamInfo: any }) {
                             <p>Próxima jornada</p>
                             <div className='d-flex align-items-center'>
                                 <img className='me-1' src={clock} alt='Clock icon'/>
-                                <p>{teamInfo.next_gameweek}</p>
+                                <p className='bold'>{teamInfo.next_gameweek}</p>
                             </div>
                         </div>
                     </Col>
                     <Col className="text-center">
                         <div>
                             <p>Saldo Actual</p>
-                            <span>{teamInfo.current_balance} €</span>
+                            <span className='bold'>{teamInfo.current_balance} €</span>
                         </div>
                     </Col>
                     <Col className='text-center'>
                         <div className="">
                             <p>Saldo futuro</p>
-                            <span>{teamInfo.future_balance} €</span>
+                            <span className='bold'>{teamInfo.future_balance} €</span>
                         </div>
                     </Col>
                     <Col className='text-center'>
                         <div>
                             <p>Deuda máxima</p>
-                            <span>{teamInfo.maximum_debt} €</span>
+                            <span className='bold'>{teamInfo.maximum_debt} €</span>
                         </div>
                     </Col>
                     <Col className="d-flex align-items-center">
                         <div>
-                            <p>{teamInfo.name}</p>
+                            <p className='bold'>{teamInfo.name}</p>
                             <div className="d-flex">
                                 <img src={star_icon} alt='Star icon'/>
-                                <span className='ms-1'>{teamInfo.points}</span>
+                                <span className='ms-1 bold'>{teamInfo.points}</span>
                             </div>
                         </div>
                         <img src={user_logo} alt='User logo' className="ms-2" />
