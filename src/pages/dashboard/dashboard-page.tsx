@@ -36,7 +36,7 @@ export default function DashboardPage() {
                             </Col>
                         </Row>
                     </Col>
-                    <Col className='p-0 m-0 ms-2'>
+                    <Col className='p-0 m-0 ms-2 lg'>
                         <LineUp />
                     </Col>
                 </Row>
