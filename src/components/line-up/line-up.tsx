@@ -224,16 +224,16 @@ export default function LineUp() {
     const formation = data[currentPlantilla].defense.length + '-' + data[currentPlantilla].midfield.length + '-' + data[currentPlantilla].attack.length
 
     return (
-        <div className='container my-container p-3 rounded d-flex align-items-center justify-content-center' style={{ width: '49%', height: '98%', backgroundColor: 'white' }}>
+        <div className='container my-container p-3 rounded-4 d-flex align-items-center justify-content-center' style={{ width: '49%', height: '98%', backgroundColor: 'white' }}>
             <div className='container d-flex justify-content-between flex-column' style={{ width: '95%', height: '98%' }}>
                 <div className="container d-flex flex-column" style={{ width: '100%', height: '8%' }}>
-                    <p>Plantilla</p>
+                    <strong className='text-secondary'>Plantilla</strong>
                     <div className="d-flex justify-content-around align-items-center selection-plantilla">
-                        <p className='fs-7'>{currentPlantilla === 0 ? types[types.length - 1] : types[currentPlantilla - 1]}</p>
-                        <button className='change-button' onClick={() => changePlantilla('down')}><LeftArrowIcon fill='white' /> </button>
+                        <p className='fs-7 text-secondary'>{currentPlantilla === 0 ? types[types.length - 1] : types[currentPlantilla - 1]}</p>
+                        <button className='change-button' onClick={() => changePlantilla('left')}><LeftArrowIcon fill='white' /> </button>
                         <strong className='fs-5'>{types[currentPlantilla]}</strong>
                         <button className='change-button' onClick={() => changePlantilla('up')}> <RightArrowIcon fill='white' /></button>
-                        <p className='fs-7'>
+                        <p className='fs-7 text-secondary'>
                             {currentPlantilla === types.length - 1 ? types[0] : types[currentPlantilla + 1]}
                         </p>
                     </div>

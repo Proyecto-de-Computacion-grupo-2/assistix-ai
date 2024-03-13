@@ -94,3 +94,47 @@ export const LeftArrowIcon = ({ fill, className }: { fill: string, className?: s
     )
 }
 
+export const SubstitutionIcon = ({ fill }: { fill: string }) => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={fill ? fill : "currentColor"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 3m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+            <path d="M15 15m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+            <path d="M21 11v-3a2 2 0 0 0 -2 -2h-6l3 3m0 -6l-3 3" />
+            <path d="M3 13v3a2 2 0 0 0 2 2h6l-3 -3m0 6l3 -3" />
+        </svg>
+
+    )
+}
+
+export const TrendingUpIcon = ({ fill }: { fill: string }) => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={fill ? fill : "currentColor"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 17l6 -6l4 4l8 -8" />
+            <path d="M14 7l7 0l0 7" />
+        </svg>
+    )
+}
+
+export const TrendingDownIcon = ({ fill }: { fill: string }) => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={fill ? fill : "currentColor"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 7l6 6l4 -4l8 8" />
+            <path d="M21 10l0 7l-7 0" />
+        </svg>
+    )
+}
+
+export const TimeRemaining = ({ fill }: { fill: string }) => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={fill ? fill : "currentColor"} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M12 13m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+            <path d="M12 10l0 3l2 0" />
+            <path d="M7 4l-2.75 2" />
+            <path d="M17 4l2.75 2" />
+        </svg>
+    )
+}
