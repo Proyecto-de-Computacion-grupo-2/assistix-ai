@@ -4,7 +4,7 @@ import './layout.scss'
 import SideBar from '../side_bar/side-bar';
 import Header from '../header/header.tsx';
 
-export default function Layout({ children }: { children: any }) {
+export default function Layout({children}: { children: any }) {
 
     const teamInfo = {
         name: "UA2C",
@@ -18,9 +18,9 @@ export default function Layout({ children }: { children: any }) {
 
     return (
         <Container className='grid-container' fluid>
-            <Row className="h-100">
-                <Col sm={2}>
-                    <SideBar />
+            <Row className="h-100 w-100">
+                <Col sm={2} className='mt-3 pe-1'>
+                    <SideBar/>
                 </Col>
                 <Col sm={10} className='h-100 d-flex flex-column'>
                     <Row className='h-auto'>
