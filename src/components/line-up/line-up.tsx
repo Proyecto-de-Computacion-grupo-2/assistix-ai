@@ -3,6 +3,7 @@ import BoxInfo from '../box-info/box-info'
 import { LeftArrowIcon, RightArrowIcon } from '../icons/icons'
 import PlayerCard from '../player-card/player-card'
 import './line-up.scss'
+import { Container } from 'react-bootstrap'
 
 const plantillas = [
     {
@@ -224,57 +225,107 @@ export default function LineUp() {
     const formation = data[currentPlantilla].defense.length + '-' + data[currentPlantilla].midfield.length + '-' + data[currentPlantilla].attack.length
 
     return (
-        <div className='container my-container p-3 rounded-4 d-flex align-items-center justify-content-center' style={{ width: '49%', height: '98%', backgroundColor: 'white' }}>
-            <div className='container d-flex justify-content-between flex-column' style={{ width: '95%', height: '98%' }}>
-                <div className="container d-flex flex-column" style={{ width: '100%', height: '8%' }}>
-                    <strong className='text-secondary'>Plantilla</strong>
-                    <div className="d-flex justify-content-around align-items-center selection-plantilla">
-                        <p className='fs-7 text-secondary'>{currentPlantilla === 0 ? types[types.length - 1] : types[currentPlantilla - 1]}</p>
-                        <button className='change-button' onClick={() => changePlantilla('left')}><LeftArrowIcon fill='white' /> </button>
-                        <strong className='fs-5'>{types[currentPlantilla]}</strong>
-                        <button className='change-button' onClick={() => changePlantilla('up')}> <RightArrowIcon fill='white' /></button>
-                        <p className='fs-7 text-secondary'>
-                            {currentPlantilla === types.length - 1 ? types[0] : types[currentPlantilla + 1]}
-                        </p>
-                    </div>
-                </div>
-                <div className="container futbol-campo rounded-4 p-4 shadow-lg" style={{ width: '100%', height: '80%' }}>
-                    <div className="row d-flex lign-items-center justify-content-center">
+
+        <Container className='bg-white rounded-4 h-100 d-flex align-items-center justify-content-center p-3' fluid>
+            <Container className='d-flex flex-column h-100'>
+                <strong className='text-secondary'>Plantilla</strong>
+                <Container className='d-flex justify-content-around align-items-center selection-plantilla mb-2'>
+                    <p className='fs-7 text-secondary'>{currentPlantilla === 0 ? types[types.length - 1] : types[currentPlantilla - 1]}</p>
+                    <button className='change-button' onClick={() => changePlantilla('left')}><LeftArrowIcon fill='white' /> </button>
+                    <strong className='fs-5'>{types[currentPlantilla]}</strong>
+                    <button className='change-button' onClick={() => changePlantilla('up')}> <RightArrowIcon fill='white' /></button>
+                    <p className='fs-7 text-secondary'>
+                        {currentPlantilla === types.length - 1 ? types[0] : types[currentPlantilla + 1]}
+                    </p>
+                </Container>
+                <Container className='futbol-campo rounded-4 p-4 shadow-lg flex-grow-1' fluid>
+                    <Container className='d-flex lign-items-center justify-content-center' fluid>
                         {data[currentPlantilla].attack.map((player, index) => {
                             return <PlayerCard key={index} player={player} />
                         })
                         }
-                    </div>
-                    <div className="row d-flex lign-items-center justify-content-center">
+                    </Container>
+                    <Container className='d-flex lign-items-center justify-content-center' fluid>
                         {data[currentPlantilla].midfield.map((player, index) => {
                             return <PlayerCard key={index} player={player} />
                         })}
-                    </div>
-                    <div className="row d-flex lign-items-center justify-content-center">
-
+                    </Container>
+                    <Container className='d-flex lign-items-center justify-content-center' fluid>
                         {data[currentPlantilla].defense.map((player, index) => {
                             return <PlayerCard key={index} player={player} />
                         })}
-
-                    </div>
-                    <div className="row d-flex lign-items-center justify-content-center">
+                    </Container>
+                    <Container className='d-flex lign-items-center justify-content-center' fluid>
                         <PlayerCard player={data[currentPlantilla].goalkeeper} />
-                    </div>
-
+                    </Container>
                     <BoxInfo info={formation} icon={<RightArrowIcon fill='black' />} bottom='10px' left='5px' />
                     <BoxInfo info='93.5 M' icon={<RightArrowIcon fill='black' />} bottom='10px' right='5px' />
-                </div>
-                <div className="container d-flex justify-content-between align-items-center" style={{ width: '100%', height: '8%' }}>
-                    <p className='fs-4 fw-medium'>17 Jugadores</p>
-                    <div className="d-flex justify-content-center align-items-center">
+                </Container>
+                <Container className='d-flex justify-content-between align-items-center mt-2' fluid>
+                    <p className='fs-4 fw-medium w-50'>17 Jugadores</p>
+                    <Container className='d-flex justify-content-end align-items-center'>
                         <p className='fs-5 mx-2 fw-medium text-danger'>PT <strong className='fs-4 text-black'>2</strong></p>
                         <p className='fs-5 mx-2 fw-medium text-warning'>DF <strong className='fs-4 text-black'>5</strong></p>
                         <p className='fs-5 mx-2 fw-medium text-danger-emphasis'>MC <strong className='fs-4 text-black'>5</strong></p>
                         <p className='fs-5 mx-2 fw-medium text-primary'>DL <strong className='fs-4 text-black'>3</strong></p>
-                    </div>
+                    </Container>
+                </Container>
+            </Container>
+        </Container>
 
-                </div>
-            </div>
-        </div>
+
+
+        // <div className='container my-container p-3 rounded-4 d-flex align-items-center justify-content-center' style={{ width: '49%', height: '98%', backgroundColor: 'white' }}>
+        //     <div className='container d-flex justify-content-between flex-column' style={{ width: '95%', height: '98%' }}>
+        //         <div className="container d-flex flex-column" style={{ width: '100%', height: '8%' }}>
+        //             <strong className='text-secondary'>Plantilla</strong>
+        //             <div className="d-flex justify-content-around align-items-center selection-plantilla">
+        //                 <p className='fs-7 text-secondary'>{currentPlantilla === 0 ? types[types.length - 1] : types[currentPlantilla - 1]}</p>
+        //                 <button className='change-button' onClick={() => changePlantilla('left')}><LeftArrowIcon fill='white' /> </button>
+        //                 <strong className='fs-5'>{types[currentPlantilla]}</strong>
+        //                 <button className='change-button' onClick={() => changePlantilla('up')}> <RightArrowIcon fill='white' /></button>
+        //                 <p className='fs-7 text-secondary'>
+        //                     {currentPlantilla === types.length - 1 ? types[0] : types[currentPlantilla + 1]}
+        //                 </p>
+        //             </div>
+        //         </div>
+        //         <div className="container futbol-campo rounded-4 p-4 shadow-lg" style={{ width: '100%', height: '80%' }}>
+        //             <div className="row d-flex lign-items-center justify-content-center">
+        //                 {data[currentPlantilla].attack.map((player, index) => {
+        //                     return <PlayerCard key={index} player={player} />
+        //                 })
+        //                 }
+        //             </div>
+        //             <div className="row d-flex lign-items-center justify-content-center">
+        //                 {data[currentPlantilla].midfield.map((player, index) => {
+        //                     return <PlayerCard key={index} player={player} />
+        //                 })}
+        //             </div>
+        //             <div className="row d-flex lign-items-center justify-content-center">
+
+        //                 {data[currentPlantilla].defense.map((player, index) => {
+        //                     return <PlayerCard key={index} player={player} />
+        //                 })}
+
+        //             </div>
+        //             <div className="row d-flex lign-items-center justify-content-center">
+        //                 <PlayerCard player={data[currentPlantilla].goalkeeper} />
+        //             </div>
+
+        //             <BoxInfo info={formation} icon={<RightArrowIcon fill='black' />} bottom='10px' left='5px' />
+        //             <BoxInfo info='93.5 M' icon={<RightArrowIcon fill='black' />} bottom='10px' right='5px' />
+        //         </div>
+        //         <div className="container d-flex justify-content-between align-items-center" style={{ width: '100%', height: '8%' }}>
+        //             <p className='fs-4 fw-medium'>17 Jugadores</p>
+        //             <div className="d-flex justify-content-center align-items-center">
+        //                 <p className='fs-5 mx-2 fw-medium text-danger'>PT <strong className='fs-4 text-black'>2</strong></p>
+        //                 <p className='fs-5 mx-2 fw-medium text-warning'>DF <strong className='fs-4 text-black'>5</strong></p>
+        //                 <p className='fs-5 mx-2 fw-medium text-danger-emphasis'>MC <strong className='fs-4 text-black'>5</strong></p>
+        //                 <p className='fs-5 mx-2 fw-medium text-primary'>DL <strong className='fs-4 text-black'>3</strong></p>
+        //             </div>
+
+        //         </div>
+        //     </div>
+        // </div>
     )
 }

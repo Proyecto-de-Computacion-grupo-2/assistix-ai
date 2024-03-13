@@ -1,34 +1,50 @@
-import {Nav, Card, Button} from 'react-bootstrap';
-import {FigureSoccer, HomeIcon, ChatBotIcon, SettingsIcon, MarketIcon} from '../icons/icons';
-import assistix_ai_logo from '../../assets/assistix-ai-logo.png';
-import integrated_ai_logo from '../../assets/integrated-ai-logo.png';
 import './side_bar.scss'
+
+import { NavLink } from "react-router-dom";
+import { Container } from "react-bootstrap";
+
+import logo from '../../assets/assistix-ai-logo.png'
+import iaImage from '../../assets/integrated-ai-logo.png'
+import { FigureSoccer, HomeIcon, ChatBotIcon, SettingsIcon, MarketIcon } from '../../components/icons/icons';
 
 export default function SideBar() {
     return (
-        <aside className='rounded-4 h-100'>
-            <Nav className="flex-column m-0">
-                <Nav.Link href='/'>
-                    <div className='d-flex align-items-center pt-3'>
-                        <img className='img-fluid ms-2 me-2' style={{width: '40px', height: '40px'}} src={assistix_ai_logo} alt="Logo de assistix AI"/>
-                        <p className='fw-bold text-sidebar'>ASSISTIX AI</p>
-                    </div>
-                </Nav.Link>
-                <Nav.Link className='text-sidebar'>Main</Nav.Link>
-                <Nav.Link href='/' className='mt-3 text-sidebar'><HomeIcon fill='black' className='me-3'/>Home</Nav.Link>
-                <Nav.Link href="/assistant" className='mt-3 text-sidebar'><ChatBotIcon fill='black' className='me-3'/>Assistente</Nav.Link>
-                <Nav.Link href="/market" className='mt-3 text-sidebar'><MarketIcon fill='black' className='me-3'/>Mercado</Nav.Link>
-                <Nav.Link href="/players" className='mt-3 text-sidebar'><FigureSoccer fill='black' className='me-3'/>Jugadores</Nav.Link>
-                <Nav.Link href="/settings" className='mt-3 text-sidebar'><SettingsIcon fill='black' className='me-3'/>Configuración</Nav.Link>
-            </Nav>
-            <Card className='pt-3 mt-5 ms-2 me-2 integrated-ai-color align-items-center text-center rounded-4'>
-                <Card.Img variant="top" src={integrated_ai_logo} className='w-50'/>
-                <Card.Body>
-                    <Card.Title>IA Integrada</Card.Title>
-                    <Button variant="dark">Saber más</Button>
-                </Card.Body>
-            </Card>
-        </aside>
+        <Container className="h-100 m-0 p-3 bg-white rounded-4 d-flex flex-column justify-content-between" fluid>
+            <Container className="m-0 p-0 d-flex flex-column gap-4">
+                <NavLink to='/' className='d-flex flex-row gap-3 w-100 align-items-center link-offset-2 link-underline link-underline-opacity-0 fs-5 fw-bold text-black'>
+                    <img src={logo} alt="logo" className="fluid m-0 p-0" style={{ width: '60px', height: '60px' }} />
+                    ASSISTIX AI
+                </NavLink>
+                <Container className="m-0 p-0 d-flex flex-column gap-2" fluid>
+                    <p className="bold fs-5">Main</p>
+                    <NavLink to='/' className='d-flex flex-row gap-2 my-2 w-100 align-items-center link-offset-2 link-underline link-underline-opacity-0 fs-5 fw-bold text-black'>
+                        <HomeIcon fill='black' className="ms-1" />
+                        Home
+                    </NavLink>
+                    <NavLink to='/assistant' className='d-flex flex-row gap-2 mb-2 w-100 align-items-center link-offset-2 link-underline link-underline-opacity-0 fs-5 fw-bold text-black'>
+                        <ChatBotIcon fill='black' className="ms-1" />
+                        Asistente
+                    </NavLink>
+                    <NavLink to='/market' className='d-flex flex-row gap-2 mb-2 w-100 align-items-center link-offset-2 link-underline link-underline-opacity-0 fs-5 fw-bold text-black'>
+                        <MarketIcon fill='black' className="ms-1" />
+                        Mercado
+                    </NavLink>
+                    <NavLink to='/players' className='d-flex flex-row gap-2 mb-2 w-100 align-items-center link-offset-2 link-underline link-underline-opacity-0 fs-5 fw-bold text-black'>
+                        <FigureSoccer fill='black' className="ms-1" />
+                        Jugadores
+                    </NavLink>
+                    <NavLink to='/settings' className='d-flex flex-row gap-2 w-100 align-items-center link-offset-2 link-underline link-underline-opacity-0 fs-5 fw-bold text-black'>
+                        <SettingsIcon fill='black' className="ms-1" />
+                        Configuracion
+                    </NavLink>
+                </Container>
+            </Container>
+            <Container className="rounded-4 py-3 px-4 mb-5 d-flex flex-column justify-content-center align-items-center w-75 integrated-ai-color" fluid>
+                <img src={iaImage} alt="logo" className="rounded m-0 p-0 w-100 h-auto" />
+                <p className="fs-6 fw-bold my-2 text-center text-black">IA Integrada</p>
+                <button className="btn btn-dark text-white ">Saber más</button>
+            </Container>
+        </Container>
     )
 }
 
