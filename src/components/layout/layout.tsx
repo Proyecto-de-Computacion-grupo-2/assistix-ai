@@ -1,8 +1,10 @@
-import Header from '../../components/header/header.tsx'
-import SideBar from "../../components/side_bar/side-bar.tsx";
-import './layout.scss'
+import { Container, Row, Col } from 'react-bootstrap';
 
-export default function Layout({ children }: { children: any }) {
+import './layout.scss'
+import SideBar from '../side_bar/side-bar';
+import Header from '../header/header.tsx';
+
+export default function Layout({children}: { children: any }) {
 
     const teamInfo = {
         name: "UA2C",
@@ -13,14 +15,22 @@ export default function Layout({ children }: { children: any }) {
         points: "748",
     };
 
-    return (
-        <div className='grid-container'>
-            <SideBar />
-            <div className="main-container">
-                <Header teamInfo={teamInfo} />
-                {children}
-            </div>
-        </div>
-    )
 
+    return (
+        <Container className='grid-container' fluid>
+            <Row className="h-100 w-100">
+                <Col sm={2} className='mt-3 pe-1'>
+                    <SideBar/>
+                </Col>
+                <Col sm={10} className='h-100 d-flex flex-column'>
+                    <Row className='h-auto'>
+                        <Header teamInfo={teamInfo} />
+                    </Row>
+                    <Row className='flex-grow-1' fluid>
+                        {children}
+                    </Row>
+                </Col>
+            </Row>
+        </Container>
+    )
 }

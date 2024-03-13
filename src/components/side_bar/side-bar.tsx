@@ -1,41 +1,32 @@
-import home_icon from '../../assets/home-icon.svg';
-import chatbot_icon from '../../assets/chatbot-icon.svg';
-import mercado_icon from '../../assets/market-icon.svg';
-import player_icon from '../../assets/player-icon.svg';
-import settings_icon from '../../assets/settings-icon.svg';
+import { Nav, Card, Button } from 'react-bootstrap';
+import { FigureSoccer, HomeIcon, ChatBotIcon, SettingsIcon, MarketIcon } from '../icons/icons';
 import assistix_ai_logo from '../../assets/assistix-ai-logo.png';
 import integrated_ai_logo from '../../assets/integrated-ai-logo.png';
-
-
 import './side_bar.scss'
 
 
 export default function SideBar() {
     return (
-        <aside>
-            <div className="top-content">
-                <div className="fc sidebar-header">
-                    <img src={assistix_ai_logo} alt="ASSISTIX AI Logo" />
-                    <h2>ASSISTIX AI</h2>
-                </div>
-
-                <nav className="fc sidebar-nav">
-                    <ul>
-                        <p>Main</p>
-                        <li><a href="#"><img src={home_icon} alt="Home icon" />Home</a></li>
-                        <li><a href="#"><img src={chatbot_icon} alt="Assistant icon" /> Asistente</a></li>
-                        <li><a href="#"><img src={mercado_icon} alt="Market icon" /> Mercado</a></li>
-                        <li><a href="#"><img src={player_icon} alt="Players icon" /> Jugadores</a></li>
-                        <li><a href="#"><img src={settings_icon} alt="Settings icon" /> Configuración</a></li>
-                    </ul>
-                </nav>
+        <aside className='rounded-4 h-100'>
+            <div className='d-flex align-items-center pt-3'>
+                <img className='img-fluid ms-2 me-2' style={{ width: '40px', height: '40px' }} src={assistix_ai_logo} alt="Logo de assistix AI" />
+                <p className='fw-bold aqua-color-highlight'>ASSISTIX AI</p>
             </div>
-
-            <div className="know-more-ai">
-                <img src={integrated_ai_logo} alt="IA Integrada logo" />
-                <p>IA Integrada</p>
-                <a>Saber más</a>
-            </div>
+            <Nav defaultActiveKey="/home" className="flex-column mt-4">
+                <Nav.Link className='aqua-color-highlight'>Main</Nav.Link>
+                <Nav.Link href="/home" className='mt-3 text-sidebar'><HomeIcon fill='black' className='me-3' />Home</Nav.Link>
+                <Nav.Link eventKey="link-1" className='mt-3 text-sidebar'><ChatBotIcon fill='black' className='me-3' />Assistente</Nav.Link>
+                <Nav.Link eventKey="link-2" className='mt-3 text-sidebar'><MarketIcon fill='black' className='me-3' />Mercado</Nav.Link>
+                <Nav.Link eventKey="link-3" className='mt-3 text-sidebar'><FigureSoccer fill='black' className='me-3' />Jugadores</Nav.Link>
+                <Nav.Link eventKey="link-4" className='mt-3 text-sidebar'><SettingsIcon fill='black' className='me-3' />Configuración</Nav.Link>
+            </Nav>
+            <Card className='pt-3 mt-5 ms-2 me-2 integrated-ai-color align-items-center text-center rounded-4'>
+                <Card.Img variant="top" src={integrated_ai_logo} className='w-50' />
+                <Card.Body>
+                    <Card.Title>IA Integrada</Card.Title>
+                    <Button variant="dark">Saber más</Button>
+                </Card.Body>
+            </Card>
         </aside>
     )
 }

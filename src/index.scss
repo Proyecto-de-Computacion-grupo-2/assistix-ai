@@ -1,5 +1,7 @@
 $color1: #64f0c9;
 
+@import "../node_modules/bootstrap/scss/bootstrap";
+
 html {
     font-family: 'Poppins', sans-serif;
 }
@@ -23,4 +25,17 @@ h1 {
     font-weight: 800;
 
     font-size: 2rem;
+}
+
+.scroll-section {
+    overflow-y: auto;
+}
+
+.scroll-section::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scroll-section::-webkit-scrollbar-thumb {
+    background-color: #e0e0e0;
+    border-radius: 10px;
 }
