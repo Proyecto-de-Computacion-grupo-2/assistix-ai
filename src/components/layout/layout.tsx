@@ -1,4 +1,6 @@
-import {Container, Row, Col} from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+
+import './layout.scss'
 import SideBar from '../side_bar/side-bar';
 import Header from '../header/header.tsx';
 
@@ -20,9 +22,13 @@ export default function Layout({children}: { children: any }) {
                 <Col sm={2} className='mt-3 pe-1'>
                     <SideBar/>
                 </Col>
-                <Col sm={10} className='mt-3'>
-                    <Header teamInfo={teamInfo}/>
-                    {children}
+                <Col sm={10} className='h-100 d-flex flex-column'>
+                    <Row className='h-auto'>
+                        <Header teamInfo={teamInfo} />
+                    </Row>
+                    <Row className='flex-grow-1' fluid>
+                        {children}
+                    </Row>
                 </Col>
             </Row>
         </Container>

@@ -5,12 +5,11 @@ import Market from './pages/market/market.tsx';
 
 
 export default function App() {
-
-    return (
-        <>
-          <Market/>
-        </>
-    )
+  return (
+    <>
+      <Dashboard />
+    </>
+  )
 }
 
 
