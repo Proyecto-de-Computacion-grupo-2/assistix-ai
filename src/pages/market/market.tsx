@@ -83,7 +83,8 @@ export default function Market() {
                                         <div className="player-container rounded-4 bg-dark my-2 mx-3 d-flex justify-content-center align-items-center">
                                             <img src={Ramanzani} alt="player" height={50} width={50} />
                                         </div>
-                                        <p className='fs-5 bold me-4 text-success'>{variation}</p> //TODO: Change color depending on the variation
+                                        <p className='fs-5 bold me-4 text-success'>{variation}</p>
+                                        {/* TODO: Change color depending on the variation */}
                                     </Container>
                                 </Container>
                                 <Container className='flex-grow-1 p-0 m-0' fluid>
