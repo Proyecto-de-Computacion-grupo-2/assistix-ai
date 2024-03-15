@@ -1,5 +1,7 @@
+@import '../../variables.scss';
+
 .header {
-  background-color: #fff !important;
+  background-color: $background_color_component !important;
 }
 
 .bold {

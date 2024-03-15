@@ -136,7 +136,7 @@ const Settings: React.FC = () => {
     ];
 
     return (
-        <main className='p-5 rounded-4 main'>
+        <main className='p-5 rounded-4 bg-white'>
             <div>
                 <h3 className='mb-4'>Configuración de notificaciones</h3>
                 <p className='mb-3'>De modo de brindarte una experiencia única como usuario te ofrecemos la siguiente
