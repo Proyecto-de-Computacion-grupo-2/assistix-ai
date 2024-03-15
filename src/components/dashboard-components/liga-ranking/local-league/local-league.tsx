@@ -56,7 +56,7 @@ const tablaLocal = {
 
 export default function LocalLeague() {
     return (
-        <Container className="h-100 p-0 d-flex align-items-center flex-column " fluid>
+        <Container className="h-100 p-0 d-flex align-items-center flex-column" fluid>
             <Row className="h-auto d-flex justify-content-around border-bottom w-100" fluid>
                 <Col sm={1} className="text-center p-0 m-0">
                     Pos
@@ -70,16 +70,16 @@ export default function LocalLeague() {
                 <Col sm={3} className="text-center p-0 m-0">
                     Valor
                 </Col>
+                <Container className="flex-grow-1 px-1 scroll-section d-flex flex-column align-items-center" style={{ maxHeight: '20vh' }}>
+                    {
+                        tablaLocal.table.map((team, index) => {
+                            return (
+                                <RankingCard team={team} key={index} />
+                            )
+                        })
+                    }
+                </Container>
             </Row>
-            <Container className="flex-grow-1 px-1 scroll-section d-flex flex-column align-items-center" style={{ maxHeight: '20vh' }}>
-                {
-                    tablaLocal.table.map((team, index) => {
-                        return (
-                            <RankingCard team={team} key={index} />
-                        )
-                    })
-                }
-            </Container>
 
         </Container>
     )
