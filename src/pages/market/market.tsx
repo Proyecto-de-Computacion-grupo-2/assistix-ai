@@ -58,14 +58,13 @@ export default function Market() {
         processData();
     }, []);
 
-
     return (
         <Layout>
             <Row className='p-0 m-0 h-100' fluid>
-                <Col sm={6} className='p-0'>
+                <Col md={6} className='p-0'>
                     <PlayerInMarket />
                 </Col>
-                <Col sm={6} className='p-0'>
+                <Col md={6} className='p-0'>
                     <Container className='h-100 ms-1 p-0 d-flex flex-column gap-1' fluid>
                         <Row className='p-0 m-0 flex-grow-1 w-100 bg-white rounded-4 d-flex'>
                             <Container className='p-2 h-100 d-flex flex-column' fluid>
@@ -100,5 +99,4 @@ export default function Market() {
             </Row>
         </Layout>
     )
-
 }
