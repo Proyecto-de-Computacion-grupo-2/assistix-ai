@@ -226,7 +226,7 @@ export default function LineUp() {
 
     return (
 
-        <Container className='bg-white rounded-4 h-100 d-flex align-items-center justify-content-center p-3' fluid>
+        <Container className='bg-white rounded-4 h-100 d-flex align-items-center justify-content-center p-3' style={{ minHeight: '700px' }} fluid>
             <Container className='d-flex flex-column h-100'>
                 <strong className='text-secondary'>Plantilla</strong>
                 <Container className='d-flex justify-content-around align-items-center selection-plantilla mb-2'>
