@@ -1,7 +1,6 @@
 import Layout from '../../components/layout/layout.tsx'
 import Chatbot from '../../components/bot/bot.tsx'
 
-
 export default function Assistant() {
 
     return (
@@ -9,5 +8,4 @@ export default function Assistant() {
             <Chatbot/>
         </Layout>
     )
-
 }

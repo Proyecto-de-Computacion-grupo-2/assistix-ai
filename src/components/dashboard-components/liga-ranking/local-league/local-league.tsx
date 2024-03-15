@@ -56,7 +56,7 @@ const tablaLocal = {
 
 export default function LocalLeague() {
     return (
-        <Container className="h-100 p-0 d-flex align-items-center flex-column " fluid>
+        <Container className="h-100 p-0 d-flex align-items-center flex-column" fluid>
             <Row className="h-auto d-flex justify-content-around border-bottom w-100" fluid>
                 <Col sm={1} className="text-center p-0 m-0">
                     Pos
@@ -80,7 +80,6 @@ export default function LocalLeague() {
                     })
                 }
             </Container>
-
         </Container>
     )
 }
