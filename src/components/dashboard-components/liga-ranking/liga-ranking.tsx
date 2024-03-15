@@ -16,7 +16,7 @@ export default function LigaRanking() {
                 </Container>
             </Container>
             <Container className="flex-grow-1 px-1" style={{ maxHeight: '28vh' }}>
-                {/* <iframe id="sofa-standings-embed-36-52376" src="https://widgets.sofascore.com/es-ES/embed/tournament/36/season/52376/standings/LaLiga?widgetTitle=LaLiga&showCompetitionLogo=true&v=2" style={{ width: '100%', height: '100%', maxWidth: '100%', maxHeight: '100' }} /> */}
+                <iframe id="sofa-standings-embed-36-52376" src="https://widgets.sofascore.com/es-ES/embed/tournament/36/season/52376/standings/LaLiga?widgetTitle=LaLiga&showCompetitionLogo=true&v=2" style={{ width: '100%', height: '100%', maxWidth: '100%', maxHeight: '100' }} />
             </Container>
         </Container>
     )
