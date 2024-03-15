@@ -65,47 +65,35 @@ export default function SideBar() {
 
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header closeButton>
-                        <Modal.Title>IA Integrada</Modal.Title>
+                        <Modal.Title>Inteligencia Artificial Integrada</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-                        classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a
-                        Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin
-                        words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in
-                        classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32
-                        and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero,
-                        written in 45 BC. This book is a treatise on the theory of ethics, very popular during the
-                        Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in
-                        section 1.10.32.
+                        Nuestra aplicación hace uso de nuestro último modelo de inteligencia artificial generativa.
+                        Diseñado de forma completamente interna desde cero para maximizar la precisión en las ligas
+                        fantasy, este modelo propietario de última generación marca un hito significativo comparado con
+                        las técnicas de aprendizaje automático tradicionales como regresión lineal o K-NN.<br/><br/>
 
-                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
-                        Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced
-                        in their exact original form, accompanied by English versions from the 1914 translation by H.
-                        Rackham.
+                        Este revolucionario modelo de IA, con más de 100 millones de parámetros, se basa en la avanzada
+                        arquitectura de transformers, la misma tecnología que impulsa los grandes modelos de lenguaje
+                        más avanzados conocidos hasta la fecha como GPT-4 o Claude, ofreciendo una precisión sin
+                        precedentes en la predicción de datos de fútbol Fantasy. A través de un enfoque cuidado en la
+                        selección de datos y uso de entornos de entrenamiento desarrollados únicamente para esta tarea,
+                        hemos conseguido establecer un nuevo estándar de referencia en el sector, posicionando nuestra
+                        solución en la cima de las capacidades predictivas actuales.<br/><br/>
 
-                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
-                        classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a
-                        Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin
-                        words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in
-                        classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32
-                        and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero,
-                        written in 45 BC. This book is a treatise on the theory of ethics, very popular during the
-                        Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in
-                        section 1.10.32.
+                        Este avance no es solo un gran paso adelante en la precisión y fiabilidad de las predicciones
+                        que ofrecemos a nuestros usuarios, sino también nos permite colaborar en construir modelos más
+                        poderosos, capaces y seguros. Con el objetivo final de contribuir al desarrollo de la
+                        inteligencia artificial general para beneficiar a toda la humanidad.<br/><br/>
 
-                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
-                        Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced
-                        in their exact original form, accompanied by English versions from the 1914 translation by H.
-                        Rackham.
+                        ¿Qué significa esto para ti?<br/><br/>
 
-                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
-                        Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced
-                        in their exact original form, accompanied by English versions from the 1914 translation by H.
-                        Rackham.
-                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
-                        Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced
-                        in their exact original form, accompanied by English versions from the 1914 translation by H.
-                        Rackham.
+                        Predicciones más precisas: Nuestro modelo está entrenado con la tecnología más avanzada, la
+                        misma que impulsa los mejores modelos de procesamiento del lenguaje natural.<br/><br/>
+                        Información más confiable: Toma decisiones más inteligentes con datos que te ayudarán a
+                        ganar.<br/><br/>
+                        Análisis más profundos: Descubre las claves del juego y las tendencias que te darán ventaja
+                        sobre tus rivales.<br/><br/>
                     </Modal.Body>
                 </Modal>
             </Container>
