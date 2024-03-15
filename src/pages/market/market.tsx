@@ -38,15 +38,6 @@ export default function Market() {
     const [marketPrice, setMarketPrice] = useState('0');
     const [variation, setVariation] = useState('0%');
 
-    //TODO: Fetch data from API
-    // async function fetchData() {
-    //     const response = await fetch(`${json}`);
-    //     const data = await response.json();
-
-    //     return data.points;
-    // }
-
-
     function processData() {
         const data = convertFormat(json.points as InputFormat[]);
         setData(data);
