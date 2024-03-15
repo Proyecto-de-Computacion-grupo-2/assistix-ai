@@ -70,17 +70,16 @@ export default function LocalLeague() {
                 <Col sm={3} className="text-center p-0 m-0">
                     Valor
                 </Col>
-                <Container className="flex-grow-1 px-1 scroll-section d-flex flex-column align-items-center" style={{ maxHeight: '20vh' }}>
-                    {
-                        tablaLocal.table.map((team, index) => {
-                            return (
-                                <RankingCard team={team} key={index} />
-                            )
-                        })
-                    }
-                </Container>
             </Row>
-
+            <Container className="flex-grow-1 px-1 scroll-section d-flex flex-column align-items-center" style={{ maxHeight: '20vh' }}>
+                {
+                    tablaLocal.table.map((team, index) => {
+                        return (
+                            <RankingCard team={team} key={index} />
+                        )
+                    })
+                }
+            </Container>
         </Container>
     )
 }

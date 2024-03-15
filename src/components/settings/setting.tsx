@@ -71,7 +71,7 @@ const Settings: React.FC = () => {
             eventKey: "0",
             title: "Jugador",
             iconName: "FigureSoccer",
-            description: "Notificaciones que recibes cuando un jugador está lesionado.",
+            description: "Mantente al tanto del estado físico de tus jugadores. Recibe alertas inmediatas sobre lesiones o cambios en su condición para poder realizar ajustes en tu equipo a tiempo.",
             options: [
                 { label: "Aplicación", iconName: "BellIcon" },
                 { label: "Mensaje", iconName: "MessageIcon" },
@@ -80,9 +80,9 @@ const Settings: React.FC = () => {
         },
         {
             eventKey: "1",
-            title: "Jornada",
-            iconName: "FootballIcon",
-            description: "Notificaciones que recibes antes de empezar una jornada.",
+            title: "Jugador",
+            iconName: "FigureSoccer",
+            description: "Mantente al tanto del estado físico de tus jugadores. Recibe alertas inmediatas sobre lesiones o cambios en su condición para poder realizar ajustes en tu equipo a tiempo.",
             options: [
                 { label: "Aplicación", iconName: "BellIcon" },
                 { label: "Mensaje", iconName: "MessageIcon" },
@@ -91,9 +91,9 @@ const Settings: React.FC = () => {
         },
         {
             eventKey: "2",
-            title: "Mercado",
-            iconName: "MarketIcon",
-            description: "Notificaciones que recibes cuando un jugador se lanza al mercado.",
+            title: "Jornada",
+            iconName: "FootballIcon",
+            description: "Prepárate para cada jornada con notificaciones que te informan sobre el inicio de la misma. Asegúrate de tener tu equipo listo para competir y aprovechar cada oportunidad.",
             options: [
                 { label: "Aplicación", iconName: "BellIcon" },
                 { label: "Mensaje", iconName: "MessageIcon" },
@@ -102,9 +102,9 @@ const Settings: React.FC = () => {
         },
         {
             eventKey: "3",
-            title: "Jugador",
-            iconName: "FigureSoccer",
-            description: "Notificaciones que recibes cuando un jugador está lesionado.",
+            title: "Jornada",
+            iconName: "FootballIcon",
+            description: "Prepárate para cada jornada con notificaciones que te informan sobre el inicio de la misma. Asegúrate de tener tu equipo listo para competir y aprovechar cada oportunidad.",
             options: [
                 { label: "Aplicación", iconName: "BellIcon" },
                 { label: "Mensaje", iconName: "MessageIcon" },
@@ -113,9 +113,9 @@ const Settings: React.FC = () => {
         },
         {
             eventKey: "4",
-            title: "Jornada",
-            iconName: "FootballIcon",
-            description: "Notificaciones que recibes antes de empezar una jornada.",
+            title: "Mercado",
+            iconName: "MarketIcon",
+            description: "Sé el primero en saber cuándo un jugador está disponible en el mercado. Estas notificaciones te permiten actuar rápidamente para hacer las mejores adquisiciones y fortalecer tu equipo.",
             options: [
                 { label: "Aplicación", iconName: "BellIcon" },
                 { label: "Mensaje", iconName: "MessageIcon" },
@@ -126,7 +126,7 @@ const Settings: React.FC = () => {
             eventKey: "5",
             title: "Mercado",
             iconName: "MarketIcon",
-            description: "Notificaciones que recibes cuando un jugador se lanza al mercado.",
+            description: "Sé el primero en saber cuándo un jugador está disponible en el mercado. Estas notificaciones te permiten actuar rápidamente para hacer las mejores adquisiciones y fortalecer tu equipo.",
             options: [
                 { label: "Aplicación", iconName: "BellIcon" },
                 { label: "Mensaje", iconName: "MessageIcon" },
