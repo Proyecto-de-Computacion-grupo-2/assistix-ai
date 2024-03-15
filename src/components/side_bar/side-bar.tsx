@@ -2,11 +2,12 @@ import './side_bar.scss'
 
 import {NavLink} from "react-router-dom";
 import {Container, Button, Modal} from "react-bootstrap";
+
 import {useState} from 'react';
+import {FigureSoccer, HomeIcon, ChatBotIcon, SettingsIcon, MarketIcon} from '../icons/icons';
 
 import logo from '../../assets/assistix-ai-logo.png'
 import iaImage from '../../assets/integrated-ai-logo.png'
-import {FigureSoccer, HomeIcon, ChatBotIcon, SettingsIcon, MarketIcon} from '../icons/icons';
 
 export default function SideBar() {
 
