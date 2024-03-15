@@ -15,9 +15,9 @@ export default function SideBarMobile() {
     const handleShow = () => setShow(true);
 
     return (
-        <div>
+        <div className='p-0 m-0'>
             <div
-                className='d-flex flex-row gap-3 w-100 align-items-center justify-content-around link-offset-2 link-underline link-underline-opacity-0 fs-5 fw-bold text-black rounded-4  color-white'>
+                className='d-flex flex-row  w-100 align-items-center justify-content-around link-offset-2 link-underline link-underline-opacity-0 fs-5 fw-bold text-black rounded-4  color-white'>
                 <div className='d-flex align-items-center'>
                     <img src={logo} alt="logo" className="fluid m-0 p-0" style={{width: '60px', height: '60px'}}/>
                     <p>ASSISTIX AI</p>
