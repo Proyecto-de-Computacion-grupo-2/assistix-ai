@@ -6,9 +6,9 @@ import LigaRanking from '../../components/dashboard-components/liga-ranking/liga
 import RecomendationSection from '../../components/dashboard-components/recomendation-section/recomendation.tsx'
 import PricesComponent from '../../components/dashboard-components/prices-component/prices-component.tsx'
 import PujadosSection from '../../components/dashboard-components/pujados-section/pujados-section.tsx'
+import FootballWidget from '../../components/dashboard-components/api-football/api-football.tsx'
 
 export default function DashboardPage() {
-
     return (
         <>
             <Layout>
@@ -31,8 +31,8 @@ export default function DashboardPage() {
                             </Col>
                         </Row>
                         <Row className='p-0 m-0'>
-                            <Col sm={12} className='p-0 bg-white mt-2 rounded-4' style={{ height: '24vh' }}>
-                                En desarrollo
+                            <Col sm={12} className='p-0 bg-white mt-2 rounded-4' style={{ height: '1000px' }}>
+                                <FootballWidget/>
                             </Col>
                         </Row>
                     </Col>
@@ -43,5 +43,4 @@ export default function DashboardPage() {
             </Layout >
         </>
     )
-
 }
