@@ -1,9 +1,9 @@
-$color1: #64f0c9;
-
 @import "../node_modules/bootstrap/scss/bootstrap";
+@import './variables.scss';
 
-html {
-    font-family: 'Poppins', sans-serif;
+
+* {
+    font-family: sans-serif;
 }
 
 body {

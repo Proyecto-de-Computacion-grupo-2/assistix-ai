@@ -31,7 +31,7 @@ export default function DashboardPage() {
                             </Col>
                         </Row>
                         <Row className='p-0 m-0'>
-                            <Col sm={12} className='p-0 bg-white mt-2 rounded-4' style={{ height: '1000px' }}>
+                            <Col sm={12} className='p-0 bg-white mt-2 rounded-4' style={{ height: '24vh' }}>
                                 <FootballWidget/>
                             </Col>
                         </Row>
