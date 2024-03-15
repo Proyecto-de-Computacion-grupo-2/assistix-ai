@@ -23,7 +23,7 @@ export default function SideBarMobile() {
                     <p>ASSISTIX AI</p>
                 </div>
                 <div>
-                    <Button variant="primary" onClick={handleShow}>
+                    <Button variant="dark" onClick={handleShow}>
                         Menu
                     </Button>
                 </div>

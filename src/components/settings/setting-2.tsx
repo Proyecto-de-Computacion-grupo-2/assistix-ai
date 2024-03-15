@@ -1,4 +1,4 @@
-import { Accordion, Form } from 'react-bootstrap';
+import { Accordion, Form, Button } from 'react-bootstrap';
 import { ReactElement } from 'react';
 import { FigureSoccer, MarketIcon, EmailIcon, BellIcon, MessageIcon, FootballIcon } from '../icons/icons';
 import './setting.scss';
@@ -100,13 +100,47 @@ const Settings: React.FC = () => {
                 { label: "Correo electrónico", iconName: "EmailIcon" },
             ],
         },
+        {
+            eventKey: "3",
+            title: "Jugador",
+            iconName: "FigureSoccer",
+            description: "Notificaciones que recibes cuando un jugador está lesionado.",
+            options: [
+                { label: "Aplicación", iconName: "BellIcon" },
+                { label: "Mensaje", iconName: "MessageIcon" },
+                { label: "Correo electrónico", iconName: "EmailIcon" },
+            ],
+        },
+        {
+            eventKey: "4",
+            title: "Jornada",
+            iconName: "FootballIcon",
+            description: "Notificaciones que recibes antes de empezar una jornada.",
+            options: [
+                { label: "Aplicación", iconName: "BellIcon" },
+                { label: "Mensaje", iconName: "MessageIcon" },
+                { label: "Correo electrónico", iconName: "EmailIcon" },
+            ],
+        },
+        {
+            eventKey: "5",
+            title: "Mercado",
+            iconName: "MarketIcon",
+            description: "Notificaciones que recibes cuando un jugador se lanza al mercado.",
+            options: [
+                { label: "Aplicación", iconName: "BellIcon" },
+                { label: "Mensaje", iconName: "MessageIcon" },
+                { label: "Correo electrónico", iconName: "EmailIcon" },
+            ],
+        },
     ];
 
     return (
-        <main className='p-5 mt-4 ms-1 rounded-4 main'>
+        <main className='p-5 ms-1 rounded-4 main'>
             <div>
                 <h3 className='mb-4'>Configuración de notificaciones</h3>
-                <p className='mb-3'>De modo de brindarte una experiencia única como usuario te ofrecemos la siguiente configuración de notificaciones en la aplicación:</p>
+                <p className='mb-3'>De modo de brindarte una experiencia única como usuario te ofrecemos la siguiente
+                    configuración de notificaciones en la aplicación:</p>
             </div>
             <Accordion>
                 {categories.map((category, index) => (
@@ -123,6 +157,11 @@ const Settings: React.FC = () => {
                     />
                 ))}
             </Accordion>
+            <div className="d-grid m-5">
+                <Button variant="dark" size="lg" className='rounded-4'>
+                    Cerrar Sessión
+                </Button>
+            </div>
         </main>
     );
 }
