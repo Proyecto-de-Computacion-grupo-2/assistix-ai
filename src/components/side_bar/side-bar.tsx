@@ -22,7 +22,7 @@ export default function SideBar() {
     )
 }
 
-function AppName () {
+function AppName() {
     return (
         <NavLink to='/'
                  className='d-flex w-100 align-items-center link-offset-2 link-underline link-underline-opacity-0 fs-5 fw-bold text-black mb-4'>
@@ -64,7 +64,7 @@ function SideBarComponent() {
     )
 }
 
-function MoreInfoAI(){
+function MoreInfoAI() {
 
     const [show, setShow] = useState(false);
 
@@ -72,10 +72,12 @@ function MoreInfoAI(){
     const handleShow = () => setShow(true);
 
     return (
-        <Container className="rounded-4 py-3 px-4 mb-5 d-flex flex-column justify-content-center align-items-center w-75 integrated-ai-color" fluid>
+        <Container
+            className="rounded-4 py-3 px-4 mb-5 d-flex flex-column justify-content-center align-items-center w-75 integrated-ai-color"
+            fluid>
             <img src={iaImage} alt="logo" className="rounded m-0 p-0 w-100 h-auto"/>
             <p className="fs-6 fw-bold my-2 text-center text-black">IA Integrada</p>
-            <Button variant="dark" onClick={handleShow}>
+            <Button variant="dark" onClick={handleShow} className='fw-bold'>
                 Saber más
             </Button>
             <Modal show={show} onHide={handleClose}>

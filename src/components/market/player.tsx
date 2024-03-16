@@ -40,8 +40,8 @@ interface PlayerMarketProps {
 function PlayerData({label, value}: PlayerDataProps) {
     return (
         <div className='d-flex flex-column align-items-center ms-3 me-3'>
-            <p className='mb-1 bold'>{label}</p>
-            <p className='bold'>{value}</p>
+            <p className='mb-1 fw-bold bg-dark rounded-1 text-white p-1'>{label}</p>
+            <p className='fw-bold bg-dark rounded-1 text-white p-1'>{value}</p>
         </div>
     )
 }
@@ -66,7 +66,7 @@ function PlayerGameWeek({points, gameWeek}: PlayerGameWeekProps) {
 function PlayerGameWeeks({name, gameWeeks}: PlayerGameWeeksProps) {
     return (
         <div className='d-flex flex-column mt-2 ms-3'>
-            <p className='bold'>{name}</p>
+            <p className='fw-bold'>{name}</p>
             <div className='d-flex'>
                 {gameWeeks.map((week, index) => (
                     <PlayerGameWeek key={index} points={week.points} gameWeek={week.gameWeek}/>
