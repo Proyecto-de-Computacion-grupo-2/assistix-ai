@@ -11,7 +11,7 @@ export default function RankingCard({ team }: {
     return (
         <Row className="h-auto d-flex border-top border-bottom justify-content-around w-100" fluid>
             <Col sm={1} className="text-center p-0 m-0">
-                #{team.position}
+                {team.position}
             </Col>
             <Col sm={5} className="p-0 m-0">
                 <p className="ms-2 text-truncate">

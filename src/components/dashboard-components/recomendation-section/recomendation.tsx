@@ -1,5 +1,5 @@
 import {Container} from "react-bootstrap";
-import ChangeRecomendationCard from "./recomendation-card/change-recomendation-card";
+//import ChangeRecomendationCard from "./recomendation-card/change-recomendation-card";
 import RecomendtionCard from "./recomendation-card/recomendation-card";
 import './recomendation.scss'
 

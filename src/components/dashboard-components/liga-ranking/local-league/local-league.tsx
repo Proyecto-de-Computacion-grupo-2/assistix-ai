@@ -1,5 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import RankingCard from "./local-card/local-card";
+import misterLogo from '../../../../assets/misterLogo.png'
+
 
 const tablaLocal = {
     'table': [
@@ -58,16 +60,17 @@ export default function LocalLeague() {
     return (
         <Container className="h-100 p-0 d-flex align-items-center flex-column" fluid>
             <Row className="h-auto d-flex justify-content-around border-bottom w-100" fluid>
-                <Col sm={1} className="text-center p-0 m-0">
-                    Pos
+                <Container className='d-flex text-center mt-4 mb-4 fw-bold'>
+                    <img src={misterLogo} width={30} height={30} className='me-2'/>
+                    <p>Mister Mundo Deportivo</p>
+                </Container>
+                <Col sm={5} className="text-center p-0 m-0 fw-bold">
+                    # Equipo
                 </Col>
-                <Col sm={5} className="text-center p-0 m-0">
-                    Usuario
-                </Col>
-                <Col sm={3} className="text-center p-0 m-0">
+                <Col sm={3} className="text-center p-0 m-0 fw-bold">
                     Puntos
                 </Col>
-                <Col sm={3} className="text-center p-0 m-0">
+                <Col sm={3} className="text-center p-0 m-0 fw-bold">
                     Valor
                 </Col>
             </Row>

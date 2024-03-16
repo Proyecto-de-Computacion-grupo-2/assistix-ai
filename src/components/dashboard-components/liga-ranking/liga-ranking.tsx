@@ -23,7 +23,6 @@ export default function LigaRanking() {
             </Carousel.Item>
             <Carousel.Item style={{ minHeight: '30vh' }}>
                 <Container className='d-flex flex-column justify-content-center align-items-center m-0 p-0'>
-                    <img src={misterLogo} width={30} height={30} />
                     <LocalLeague />
                 </Container>
             </Carousel.Item>
