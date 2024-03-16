@@ -40,8 +40,8 @@ interface PlayerMarketProps {
 function PlayerData({label, value}: PlayerDataProps) {
     return (
         <div className='d-flex flex-column align-items-center ms-3 me-3'>
-            <p className='mb-1 fw-bold bg-dark rounded-1 text-white p-1'>{label}</p>
-            <p className='fw-bold bg-dark rounded-1 text-white p-1'>{value}</p>
+            <p className='mb-1 fw-bold bg-dark rounded-2 text-white p-1'>{label}</p>
+            <p className='fw-bold bg-dark rounded-2 text-white p-1'>{value}</p>
         </div>
     )
 }
