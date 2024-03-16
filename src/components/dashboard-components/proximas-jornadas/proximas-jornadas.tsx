@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Carousel from 'react-bootstrap/Carousel';
 import MatchCard from "./next-round-card";
 
@@ -50,17 +50,17 @@ const matches = {
 
 export default function ProximasJornadas() {
     return (
-        <Container className="p-1 m-0 bg-white h-100 rounded-4 d-flex flex-column" fluid>
-            <Container className="h-25">
-                <strong className="text-secondary">Próximos partidos</strong>
-            </Container>
+        <Container className="p-1 m-0 bg-white h-100 rounded-4 d-flex flex-column me-1" fluid>
             <Carousel className="flex-grow-1 h-100 w-100 m-0 p-0" >
                 {
                     matches.matches.map((match, index) => {
                         return (
                             <Carousel.Item key={index} className="h-100">
-                                <img src={matchImg} width={'100%'} className="rounded-4 h-auto" style={{ maxHeight: '18vh' }} />
+                                <img src={matchImg} width={'100%'} className="rounded-4 h-auto" style={{ maxHeight: '24vh' }} />
                                 <MatchCard match={match} />
+                                <Carousel.Caption>
+                                    <strong className="text-white">Proxima jornada</strong>
+                                </Carousel.Caption>
                             </Carousel.Item>
                         )
                     })

@@ -7,6 +7,7 @@ import RecomendationSection from '../../components/dashboard-components/recomend
 import PricesComponent from '../../components/dashboard-components/prices-component/prices-component.tsx'
 import PujadosSection from '../../components/dashboard-components/pujados-section/pujados-section.tsx'
 import ProximasJornadas from '../../components/dashboard-components/proximas-jornadas/proximas-jornadas.tsx'
+import BestPlayers from '../../components/dashboard-components/mejores-jugadores/mejores-jugadores.tsx'
 
 export default function DashboardPage() {
     return (
@@ -35,7 +36,7 @@ export default function DashboardPage() {
                                 <ProximasJornadas />
                             </Col>
                             <Col sm={6} className='p-0 h-100' style={{ height: '24vh' }}>
-
+                                <BestPlayers />
                             </Col>
                         </Row>
                     </Col>
