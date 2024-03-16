@@ -238,7 +238,7 @@ export default function LineUp() {
                         {currentPlantilla === types.length - 1 ? types[0] : types[currentPlantilla + 1]}
                     </p>
                 </Container>
-                <Container className='futbol-campo rounded-4 p-4 shadow-lg flex-grow-1' fluid>
+                <Container className='futbol-campo rounded-4 p-3 shadow-lg flex-grow-1' fluid>
                     <Container className='d-flex lign-items-center justify-content-center' fluid>
                         {data[currentPlantilla].attack.map((player, index) => {
                             return <PlayerCard key={index} player={player} />
