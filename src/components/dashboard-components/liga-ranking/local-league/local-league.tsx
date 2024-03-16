@@ -1,4 +1,4 @@
-import { Col, Container, Row } from "react-bootstrap";
+import {Col, Container, Row} from "react-bootstrap";
 import RankingCard from "./local-card/local-card";
 import misterLogo from '../../../../assets/misterLogo.png'
 
@@ -52,7 +52,19 @@ const tablaLocal = {
             'points': 956,
             'value': 100
         }
-
+        ,
+        {
+            'position': 7,
+            'name': 'admin',
+            'points': 975,
+            'value': 100
+        },
+        {
+            'position': 8,
+            'name': 'M31-G6-AcMilanesa',
+            'points': 956,
+            'value': 100
+        }
     ]
 }
 
@@ -74,11 +86,12 @@ export default function LocalLeague() {
                     Valor
                 </Col>
             </Row>
-            <Container className="flex-grow-1 px-1 scroll-section d-flex flex-column align-items-center" style={{ maxHeight: '24vh' }}>
+            <Container className="flex-grow-1 px-1 scroll-section d-flex flex-column align-items-center"
+                       style={{maxHeight: '24vh'}}>
                 {
                     tablaLocal.table.map((team, index) => {
                         return (
-                            <RankingCard team={team} key={index} />
+                            <RankingCard team={team} key={index}/>
                         )
                     })
                 }

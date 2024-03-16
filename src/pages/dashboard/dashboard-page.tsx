@@ -12,7 +12,7 @@ import BestPlayers from '../../components/dashboard-components/mejores-jugadores
 export default function DashboardPage() {
     return (
         <Layout>
-            <Container className='p-0 m-0'>
+            <Container className='p-0 m-0' style={{minHeight: '30vh'}} fluid>
                 <Row className='p-0 m-0 h-100' fluid>
                     <Col className='p-0 me-2 d-flex flex-column'>
                         <Row className='p-0 m-0'>

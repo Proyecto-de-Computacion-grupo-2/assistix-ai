@@ -1,6 +1,6 @@
-import { Col, Row } from "react-bootstrap"
+import {Col, Row} from "react-bootstrap"
 
-export default function RankingCard({ team }: {
+export default function RankingCard({team}: {
     team: {
         position: number,
         name: string,
