@@ -1,4 +1,4 @@
-import { Col, Row, } from 'react-bootstrap'
+import {Col, Container, Row,} from 'react-bootstrap'
 import Layout from '../../components/layout/layout.tsx'
 import './dashboard-page.scss'
 import LineUp from '../../components/line-up/line-up.tsx'
@@ -11,8 +11,8 @@ import BestPlayers from '../../components/dashboard-components/mejores-jugadores
 
 export default function DashboardPage() {
     return (
-        <>
-            <Layout>
+        <Layout>
+            <Container className='p-0 m-0'>
                 <Row className='p-0 m-0 h-100' fluid>
                     <Col className='p-0 me-2 d-flex flex-column'>
                         <Row className='p-0 m-0'>
@@ -40,11 +40,11 @@ export default function DashboardPage() {
                             </Col>
                         </Row>
                     </Col>
-                    <Col className='p-0 m-0 ms-2 lg'>
+                    <Col xl={6} className='p-0 m-0 ms-1'>
                         <LineUp />
                     </Col>
                 </Row>
-            </Layout >
-        </>
+            </Container>
+        </Layout >
     )
 }

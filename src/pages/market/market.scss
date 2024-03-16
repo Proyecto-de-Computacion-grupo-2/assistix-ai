@@ -2,3 +2,13 @@
     height: 60px;
     width: 60px;
 }
+
+.vertical-gap {
+    margin-top: 0.5rem; /* Adjust this value as needed */
+}
+
+@media (min-width: 768px) { /* Adjust based on the Bootstrap md breakpoint */
+    .vertical-gap {
+        margin-top: 0; /* Remove the gap for larger screens if desired */
+    }
+}

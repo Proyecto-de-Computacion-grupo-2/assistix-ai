@@ -1,7 +1,7 @@
 export default function Chatbot() {
 
     return (
-        <iframe
+        <iframe className='m-0 p-0 rounded-4'
             srcDoc="<body><script src='https://cdn.botpress.cloud/webchat/v0/inject.js'></script>
             <script>
               window.botpressWebChat.init({

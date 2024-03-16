@@ -1,27 +1,38 @@
-import Ramanzani from '../../../../assets/40090.png'
+import {Container} from "react-bootstrap";
+import RamanzaniImage from '../../../../assets/40090.png';
+import '../recomendation.scss';
 
-import '../recomendation.scss'
+interface RecomendationProps {
+    playerName: string;
+    actionText: string;
+    actionValue: string;
+    latestGameWeekPoints: number[];
+}
 
-export default function RecomendtionCard() {
+const recomendationProps: RecomendationProps = {
+    playerName: 'Ramanzani',
+    actionText: 'Vender',
+    actionValue: '1.7M',
+    latestGameWeekPoints: [1, 2, 3],
+};
 
+export default function RecomendationCard() {
     return (
-        <div className="container border-top border-bottom d-flex flex-row justify-content-around align-items-center py-1">
-            <div className='bg-light d-flex justify-content-center align-items-center rounded-4 border border-dark' style={{ height: '60px', width: '60px' }}>
-                <img src={Ramanzani} alt="" style={{ height: '50px', width: '50px' }} />
-            </div>
-            <div className="d-flex flex-column">
-                <strong>Ramanzani</strong>
-                <div className="d-flex justify-content-around align-items-center gap-2">
-                    <p className='rounded-2 m-0 align-center text-center j'>1</p>
-                    <p className='rounded-2 m-0 align-center text-center j'>2</p>
-                    <p className='rounded-2 m-0 align-center text-center j'>3</p>
+        <Container className="d-flex justify-content-between align-items-center border-top border-bottom p-0 m-0 py-1" fluid>
+            <Container className='bg-light d-flex justify-content-center align-items-center rounded-4 border border-dark' style={{height: '60px', width: '60px'}} fluid><img src={RamanzaniImage} alt={recomendationProps.playerName} style={{height: '50px', width: '50px'}}/>
+            </Container>
+            <Container className="d-flex flex-column" fluid>
+                <strong>{recomendationProps.playerName}</strong>
+                <div className="d-flex justify-content-start align-items-center gap-2">
+                    {recomendationProps.latestGameWeekPoints.map((point, index) => (
+                        <p key={index} className='rounded-2 m-0 align-center text-center j'>{point}</p>
+                    ))}
                 </div>
-            </div>
-            <div className="d-flex flex-column justify-content-center align-items-center">
-                <p>Vender</p>
-                <p>1.7M</p>
-
-            </div>
-        </div>
-    )
+            </Container>
+            <Container className="d-flex flex-column  align-items-center p-0 m-0">
+                <p>{recomendationProps.actionText}</p>
+                <p>{recomendationProps.actionValue}</p>
+            </Container>
+        </Container>
+    );
 }

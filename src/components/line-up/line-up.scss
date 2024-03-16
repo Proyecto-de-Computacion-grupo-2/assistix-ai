@@ -1,3 +1,5 @@
+@import '../../variables.scss';
+
 .futbol-campo {
     background-image: url('../../assets/campo-futbol.jfif');
 
@@ -32,7 +34,7 @@
 }
 
 .change-button:hover {
-    background-color: #0BF4CC;
+    background-color: $button_hover_color;
 }
 
 .selection-plantilla {

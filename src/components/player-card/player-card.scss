@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 .player-card {
     min-width: 6vw !important;
     max-width: 19% !important;
@@ -28,7 +30,7 @@
         background-size: contain;
         background-position: center;
 
-        background-color: #D9D9D9;
+        background-color: $player_card_background;
 
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
@@ -48,7 +50,7 @@
         top: 4px;
         right: 4px;
 
-        background-color: #F1FAF8;
+        background-color: $player_card_points_background;
         border-radius: 50%;
 
         display: flex;

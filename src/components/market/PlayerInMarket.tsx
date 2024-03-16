@@ -21,11 +21,11 @@ export default function PlayerInMarket() {
     };
 
     return (
-        <Container className='scroll-section me-1 bg-white rounded-4 h-100 p-2 d-flex flex-column' >
-            <Container className="py-1 border-bottom m-0">
+        <Container className='scroll-section me-1 bg-white rounded-4 h-100 p-2 d-flex flex-column' fluid>
+            <Container className="py-1 border-bottom m-0" fluid>
                 <strong className="text-secondary">Mercado</strong>
             </Container>
-            <Container className="flex-grow-1 px-1 scroll-section" style={{ maxHeight: '81vh' }}>
+            <Container className="flex-grow-1 px-1 scroll-section" style={{ maxHeight: '81vh' }} fluid>
                 <PlayerMarket player={playerData} />
                 <PlayerMarket player={playerData} />
                 <PlayerMarket player={playerData} />
@@ -37,7 +37,6 @@ export default function PlayerInMarket() {
                 <PlayerMarket player={playerData} />
                 <PlayerMarket player={playerData} />
             </Container>
-
         </Container>
     )
 }
