@@ -34,7 +34,7 @@ export default function Layout({ children }: { children: any }) {
     const isTablet = useIsTablet(); // Use the custom hook
 
     return (
-        <Container className="vh-100 m-0 p-2 bg-dark" fluid>
+        <Container className="vh-100 m-0 p-2" fluid>
             <Row className="h-100 p-0 m-0 gx-2" fluid>
                 { !isTablet && (
                     <Col sm={2} className="d-flex flex-column justify-content-between">

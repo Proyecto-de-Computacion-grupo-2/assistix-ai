@@ -95,7 +95,7 @@ export default function SideBarNavMoney() {
                     <NavLink to='/settings'
                              className='d-flex flex-row gap-2 w-100 align-items-center link-offset-2 link-underline link-underline-opacity-0 fs-5 fw-bold text-black'>
                         <SettingsIcon fill='black' className="ms-1"/>
-                        Configuracion
+                        Ajustes
                     </NavLink>
                 </Container>
             </Container>

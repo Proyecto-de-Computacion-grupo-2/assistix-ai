@@ -1,179 +1,169 @@
-import {Accordion, Form} from 'react-bootstrap';
-import {FigureSoccer, MarketIcon, EmailIcon, BellIcon, MessageIcon, FootballIcon} from '../icons/icons';
+import { Accordion, Form, Button } from 'react-bootstrap';
+import { ReactElement } from 'react';
+import { FigureSoccer, MarketIcon, EmailIcon, BellIcon, MessageIcon, FootballIcon } from '../icons/icons';
+import './setting.scss';
 
-import './setting.scss'
+interface NotificationOptionProps {
+    icon: ReactElement;
+    label: string;
+}
+
+interface NotificationCategoryProps {
+    eventKey: string;
+    title: string;
+    icon: ReactElement;
+    description: string; // Add this line
+    options: NotificationOptionProps[];
+}
+
+interface Option {
+    label: string;
+    iconName: keyof typeof iconMapping;
+}
+
+interface Category {
+    eventKey: string;
+    title: string;
+    iconName: keyof typeof iconMapping;
+    description: string;
+    options: Option[];
+}
+
+const iconMapping: { [key: string]: ReactElement } = {
+    FigureSoccer: <FigureSoccer fill='black' className='me-2'/>,
+    MarketIcon: <MarketIcon fill='black' className='me-2'/>,
+    EmailIcon: <EmailIcon fill='black' className='me-2'/>,
+    BellIcon: <BellIcon fill='black' className='me-2'/>,
+    MessageIcon: <MessageIcon fill='black' className='me-2'/>,
+    FootballIcon: <FootballIcon fill='black' className='me-2'/>,
+};
 
 
-export default function Setting() {
+const NotificationOption: React.FC<NotificationOptionProps> = ({ icon, label }) => (
+    <div className='d-flex align-items-center justify-content-between mb-2'>
+        <div className='d-flex align-items-center'>
+            {icon}
+            <p>{label}</p>
+        </div>
+        <Form><Form.Check type="switch" /></Form>
+    </div>
+);
+
+const NotificationCategory: React.FC<NotificationCategoryProps> = ({eventKey, title, icon, description, options}) => (
+    <Accordion.Item eventKey={eventKey}>
+        <Accordion.Header>
+            {icon}
+            {title}
+        </Accordion.Header>
+        <Accordion.Body>
+            <p className='mt-3 mb-4'>{description}</p>
+            {options.map((option, index) => (
+                <NotificationOption key={index} {...option} />
+            ))}
+        </Accordion.Body>
+    </Accordion.Item>
+);
+
+const Settings: React.FC = () => {
+
+    const categories: Category[] = [
+        {
+            eventKey: "0",
+            title: "Jugador",
+            iconName: "FigureSoccer",
+            description: "Notificaciones que recibes cuando un jugador está lesionado.",
+            options: [
+                { label: "Aplicación", iconName: "BellIcon" },
+                { label: "Mensaje", iconName: "MessageIcon" },
+                { label: "Correo electrónico", iconName: "EmailIcon" },
+            ],
+        },
+        {
+            eventKey: "1",
+            title: "Jornada",
+            iconName: "FootballIcon",
+            description: "Notificaciones que recibes antes de empezar una jornada.",
+            options: [
+                { label: "Aplicación", iconName: "BellIcon" },
+                { label: "Mensaje", iconName: "MessageIcon" },
+                { label: "Correo electrónico", iconName: "EmailIcon" },
+            ],
+        },
+        {
+            eventKey: "2",
+            title: "Mercado",
+            iconName: "MarketIcon",
+            description: "Notificaciones que recibes cuando un jugador se lanza al mercado.",
+            options: [
+                { label: "Aplicación", iconName: "BellIcon" },
+                { label: "Mensaje", iconName: "MessageIcon" },
+                { label: "Correo electrónico", iconName: "EmailIcon" },
+            ],
+        },
+        {
+            eventKey: "3",
+            title: "Jugador",
+            iconName: "FigureSoccer",
+            description: "Notificaciones que recibes cuando un jugador está lesionado.",
+            options: [
+                { label: "Aplicación", iconName: "BellIcon" },
+                { label: "Mensaje", iconName: "MessageIcon" },
+                { label: "Correo electrónico", iconName: "EmailIcon" },
+            ],
+        },
+        {
+            eventKey: "4",
+            title: "Jornada",
+            iconName: "FootballIcon",
+            description: "Notificaciones que recibes antes de empezar una jornada.",
+            options: [
+                { label: "Aplicación", iconName: "BellIcon" },
+                { label: "Mensaje", iconName: "MessageIcon" },
+                { label: "Correo electrónico", iconName: "EmailIcon" },
+            ],
+        },
+        {
+            eventKey: "5",
+            title: "Mercado",
+            iconName: "MarketIcon",
+            description: "Notificaciones que recibes cuando un jugador se lanza al mercado.",
+            options: [
+                { label: "Aplicación", iconName: "BellIcon" },
+                { label: "Mensaje", iconName: "MessageIcon" },
+                { label: "Correo electrónico", iconName: "EmailIcon" },
+            ],
+        },
+    ];
 
     return (
-        <main className='p-5 mt-4 ms-1 rounded-4 main'>
+        <main className='p-5 rounded-4 main'>
             <div>
                 <h3 className='mb-4'>Configuración de notificaciones</h3>
-                <p className='mb-3'>De modo de brindarte una experiencia única como usaurio te ofrecemos la siguiente  configuración de notificaciones en la aplicación:</p>
+                <p className='mb-3'>De modo de brindarte una experiencia única como usuario te ofrecemos la siguiente
+                    configuración de notificaciones en la aplicación:</p>
             </div>
             <Accordion>
-                <Accordion.Item eventKey="0">
-                    <Accordion.Header>
-                        <FigureSoccer fill='black' className='me-2'/>
-                        Jugador
-                    </Accordion.Header>
-                    <Accordion.Body>
-                        Notificaciones que recibes cuando un jugador esta lesionado.
-                        <div className='mt-4'>
-                            <div className='d-flex align-items-center justify-content-between mb-2'>
-                                <div className='d-flex align-items-center'>
-                                    <BellIcon fill='black' className='me-2'/>
-                                    <p>Aplicación</p>
-                                </div>
-                                <Form><Form.Check type="switch"/></Form>
-                            </div>
-                            <div className='d-flex align-items-center justify-content-between mb-2'>
-                                <div className='d-flex align-items-center'>
-                                    <MessageIcon fill='black' className='me-2'/>
-                                    <p>Mensaje</p>
-                                </div>
-                                <Form><Form.Check type="switch"/></Form>
-                            </div>
-                            <div className='d-flex align-items-center justify-content-between'>
-                                <div className='d-flex align-items-center'>
-                                    <EmailIcon fill='black' className='me-2'/>
-                                    <p>Correo electrónico</p>
-                                </div>
-                                <Form><Form.Check type="switch"/></Form>
-                            </div>
-                        </div>
-                    </Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="1">
-                    <Accordion.Header>
-                        <FootballIcon fill='black' className='me-2'/>
-                        Jornada
-                    </Accordion.Header>
-                    <Accordion.Body>
-                        Notificaciones que recibes un día antes de empezar la jornada.
-                        <div className='mt-4'>
-                            <div className='d-flex align-items-center justify-content-between mb-2'>
-                                <div className='d-flex align-items-center'>
-                                    <BellIcon fill='black' className='me-2'/>
-                                    <p>Aplicación</p>
-                                </div>
-                                <Form><Form.Check type="switch"/></Form>
-                            </div>
-                            <div className='d-flex align-items-center justify-content-between mb-2'>
-                                <div className='d-flex align-items-center'>
-                                    <MessageIcon fill='black' className='me-2'/>
-                                    <p>Mensaje</p>
-                                </div>
-                                <Form><Form.Check type="switch"/></Form>
-                            </div>
-                            <div className='d-flex align-items-center justify-content-between'>
-                                <div className='d-flex align-items-center'>
-                                    <EmailIcon fill='black' className='me-2'/>
-                                    <p>Correo electrónico</p>
-                                </div>
-                                <Form><Form.Check type="switch"/></Form>
-                            </div>
-                        </div>
-                    </Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="2">
-                    <Accordion.Header>
-                        <MarketIcon fill='black' className='me-2'/>
-                        Mercado
-                    </Accordion.Header>
-                    <Accordion.Body>
-                        Notificaciones que recibes cuando un jugador sale al mercado.
-                        <div className='mt-4'>
-                            <div className='d-flex align-items-center justify-content-between mb-2'>
-                                <div className='d-flex align-items-center'>
-                                    <BellIcon fill='black' className='me-2'/>
-                                    <p>Aplicación</p>
-                                </div>
-                                <Form><Form.Check type="switch"/></Form>
-                            </div>
-                            <div className='d-flex align-items-center justify-content-between mb-2'>
-                                <div className='d-flex align-items-center'>
-                                    <MessageIcon fill='black' className='me-2'/>
-                                    <p>Mensaje</p>
-                                </div>
-                                <Form><Form.Check type="switch"/></Form>
-                            </div>
-                            <div className='d-flex align-items-center justify-content-between'>
-                                <div className='d-flex align-items-center'>
-                                    <EmailIcon fill='black' className='me-2'/>
-                                    <p>Correo electrónico</p>
-                                </div>
-                                <Form><Form.Check type="switch"/></Form>
-                            </div>
-                        </div>
-                    </Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="3">
-                    <Accordion.Header>
-                        <FigureSoccer fill='black' className='me-2'/>
-                        Jugador
-                    </Accordion.Header>
-                    <Accordion.Body>
-                        Notificaciones que recibes cuando un jugador esta lesionado.
-                        <div className='mt-4'>
-                            <div className='d-flex align-items-center justify-content-between mb-2'>
-                                <div className='d-flex align-items-center'>
-                                    <BellIcon fill='black' className='me-2'/>
-                                    <p>Aplicación</p>
-                                </div>
-                                <Form><Form.Check type="switch"/></Form>
-                            </div>
-                            <div className='d-flex align-items-center justify-content-between mb-2'>
-                                <div className='d-flex align-items-center'>
-                                    <MessageIcon fill='black' className='me-2'/>
-                                    <p>Mensaje</p>
-                                </div>
-                                <Form><Form.Check type="switch"/></Form>
-                            </div>
-                            <div className='d-flex align-items-center justify-content-between'>
-                                <div className='d-flex align-items-center'>
-                                    <EmailIcon fill='black' className='me-2'/>
-                                    <p>Correo electrónico</p>
-                                </div>
-                                <Form><Form.Check type="switch"/></Form>
-                            </div>
-                        </div>
-                    </Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="4">
-                    <Accordion.Header>
-                        <FootballIcon fill='black' className='me-2'/>
-                        Jornada
-                    </Accordion.Header>
-                    <Accordion.Body>
-                        Notificaciones que recibes un día antes de empezar la jornada.
-                        <div className='mt-4'>
-                            <div className='d-flex align-items-center justify-content-between mb-2'>
-                                <div className='d-flex align-items-center'>
-                                    <BellIcon fill='black' className='me-2'/>
-                                    <p>Aplicación</p>
-                                </div>
-                                <Form><Form.Check type="switch"/></Form>
-                            </div>
-                            <div className='d-flex align-items-center justify-content-between mb-2'>
-                                <div className='d-flex align-items-center'>
-                                    <MessageIcon fill='black' className='me-2'/>
-                                    <p>Mensaje</p>
-                                </div>
-                                <Form><Form.Check type="switch"/></Form>
-                            </div>
-                            <div className='d-flex align-items-center justify-content-between'>
-                                <div className='d-flex align-items-center'>
-                                    <EmailIcon fill='black' className='me-2'/>
-                                    <p>Correo electrónico</p>
-                                </div>
-                                <Form><Form.Check type="switch"/></Form>
-                            </div>
-                        </div>
-                    </Accordion.Body>
-                </Accordion.Item>
+                {categories.map((category, index) => (
+                    <NotificationCategory
+                        key={index}
+                        eventKey={category.eventKey}
+                        title={category.title}
+                        icon={iconMapping[category.iconName]}
+                        description={category.description}
+                        options={category.options.map(option => ({
+                            ...option,
+                            icon: iconMapping[option.iconName]
+                        }))}
+                    />
+                ))}
             </Accordion>
+            <div className="d-grid m-5">
+                <Button variant="dark" size="lg" className='rounded-4'>
+                    Cerrar Sessión
+                </Button>
+            </div>
         </main>
-    )
+    );
 }
+
+export default Settings;

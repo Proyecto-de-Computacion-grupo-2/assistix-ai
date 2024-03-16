@@ -9,9 +9,6 @@ import PujadosSection from '../../components/dashboard-components/pujados-sectio
 import ProximasJornadas from '../../components/dashboard-components/proximas-jornadas/proximas-jornadas.tsx'
 
 export default function DashboardPage() {
-
-
-
     return (
         <>
             <Layout>
@@ -49,5 +46,4 @@ export default function DashboardPage() {
             </Layout >
         </>
     )
-
 }
