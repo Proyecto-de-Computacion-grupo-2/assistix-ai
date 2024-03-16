@@ -18,7 +18,7 @@ const recomendationProps: RecomendationProps = {
 
 export default function RecomendationCard() {
     return (
-        <Container className="d-flex justify-content-around align-items-center border-top border-bottom py-1" fluid>
+        <Container className="d-flex justify-content-between align-items-center border-top border-bottom p-0 m-0 py-1" fluid>
             <Container className='bg-light d-flex justify-content-center align-items-center rounded-4 border border-dark' style={{height: '60px', width: '60px'}} fluid><img src={RamanzaniImage} alt={recomendationProps.playerName} style={{height: '50px', width: '50px'}}/>
             </Container>
             <Container className="d-flex flex-column" fluid>

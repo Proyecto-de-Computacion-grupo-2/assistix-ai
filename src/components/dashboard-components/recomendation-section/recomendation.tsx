@@ -17,9 +17,9 @@ export default function RecomendationSection() {
                 recomendations ?
                     <Container className="flex-grow-1 px-1 scroll-section" style={{maxHeight: '32vh'}} fluid>
                         <RecomendtionCard/>
-                        <ChangeRecomendationCard/>
                         <RecomendtionCard/>
-                        <ChangeRecomendationCard/>
+                        <RecomendtionCard/>
+                        <RecomendtionCard/>
                         <RecomendtionCard/>
                     </Container>
                     :
