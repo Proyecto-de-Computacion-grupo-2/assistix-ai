@@ -6,14 +6,15 @@ import LigaRanking from '../../components/dashboard-components/liga-ranking/liga
 import RecomendationSection from '../../components/dashboard-components/recomendation-section/recomendation.tsx'
 import PricesComponent from '../../components/dashboard-components/prices-component/prices-component.tsx'
 import PujadosSection from '../../components/dashboard-components/pujados-section/pujados-section.tsx'
-import FootballWidget from '../../components/dashboard-components/api-football/api-football.tsx'
+import ProximasJornadas from '../../components/dashboard-components/proximas-jornadas/proximas-jornadas.tsx'
+import BestPlayers from '../../components/dashboard-components/mejores-jugadores/mejores-jugadores.tsx'
 
 export default function DashboardPage() {
     return (
         <Layout>
             <Container className='p-0 m-0'>
                 <Row className='p-0 m-0 h-100' fluid>
-                    <Col className='p-0 me-1'>
+                    <Col className='p-0 me-2 d-flex flex-column'>
                         <Row className='p-0 m-0'>
                             <Col sm={6} className='p-0'>
                                 <LigaRanking />
@@ -30,9 +31,12 @@ export default function DashboardPage() {
                                 <PujadosSection />
                             </Col>
                         </Row>
-                        <Row className='p-0 m-0'>
-                            <Col sm={12} className='p-0 bg-white mt-2 rounded-4' style={{ height: '24vh' }}>
-                                <FootballWidget/>
+                        <Row className='p-0 mt-2 mx-0 flex-grow-1'>
+                            <Col sm={6} className='p-0 h-100'>
+                                <ProximasJornadas />
+                            </Col>
+                            <Col sm={6} className='p-0 h-100' style={{ height: '24vh' }}>
+                                <BestPlayers />
                             </Col>
                         </Row>
                     </Col>

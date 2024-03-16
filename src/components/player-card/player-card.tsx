@@ -9,8 +9,8 @@ export default function PlayerCard({ player }: {
     return (
         <div className="player-card">
             <div className="player-img" style={{ backgroundImage: `url(${player.img})` }} />
-            <p>{player.nombre}</p>
-            <div className="puntuation-container">
+            <p className='text-truncate text-black'>{player.nombre}</p>
+            <div className="puntuation-container text-black">
                 {player.puntuation}
             </div>
         </div>
