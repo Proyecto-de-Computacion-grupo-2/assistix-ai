@@ -1,4 +1,4 @@
-import {Col, Container, Row} from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import RankingCard from "./local-card/local-card";
 import misterLogo from '../../../../assets/misterLogo.png'
 
@@ -73,25 +73,25 @@ export default function LocalLeague() {
         <Container className="h-100 p-0 d-flex align-items-center flex-column" fluid>
             <Row className="h-auto d-flex justify-content-around border-bottom w-100" fluid>
                 <Container className='d-flex text-center mt-4 mb-4 fw-bold'>
-                    <img src={misterLogo} width={30} height={30} className='me-2'/>
+                    <img src={misterLogo} width={30} height={30} className='me-2' />
                     <p>Mister Mundo Deportivo</p>
                 </Container>
-                <Col sm={5} className="text-center p-0 m-0 fw-bold">
+                <Col sm={5} xs={5} className="text-center p-0 m-0 fw-bold">
                     # Equipo
                 </Col>
-                <Col sm={3} className="text-center p-0 m-0 fw-bold">
+                <Col sm={3} xs={3} className="text-center p-0 m-0 fw-bold">
                     Puntos
                 </Col>
-                <Col sm={3} className="text-center p-0 m-0 fw-bold">
+                <Col sm={3} xs={3} className="text-center p-0 m-0 fw-bold">
                     Valor
                 </Col>
             </Row>
             <Container className="flex-grow-1 px-1 scroll-section d-flex flex-column align-items-center"
-                       style={{maxHeight: '24vh'}}>
+                style={{ maxHeight: '24vh' }}>
                 {
                     tablaLocal.table.map((team, index) => {
                         return (
-                            <RankingCard team={team} key={index}/>
+                            <RankingCard team={team} key={index} />
                         )
                     })
                 }

@@ -4,6 +4,8 @@ import BestPlayerCard from "./player-card";
 
 import bestPlayer from "../../../assets/best-player.jfif"
 
+import '../../../pages/dashboard/dashboard-page.scss'
+
 const player = {
     "players": [
         {
@@ -28,7 +30,7 @@ const player = {
 export default function BestPlayers() {
 
     return (
-        <Container className="p-1 m-0 bg-white h-100 rounded-4 d-flex flex-column ms-1 justify-content-center align-items-center" fluid>
+        <Container className="p-1 bg-white h-100 rounded-4 d-flex flex-column justify-content-center align-items-center custom-margin left-custom-margin" fluid>
             <Carousel className="flex-grow-1 h-100 w-100 m-0 p-0">
                 {
                     player.players.map((player, index) => {

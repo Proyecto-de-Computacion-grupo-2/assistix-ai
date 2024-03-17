@@ -1,4 +1,4 @@
-import {Col, Container, Row,} from 'react-bootstrap'
+import { Col, Container, Row, } from 'react-bootstrap'
 import Layout from '../../components/layout/layout.tsx'
 import './dashboard-page.scss'
 import LineUp from '../../components/line-up/line-up.tsx'
@@ -12,10 +12,10 @@ import BestPlayers from '../../components/dashboard-components/mejores-jugadores
 export default function DashboardPage() {
     return (
         <Layout>
-            <Container className='p-0 m-0' style={{minHeight: '30vh'}} fluid>
+            <Container className='p-0 m-0' style={{ minHeight: '30vh' }} fluid>
                 <Row className='p-0 m-0 h-100' fluid>
-                    <Col className='p-0 me-2 d-flex flex-column'>
-                        <Row className='p-0 m-0'>
+                    <Col className='p-0 d-flex flex-column custom-margin right-custom-margin'>
+                        <Row className='p-0 row-custom-margin'>
                             <Col sm={6} className='p-0'>
                                 <LigaRanking />
                             </Col>
@@ -23,7 +23,7 @@ export default function DashboardPage() {
                                 <RecomendationSection />
                             </Col>
                         </Row>
-                        <Row className='p-0 m-0'>
+                        <Row className='p-0 row-custom-margin'>
                             <Col sm={6} className='p-0 '>
                                 <PricesComponent />
                             </Col>
@@ -31,16 +31,16 @@ export default function DashboardPage() {
                                 <PujadosSection />
                             </Col>
                         </Row>
-                        <Row className='p-0 mt-2 mx-0 flex-grow-1'>
-                            <Col sm={6} className='p-0 h-100'>
+                        <Row className='p-0 mt-2 mx-0 flex-grow-1 row-custom-margin'>
+                            <Col sm={6} className='p-0 h-100' style={{ maxHeight: '26vh' }}>
                                 <ProximasJornadas />
                             </Col>
-                            <Col sm={6} className='p-0 h-100' style={{ height: '24vh' }}>
+                            <Col sm={6} className='p-0 h-100' style={{ maxHeight: '26vh' }}>
                                 <BestPlayers />
                             </Col>
                         </Row>
                     </Col>
-                    <Col xl={6} className='p-0 m-0 ms-1'>
+                    <Col xl={6} className='p-0 custom-margin'>
                         <LineUp />
                     </Col>
                 </Row>
