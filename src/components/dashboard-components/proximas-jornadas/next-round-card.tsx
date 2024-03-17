@@ -14,11 +14,11 @@ export default function MatchCard({ match }: {
     return (
         <Carousel.Caption className="p-0 m-0 content-card">
             <Row className="p-0 m-0 h-auto d-flex justify-content-around align-items-center" fluid>
-                <Col sm={4} className="p-0 m-0 d-flex align-items-center justify-content-center">
+                <Col xs={4} sm={4} className="p-0 m-0 d-flex align-items-center justify-content-center">
                     <img src={match.localUrl} alt={match.local} width={50} height={50} />
                 </Col>
-                <Col sm={4} className="p-0 m-0 d-flex align-items-center justify-content-center">VS</Col>
-                <Col sm={4} className="p-0 m-0 d-flex align-items-center justify-content-center">
+                <Col xs={4} sm={4} className="p-0 m-0 d-flex align-items-center justify-content-center">VS</Col>
+                <Col xs={4} sm={4} className="p-0 m-0 d-flex align-items-center justify-content-center">
                     <img src={match.visitanteUrl} alt={match.visitante} width={50} height={50} />
                 </Col>
             </Row>

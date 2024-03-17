@@ -5,6 +5,8 @@ import PlayerCard from '../player-card/player-card'
 import './line-up.scss'
 import { Container } from 'react-bootstrap'
 
+import '../../pages/dashboard/dashboard-page.scss'
+
 const plantillas = [
     {
         goalkeeper: {
@@ -226,36 +228,36 @@ export default function LineUp() {
 
     return (
 
-        <Container className='bg-white rounded-4 h-100 d-flex align-items-center justify-content-center p-3' style={{ minHeight: '700px' }} fluid>
+        <Container className='bg-white rounded-4 h-100 d-flex align-items-center justify-content-center p-3 left-custom-margin' style={{ minHeight: '700px' }} fluid>
             <Container className='d-flex flex-column h-100'>
                 <strong className='text-secondary'>Plantilla</strong>
                 <Container className='d-flex justify-content-around align-items-center selection-plantilla mb-2'>
-                    <p className='fs-7 text-secondary'>{currentPlantilla === 0 ? types[types.length - 1] : types[currentPlantilla - 1]}</p>
+                    <p className='fs-7 text-secondary text-truncate'>{currentPlantilla === 0 ? types[types.length - 1] : types[currentPlantilla - 1]}</p>
                     <button className='change-button' onClick={() => changePlantilla('left')}><LeftArrowIcon fill='white' /> </button>
                     <strong className='fs-5'>{types[currentPlantilla]}</strong>
                     <button className='change-button' onClick={() => changePlantilla('up')}> <RightArrowIcon fill='white' /></button>
-                    <p className='fs-7 text-secondary'>
+                    <p className='fs-7 text-secondary text-truncate'>
                         {currentPlantilla === types.length - 1 ? types[0] : types[currentPlantilla + 1]}
                     </p>
                 </Container>
-                <Container className='futbol-campo rounded-4 p-3 shadow-lg flex-grow-1' fluid>
-                    <Container className='d-flex lign-items-center justify-content-center' fluid>
+                <Container className='futbol-campo rounded-4  custom-line-up shadow-lg flex-grow-1' fluid>
+                    <Container className='d-flex justify-content-center flex-wrap p-0 m-0' fluid>
                         {data[currentPlantilla].attack.map((player, index) => {
                             return <PlayerCard key={index} player={player} />
                         })
                         }
                     </Container>
-                    <Container className='d-flex lign-items-center justify-content-center' fluid>
+                    <Container className='d-flex  justify-content-center flex-wrap p-0 m-0' fluid>
                         {data[currentPlantilla].midfield.map((player, index) => {
                             return <PlayerCard key={index} player={player} />
                         })}
                     </Container>
-                    <Container className='d-flex lign-items-center justify-content-center' fluid>
+                    <Container className='d-flex justify-content-center flex-wrap p-0 m-0' fluid>
                         {data[currentPlantilla].defense.map((player, index) => {
                             return <PlayerCard key={index} player={player} />
                         })}
                     </Container>
-                    <Container className='d-flex lign-items-center justify-content-center' fluid>
+                    <Container className='d-flex  justify-content-center flex-wrap p-0 m-0' fluid>
                         <PlayerCard player={data[currentPlantilla].goalkeeper} />
                     </Container>
                     <BoxInfo info={formation} icon={<RightArrowIcon fill='black' />} bottom='10px' left='5px' />

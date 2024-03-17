@@ -50,7 +50,7 @@ const matches = {
 
 export default function ProximasJornadas() {
     return (
-        <Container className="p-1 m-0 bg-white h-100 rounded-4 d-flex flex-column me-1" fluid>
+        <Container className="p-1 bg-white h-100 rounded-4 d-flex flex-column right-custom-margin" fluid>
             <Carousel className="flex-grow-1 h-100 w-100 m-0 p-0" >
                 {
                     matches.matches.map((match, index) => {

@@ -1,3 +1,51 @@
 body {
   background-color: #F1FAF8;
 }
+
+@import "bootstrap/scss/bootstrap";
+
+@include media-breakpoint-up(xs) {
+  .custom-margin {
+    margin: .5rem 0 !important;
+  }
+
+  .row-custom-margin {
+    margin: .5rem 0 !important;
+  }
+
+  .custom-height {
+    max-height: 35vh !important;
+    min-height: 35vh !important;
+  }
+
+  .custom-line-up {
+    padding: .25rem;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .custom-margin {
+    margin: 0 0 !important;
+  }
+
+  .right-custom-margin {
+    margin-right: .5rem !important;
+  }
+
+  .left-custom-margin {
+    margin-left: .5rem !important;
+  }
+
+  .row-custom-margin {
+    margin: .5rem 0 !important;
+  }
+
+  .custom-height {
+    max-height: 35vh !important;
+    min-height: 35vh !important;
+  }
+
+  .custom-line-up {
+    padding: 2rem;
+  }
+}

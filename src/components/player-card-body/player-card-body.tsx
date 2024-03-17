@@ -1,11 +1,11 @@
-import {useState} from 'react'; // Step 1
-import {Card, Row, Col, Container, Form} from 'react-bootstrap';
+import { useState } from 'react'; // Step 1
+import { Card, Row, Col, Container, Form } from 'react-bootstrap';
 import './player-card-body.scss';
 
-function PlayerCardBody({image, name, position, value, points}) {
+function PlayerCardBody({ image, name, position, value, points }: { image: string, name: string, position: string, value: number, points: number }) {
     return (
-        <Card className='rounded-5' style={{width: '15rem'}}>
-            <Card.Img className='bg-light rounded-5' variant="top" src={image}/>
+        <Card className='rounded-5' style={{ width: '15rem' }}>
+            <Card.Img className='bg-light rounded-5' variant="top" src={image} />
             <Card.Body>
                 <Card.Title className='fw-bold'>{name}</Card.Title>
                 <Card.Subtitle><p className='fw-bold'>{position}</p> {value}€</Card.Subtitle>
@@ -94,8 +94,8 @@ export default function PlayersGrid() {
                     />
                 </Container>
                 {filteredPlayers.map((player, index) => (
-                    <Col key={index} className='gap-2'>
-                        <PlayerCardBody {...player}/>
+                    <Col key={index} className='gap-2 d-flex justify-content-center'>
+                        <PlayerCardBody {...player} />
                     </Col>
                 ))}
             </Row>
