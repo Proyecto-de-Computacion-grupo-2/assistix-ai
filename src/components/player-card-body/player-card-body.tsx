@@ -94,7 +94,7 @@ export default function PlayersGrid() {
                     />
                 </Container>
                 {filteredPlayers.map((player, index) => (
-                    <Col key={index} className='gap-2 fixing-responsive-dashboard'>
+                    <Col key={index} className='gap-2 d-flex justify-content-center'>
                         <PlayerCardBody {...player} />
                     </Col>
                 ))}
