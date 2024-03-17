@@ -4,7 +4,7 @@ import './player-card-body.scss';
 
 function PlayerCardBody({ image, name, position, value, points }: { image: string, name: string, position: string, value: number, points: number }) {
     return (
-        <Card className='rounded-5' style={{ width: '15rem' }}>
+        <Card className='rounded-4 m-3' style={{ width: '15rem' }}>
             <Card.Img className='bg-light rounded-5' variant="top" src={image} />
             <Card.Body>
                 <Card.Title className='fw-bold'>{name}</Card.Title>
@@ -93,11 +93,13 @@ export default function PlayersGrid() {
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />
                 </Container>
-                {filteredPlayers.map((player, index) => (
-                    <Col key={index} className='gap-2 d-flex justify-content-center'>
-                        <PlayerCardBody {...player} />
-                    </Col>
-                ))}
+                <Container className='d-flex flex-wrap m-0 p-0' fluid>
+                    {
+                        filteredPlayers.map((player, index) => (
+                            <PlayerCardBody key={index} {...player} />
+                        ))
+                    }
+                </Container>
             </Row>
         </Container>
     );
