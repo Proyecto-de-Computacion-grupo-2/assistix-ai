@@ -1,5 +1,5 @@
 import { useState } from 'react'; // Step 1
-import { Card, Row, Col, Container, Form } from 'react-bootstrap';
+import { Card, Row, Container, Form } from 'react-bootstrap';
 import './player-card-body.scss';
 
 function PlayerCardBody({ image, name, position, value, points }: { image: string, name: string, position: string, value: number, points: number }) {
