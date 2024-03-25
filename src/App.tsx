@@ -4,6 +4,7 @@ import Market from './pages/market/market.tsx';
 import Player from './pages/player/player.tsx';
 import Settings from './pages/settings/settings.tsx';
 import { Routes, Route } from "react-router-dom";
+import PlayerId from "./pages/player-id/player-id.tsx";
 
 export default function App() {
     return (
@@ -14,6 +15,7 @@ export default function App() {
                 <Route path="/market" element={<Market />} />
                 <Route path="/players" element={<Player />} />
                 <Route path="/settings" element={<Settings />} />
+                <Route path="/player-id" element={<PlayerId />} />
             </Routes>
         </>
     )
