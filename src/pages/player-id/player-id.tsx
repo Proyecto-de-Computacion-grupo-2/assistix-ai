@@ -10,6 +10,7 @@ import OtherSection from "../../components/player-id-components/other/other-sect
 import LastGamesSection from "../../components/player-id-components/last-games/last-games-section.tsx";
 import OwnerHistorySection from "../../components/player-id-components/owner-history/owner-history-section.tsx";
 import PredictionCircle from "../../components/player-id-components/prediction-circle/prediction-circle.tsx";
+import ParlimentDonut from "../../components/player-id-components/parliment-donut/parliment-donut.tsx";
 
 interface ChartData {
     time: string;
@@ -89,8 +90,8 @@ export default function PlayerId() {
                             <PersonalCard/>
                         </Row>
                         <Row className=" d-flex flex-grow-1 py-1">
-                            <Col sm={6} className="h-100 bg-white">
-
+                            <Col sm={6} className="h-100 bg-white rounded-4">
+                                <ParlimentDonut/>
                             </Col>
                             <Col sm={6} className="h-100 p-1 d-flex bg-white rounded-4">
                                 <PredictionCircle/>

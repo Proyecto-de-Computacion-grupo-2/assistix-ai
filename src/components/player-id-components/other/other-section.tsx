@@ -6,13 +6,13 @@ export default function OtherSection(){
         <Container className="m-0 p-2 h-100" fluid>
           <strong className="text-secondary">Otros</strong>
             <Row className="h-auto d-flex justify-content-around border-bottom w-100 p-0 m-0" fluid>
-                <Col sm={4} xs={4} className="text-center p-0 m-0 fw-bold">
+                <Col sm={2} xs={2} className="text-center p-0 m-0 fw-bold">
                     Tipos
                 </Col>
-                <Col sm={4} xs={4} className="text-center p-0 m-0 fw-bold">
+                <Col sm={5} xs={5} className="text-center p-0 m-0 fw-bold">
                     Desde
                 </Col>
-                <Col sm={4} xs={4} className="text-center p-0 m-0 fw-bold">
+                <Col sm={5} xs={5} className="text-center p-0 m-0 fw-bold">
                     Hasta
                 </Col>
             </Row>

@@ -12,7 +12,7 @@ export default function LastGamesSection() {
                 <Col sm={2} xs={2} className="text-center p-0 m-0 fw-bold">
                     Estado
                 </Col>
-                <Col sm={2} xs={2} className="text-center p-0 m-0 fw-bold">
+                <Col sm={3} xs={3} className="text-center p-0 m-0 fw-bold">
                     Rival
                 </Col>
                 <Col sm={1} xs={1} className="text-center p-0 m-0 fw-bold">

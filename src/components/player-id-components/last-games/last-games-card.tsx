@@ -1,6 +1,4 @@
 import {Col, Row} from "react-bootstrap";
-import medkit from "../../../assets/botiquin.webp";
-
 
 export default function LastGameCard(){
     return (
@@ -11,9 +9,9 @@ export default function LastGameCard(){
             <Col xs={2} sm={2}>
                 <p className="small text-center">Local</p>
             </Col>
-            <Col xs={3} sm={3} className="d-flex flex-row">
-                <img src={medkit} width={20}></img>
-                <p className="small">Granada</p>
+            <Col xs={3} sm={3} className="d-flex flex-row justify-content-center">
+                <img src="https://cdn.gomister.com/file/cdn-common/teams/3.png?version=20240324" width={20}></img>
+                <p className="small">Barcelona</p>
             </Col>
             <Col xs={1} sm={1}>
                 <p className="small alert-warning">3-3</p>
