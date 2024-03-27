@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import {ChartComponent} from "../../market-components/chart/chart.tsx";
-import json from "../../../pages/market/prueba.json";
+import json from "./prueba.json";
 import {Container} from "react-bootstrap";
 import Ramanzani from "../../../assets/40090.png";
 
