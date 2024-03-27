@@ -4,3 +4,19 @@
 .big-card{
   max-height: 40vh;
 }
+
+@import "bootstrap/scss/bootstrap";
+
+.space {
+  margin-top: 0px !important;
+}
+
+@include media-breakpoint-down(sm) {
+  .space {
+    margin-top: 10px !important;
+  }
+  .side-space {
+    margin-left: 0.25px !important;
+    margin-right: 0.5px !important;
+  }
+}

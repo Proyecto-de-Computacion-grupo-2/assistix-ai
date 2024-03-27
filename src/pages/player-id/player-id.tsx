@@ -84,43 +84,43 @@ export default function PlayerId() {
     return (
         <Layout>
             <Container className="h-100 p-0 pe-3" fluid>
-                <Row className="h-100 p-0">
+                <Row className=" p-0">
                     <Col lg={6} md={12} className="d-flex flex-column h-100">
                         <Row className="flex-grow-1 player-id">
                             <Container className="flex-grow-1 player-id">
                                 <PersonalCard/>
                             </Container>
                         </Row>
-                        <Row className=" d-flex flex-grow-1 py-2">
+                        <Row className=" d-flex py-2">
                             <Col lg={6} md={12} className="">
-                                <Container className=" bg-white rounded-4 h-100">
+                                <Container className=" bg-white rounded-4" style={{maxHeight:"50vh"}}>
                                     <ParlimentDonut/>
                                 </Container>
                             </Col>
                             <Col lg={6} md={12}>
-                                <Container className="h-100 d-flex bg-white rounded-4">
+                                <Container className="h-100 d-flex bg-white rounded-4 space" style={{maxHeight:"50vh"}}>
                                     <PredictionCircle/>
                                 </Container>
                             </Col>
                         </Row>
-                        <Row className="flex-grow-1">
-                            <Col lg={6} xs={12} className="d-flex flex-grow-1">
-                                    <Container className="bg-white rounded-4 mt-2" style={{maxHeight:"50vh"}}>
+                        <Row className="">
+                            <Col lg={6} ms={12} className="d-flex flex-grow-1">
+                                    <Container className="bg-white rounded-4 mt-2 space" style={{maxHeight:"50vh"}}>
                                         <OwnerHistorySection/>
                                     </Container>
                             </Col>
-                            <Col lg={6} xs={12} className="d-flex flex-grow-1">
+                            <Col lg={6} ms={12} className="d-flex flex-grow-1">
                                 <Container className="bg-white rounded-4 mt-2 d-flex flex-grow-1" style={{maxHeight:"50vh"}}>
                                     <OtherSection/>
                                 </Container>
                             </Col>
                         </Row>
                     </Col>
-                    <Col lg={6} className="flex-grow-0 d-flex flex-column ps-3">
-                        <Row className="bg-white rounded-4 mb-1 ps-1">
+                    <Col lg={6} className="flex-grow-0 d-flex flex-column ps-3 space">
+                        <Row className="bg-white rounded-4 mb-1 ps-1 side-space">
                             <PlayerGraph/>
                         </Row>
-                        <Row className="flex-grow-1 bg-white rounded-4 mt-1 " style={{maxHeight:"50vh"}}>
+                        <Row className="flex-grow-1 bg-white rounded-4 mt-1 side-space" style={{maxHeight:"50vh"}}>
                             <LastGamesSection/>
                         </Row>
                     </Col>

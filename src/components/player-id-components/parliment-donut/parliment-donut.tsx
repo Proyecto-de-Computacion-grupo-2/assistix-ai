@@ -39,7 +39,7 @@ export default function ParlimentDonut(){
             <ReactEcharts
                 option={option}
                 style={{height: '350px', width: '100%'}}
-                className={'react_for_echarts position-relative'}
+                className={'react_for_echarts position-relative pb-5'}
             />
         </Container>
     );
