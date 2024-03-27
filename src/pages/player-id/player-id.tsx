@@ -9,15 +9,25 @@ import ParlimentDonut from "../../components/player-id-components/parliment-donu
 import PlayerGraph from "../../components/shared-components/player/player-graph.tsx";
 import './player-id.scss';
 
+const playerData = {
+    name: { first: "Lamine", last: "Yamal" },
+    position: "Delantero",
+    owner: "M31-G3-Cactus Panda",
+    teamName: "Barcelona",
+    playerImageUrl: "https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png",
+    teamImageUrl: "https://cdn.gomister.com/file/cdn-common/teams/3.png?version=20240324"
+};
+
 export default function PlayerId() {
     return (
         <Layout>
             <Container className="h-100 p-0 pe-3" fluid>
-                <Row className=" p-0">
+                <Row className="p-0">
                     <Col lg={6} md={12} className="d-flex flex-column h-100">
                         <Row className="flex-grow-1 player-id">
                             <Container className="flex-grow-1 player-id">
-                                <PersonalCard/>
+                                <PersonalCard playerInfo={playerData}
+                                />
                             </Container>
                         </Row>
                         <Row className=" d-flex py-2">
