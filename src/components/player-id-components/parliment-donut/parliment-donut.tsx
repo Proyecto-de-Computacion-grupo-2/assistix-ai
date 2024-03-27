@@ -30,9 +30,6 @@ const option = {
 
 
 export default function ParlimentDonut(){
-
-    //const result = option.series[0].data.reduce((total, item) => total + item.value, 0);
-
     return (
         <Container className="p-2 m-0" style={{maxHeight:"30vh"}}>
             <strong className="text-secondary">Racha</strong>

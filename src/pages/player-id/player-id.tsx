@@ -26,11 +26,10 @@ export default function PlayerId() {
                     <Col lg={6} md={12} className="d-flex flex-column h-100">
                         <Row className="flex-grow-1 player-id">
                             <Container className="flex-grow-1 player-id">
-                                <PersonalCard playerInfo={playerData}
-                                />
+                                <PersonalCard playerInfo={playerData}/>
                             </Container>
                         </Row>
-                        <Row className=" d-flex py-2">
+                        <Row className="d-flex py-2">
                             <Col lg={6} md={12} className="">
                                 <Container className=" bg-white rounded-4" style={{maxHeight:"50vh"}}>
                                     <ParlimentDonut/>
@@ -38,7 +37,7 @@ export default function PlayerId() {
                             </Col>
                             <Col lg={6} md={12}>
                                 <Container className="h-100 d-flex bg-white rounded-4 space" style={{maxHeight:"50vh"}}>
-                                    <PredictionCircle/>
+                                    <PredictionCircle prediction={32}/>
                                 </Container>
                             </Col>
                         </Row>
