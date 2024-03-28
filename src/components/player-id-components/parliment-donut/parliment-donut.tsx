@@ -18,20 +18,19 @@ const option = {
             startAngle: 180,
             endAngle: 360,
             data: [
-                { value: 8, name: 'J22' },
-                { value: 8, name: 'J23' },
-                { value: 16, name: 'J24' }
-
-            ]
+                {value: 8, name: 'J22'},
+                {value: 8, name: 'J23'},
+                {value: 16, name: 'J24'}
+            ],
+            color: ['#349FB5', '#19CAD8', '#16EDC1'], // Example colors: Tomato, SteelBlue, LimeGreen
         }
     ]
 };
 
 
-
-export default function ParlimentDonut(){
+export default function ParlimentDonut() {
     return (
-        <Container className="p-2 m-0" style={{maxHeight:"30vh"}}>
+        <Container className="p-2 m-0" style={{maxHeight: "30vh"}}>
             <strong className="text-secondary">Racha</strong>
             <ReactEcharts
                 option={option}
