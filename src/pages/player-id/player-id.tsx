@@ -44,6 +44,7 @@ export default function PlayerId() {
                             <Col lg={6} ms={12} className="d-flex flex-grow-1">
                                     <Container className="bg-white rounded-4 mt-2 space" style={{maxHeight:"50vh"}}>
                                         <div className='bg-white'>
+                                            {/*Pending to add or restructure this*/}
                                         </div>
                                     </Container>
                             </Col>

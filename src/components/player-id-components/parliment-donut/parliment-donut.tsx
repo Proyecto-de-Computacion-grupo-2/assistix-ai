@@ -22,26 +22,26 @@ const option = {
                 {value: 8, name: '23'},
                 {value: 16, name: '24'}
             ],
-            color: ['#349FB5', '#19CAD8', '#16EDC1'], // Example colors: Tomato, SteelBlue, LimeGreen
+            color: ['#349FB5', '#19CAD8', '#16EDC1'],
         }
     ],
     graphic: [
-        { // The number "32"
+        {
             type: 'text',
             left: 'center',
-            bottom: '32%', // Adjust for visual separation
+            bottom: '32%',
             style: {
-                text: '32', // Displaying the total as text
+                text: '32',
                 textAlign: 'center',
-                fill: '#000', // Text color
+                fill: '#000',
                 fontSize: 40,
                 fontWeight: 'bold',
             },
         },
-        { // The word "puntos"
+        {
             type: 'text',
             left: 'center',
-            bottom: '27%', // Adjusted to be below the "32"
+            bottom: '27%',
             style: {
                 text: 'Puntos totales',
                 textAlign: 'center',
