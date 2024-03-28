@@ -24,32 +24,32 @@ export default function PlayerId() {
                 <Row className="p-0">
                     <Col lg={6} md={12} className="d-flex flex-column h-100">
                         <Row className="flex-grow-1 player-id">
-                            <Container className="flex-grow-1 player-id">
+                            <Container className="flex-grow-1 player-id" fluid>
                                 <PersonalCard playerInfo={playerData}/>
                             </Container>
                         </Row>
                         <Row className="d-flex py-2">
                             <Col lg={6} md={12} className="">
-                                <Container className=" bg-white rounded-4" style={{maxHeight:"50vh"}}>
+                                <Container className=" bg-white rounded-4" style={{maxHeight:"50vh"}} fluid>
                                     <ParlimentDonut/>
                                 </Container>
                             </Col>
                             <Col lg={6} md={12}>
-                                <Container className="h-100 d-flex bg-white rounded-4 space" style={{maxHeight:"50vh"}}>
+                                <Container className="h-100 d-flex bg-white rounded-4 space" style={{maxHeight:"50vh"}} fluid>
                                     <PredictionCircle prediction={32}/>
                                 </Container>
                             </Col>
                         </Row>
                         <Row className="">
                             <Col lg={6} ms={12} className="d-flex flex-grow-1">
-                                    <Container className="bg-white rounded-4 mt-2 space" style={{maxHeight:"50vh"}}>
+                                    <Container className="bg-white rounded-4 mt-2 space" style={{maxHeight:"50vh"}} fluid>
                                         <div className='bg-white'>
                                             {/*Pending to add or restructure this*/}
                                         </div>
                                     </Container>
                             </Col>
                             <Col lg={6} ms={12} className="d-flex flex-grow-1">
-                                <Container className="bg-white rounded-4 mt-2 d-flex flex-grow-1" style={{maxHeight:"50vh"}}>
+                                <Container className="bg-white rounded-4 mt-2 d-flex flex-grow-1" style={{maxHeight:"50vh"}} fluid>
                                     <OtherSection/>
                                 </Container>
                             </Col>
