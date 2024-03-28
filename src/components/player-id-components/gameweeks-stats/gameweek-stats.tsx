@@ -1,5 +1,5 @@
 import {Col, Container, Row} from "react-bootstrap";
-import GameCard from "./last-games-card.tsx";
+import GameweekStats from "./gameweeks-stats.tsx";
 
 interface ColumnHeader {
     children: string;
@@ -171,7 +171,7 @@ const ColumnHeader = ({children}: ColumnHeader) => (
     </Col>
 );
 
-export default function LastGamesSection() {
+export default function GameweeksStats() {
     return (
         <Container className="m-0 p-2 h-100" fluid>
             <p className="fw-bold text-secondary p-2 mb-2">Últimos partidos</p>
@@ -182,7 +182,7 @@ export default function LastGamesSection() {
             </Row>
             <Container className="flex-grow-1 px-1 scroll-section overflow-auto" style={{ maxHeight: "30vh" }}  fluid>
                 {gamesData.map((game, index) => (
-                    <GameCard key={index} game={game} />
+                    <GameweekStats key={index} game={game} />
                 ))}
             </Container>
         </Container>

@@ -17,16 +17,16 @@ interface GameCardProps {
     game: Game;
 }
 
-function GameCardStats({children}){
+function GameCardStats({children}: number){
     return (
-        <Col xs={1} sm={1}>
+        <Col xs={1} sm={1} class='justify-content-center align-items-center'>
             <p className="small text-center">{children}</p>
         </Col>
     )
 }
 
 
-export default function GameCard({game}: GameCardProps){
+export default function GameweekStats({game}: GameCardProps){
 
     const columnValues = [
         game.gameweek,
