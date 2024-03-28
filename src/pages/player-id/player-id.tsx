@@ -3,7 +3,6 @@ import Layout from "../../components/layout/layout";
 import PersonalCard from "../../components/player-id-components/personal-card/personal-card.tsx";
 import OtherSection from "../../components/player-id-components/other/other-section.tsx";
 import LastGamesSection from "../../components/player-id-components/last-games/last-games-section.tsx";
-import OwnerHistorySection from "../../components/player-id-components/owner-history/owner-history-section.tsx";
 import PredictionCircle from "../../components/player-id-components/prediction-circle/prediction-circle.tsx";
 import ParlimentDonut from "../../components/player-id-components/parliment-donut/parliment-donut.tsx";
 import PlayerGraph from "../../components/shared-components/player/player-graph.tsx";
@@ -44,7 +43,8 @@ export default function PlayerId() {
                         <Row className="">
                             <Col lg={6} ms={12} className="d-flex flex-grow-1">
                                     <Container className="bg-white rounded-4 mt-2 space" style={{maxHeight:"50vh"}}>
-                                        <OwnerHistorySection/>
+                                        <div className='bg-white'>
+                                        </div>
                                     </Container>
                             </Col>
                             <Col lg={6} ms={12} className="d-flex flex-grow-1">

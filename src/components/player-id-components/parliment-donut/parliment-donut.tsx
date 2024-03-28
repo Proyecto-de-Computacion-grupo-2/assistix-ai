@@ -25,18 +25,32 @@ const option = {
             color: ['#349FB5', '#19CAD8', '#16EDC1'], // Example colors: Tomato, SteelBlue, LimeGreen
         }
     ],
-    graphic: { // Using the graphic option to add custom elements
-        type: 'text',
-        left: 'center', // Position horizontally in the center
-        bottom: '30%', // Position vertically in the center
-        style: {
-            text: 32, // Displaying the total as text
-            textAlign: 'center',
-            fill: '#000', // Text color
-            fontSize: 40,
-            fontWeight: 'bold',
-        }
-    }
+    graphic: [
+        { // The number "32"
+            type: 'text',
+            left: 'center',
+            bottom: '32%', // Adjust for visual separation
+            style: {
+                text: '32', // Displaying the total as text
+                textAlign: 'center',
+                fill: '#000', // Text color
+                fontSize: 40,
+                fontWeight: 'bold',
+            },
+        },
+        { // The word "puntos"
+            type: 'text',
+            left: 'center',
+            bottom: '27%', // Adjusted to be below the "32"
+            style: {
+                text: 'Puntos totales',
+                textAlign: 'center',
+                fill: '#000',
+                fontSize: 12,
+                fontWeight: 'normal',
+            },
+        },
+    ],
 };
 
 
