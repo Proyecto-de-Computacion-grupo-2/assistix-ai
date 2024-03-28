@@ -41,20 +41,128 @@ const gamesData = [
         total_tackle: 8,
         fouls: 3,
         minutes_played: 92
+    },    {
+        gameweek: 3,
+        team: 200,
+        opposing_team: 300,
+        mixed: 3,
+        goals: 1,
+        total_passes: 140,
+        accurate_passes: 120,
+        total_tackle: 8,
+        fouls: 3,
+        minutes_played: 92
+    },    {
+        gameweek: 3,
+        team: 200,
+        opposing_team: 300,
+        mixed: 3,
+        goals: 1,
+        total_passes: 140,
+        accurate_passes: 120,
+        total_tackle: 8,
+        fouls: 3,
+        minutes_played: 92
+    },    {
+        gameweek: 3,
+        team: 200,
+        opposing_team: 300,
+        mixed: 3,
+        goals: 1,
+        total_passes: 140,
+        accurate_passes: 120,
+        total_tackle: 8,
+        fouls: 3,
+        minutes_played: 92
+    },    {
+        gameweek: 3,
+        team: 200,
+        opposing_team: 300,
+        mixed: 3,
+        goals: 1,
+        total_passes: 140,
+        accurate_passes: 120,
+        total_tackle: 8,
+        fouls: 3,
+        minutes_played: 92
+    },    {
+        gameweek: 3,
+        team: 200,
+        opposing_team: 300,
+        mixed: 3,
+        goals: 1,
+        total_passes: 140,
+        accurate_passes: 120,
+        total_tackle: 8,
+        fouls: 3,
+        minutes_played: 92
+    },    {
+        gameweek: 3,
+        team: 200,
+        opposing_team: 300,
+        mixed: 3,
+        goals: 1,
+        total_passes: 140,
+        accurate_passes: 120,
+        total_tackle: 8,
+        fouls: 3,
+        minutes_played: 92
+    },    {
+        gameweek: 3,
+        team: 200,
+        opposing_team: 300,
+        mixed: 3,
+        goals: 1,
+        total_passes: 140,
+        accurate_passes: 120,
+        total_tackle: 8,
+        fouls: 3,
+        minutes_played: 92
+    },    {
+        gameweek: 3,
+        team: 200,
+        opposing_team: 300,
+        mixed: 3,
+        goals: 1,
+        total_passes: 140,
+        accurate_passes: 120,
+        total_tackle: 8,
+        fouls: 3,
+        minutes_played: 92
+    },    {
+        gameweek: 3,
+        team: 200,
+        opposing_team: 300,
+        mixed: 3,
+        goals: 1,
+        total_passes: 140,
+        accurate_passes: 120,
+        total_tackle: 8,
+        fouls: 3,
+        minutes_played: 92
+    },    {
+        gameweek: 3,
+        team: 200,
+        opposing_team: 300,
+        mixed: 3,
+        goals: 1,
+        total_passes: 140,
+        accurate_passes: 120,
+        total_tackle: 8,
+        fouls: 3,
+        minutes_played: 92
     },
-    // Add more game objects as needed
 ];
 
 const columnHeaders = [
     "#J",
-    "Equipo",
     "Rival",
-    "Mixto.",
+    "Mixto",
     "Goles",
-    "Pases totales*",
-    "Pases completados",
+    "PT",
+    "PC",
     "Faltas",
-    "Minutos jugados"
+    "MJ"
 ];
 
 const ColumnHeader = ({children}: ColumnHeader) => (
@@ -66,13 +174,13 @@ const ColumnHeader = ({children}: ColumnHeader) => (
 export default function LastGamesSection() {
     return (
         <Container className="m-0 p-2 h-100" fluid>
-            <p className="fw-bold text-secondary">Últimos partidos</p>
+            <p className="fw-bold text-secondary p-2 mb-2">Últimos partidos</p>
             <Row className="h-auto d-flex justify-content-around border-bottom w-100 p-0 m-0" fluid>
                 {columnHeaders.map((header, index) => (
                     <ColumnHeader key={index}>{header}</ColumnHeader>
                 ))}
             </Row>
-            <Container className="flex-grow-1 px-1 scroll-section" style={{maxHeight: "30vh"}} fluid>
+            <Container className="flex-grow-1 px-1 scroll-section overflow-auto" style={{ maxHeight: "30vh" }}  fluid>
                 {gamesData.map((game, index) => (
                     <GameCard key={index} game={game} />
                 ))}
