@@ -24,7 +24,19 @@ const option = {
             ],
             color: ['#349FB5', '#19CAD8', '#16EDC1'], // Example colors: Tomato, SteelBlue, LimeGreen
         }
-    ]
+    ],
+    graphic: { // Using the graphic option to add custom elements
+        type: 'text',
+        left: 'center', // Position horizontally in the center
+        bottom: '30%', // Position vertically in the center
+        style: {
+            text: 32, // Displaying the total as text
+            textAlign: 'center',
+            fill: '#000', // Text color
+            fontSize: 40,
+            fontWeight: 'bold',
+        }
+    }
 };
 
 
