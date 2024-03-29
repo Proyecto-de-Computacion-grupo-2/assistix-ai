@@ -3,11 +3,11 @@ import './side_bar.scss'
 import {NavLink} from "react-router-dom";
 import {Container} from "react-bootstrap";
 
-import logo from '../../assets/assistix-ai-logo.png'
-import {FigureSoccer, HomeIcon, ChatBotIcon, SettingsIcon, MarketIcon} from '../icons/icons';
-import clock from "../../assets/clock.svg";
-import star_icon from "../../assets/star.svg";
-import user_logo from '../../assets/user-logo.png';
+import logo from '../../../assets/assistix-ai-logo.png'
+import {FigureSoccer, HomeIcon, ChatBotIcon, SettingsIcon, MarketIcon} from '../icons/icons.tsx';
+import clock from "../../../assets/clock.svg";
+import star_icon from "../../../assets/star.svg";
+import user_logo from '../../../assets/user-logo.png';
 
 
 function HeaderMobile() {

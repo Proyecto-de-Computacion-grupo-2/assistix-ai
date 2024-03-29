@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Col, Container, Row } from "react-bootstrap";
 
-import Header from "../../components/header/header";
-import SideBar from "../../components/side_bar/side-bar";
+import Header from "../header/header.tsx";
+import SideBar from "../side_bar/side-bar.tsx";
 import SideBarMobile from "../side_bar/side-bar-mobile.tsx";
 
 function useIsTablet() {

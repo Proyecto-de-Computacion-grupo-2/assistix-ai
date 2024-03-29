@@ -1,5 +1,5 @@
 import {Col, Container, Row} from "react-bootstrap";
-import Layout from "../../components/layout/layout";
+import Layout from "../../components/shared-components/layout/layout";
 import PersonalCard from "../../components/player-id-components/personal-card/personal-card.tsx";
 import OtherSection from "../../components/player-id-components/other/other-section.tsx";
 import GameweeksStats from "../../components/player-id-components/gameweeks-stats/gameweek-stats.tsx";

@@ -1,6 +1,6 @@
 import { Accordion, Form, Button } from 'react-bootstrap';
 import { ReactElement } from 'react';
-import { FigureSoccer, MarketIcon, EmailIcon, BellIcon, MessageIcon, FootballIcon } from '../icons/icons';
+import { FigureSoccer, MarketIcon, EmailIcon, BellIcon, MessageIcon, FootballIcon } from '../shared-components/icons/icons';
 import './setting.scss';
 
 interface NotificationOptionProps {

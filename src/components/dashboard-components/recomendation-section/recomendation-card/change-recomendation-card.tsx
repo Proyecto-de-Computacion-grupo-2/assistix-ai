@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-import { SubstitutionIcon } from '../../../icons/icons'
+import { SubstitutionIcon } from '../../../shared-components/icons/icons'
 import Ramanzani from '../../../../assets/40090.png'
 
 export default function ChangeRecomendationCard() {

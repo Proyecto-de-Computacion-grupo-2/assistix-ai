@@ -4,10 +4,10 @@ import {NavLink} from "react-router-dom";
 import {Container, Button, Modal} from "react-bootstrap";
 
 import {useState} from 'react';
-import {FigureSoccer, HomeIcon, ChatBotIcon, SettingsIcon, MarketIcon} from '../icons/icons';
+import {FigureSoccer, HomeIcon, ChatBotIcon, SettingsIcon, MarketIcon} from '../icons/icons.tsx';
 
-import logo from '../../assets/assistix-ai-logo.png'
-import iaImage from '../../assets/integrated-ai-logo.png'
+import logo from '../../../assets/assistix-ai-logo.png'
+import iaImage from '../../../assets/integrated-ai-logo.png'
 
 export default function SideBar() {
 
