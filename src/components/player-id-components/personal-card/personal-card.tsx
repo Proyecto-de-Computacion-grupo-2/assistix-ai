@@ -1,10 +1,26 @@
 import {Col, Container, Row} from "react-bootstrap";
 import './personal-card.scss';
 
-export default function PersonalCard({playerInfo}) {
+interface PlayerInfo {
+    playerImageUrl: string;
+    name: {
+        first: string;
+        last: string;
+    };
+    position: string;
+    owner: string;
+    teamImageUrl: string;
+    teamName: string;
+}
+
+interface PersonalCardProps {
+    playerInfo: PlayerInfo;
+}
+
+export default function PersonalCard({playerInfo}:PersonalCardProps) {
     return (
         <Container className="bg-white rounded-4 h-100 p-2 d-flex flex-column personal-card" fluid>
-            <p className="text-secondary fw-bold">Datos personales</p>
+            <p className="text-secondary fw-bold p-2">Datos personales</p>
             <Row className="flex-grow-1">
                 <Col xs={4}>
                     <img src={playerInfo.playerImageUrl} width={180}></img>

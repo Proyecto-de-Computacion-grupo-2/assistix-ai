@@ -1,5 +1,11 @@
 import {Col, Container, Row} from "react-bootstrap";
-import OtherCard from "./other-card.tsx";
+import PlayerInjuryCard from "./other-card.tsx";
+
+const absence = {
+    type: "Lesion",
+    since: "01/01/01",
+    until: "01/01/01"
+};
 
 export default function OtherSection(){
     return (
@@ -17,11 +23,11 @@ export default function OtherSection(){
                 </Col>
             </Row>
             <Container className="flex-grow-1 px-1 scroll-section" style={{maxHeight:"30vh"}} fluid>
-                <OtherCard />
-                <OtherCard />
-                <OtherCard />
-                <OtherCard />
-                <OtherCard />
+                <PlayerInjuryCard absence={absence} />
+                <PlayerInjuryCard absence={absence} />
+                <PlayerInjuryCard absence={absence} />
+                <PlayerInjuryCard absence={absence} />
+                <PlayerInjuryCard absence={absence} />
             </Container>
         </Container>
     )
