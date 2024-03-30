@@ -117,7 +117,7 @@ export default function GameweeksStats() {
                         {gameValues.map((data, index) => (
                             <tr key={index} className='text-center text-truncate'>
                                 {data.map((data_2, index_2) => (
-                                    <th key={index_2}>{data_2}</th>
+                                    <td key={index_2}>{data_2}</td>
                                 ))}
                             </tr>
                         ))}
