@@ -1,4 +1,4 @@
-import {Col, Container, Row} from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import Layout from "../../components/shared-components/layout/layout";
 import PersonalCard from "../../components/player-id-components/personal-card/personal-card.tsx";
 import OtherSection from "../../components/player-id-components/other/other-section.tsx";
@@ -20,47 +20,40 @@ const playerData = {
 export default function PlayerId() {
     return (
         <Layout>
-            <Container className="h-100 p-0 pe-3" fluid>
-                <Row className="p-0">
-                    <Col lg={6} md={12} className="d-flex flex-column h-100">
-                        <Row className="flex-grow-1 player-id">
-                            <Container className="flex-grow-1 player-id" fluid>
-                                <PersonalCard playerInfo={playerData}/>
+            <Container className="h-100 p-0" fluid>
+                <Row className="p-0 m-0 personalized-height ">
+                    <Col lg={6} sm={12} className="d-flex flex-column h-100">
+                        <Row className="flex-grow-1 player-id p-0">
+                            <Container className="flex-grow-1 player-id p-0" fluid>
+                                <PersonalCard playerInfo={playerData} />
                             </Container>
                         </Row>
-                        <Row className="d-flex py-2">
-                            <Col lg={6} md={12} className="">
-                                <Container className=" bg-white rounded-4" style={{maxHeight:"50vh"}} fluid>
-                                    <ParlimentDonut/>
+                        <Row className="d-flex py-1 p-0 personalized-row-heigth">
+                            <Col lg={6} sm={6} className="prediction-pad-personalized">
+                                <Container className="h-100 d-flex justify-content-center bg-white rounded-4 space" style={{ maxHeight: "40vh" }} fluid>
+                                    <PredictionCircle prediction={32} />
                                 </Container>
                             </Col>
-                            <Col lg={6} md={12}>
-                                <Container className="h-100 d-flex bg-white rounded-4 space" style={{maxHeight:"50vh"}} fluid>
-                                    <PredictionCircle prediction={32}/>
+                            <Col lg={6} sm={6} className="other-pad-personalized">
+                                <Container className="bg-white rounded-4 d-flex flex-grow-1 h-100" style={{ maxHeight: "40vh" }} fluid>
+                                    <OtherSection />
                                 </Container>
                             </Col>
                         </Row>
-                        <Row className="">
-                            <Col lg={6} ms={12} className="d-flex flex-grow-1">
-                                    <Container className="bg-white rounded-4 mt-2 space" style={{maxHeight:"50vh"}} fluid>
-                                        <div className='bg-white'>
-                                            {/*Pending to add or restructure this*/}
-                                        </div>
-                                    </Container>
-                            </Col>
-                            <Col lg={6} ms={12} className="d-flex flex-grow-1">
-                                <Container className="bg-white rounded-4 mt-2 d-flex flex-grow-1" style={{maxHeight:"50vh"}} fluid>
-                                    <OtherSection/>
+                        <Row className="d-flex p-0 p-0 personalized-row-heigth">
+                            <Col lg={12} xs={12} className="d-flex p-0">
+                                <Container className=" bg-white rounded-4 overflow-hidden p-0 d-flex justify-content-center" style={{ maxHeight: "40vh" }} fluid>
+                                    <ParlimentDonut />
                                 </Container>
                             </Col>
                         </Row>
                     </Col>
-                    <Col lg={6} className="flex-grow-0 d-flex flex-column ps-3 space">
-                        <Row className="bg-white rounded-4 mb-1 ps-1 side-space">
-                            <PlayerGraph/>
+                    <Col lg={6} className="d-flex flex-column col-2-padding-personalized h-100">
+                        <Row className="flex-grow-1 bg-white rounded-4 m-0 p-0">
+                            <PlayerGraph />
                         </Row>
-                        <Row className="flex-grow-1 bg-white rounded-4 mt-1 side-space" style={{maxHeight:"50vh"}}>
-                            <GameweeksStats/>
+                        <Row className="flex-grow-1 m-0 p-0 pt-1" style={{ maxHeight: "50vh" }}>
+                            <GameweeksStats />
                         </Row>
                     </Col>
                 </Row>

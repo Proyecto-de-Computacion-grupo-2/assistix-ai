@@ -1,7 +1,7 @@
-import {useEffect, useState} from "react";
-import {ChartComponent} from "../../market-components/chart/chart.tsx";
+import { useEffect, useState } from "react";
+import { ChartComponent } from "../../market-components/chart/chart.tsx";
 import json from "./prueba.json";
-import {Container} from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Ramanzani from "../../../assets/40090.png";
 
 
@@ -58,13 +58,13 @@ export default function PlayerGraph() {
                 <Container className='p-0 m-0 d-flex flex-column align-items-end'>
                     <div
                         className="player-container rounded-4 bg-dark my-2 mx-3 d-flex justify-content-center align-items-center">
-                        <img src={Ramanzani} alt="player" height={50} width={50}/>
+                        <img src={Ramanzani} alt="player" height={50} width={50} />
                     </div>
                     <p className='fs-5 bold me-4 text-success'>{variation}</p>
                 </Container>
             </Container>
             <Container className='flex-grow-1 p-0 m-0' fluid>
-                <ChartComponent data={data}/>
+                <ChartComponent data={data} />
             </Container>
         </Container>
     )

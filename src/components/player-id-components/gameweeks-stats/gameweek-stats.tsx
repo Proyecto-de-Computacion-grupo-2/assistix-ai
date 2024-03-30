@@ -1,9 +1,9 @@
-import {Container, Table} from "react-bootstrap";
+import { Container, Table } from "react-bootstrap";
 
 const columnHeaders2 = [
     "Jornada",
     "Equipo",
-    "Equipo Oponente",
+    "Rival",
     "Mixto",
     "As",
     "Marca",
@@ -102,26 +102,28 @@ const gameValues = [
 
 export default function GameweeksStats() {
     return (
-        <Container className="m-0 p-2 rounded-4" style={{maxHeight: "45vh", overflowY: 'auto'}} fluid>
-            <p className="fw-bold text-secondary p-2">Últimos partidos</p>
-            <Table responsive hover className='rounded-4'>
-                <thead>
-                <tr>
-                    {columnHeaders2.map((header, index) => (
-                        <th key={index}>{header}</th>
-                    ))}
-                </tr>
-                </thead>
-                <tbody>
-                    {gameValues.map((data, index) => (
-                        <tr key={index} className='text-center'>
-                            {data.map((data_2, index_2) => (
-                                <th key={index_2}>{data_2}</th>
+        <Container className="m-0 p-0 rounded-4 bg-white h-100" style={{ overflowY: 'auto' }} fluid>
+            <Container className="m-0 p-2 rounded-4" style={{ maxHeight: "45vh", overflowY: 'auto' }} fluid>
+                <p className="fw-bold text-secondary p-2">Últimos partidos</p>
+                <Table responsive hover className='rounded-4'>
+                    <thead>
+                        <tr className="text-truncate">
+                            {columnHeaders2.map((header, index) => (
+                                <th key={index}>{header}</th>
                             ))}
                         </tr>
-                    ))}
-                </tbody>
-            </Table>
+                    </thead>
+                    <tbody>
+                        {gameValues.map((data, index) => (
+                            <tr key={index} className='text-center text-truncate'>
+                                {data.map((data_2, index_2) => (
+                                    <th key={index_2}>{data_2}</th>
+                                ))}
+                            </tr>
+                        ))}
+                    </tbody>
+                </Table>
+            </Container>
         </Container>
     )
 }
