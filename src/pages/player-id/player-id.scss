@@ -1,0 +1,50 @@
+.player-id {
+  max-height: 30vh;
+}
+
+.big-card {
+  max-height: 40vh;
+}
+
+@import "bootstrap/scss/bootstrap";
+
+@include media-breakpoint-up(lg) {
+  .personalized-height {
+    height: 100%;
+  }
+
+  .prediction-pad-personalized {
+    padding: 0 5px 0 0 !important;
+  }
+
+  .other-pad-personalized {
+    padding: 0 0 0 5px !important;
+  }
+
+  .personalized-row-heigth {
+    flex: 1;
+  }
+
+  .col-2-padding-personalized {
+    padding: 0 0 0 .5rem !important;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .prediction-pad-personalized {
+    padding: 0 5px 0 0 !important;
+  }
+
+  .other-pad-personalized {
+    padding: 0 0 0 5px !important;
+  }
+
+  .personalized-height {
+    height: auto;
+    gap: 5px;
+  }
+
+  .col-2-padding-personalized {
+    padding: 0 !important;
+  }
+}

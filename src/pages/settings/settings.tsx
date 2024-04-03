@@ -1,5 +1,5 @@
-import Layout from '../../components/layout/layout.tsx'
-import Setting from '../../components/settings/setting.tsx'
+import Layout from '../../components/shared-components/layout/layout.tsx'
+import Setting from '../../components/settings-components/setting.tsx'
 
 
 export default function Settings() {

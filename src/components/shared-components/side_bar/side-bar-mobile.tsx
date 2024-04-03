@@ -4,7 +4,7 @@ import SideBarNavMoney from "./side-bar-nav-money.tsx";
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
-import logo from '../../assets/assistix-ai-logo.png'
+import logo from '../../../assets/assistix-ai-logo.png'
 import './side_bar.scss'
 
 export default function SideBarMobile() {

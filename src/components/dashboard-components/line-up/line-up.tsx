@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import BoxInfo from '../box-info/box-info'
-import { LeftArrowIcon, RightArrowIcon } from '../icons/icons'
-import PlayerCard from '../player-card/player-card'
+import BoxInfo from './box-info/box-info.tsx'
+import { LeftArrowIcon, RightArrowIcon } from '../../shared-components/icons/icons.tsx'
+import PlayerCard from '../player-card/player-card.tsx'
 import './line-up.scss'
 import { Container } from 'react-bootstrap'
 
-import '../../pages/dashboard/dashboard-page.scss'
+import '../../../pages/dashboard/dashboard-page.scss'
 
 const plantillas = [
     {

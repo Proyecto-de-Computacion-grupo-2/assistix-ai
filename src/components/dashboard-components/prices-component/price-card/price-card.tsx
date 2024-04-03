@@ -1,5 +1,5 @@
 import Ramanzani from '../../../../assets/40090.png'
-import { TrendingDownIcon, TrendingUpIcon } from '../../../icons/icons'
+import { TrendingDownIcon, TrendingUpIcon } from '../../../shared-components/icons/icons'
 
 export default function PriceChangeCard({ up }: { up: boolean }) {
 

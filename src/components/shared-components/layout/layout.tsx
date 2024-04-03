@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Col, Container, Row } from "react-bootstrap";
 
-import Header from "../../components/header/header";
-import SideBar from "../../components/side_bar/side-bar";
+import Header from "../header/header.tsx";
+import SideBar from "../side_bar/side-bar.tsx";
 import SideBarMobile from "../side_bar/side-bar-mobile.tsx";
 
 function useIsTablet() {
@@ -34,8 +34,8 @@ export default function Layout({ children }: { children: any }) {
     const isTablet = useIsTablet(); // Use the custom hook
 
     return (
-        <Container className="vh-100 m-0 p-2" fluid>
-            <Row className="h-100 p-0 m-0 gx-2" fluid>
+        <Container className="min-vh-100 m-0 p-2" fluid>
+            <Row className="min-vh-100 p-0 m-0 gx-2" fluid>
                 {!isTablet && (
                     <Col sm={2} className="d-flex flex-column justify-content-between">
                         <SideBar />

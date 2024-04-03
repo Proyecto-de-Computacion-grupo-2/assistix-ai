@@ -1,5 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel';
-import PlayerCard from '../../player-card/player-card';
+import PlayerCard from '../player-card/player-card';
 
 import "../proximas-jornadas/card.scss"
 
