@@ -3,7 +3,7 @@ import PujadosCard from "./pujados-card/pujados-card";
 import '../../../pages/dashboard/dashboard-page.scss'
 
 
-export default function PujadosSection() {
+export default function BidSection() {
 
     const pujados = true;
 

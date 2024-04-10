@@ -34,7 +34,7 @@ function AppName() {
 
 function SideBarComponent() {
     return (
-        <Container className="m-0 p-0 d-flex flex-column gap-2" fluid>
+        <Container className="m-0 p-0 d-flex flex-column gap-4" fluid>
             <NavLink to='/'
                      className='d-flex flex-row gap-2 my-2 w-100 align-items-center link-offset-2 link-underline link-underline-opacity-0 fs-5 text-black mt-3 mb-3'>
                 <HomeIcon fill='black' className="ms-1"/>

@@ -5,7 +5,7 @@ import './liga-ranking.scss'
 import LocalLeague from './local-league/local-league'
 
 
-export default function LigaRanking() {
+export default function LeagueRanking() {
 
     const [index, setIndex] = useState(0);
 

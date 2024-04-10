@@ -2,12 +2,12 @@ import { Col, Container, Row, } from 'react-bootstrap'
 import Layout from '../../components/shared-components/layout/layout.tsx'
 import './dashboard-page.scss'
 import LineUp from '../../components/dashboard-components/line-up/line-up.tsx'
-import LigaRanking from '../../components/dashboard-components/liga-ranking/liga-ranking.tsx'
 import RecomendationSection from '../../components/dashboard-components/recomendation-section/recomendation.tsx'
 import PricesComponent from '../../components/dashboard-components/prices-component/prices-component.tsx'
-import PujadosSection from '../../components/dashboard-components/pujados-section/pujados-section.tsx'
-import ProximasJornadas from '../../components/dashboard-components/proximas-jornadas/proximas-jornadas.tsx'
+import BidSection from '../../components/dashboard-components/pujados-section/pujados-section.tsx'
 import BestPlayers from '../../components/dashboard-components/mejores-jugadores/mejores-jugadores.tsx'
+import LeagueRanking from "../../components/dashboard-components/liga-ranking/liga-ranking.tsx";
+import NextGameweek from "../../components/dashboard-components/proximas-jornadas/proximas-jornadas.tsx";
 
 export default function DashboardPage() {
     return (
@@ -17,7 +17,7 @@ export default function DashboardPage() {
                     <Col className='p-0 d-flex flex-column custom-margin right-custom-margin'>
                         <Row className='p-0 row-custom-margin'>
                             <Col sm={6} className='p-0'>
-                                <LigaRanking />
+                                <LeagueRanking />
                             </Col>
                             <Col sm={6} className='p-0'>
                                 <RecomendationSection />
@@ -28,12 +28,12 @@ export default function DashboardPage() {
                                 <PricesComponent />
                             </Col>
                             <Col sm={6} className='p-0 '>
-                                <PujadosSection />
+                                <BidSection />
                             </Col>
                         </Row>
                         <Row className='p-0 mt-2 mx-0 flex-grow-1 row-custom-margin'>
                             <Col sm={6} className='p-0 h-100' style={{ maxHeight: '26vh' }}>
-                                <ProximasJornadas />
+                                <NextGameweek />
                             </Col>
                             <Col sm={6} className='p-0 h-100' style={{ maxHeight: '26vh' }}>
                                 <BestPlayers />

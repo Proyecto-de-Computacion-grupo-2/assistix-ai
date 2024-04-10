@@ -48,7 +48,7 @@ const matches = {
 }
 
 
-export default function ProximasJornadas() {
+export default function NextGameweek() {
     return (
         <Container className="p-1 bg-white h-100 rounded-4 d-flex flex-column right-custom-margin" fluid>
             <Carousel className="flex-grow-1 h-100 w-100 m-0 p-0" >
