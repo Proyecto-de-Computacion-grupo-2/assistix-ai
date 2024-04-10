@@ -9,7 +9,7 @@ export default function BidSection() {
 
     return (
         <Container className="w-100 bg-white rounded-4 h-100 d-flex flex-column p-0 custom-margin custom-height left-custom-margin" style={{ minHeight: '30vh' }} fluid>
-            <Container className="py-1 border-bottom m-0">
+            <Container className="py-3 border-bottom m-0">
                 <strong className="text-secondary">Movimientos pendientes</strong>
             </Container>
             {

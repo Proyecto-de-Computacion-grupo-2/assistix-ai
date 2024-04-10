@@ -13,7 +13,7 @@ export default function RecomendationSection() {
         <Container className="w-100 bg-white rounded-4 h-100 d-flex flex-column p-0  custom-margin left-custom-margin"
             style={{ minHeight: '30vh' }} fluid>
             {/* ms-1 mb-1 */}
-            <Container className="py-1 border-bottom m-0" fluid>
+            <Container className="py-3 border-bottom m-0" fluid>
                 <strong className="text-secondary">Recomendaciones Assistix AI</strong>
             </Container>
             {

@@ -26,7 +26,7 @@ function AppName() {
     return (
         <NavLink to='/'
                  className='d-flex w-100 align-items-center link-offset-2 link-underline link-underline-opacity-0 fs-5 fw-bold text-black mb-4'>
-            <img src={logo} alt="logo" className="fluid m-0 p-0" style={{width: '60px', height: '60px'}}/>
+            <img src={logo} alt="logo" className="fluid m-0 p-0 me-2" style={{width: '60px', height: '60px'}}/>
             ASSISTIX AI
         </NavLink>
     )

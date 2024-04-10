@@ -21,11 +21,11 @@ export default function AdminTable() {
         <Container className='bg-white rounded-4 mt-4'>
             <Table hover responsive className='text-center'>
                 <thead>
-                <tr>
-                    {header_table.map((header, index) => (
-                        <th key={index}>{header}</th>
-                    ))}
-                </tr>
+                    <tr>
+                        {header_table.map((header, index) => (
+                            <th key={index}>{header}</th>
+                        ))}
+                    </tr>
                 </thead>
                 <tbody>
                 {data_users.map((data, index) => (
