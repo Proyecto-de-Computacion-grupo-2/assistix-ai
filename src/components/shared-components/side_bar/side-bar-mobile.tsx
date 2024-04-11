@@ -4,7 +4,7 @@ import SideBarNavMoney from "./side-bar-nav-money.tsx";
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
-import logo from '../../../assets/images/assistix-ai-logo.png'
+import logo from '../../../assets/images/misterLogo.png'
 import './side_bar.scss'
 
 export default function SideBarMobile() {
@@ -23,8 +23,7 @@ export default function SideBarMobile() {
                     </Button>
                 </div>
                 <div className='d-flex align-items-center'>
-                    <img src={logo} alt="logo" className="fluid m-0 p-0" style={{width: '60px', height: '60px'}}/>
-                    <p>ASSISTIX AI</p>
+                    <img src={logo} alt="logo" className="fluid my-1 p-0 rounded-4" style={{width: '60px', height: '60px'}}/>
                 </div>
             </div>
             <Offcanvas show={show} onHide={handleClose}>
