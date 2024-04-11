@@ -8,7 +8,7 @@ import {NavLink} from "react-router-dom";
 import logo from "../../../assets/images/assistix-ai-logo.png";
 
 
-function HeaderMobile() {
+function UserDetails() {
 
     const teamInfo = {
         name: "UA2C",
@@ -74,7 +74,7 @@ export default function SideBarNavMoney() {
         <Container className="h-100 m-0 p-1 bg-white rounded-4 d-flex flex-column justify-content-evenly" fluid>
             <AppName/>
             <SideBarComponent/>
-            <HeaderMobile/>
+            <UserDetails/>
         </Container>
     )
 }
