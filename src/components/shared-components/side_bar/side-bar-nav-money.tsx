@@ -71,7 +71,7 @@ function AppName() {
 export default function SideBarNavMoney() {
 
     return (
-        <Container className="h-100 m-0 p-3 bg-white rounded-4 d-flex flex-column justify-content-between" fluid>
+        <Container className="h-100 m-0 p-1 bg-white rounded-4 d-flex flex-column justify-content-evenly" fluid>
             <AppName/>
             <SideBarComponent/>
             <HeaderMobile/>

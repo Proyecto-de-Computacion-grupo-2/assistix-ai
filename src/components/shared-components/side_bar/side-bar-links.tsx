@@ -10,7 +10,7 @@ const navLinks = [
     { path: '/settings', label: 'Ajustes', Icon: SettingsIcon },
 ];
 
-export default function SideBarComponent() {
+export default function SideBarLinks() {
     return (
         <Container className="m-0 p-0 d-flex flex-column gap-4" fluid>
             {navLinks.map(({ path, label, Icon }) => (
