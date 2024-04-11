@@ -5,7 +5,7 @@ import PlayerCard from '../player-card/player-card.tsx'
 import './line-up.scss'
 import { Container } from 'react-bootstrap'
 
-import '../../../pages/dashboard/dashboard-page.scss'
+import '../../../styles/dashboard-page.scss'
 
 const plantillas = [
     {

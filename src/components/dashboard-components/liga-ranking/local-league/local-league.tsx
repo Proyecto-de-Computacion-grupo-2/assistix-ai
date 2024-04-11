@@ -1,6 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 import RankingCard from "./local-card/local-card";
-import misterLogo from '../../../../assets/misterLogo.png'
+import misterLogo from '../../../../assets/images/misterLogo.png'
 
 
 const tablaLocal = {

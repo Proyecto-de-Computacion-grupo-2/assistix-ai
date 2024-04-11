@@ -1,5 +1,5 @@
 import { Col, Row } from "react-bootstrap";
-import medkit from '../../../assets/botiquin.webp'
+import medkit from '../../../assets/images/botiquin.webp'
 
 interface Player {
     type: string;

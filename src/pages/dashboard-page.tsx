@@ -1,13 +1,13 @@
 import { Col, Container, Row, } from 'react-bootstrap'
-import Layout from '../../components/shared-components/layout/layout.tsx'
-import './dashboard-page.scss'
-import LineUp from '../../components/dashboard-components/line-up/line-up.tsx'
-import RecomendationSection from '../../components/dashboard-components/recomendation-section/recomendation.tsx'
-import PricesComponent from '../../components/dashboard-components/prices-component/prices-component.tsx'
-import BidSection from '../../components/dashboard-components/pujados-section/pujados-section.tsx'
-import BestPlayers from '../../components/dashboard-components/mejores-jugadores/mejores-jugadores.tsx'
-import LeagueRanking from "../../components/dashboard-components/liga-ranking/liga-ranking.tsx";
-import NextGameweek from "../../components/dashboard-components/proximas-jornadas/proximas-jornadas.tsx";
+import Layout from '../components/shared-components/layout/layout.tsx'
+import '../styles/dashboard-page.scss'
+import LineUp from '../components/dashboard-components/line-up/line-up.tsx'
+import RecomendationSection from '../components/dashboard-components/recomendation-section/recomendation.tsx'
+import PricesComponent from '../components/dashboard-components/prices-component/prices-component.tsx'
+import BidSection from '../components/dashboard-components/pujados-section/pujados-section.tsx'
+import BestPlayers from '../components/dashboard-components/mejores-jugadores/mejores-jugadores.tsx'
+import LeagueRanking from "../components/dashboard-components/liga-ranking/liga-ranking.tsx";
+import NextGameweek from "../components/dashboard-components/proximas-jornadas/proximas-jornadas.tsx";
 
 export default function DashboardPage() {
     return (

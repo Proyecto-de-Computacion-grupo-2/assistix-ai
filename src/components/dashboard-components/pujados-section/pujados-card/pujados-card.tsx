@@ -1,4 +1,4 @@
-import Ramanzani from '../../../../assets/40090.png'
+import Ramanzani from '../../../../assets/images/40090.png'
 import { TimeRemaining } from '../../../shared-components/icons/icons'
 
 export default function PujadosCard() {

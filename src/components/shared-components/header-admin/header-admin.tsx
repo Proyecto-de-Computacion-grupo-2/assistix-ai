@@ -1,5 +1,5 @@
 import {Button, Col, Container, Navbar, Row} from "react-bootstrap";
-import logo from "../../../assets/assistix-ai-logo.png";
+import logo from "../../../assets/images/assistix-ai-logo.png";
 
 export default function HeaderAdmin({ admin_name }: { admin_name: string }) {
 

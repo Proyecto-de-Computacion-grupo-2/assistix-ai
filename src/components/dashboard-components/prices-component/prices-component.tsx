@@ -1,7 +1,7 @@
 import { Container } from "react-bootstrap";
 import PriceChangeCard from "./price-card/price-card";
 
-import '../../../pages/dashboard/dashboard-page.scss'
+import '../../../styles/dashboard-page.scss'
 
 export default function PricesComponent() {
     return (

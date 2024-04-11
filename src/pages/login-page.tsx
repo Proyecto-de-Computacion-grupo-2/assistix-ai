@@ -1,6 +1,6 @@
-import './login-page.scss'
+import '../styles/login-page.scss'
 
-import assistixLogo from '../../assets/assistix-ai-logo.png'
+import assistixLogo from './assets/assistix-ai-logo.png'
 
 export default function LoginPage() {
 

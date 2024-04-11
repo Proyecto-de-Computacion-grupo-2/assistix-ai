@@ -1,12 +1,12 @@
 import { Col, Container, Row } from "react-bootstrap";
-import Layout from "../../components/shared-components/layout/layout";
-import PersonalCard from "../../components/player-id-components/personal-card/personal-card.tsx";
-import OtherSection from "../../components/player-id-components/other/other-section.tsx";
-import GameweeksStats from "../../components/player-id-components/gameweeks-stats/gameweek-stats.tsx";
-import PredictionCircle from "../../components/player-id-components/prediction-circle/prediction-circle.tsx";
-import ParlimentDonut from "../../components/player-id-components/parliment-donut/parliment-donut.tsx";
-import PlayerGraph from "../../components/shared-components/player/player-graph.tsx";
-import './player-id.scss';
+import Layout from "../components/shared-components/layout/layout.tsx";
+import PersonalCard from "../components/player-id-components/personal-card/personal-card.tsx";
+import OtherSection from "../components/player-id-components/other/other-section.tsx";
+import GameweeksStats from "../components/player-id-components/gameweeks-stats/gameweek-stats.tsx";
+import PredictionCircle from "../components/player-id-components/prediction-circle/prediction-circle.tsx";
+import ParlimentDonut from "../components/player-id-components/parliment-donut/parliment-donut.tsx";
+import PlayerGraph from "../components/shared-components/player/player-graph.tsx";
+import '../styles/player-id.scss';
 
 const playerData = {
     name: { first: "Lamine", last: "Yamal" },

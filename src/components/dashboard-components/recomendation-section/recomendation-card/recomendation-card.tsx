@@ -1,5 +1,5 @@
 import {Container} from "react-bootstrap";
-import RamanzaniImage from '../../../../assets/40090.png';
+import RamanzaniImage from '../../../../assets/images/40090.png';
 import '../recomendation.scss';
 
 interface RecomendationProps {

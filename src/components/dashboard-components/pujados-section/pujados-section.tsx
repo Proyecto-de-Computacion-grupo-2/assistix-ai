@@ -1,6 +1,6 @@
 import { Container } from "react-bootstrap";
 import PujadosCard from "./pujados-card/pujados-card";
-import '../../../pages/dashboard/dashboard-page.scss'
+import '../../../styles/dashboard-page.scss'
 
 
 export default function BidSection() {

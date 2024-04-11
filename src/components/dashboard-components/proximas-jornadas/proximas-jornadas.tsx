@@ -2,7 +2,7 @@ import { Container } from "react-bootstrap";
 import Carousel from 'react-bootstrap/Carousel';
 import MatchCard from "./next-round-card";
 
-import matchImg from '../../../assets/futbol-2.jfif'
+import matchImg from '../../../assets/images/futbol-2.jfif'
 
 import './card.scss'
 

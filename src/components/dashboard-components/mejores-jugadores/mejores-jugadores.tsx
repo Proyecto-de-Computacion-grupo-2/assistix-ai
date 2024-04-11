@@ -2,9 +2,9 @@ import { Container } from "react-bootstrap";
 import Carousel from 'react-bootstrap/Carousel';
 import BestPlayerCard from "./player-card";
 
-import bestPlayer from "../../../assets/best-player.jfif"
+import bestPlayer from "../../../assets/images/best-player.jfif"
 
-import '../../../pages/dashboard/dashboard-page.scss'
+import '../../../styles/dashboard-page.scss'
 
 const player = {
     "players": [

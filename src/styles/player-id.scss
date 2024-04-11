@@ -6,7 +6,7 @@
   max-height: 40vh;
 }
 
-@import "bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 @include media-breakpoint-up(lg) {
   .personalized-height {

@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import RecomendtionCard from "./recomendation-card/recomendation-card";
 import './recomendation.scss'
 
-import '../../../pages/dashboard/dashboard-page.scss'
+import '../../../styles/dashboard-page.scss'
 
 export default function RecomendationSection() {
 

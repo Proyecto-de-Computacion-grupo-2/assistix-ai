@@ -1,11 +1,12 @@
 import {Routes, Route} from "react-router-dom";
-import Dashboard from './pages/dashboard/dashboard-page.tsx';
-import Assistant from './pages/assistant/assistant.tsx';
-import Market from './pages/market/market.tsx';
-import Player from './pages/player/player.tsx';
-import Settings from './pages/settings/settings.tsx';
-import PlayerId from "./pages/player-id/player-id.tsx";
-import Admin from "./pages/admin/admin-page.tsx";
+import Dashboard from './pages/dashboard-page.tsx';
+import Assistant from './pages/assistant.tsx';
+import Market from './pages/market.tsx';
+import Player from './pages/player.tsx';
+import Settings from './pages/settings.tsx';
+import PlayerId from "./pages/player-id.tsx";
+import Admin from "./pages/admin-page.tsx";
+import Prueba from "./pages/prueba.tsx";
 
 export default function App() {
     return (
@@ -18,6 +19,7 @@ export default function App() {
                 <Route path="/settings" element={<Settings/>}/>
                 <Route path="/player-id" element={<PlayerId/>}/>
                 <Route path="/admin" element={<Admin/>}/>
+                <Route path="/prueba" element={<Prueba/>}/>
             </Routes>
         </>
     )

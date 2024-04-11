@@ -2,7 +2,7 @@ body {
   background-color: #F1FAF8;
 }
 
-@import "bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 @include media-breakpoint-up(xs) {
   .custom-margin {

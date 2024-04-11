@@ -1,5 +1,5 @@
 import PlayerMarket from './player.tsx'
-import player_face_photo from '../../../assets/player-face-example.png';
+import player_face_photo from '../../../assets/images/player-face-example.png';
 import './players-in-market.scss'
 import { Container } from 'react-bootstrap';
 
