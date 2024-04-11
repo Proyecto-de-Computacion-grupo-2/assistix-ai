@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import {useState, useEffect, ReactElement} from 'react';
 import { Col, Container, Row } from "react-bootstrap";
 
 import Header from "../header/header.tsx";
@@ -29,7 +29,7 @@ const teamInfo = {
     points: "748",
 };
 
-export default function Layout({ children }: { children: any }) {
+export default function Layout({ children }: { children: ReactElement }) {
 
     const isTablet = useIsTablet(); // Use the custom hook
 
