@@ -18,10 +18,10 @@ export default function LeagueRanking() {
             <Carousel.Item>
                 <iframe id="sofa-standings-embed-36-52376"
                     src="https://widgets.sofascore.com/es-ES/embed/tournament/36/season/52376/standings/LaLiga?widgetTitle=LaLiga&showCompetitionLogo=true&v=2"
-                    style={{ width: '100%', minHeight: '36vh' }} />
+                    style={{ width: '100%', minHeight: '59vh' }} />
             </Carousel.Item>
             <Carousel.Item>
-                <Container className='d-flex flex-column justify-content-center align-items-center m-0 p-0' style={{ width: '100%', minHeight: '36vh' }}>
+                <Container className='d-flex flex-column justify-content-center align-items-center m-0 p-0' style={{ width: '100%', minHeight: '60vh' }}>
                     <LocalLeague />
                 </Container>
             </Carousel.Item>
