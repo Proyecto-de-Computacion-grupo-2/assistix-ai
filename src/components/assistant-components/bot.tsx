@@ -17,7 +17,7 @@ export default function Chatbot() {
     return (
         <Container className='m-0 p-0 rounded-4' fluid>
             {loading && (
-                <Container className='d-flex justify-content-center align-items-center m-0 p-0 w-100 h-100 bg-white rounded-4'>
+                <Container className='d-flex justify-content-center align-items-center m-0 p-0 w-100 h-100 bg-white rounded-4' fluid>
                     <div className='d-flex'>
                         <h3>Loading chatbot</h3>
                         <Spinner animation="border" role="status" className='ms-2'></Spinner>
