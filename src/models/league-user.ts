@@ -1,39 +1,42 @@
 export class LeagueUser {
-    idUser: number;
+    id_user: number;
     email: string;
     password: string;
-    teamName: string;
-    teamPoints: number;
-    teamAverage: number;
-    teamValue: number;
-    teamPlayers: number;
-    currentBalance: number;
-    futureBalance: number;
-    maximumDebt: number;
+    team_name: string;
+    team_points: number;
+    team_average: number;
+    team_value: number;
+    team_players: number;
+    current_balance: number;
+    future_balance: number;
+    maximum_debt: number;
+    active: boolean;
 
     constructor(
-        idUser: number = 0,
+        id_user: number = 0,
         email: string = "",
         password: string = "",
-        teamName: string = "",
-        teamPoints: number = 0,
-        teamAverage: number = 0,
-        teamValue: number = 0,
-        teamPlayers: number = 0,
-        currentBalance: number = 0,
-        futureBalance: number = 0,
-        maximumDebt: number = 0
+        team_name: string = "",
+        team_points: number = 0,
+        team_average: number = 0.0,
+        team_value: number = 0,
+        team_players: number = 0,
+        current_balance: number = 0,
+        future_balance: number = 0,
+        maximum_debt: number = 0,
+        active: boolean = false
     ) {
-        this.idUser = idUser;
+        this.id_user = id_user;
         this.email = email;
         this.password = password;
-        this.teamName = teamName;
-        this.teamPoints = teamPoints;
-        this.teamAverage = teamAverage;
-        this.teamValue = teamValue;
-        this.teamPlayers = teamPlayers;
-        this.currentBalance = currentBalance;
-        this.futureBalance = futureBalance;
-        this.maximumDebt = maximumDebt;
+        this.team_name = team_name;
+        this.team_points = team_points;
+        this.team_average = team_average;
+        this.team_value = team_value;
+        this.team_players = team_players;
+        this.current_balance = current_balance;
+        this.future_balance = future_balance;
+        this.maximum_debt = maximum_debt;
+        this.active = active;
     }
 }

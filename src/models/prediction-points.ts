@@ -1,21 +1,21 @@
-export class PredictionPoints {
-    idPredictionPoints: number;
-    idMundoDeportivo: number;
+export class PredictionPoint {
+    id_prediction_points: number;
+    id_mundo_deportivo: number;
     gameweek: number;
-    datePrediction: Date;
-    pointPrediction: number;
+    date_prediction: Date;
+    point_prediction: number;
 
     constructor(
-        idPredictionPoints: number = 0,
-        idMundoDeportivo: number = 0,
+        id_prediction_points: number = 0,
+        id_mundo_deportivo: number = 0,
         gameweek: number = 0,
-        datePrediction: Date = new Date(),
-        pointPrediction: number = 0
+        date_prediction: Date = new Date(),
+        point_prediction: number = 0
     ) {
-        this.idPredictionPoints = idPredictionPoints;
-        this.idMundoDeportivo = idMundoDeportivo;
+        this.id_prediction_points = id_prediction_points;
+        this.id_mundo_deportivo = id_mundo_deportivo;
         this.gameweek = gameweek;
-        this.datePrediction = datePrediction;
-        this.pointPrediction = pointPrediction;
+        this.date_prediction = date_prediction;
+        this.point_prediction = point_prediction;
     }
 }

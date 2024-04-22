@@ -1,67 +1,66 @@
-// models/player.ts
 export class Player {
-    idMundoDeportivo: number;
-    idSofaScore: number;
-    idMarca: number;
-    idUser: number;
-    fullName: string;
+    id_mundo_deportivo: number;
+    id_sofa_score: number;
+    id_marca: number;
+    id_user: number;
+    full_name: string;
     position: number;
-    playerValue: number;
-    isInMarket: boolean;
-    sellPrice: number;
-    photoBody: string;
-    photoFace: string;
-    season1516: number;
-    season1617: number;
-    season1718: number;
-    season1819: number;
-    season1920: number;
-    season2021: number;
-    season2122: number;
-    season2223: number;
-    season2324: number;
+    player_value: number;
+    is_in_market: boolean;
+    sell_price: number;
+    photo_body: string;
+    photo_face: string;
+    season_15_16: number;
+    season_16_17: number;
+    season_17_18: number;
+    season_18_19: number;
+    season_19_20: number;
+    season_20_21: number;
+    season_21_22: number;
+    season_22_23: number;
+    season_23_24: number;
 
     constructor(
-        idMundoDeportivo: number = 0,
-        idSofaScore: number = 0,
-        idMarca: number = 0,
-        idUser: number = 0,
-        fullName: string = "",
+        id_mundo_deportivo: number = 0,
+        id_sofa_score: number = 0,
+        id_marca: number = 0,
+        id_user: number = 0,
+        full_name: string = "",
         position: number = 0,
-        playerValue: number = 0,
-        isInMarket: boolean = false,
-        sellPrice: number = 0,
-        photoBody: string = "",
-        photoFace: string = "",
-        season1516: number = 0,
-        season1617: number = 0,
-        season1718: number = 0,
-        season1819: number = 0,
-        season1920: number = 0,
-        season2021: number = 0,
-        season2122: number = 0,
-        season2223: number = 0,
-        season2324: number = 0
+        player_value: number = 0,
+        is_in_market: boolean = false,
+        sell_price: number = 0,
+        photo_body: string = "",
+        photo_face: string = "",
+        season_15_16: number = 0,
+        season_16_17: number = 0,
+        season_17_18: number = 0,
+        season_18_19: number = 0,
+        season_19_20: number = 0,
+        season_20_21: number = 0,
+        season_21_22: number = 0,
+        season_22_23: number = 0,
+        season_23_24: number = 0
     ) {
-        this.idMundoDeportivo = idMundoDeportivo;
-        this.idSofaScore = idSofaScore;
-        this.idMarca = idMarca;
-        this.idUser = idUser;
-        this.fullName = fullName;
+        this.id_mundo_deportivo = id_mundo_deportivo;
+        this.id_sofa_score = id_sofa_score;
+        this.id_marca = id_marca;
+        this.id_user = id_user;
+        this.full_name = full_name;
         this.position = position;
-        this.playerValue = playerValue;
-        this.isInMarket = isInMarket;
-        this.sellPrice = sellPrice;
-        this.photoBody = photoBody;
-        this.photoFace = photoFace;
-        this.season1516 = season1516;
-        this.season1617 = season1617;
-        this.season1718 = season1718;
-        this.season1819 = season1819;
-        this.season1920 = season1920;
-        this.season2021 = season2021;
-        this.season2122 = season2122;
-        this.season2223 = season2223;
-        this.season2324 = season2324;
+        this.player_value = player_value;
+        this.is_in_market = is_in_market;
+        this.sell_price = sell_price;
+        this.photo_body = photo_body;
+        this.photo_face = photo_face;
+        this.season_15_16 = season_15_16;
+        this.season_16_17 = season_16_17;
+        this.season_17_18 = season_17_18;
+        this.season_18_19 = season_18_19;
+        this.season_19_20 = season_19_20;
+        this.season_20_21 = season_20_21;
+        this.season_21_22 = season_21_22;
+        this.season_22_23 = season_22_23;
+        this.season_23_24 = season_23_24;
     }
 }
