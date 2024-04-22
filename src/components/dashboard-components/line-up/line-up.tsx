@@ -204,7 +204,9 @@ const plantillas = [
 export default function LineUp() {
 
     const data = plantillas;
-    const types = ['Plantilla actual', 'Mejor plantilla', 'Max. puntos']
+
+    //TODO: Cambiar mi equipo por un grid de todos los jugadores que hay en la plantilla del usuario
+    const types = ['Mi equipo', 'Mejor plantilla', 'Max. puntos'] //Add mejor plantilla fantasy
 
     const [currentPlantilla, setCurrentPlantilla] = useState(0)
 

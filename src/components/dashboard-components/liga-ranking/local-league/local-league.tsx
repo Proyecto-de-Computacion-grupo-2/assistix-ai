@@ -87,7 +87,7 @@ export default function LocalLeague() {
                 </Col>
             </Row>
             <Container className="flex-grow-1 px-1 scroll-section d-flex flex-column align-items-center"
-                style={{ maxHeight: '24vh' }}>
+                style={{ maxHeight: '58vh' }}>
                 {
                     tablaLocal.table.map((team, index) => {
                         return (

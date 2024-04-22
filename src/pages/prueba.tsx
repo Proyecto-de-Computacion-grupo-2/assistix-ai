@@ -1,13 +1,13 @@
 import Layout from "../components/shared-components/layout/layout.tsx";
+import { useParams } from "react-router-dom";
 import {useEffect, useState} from "react";
 import {Player} from "../models/player.ts";
 import getPlayer from "../services/player-service/player-service.ts";
 import {Container} from "react-bootstrap";
 
-
 export default function Prueba() {
 
-    const [player, setPlayer] = useState<Player>();
+    const { id } = useParams();
 
     useEffect(() => {
         getPlayer(5)
