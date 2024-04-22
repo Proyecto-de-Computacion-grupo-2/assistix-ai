@@ -82,9 +82,9 @@ export default function PlayersGrid() {
     );
 
     return (
-        <Container className='bg-white rounded-4 scrollable-container' fluid>
+        <Container className='bg-white rounded-4' fluid>
             <Row className='gap-4 ms-4 me-4'>
-                <Container fluid className='mt-5 mb-2'>
+                <Container className='mt-5 mb-2' fluid>
                     <Form.Control
                         className='rounded-3 bg-light'
                         type="text"
@@ -93,7 +93,7 @@ export default function PlayersGrid() {
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />
                 </Container>
-                <Container className='d-flex flex-wrap m-0 p-0' fluid>
+                <Container className='d-flex flex-wrap m-0 p-0 justify-content-center' fluid>
                     {
                         filteredPlayers.map((player, index) => (
                             <PlayerCardBody key={index} {...player} />
