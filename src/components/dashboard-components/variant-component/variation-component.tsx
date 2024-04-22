@@ -5,6 +5,7 @@ import RecomendationSection from "../recomendation-section/recomendation";
 import PricesComponent from "../prices-component/prices-component";
 import BidSection from "../pujados-section/pujados-section";
 import StatsComponent from "../stats-component/stats-component";
+import LeagueMatches from "../../league-matches/league-matches";
 
 export function Hola() {
     return <h1>Hola</h1>
@@ -31,11 +32,11 @@ export default function VariationComponent() {
                 setActive(2)
                 break
             case 3:
-                setComponent(<BidSection />)
+                setComponent(<StatsComponent />)
                 setActive(3)
                 break
             case 4:
-                setComponent(<StatsComponent />)
+                setComponent(<LeagueMatches />)
                 setActive(4)
                 break
             default:
@@ -56,8 +57,8 @@ export default function VariationComponent() {
                     <Container className="p-0 m-0 d-flex flex-row justify-content-around" fluid>
                         <div className={style(active === 1)} onClick={() => changeComponent(1)}>Recomendaciones</div>
                         <div className={style(active === 2)} onClick={() => changeComponent(2)}>Precios</div>
-                        <div className={style(active === 3)} onClick={() => changeComponent(3)}>Pujas</div>
-                        <div className={style(active === 4)} onClick={() => changeComponent(4)}>Estadisticas</div>
+                        <div className={style(active === 3)} onClick={() => changeComponent(3)}>Estadisticas</div>
+                        <div className={style(active === 4)} onClick={() => changeComponent(4)}>Prox. Partidos</div>
                     </Container>
                 </Row>
                 {component}

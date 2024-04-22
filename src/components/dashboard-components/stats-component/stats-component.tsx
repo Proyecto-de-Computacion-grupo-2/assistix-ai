@@ -1,6 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
 import LeagueRanking from "../liga-ranking/liga-ranking";
-import NextGameweek from "../proximas-jornadas/proximas-jornadas";
 import BestPlayers from "../mejores-jugadores/mejores-jugadores";
 
 export default function StatsComponent() {
@@ -10,9 +9,6 @@ export default function StatsComponent() {
                 <LeagueRanking />
             </Row>
             <Row className="p-0 m-0 flex-grow-1">
-                <Col className="p-0 m-0">
-                    <NextGameweek />
-                </Col>
                 <Col className="p-0 m-0">
                     <BestPlayers />
                 </Col>

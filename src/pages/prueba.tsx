@@ -1,26 +1,16 @@
 import Layout from "../components/shared-components/layout/layout.tsx";
-import {useEffect, useState} from "react";
-import {Player} from "../models/player.ts";
-import getPlayer from "../services/player-service/player-service.ts";
+import { useParams } from "react-router-dom";
+
 
 
 export default function Prueba() {
 
-    const [player, setPlayer] = useState<Player>();
+    const { id } = useParams();
 
-    useEffect(() => {
-        getPlayer(5)
-            .then(player => {
-                setPlayer(player)
-            })
-            .catch(error => {
-                console.error(error)
-            })
-    }, []);
 
     return (
         <Layout>
-            <p>{player?.name || "Loading..."}</p>
+            <p>Player id: {id}</p>
         </Layout>
     )
 }
