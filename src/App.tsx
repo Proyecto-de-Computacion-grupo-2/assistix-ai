@@ -19,7 +19,7 @@ export default function App() {
                 <Route path="/settings" element={<Settings/>}/>
                 <Route path="/player-id" element={<PlayerId/>}/>
                 <Route path="/admin" element={<Admin/>}/>
-                <Route path="/prueba" element={<Prueba/>}/>
+                <Route path="/prueba/:id" element={<Prueba/>}/>
             </Routes>
         </>
     )
