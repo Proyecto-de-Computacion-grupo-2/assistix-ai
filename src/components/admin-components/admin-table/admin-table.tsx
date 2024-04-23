@@ -1,38 +1,61 @@
 import Table from 'react-bootstrap/Table';
 import {Container, Form} from "react-bootstrap";
-
-const header_table = ["Email", "Equipo", "Liga", "Fecha entrada", "Activo"]
-
-const data_users = [
-    ["ua2c@gmail.com", "UA2C", "PC1", "1/1/1970", <Form><Form.Check checked type="switch" /></Form>],
-    ["ua2c@gmail.com", "UA2C", "PC1", "1/1/1970", <Form><Form.Check checked type="switch" /></Form>],
-    ["ua2c@gmail.com", "UA2C", "PC1", "1/1/1970", <Form><Form.Check checked type="switch" /></Form>],
-    ["ua2c@gmail.com", "UA2C", "PC1", "1/1/1970", <Form><Form.Check checked type="switch" /></Form>],
-    ["ua2c@gmail.com", "UA2C", "PC1", "1/1/1970", <Form><Form.Check checked type="switch" /></Form>],
-    ["ua2c@gmail.com", "UA2C", "PC1", "1/1/1970", <Form><Form.Check checked type="switch" /></Form>],
-    ["ua2c@gmail.com", "UA2C", "PC1", "1/1/1970", <Form><Form.Check checked type="switch" /></Form>],
-    ["ua2c@gmail.com", "UA2C", "PC1", "1/1/1970", <Form><Form.Check checked type="switch" /></Form>],
-    ["ua2c@gmail.com", "UA2C", "PC1", "1/1/1970", <Form><Form.Check checked type="switch" /></Form>],
-    ["ua2c@gmail.com", "UA2C", "PC1", "1/1/1970", <Form><Form.Check checked type="switch" /></Form>]
-]
+import {ChangeEvent, useEffect, useState} from "react";
+import {LeagueUser} from "../../../models/league-user.ts";
+import {getPlayingUsers, changeUserState} from "../../../services/admin-service/admin-service.ts";
 
 export default function AdminTable() {
+
+    const header_table = ["Id usuario", "Email", "Equipo", "Activo"]
+    const [users, setUsers] = useState<LeagueUser[]>([]);
+
+    useEffect(() => {
+        getPlayingUsers()
+            .then(users => {
+                setUsers(users);
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }, []);
+
+    const handleActiveChange = (index: number, event: ChangeEvent<HTMLInputElement>) => {
+        const newUsers = [...users];
+        newUsers[index].active = event.target.checked;
+        setUsers(newUsers);
+
+        changeUserState(newUsers[index].id_user, newUsers[index].active)
+            .then(updatedUser => {
+                console.log('User state updated', updatedUser);
+            })
+            .catch(error => {
+                console.error('Error updating user state', error);
+            });
+    };
+
     return (
         <Container className='bg-white rounded-4 mt-4'>
             <Table hover responsive className='text-center'>
                 <thead>
-                    <tr>
-                        {header_table.map((header, index) => (
-                            <th key={index}>{header}</th>
-                        ))}
-                    </tr>
+                <tr>
+                    {header_table.map((header, index) => (
+                        <th key={index}>{header}</th>
+                    ))}
+                </tr>
                 </thead>
                 <tbody>
-                {data_users.map((data, index) => (
+                {users.map((user, index) => (
                     <tr key={index} className='text-truncate'>
-                        {data.map((data_2, index_2) => (
-                            <td key={index_2}>{data_2}</td>
-                        ))}
+                        <td>{user.id_user}</td>
+                        <td>{user.email}</td>
+                        <td>{user.team_name}</td>
+                        <td>
+                            <Form.Check
+                                type="switch"
+                                checked={user.active}
+                                onChange={event => handleActiveChange(index, event)}
+                            />
+                        </td>
                     </tr>
                 ))}
                 </tbody>
