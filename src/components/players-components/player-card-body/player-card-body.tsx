@@ -4,8 +4,8 @@ import {Player} from "../../../models/player.ts";
 import getPlayers from "../../../services/player-service/players-service.ts";
 import './player-card-body.scss';
 
-function getPosition(position: number): string {
-    switch(position) {
+function getPosition(position: number) {
+    switch (position) {
         case 1:
             return 'PT';
         case 2:
@@ -68,7 +68,8 @@ export default function PlayersGrid() {
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />
                 </Container>
-                <Container className='d-flex flex-wrap m-0 p-0 justify-content-center' fluid>
+                <Container className='d-flex flex-wrap m-0 p-0 justify-content-center '
+                           style={{maxHeight: '78vh', overflowY: 'scroll'}} fluid>
                     {
                         filteredPlayers.map((player, index) => (
                             <PlayerCardBody key={index} {...player} />
