@@ -1,27 +1,8 @@
+import '../../../styles/dashboard-page.scss'
 import { Container } from "react-bootstrap";
 import PointsCard from "./points-card.tsx";
 
-import '../../../styles/dashboard-page.scss'
-import {useEffect, useState} from "react";
-import {Player} from "../../../models/player.ts";
-import {useParams} from "react-router-dom";
-import getPlayer from "../../../services/player-service/player-service.ts";
-
 export default function PredictionComponent() {
-
-    const [player, setPlayer] = useState<Player>();
-    const { id } = useParams();
-
-    useEffect(() => {
-        getPlayer(Number(id))
-            .then(player => {
-                console.log(player); // Log the player data to the console
-                setPlayer(player);
-            })
-            .catch(error => {
-                console.error(error);
-            })
-    }, []);
 
     return (
         <Container className="p-0 m-0 d-flex flex-column" fluid>
