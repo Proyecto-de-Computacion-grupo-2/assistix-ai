@@ -4,6 +4,19 @@ import {Player} from "../../../models/player.ts";
 import getPlayers from "../../../services/player-service/players-service.ts";
 import './player-card-body.scss';
 
+function getPosition(position: number): string {
+    switch(position) {
+        case 1:
+            return 'PT';
+        case 2:
+            return 'DF';
+        case 3:
+            return 'MC';
+        case 4:
+            return 'DL';
+    }
+}
+
 function PlayerCardBody({photo_body, photo_face, full_name, position, player_value, season_23_24}: {
     photo_body: string,
     photo_face: string,
@@ -17,7 +30,7 @@ function PlayerCardBody({photo_body, photo_face, full_name, position, player_val
             <Card.Img className='bg-light rounded-5' variant="top" src={photo_body !== '0' ? photo_body : photo_face}/>
             <Card.Body>
                 <Card.Title className='fw-bold'>{full_name}</Card.Title>
-                <Card.Subtitle><p className='fw-bold'>{position}</p> {player_value}€</Card.Subtitle>
+                <Card.Subtitle><p className='fw-bold'>{getPosition(position)}</p> {player_value}€</Card.Subtitle>
                 <Card.Text>{season_23_24} puntos</Card.Text>
             </Card.Body>
         </Card>
