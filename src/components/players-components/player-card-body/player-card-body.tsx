@@ -30,8 +30,8 @@ function PlayerCardBody({photo_body, photo_face, full_name, position, player_val
             <Card.Img className='bg-light rounded-5' variant="top" src={photo_body !== '0' ? photo_body : photo_face}/>
             <Card.Body>
                 <Card.Title className='fw-bold'>{full_name}</Card.Title>
-                <Card.Subtitle><p className='fw-bold'>{getPosition(position)}</p> {player_value}€</Card.Subtitle>
-                <Card.Text>{season_23_24} puntos</Card.Text>
+                <Card.Subtitle className='fw-bold'><p>{getPosition(position)}</p> {player_value.toLocaleString('de-DE')} €</Card.Subtitle>
+                <Card.Text className='fw-bold'>{season_23_24} puntos</Card.Text>
             </Card.Body>
         </Card>
     );
