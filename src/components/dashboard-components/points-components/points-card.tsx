@@ -7,8 +7,8 @@ interface PlayerDataProps {
 
 function PlayerData({label, value}: PlayerDataProps) {
     return (
-        <div className='d-flex flex-column align-items-center ms-3 me-2 mt-1'>
-            <p className='mb-1 fw-bold bg-dark rounded-2 text-white p-1'>{label}</p>
+        <div className='d-flex flex-column align-items-center ms-1 me-2 mt-1'>
+            <p className='fw-bold mb-1 bg-dark rounded-2 text-white p-1'>{label}</p>
             <p className='fw-bold bg-dark rounded-2 text-white p-2'>{value}</p>
         </div>
     )
