@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 import {Col, Container, Row} from "react-bootstrap";
 import {Player} from "../models/player.ts";
 import {Game} from "../models/game.ts";
-import getPlayer from "../services/player-service/player-service.ts";
+import {getPlayer, getPriceVariation} from "../services/player-service/player-service.ts";
 import {getGames} from "../services/game-service/game-service.ts";
 import Layout from "../components/shared-components/layout/layout.tsx";
 import PersonalCard from "../components/player-id-components/personal-card/personal-card.tsx";
@@ -13,6 +13,7 @@ import PredictionCircle from "../components/player-id-components/prediction-circ
 import ParlimentDonut from "../components/player-id-components/parliment-donut/parliment-donut.tsx";
 import PlayerGraph from "../components/shared-components/player/player-graph.tsx";
 import '../styles/player-id.scss';
+import {PriceVariation} from "../models/price-variation.ts";
 
 export default function PlayerId() {
 
@@ -35,6 +36,19 @@ export default function PlayerId() {
         getGames(Number(id))
             .then(games => {
                 setGamesData(games);
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    },);
+
+    const [priceData, setPriceData] = useState<PriceVariation[]>([{} as PriceVariation]);
+
+    useEffect(() => {
+        getPriceVariation(Number(id))
+            .then(priceVariation => {
+                setPriceData(priceVariation);
+                console.log('priceVariation', priceVariation)
             })
             .catch(error => {
                 console.error(error);
@@ -77,7 +91,7 @@ export default function PlayerId() {
                     </Col>
                     <Col lg={6} className="d-flex flex-column col-2-padding-personalized h-100">
                         <Row className="flex-grow-1 bg-white rounded-4 m-0 p-0">
-                            <PlayerGraph/>
+                            <PlayerGraph price_data={priceData}/>
                         </Row>
                         <Row className="flex-grow-1 m-0 p-0 pt-1" style={{maxHeight: "50vh"}}>
                             <GameweeksStats games={gamesData}/>
