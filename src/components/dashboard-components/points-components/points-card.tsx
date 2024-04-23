@@ -14,7 +14,7 @@ function PlayerData({label, value}: PlayerDataProps) {
     )
 }
 
-export default function PointsCard() {
+export default function PointsCard({ full_name }: { full_name: string }) {
 
     return (
         <div
@@ -27,7 +27,7 @@ export default function PointsCard() {
                          style={{height: '50px', width: '50px'}}/>
                 </div>
                 <div className="d-flex flex-column justify-content-around">
-                    <strong>Ramanzani</strong>
+                    <strong>{full_name}</strong>
                     <div className="d-flex flex-row gap-1">
                         <p className='fw-medium'>12.000.000</p>
                     </div>

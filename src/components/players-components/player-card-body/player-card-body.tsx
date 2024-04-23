@@ -88,7 +88,7 @@ export default function PlayersGrid() {
                     <Form.Control
                         className='rounded-3 bg-light'
                         type="text"
-                        placeholder="Busacr a un jugador..."
+                        placeholder="Buscar a un jugador..."
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />

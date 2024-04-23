@@ -15,7 +15,7 @@ function PlayerData({label, value}: PlayerDataProps) {
     )
 }
 
-export default function PriceChangeCard({ up }: { up: boolean }) {
+export default function PriceChangeCard({ up, full_name }: { up: boolean, full_name: string }) {
 
     return (
         <div
@@ -27,7 +27,7 @@ export default function PriceChangeCard({ up }: { up: boolean }) {
                     <img src={Ramanzani} alt="" style={{height: '50px', width: '50px'}}/>
                 </div>
                 <div className="d-flex flex-column justify-content-around">
-                    <strong>Ramanzani</strong>
+                    <strong>{full_name}</strong>
                     <p>12.000.000</p>
                 </div>
             </div>
