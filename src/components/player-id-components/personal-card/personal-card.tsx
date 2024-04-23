@@ -1,7 +1,13 @@
 import {Col, Container, Row} from "react-bootstrap";
 import './personal-card.scss';
+import {Player} from "../../../models/player.ts";
 
-export default function PersonalCard({player}) {
+interface PersonalCardProps {
+    player: Player;
+}
+
+
+export default function PersonalCard({player}: PersonalCardProps) {
     return (
         <Container className="bg-white rounded-4 h-100 p-2 d-flex flex-column personal-card" fluid>
             <p className="text-secondary fw-bold p-2">Datos personales</p>

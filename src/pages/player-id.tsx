@@ -2,7 +2,9 @@ import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {Col, Container, Row} from "react-bootstrap";
 import {Player} from "../models/player.ts";
+import {Game} from "../models/game.ts";
 import getPlayer from "../services/player-service/player-service.ts";
+import {getGames} from "../services/game-service/game-service.ts";
 import Layout from "../components/shared-components/layout/layout.tsx";
 import PersonalCard from "../components/player-id-components/personal-card/personal-card.tsx";
 import OtherSection from "../components/player-id-components/other/other-section.tsx";
@@ -14,7 +16,7 @@ import '../styles/player-id.scss';
 
 export default function PlayerId() {
 
-    const [playerData, setPlayerData] = useState<Player>();
+    const [playerData, setPlayerData] = useState<Player>({} as Player);
     const {id} = useParams();
 
     useEffect(() => {
@@ -25,7 +27,19 @@ export default function PlayerId() {
             .catch(error => {
                 console.error(error);
             })
-    }, [playerData]);
+    },);
+
+    const [gamesData, setGamesData] = useState<Game[]>([{} as Game]);
+
+    useEffect(() => {
+        getGames(Number(id))
+            .then(games => {
+                setGamesData(games);
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    },);
 
     return (
         <Layout>
@@ -66,7 +80,7 @@ export default function PlayerId() {
                             <PlayerGraph/>
                         </Row>
                         <Row className="flex-grow-1 m-0 p-0 pt-1" style={{maxHeight: "50vh"}}>
-                            <GameweeksStats/>
+                            <GameweeksStats games={gamesData}/>
                         </Row>
                     </Col>
                 </Row>
