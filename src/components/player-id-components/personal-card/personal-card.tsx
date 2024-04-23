@@ -1,46 +1,28 @@
 import {Col, Container, Row} from "react-bootstrap";
 import './personal-card.scss';
 
-interface PlayerInfo {
-    playerImageUrl: string;
-    name: {
-        first: string;
-        last: string;
-    };
-    position: string;
-    owner: string;
-    teamImageUrl: string;
-    teamName: string;
-}
-
-interface PersonalCardProps {
-    playerInfo: PlayerInfo;
-}
-
-export default function PersonalCard({playerInfo}:PersonalCardProps) {
+export default function PersonalCard({player}) {
     return (
         <Container className="bg-white rounded-4 h-100 p-2 d-flex flex-column personal-card" fluid>
             <p className="text-secondary fw-bold p-2">Datos personales</p>
             <Row className="flex-grow-1">
                 <Col xs={4}>
-                    <img src={playerInfo.playerImageUrl} width={180}></img>
+                    <img src={player.photo_body} width={180}></img>
                 </Col>
                 <Col xs={8} className="d-flex flex-column">
-                    <p className="text-secondary fw-bold">{playerInfo.name.first}</p>
-                    <p className="fw-bold fs-3">{playerInfo.name.last}</p>
+                    <p className="fw-bold fs-3">{player.full_name}</p>
                     <Container className="d-flex flex-column p-0 m-0 justify-content-around flex-grow-1">
                         <Container className="d-flex flex-row p-0 m-0 gap-2">
                             <p className="fw-bold text-secondary">Posición:</p>
-                            <p className='fw-bold'>{playerInfo.position}</p>
+                            <p className='fw-bold'>{player.position}</p>
                         </Container>
                         <Container className="d-flex flex-row p-0 m-0 gap-2">
                             <p className="fw-bold text-secondary">Propietario:</p>
-                            <p className='fw-bold'>{playerInfo.owner}</p>
+                            <p className='fw-bold'>Hola</p>
                         </Container>
                         <Container className="d-flex flex-row p-0 m-0 gap-2">
                             <p className="fw-bold text-secondary">Equipo:</p>
-                            <img src={playerInfo.teamImageUrl} width={20} height={20}></img>
-                            <p className='fw-bold'>{playerInfo.teamName}</p>
+                            <img src={player.photo_body} width={20} height={20}></img>
                         </Container>
                     </Container>
                 </Col>
