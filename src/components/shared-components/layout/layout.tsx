@@ -53,7 +53,7 @@ export default function Layout({ children }: { children: ReactElement }) {
                         )}
                         {isTablet && (
                             <Row className="p-0 m-0">
-                                <SideBarMobile />
+                                <SideBarMobile teamInfo={teamData} />
                             </Row>
                         )}
                         <Row className="p-0 m-0 flex-grow-1">

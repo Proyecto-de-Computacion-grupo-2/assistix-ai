@@ -3,7 +3,7 @@ import {Container,Button,Offcanvas} from "react-bootstrap";
 import SideBarNavMoney from "./side-bar-nav-money.tsx";
 import logo from '../../../assets/images/misterLogo.png'
 
-export default function SideBarMobile() {
+export default function SideBarMobile({teamInfo}) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -24,7 +24,7 @@ export default function SideBarMobile() {
             </div>
             <Offcanvas show={show} onHide={handleClose}>
                 <Offcanvas.Header closeButton></Offcanvas.Header>
-                <Offcanvas.Body><SideBarNavMoney/></Offcanvas.Body>
+                <Offcanvas.Body><SideBarNavMoney teamInfo={teamInfo}/></Offcanvas.Body>
             </Offcanvas>
         </Container>
     )
