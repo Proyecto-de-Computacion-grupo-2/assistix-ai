@@ -34,7 +34,7 @@ export default function AdminTable() {
     };
 
     return (
-        <Container className='bg-white rounded-4 mt-4'>
+        <Container className='bg-white rounded-4 mt-4' style={{maxHeight: '90vh', overflowY: 'scroll'}} fluid>
             <Table hover responsive className='text-center'>
                 <thead>
                 <tr>
