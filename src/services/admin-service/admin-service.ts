@@ -13,8 +13,8 @@ export async function getPlayingUsers(): Promise<LeagueUser[]> {
         })
 }
 
-export async function changeUserState($id: number, $active: boolean): Promise<LeagueUser[]> {
-    return axios.get<LeagueUser[]>(`${import.meta.env.VITE_API_URL}admin/${$id}/${$active}`)
+export async function changeUserState(id: number, active: boolean): Promise<LeagueUser[]> {
+    return axios.get<LeagueUser[]>(`${import.meta.env.VITE_API_URL}admin/${id}/${active}`)
         .then(
             response => {
                 console.log('League user state changed', response.data);
@@ -22,5 +22,16 @@ export async function changeUserState($id: number, $active: boolean): Promise<Le
             }).catch(error => {
             console.error('Error fetching users', error);
             return [];
+        })
+}
+
+export async function getUserMoneyDetails(id: number): Promise<LeagueUser> {
+    return axios.get<LeagueUser>(`${import.meta.env.VITE_API_URL}users/${id}`)
+        .then(
+            response => {
+                return response.data;
+            }).catch(error => {
+            console.error('Error fetching user', error);
+            return new LeagueUser();
         })
 }

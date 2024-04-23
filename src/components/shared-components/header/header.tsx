@@ -4,8 +4,7 @@ import user_logo from '../../../assets/images/user-logo.png';
 import clock from '../../../assets/images/clock.svg';
 import './header.scss'
 
-
-export default function Header({ teamInfo }: { teamInfo: any }) {
+export default function Header({ teamInfo }) {
     return (
         <Navbar className="header rounded-4">
             <Container fluid>
@@ -15,7 +14,7 @@ export default function Header({ teamInfo }: { teamInfo: any }) {
                             <p>Próxima jornada</p>
                             <div className='d-flex align-items-center'>
                                 <img className='me-1' src={clock} alt='Clock icon'/>
-                                <p className='bold'>{teamInfo.next_gameweek}</p>
+                                <p className='bold'>20</p>
                             </div>
                         </div>
                     </Col>
@@ -39,10 +38,10 @@ export default function Header({ teamInfo }: { teamInfo: any }) {
                     </Col>
                     <Col className="d-flex align-items-center">
                         <div>
-                            <p className='bold'>{teamInfo.name}</p>
+                            <p className='bold'>{teamInfo.team_name}</p>
                             <div className="d-flex">
                                 <img src={star_icon} alt='Star icon'/>
-                                <span className='ms-1 bold'>{teamInfo.points}</span>
+                                <span className='ms-1 bold'>{teamInfo.team_points}</span>
                             </div>
                         </div>
                         <img src={user_logo} alt='User logo' className="ms-2" />

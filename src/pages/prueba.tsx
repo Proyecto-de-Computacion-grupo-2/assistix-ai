@@ -14,7 +14,7 @@ export default function Prueba() {
     useEffect(() => {
         getPlayer(Number(id))
             .then(player => {
-                console.log(player); // Log the player data to the console
+                console.log(player);
                 setPlayer(player);
             })
             .catch(error => {

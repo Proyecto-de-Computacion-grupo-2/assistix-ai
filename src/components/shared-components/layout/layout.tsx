@@ -1,9 +1,10 @@
 import {useState, useEffect, ReactElement} from 'react';
 import { Col, Container, Row } from "react-bootstrap";
-
 import Header from "../header/header.tsx";
 import SideBar from "../side_bar/side-bar.tsx";
 import SideBarMobile from "../side_bar/side-bar-mobile.tsx";
+import {LeagueUser} from "../../../models/league-user.ts";
+import {getUserMoneyDetails} from "../../../services/admin-service/admin-service.ts";
 
 function useIsTablet() {
     const [isTablet, setIsTablet] = useState(window.innerWidth <= 1199);
@@ -20,18 +21,20 @@ function useIsTablet() {
     return isTablet;
 }
 
-const teamInfo = {
-    name: "UA2C",
-    next_gameweek: "17:30:59",
-    current_balance: "17560860",
-    future_balance: "17560860",
-    maximum_debt: "42311110",
-    points: "748",
-};
-
 export default function Layout({ children }: { children: ReactElement }) {
 
-    const isTablet = useIsTablet(); // Use the custom hook
+    const isTablet = useIsTablet();
+    const [teamData,setTeamData] = useState<LeagueUser>( {} as LeagueUser);
+
+    useEffect(() => {
+        getUserMoneyDetails(12705845)
+            .then(teamData => {
+                setTeamData(teamData);
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }, []);
 
     return (
         <Container className="min-vh-100 m-0 p-2" fluid>
@@ -45,7 +48,7 @@ export default function Layout({ children }: { children: ReactElement }) {
                     <Container className="h-100 m-0 p-0 rounded-4 d-flex flex-column gap-2" fluid>
                         {!isTablet && (
                             <Row className="p-0 m-0">
-                                <Header teamInfo={teamInfo} />
+                                <Header teamInfo={teamData} />
                             </Row>
                         )}
                         {isTablet && (
