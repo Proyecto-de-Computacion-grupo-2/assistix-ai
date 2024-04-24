@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {Player, PlayerIdInformation} from '../../models/player';
+import {PlayerIdInformation} from '../../models/player';
 import {PriceVariation} from "../../models/price-variation.ts";
 
 export async function getPlayer(id: number): Promise<PlayerIdInformation> {
@@ -9,7 +9,7 @@ export async function getPlayer(id: number): Promise<PlayerIdInformation> {
                 return response.data;
             }).catch(error => {
             console.error('Error fetching player', error);
-            return new Player();
+            return null;
         })
 }
 
