@@ -8,9 +8,9 @@ export async function getPlayers(): Promise<Player[]> {
             response => {
                 return response.data;
             }).catch(error => {
-            console.error('Error fetching players', error);
-            return [];
-        })
+                console.error('Error fetching players', error);
+                return [];
+            })
 }
 
 export async function getPlayersWithPointPrediction(): Promise<PlayerWithPointPrediction[]> {
@@ -19,9 +19,9 @@ export async function getPlayersWithPointPrediction(): Promise<PlayerWithPointPr
             response => {
                 return response.data;
             }).catch(error => {
-            console.error('Error fetching players with point prediction', error);
-            return [];
-        })
+                console.error('Error fetching players with point prediction', error);
+                return [];
+            })
 }
 
 export async function getPlayersWithPricePrediction(): Promise<PlayerWithPricePrediction[]> {

@@ -242,28 +242,54 @@ export default function LineUp() {
                         {currentPlantilla === types.length - 1 ? types[0] : types[currentPlantilla + 1]}
                     </p>
                 </Container>
-                <Container className='futbol-campo rounded-4  custom-line-up shadow-lg flex-grow-1' fluid>
-                    <Container className='d-flex justify-content-center flex-wrap p-0 m-0' fluid>
-                        {data[currentPlantilla].attack.map((player, index) => {
-                            return <PlayerCard key={index} player={player} />
-                        })
-                        }
-                    </Container>
-                    <Container className='d-flex  justify-content-center flex-wrap p-0 m-0' fluid>
-                        {data[currentPlantilla].midfield.map((player, index) => {
-                            return <PlayerCard key={index} player={player} />
-                        })}
-                    </Container>
-                    <Container className='d-flex justify-content-center flex-wrap p-0 m-0' fluid>
-                        {data[currentPlantilla].defense.map((player, index) => {
-                            return <PlayerCard key={index} player={player} />
-                        })}
-                    </Container>
-                    <Container className='d-flex  justify-content-center flex-wrap p-0 m-0' fluid>
-                        <PlayerCard player={data[currentPlantilla].goalkeeper} />
-                    </Container>
-                    <BoxInfo info={formation} icon={<RightArrowIcon fill='black' />} bottom='10px' left='5px' />
-                    <BoxInfo info='93.5 M' icon={<RightArrowIcon fill='black' />} bottom='10px' right='5px' />
+                <Container className='futbol-campo rounded-4 shadow-lg flex-grow-1' fluid>
+                    {
+                        currentPlantilla === 0 ?
+                            <Container className='d-flex flex-wrap justify-content-around h-100 flex-grow-1' fluid>
+                                {
+                                    <PlayerCard player={data[currentPlantilla].goalkeeper} />
+                                }{
+                                    data[currentPlantilla].defense.map((p, index) => {
+                                        return <PlayerCard key={index} player={p} />
+                                    })
+                                }
+                                {
+                                    data[currentPlantilla].midfield.map((p, index) => {
+                                        return <PlayerCard key={index} player={p} />
+                                    })
+                                }
+                                {
+                                    data[currentPlantilla].attack.map((p, index) => {
+                                        return <PlayerCard key={index} player={p} />
+                                    })
+                                }
+                            </Container>
+                            :
+                            <Container className='custom-line-up  flex-grow-1'>
+                                <Container className='d-flex justify-content-center flex-wrap p-0 m-0' fluid>
+                                    {data[currentPlantilla].attack.map((player, index) => {
+                                        return <PlayerCard key={index} player={player} />
+                                    })
+                                    }
+                                </Container>
+                                <Container className='d-flex  justify-content-center flex-wrap p-0 m-0' fluid>
+                                    {data[currentPlantilla].midfield.map((player, index) => {
+                                        return <PlayerCard key={index} player={player} />
+                                    })}
+                                </Container>
+                                <Container className='d-flex justify-content-center flex-wrap p-0 m-0' fluid>
+                                    {data[currentPlantilla].defense.map((player, index) => {
+                                        return <PlayerCard key={index} player={player} />
+                                    })}
+                                </Container>
+                                <Container className='d-flex  justify-content-center flex-wrap p-0 m-0' fluid>
+                                    <PlayerCard player={data[currentPlantilla].goalkeeper} />
+                                </Container>
+                                <BoxInfo info={formation} icon={<RightArrowIcon fill='black' />} bottom='10px' left='5px' />
+                                <BoxInfo info='93.5 M' icon={<RightArrowIcon fill='black' />} bottom='10px' right='5px' />
+                            </Container>
+                    }
+
                 </Container>
                 <Container className='d-flex justify-content-between align-items-center mt-2' fluid>
                     <p className='fs-4 fw-medium w-50'>17 Jugadores</p>
