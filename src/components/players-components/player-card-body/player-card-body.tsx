@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'; // Step 1
 import {Card, Row, Container, Form} from 'react-bootstrap';
 import {Player} from "../../../models/player.ts";
-import getPlayers from "../../../services/player-service/players-service.ts";
+import {getPlayers} from "../../../services/player-service/players-service.ts";
 import './player-card-body.scss';
 
 function getPosition(position: number) {

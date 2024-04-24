@@ -1,4 +1,3 @@
-import {ChatBotIcon} from "../icons/icons.tsx";
 import {Container} from "react-bootstrap";
 import {Player} from "../../../models/player.ts";
 
