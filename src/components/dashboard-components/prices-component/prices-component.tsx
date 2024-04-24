@@ -1,5 +1,5 @@
 import {Container, Form} from "react-bootstrap";
-import PriceChangeCard from "./price-card/price-card";
+import PriceChangeCard from "./price-card.tsx";
 
 import '../../../styles/dashboard-page.scss'
 import {useState} from "react";
