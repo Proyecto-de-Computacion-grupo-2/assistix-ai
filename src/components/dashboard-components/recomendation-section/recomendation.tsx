@@ -1,13 +1,30 @@
-import { Container } from "react-bootstrap";
-//import ChangeRecomendationCard from "./recomendation-card/change-recomendation-card";
-import RecomendtionCard from "./recomendation-card/recomendation-card";
+import {Container} from "react-bootstrap";
 import './recomendation.scss'
-
 import '../../../styles/dashboard-page.scss'
+import {useEffect, useState} from "react";
+import {UserRecommendations} from "../../../models/player.ts";
+import {getPlayerRecommendations,} from "../../../services/player-service/players-service.ts";
+import PlayerFaceCard from "../../shared-components/player/player-face-card.tsx";
 
 export default function RecomendationSection() {
+    const [recommendationsData, setRecommendationsData] = useState<UserRecommendations[]>([]);
 
-    const recomendations = true;
+    useEffect(() => {
+        getPlayerRecommendations(Number(12705845))
+            .then(recommendations => {
+                setRecommendationsData(recommendations);
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }, []);
+
+    let no_recommendations = true;
+    {
+        if (recommendationsData.length === 0) {
+            no_recommendations = false;
+        }
+    }
 
     return (
         <Container className="p-0 m-0 d-flex flex-column" fluid>
@@ -15,23 +32,15 @@ export default function RecomendationSection() {
                 <strong className="text-secondary">Recomendaciones Assistix AI</strong>
             </Container>
             {
-                recomendations ?
-                    <Container className="flex-grow-1 px-1 scroll-section" style={{ maxHeight: '78vh' }} fluid>
-                        <RecomendtionCard />
-                        <RecomendtionCard />
-                        <RecomendtionCard />
-                        <RecomendtionCard />
-                        <RecomendtionCard />
-                        <RecomendtionCard />
-                        <RecomendtionCard />
-                        <RecomendtionCard />
-                        <RecomendtionCard />
-                        <RecomendtionCard />
-                        <RecomendtionCard />
-                        <RecomendtionCard />
-                        <RecomendtionCard />
-                        <RecomendtionCard />
-                        <RecomendtionCard />
+                no_recommendations ?
+                    <Container className="flex-grow-1 px-1 scroll-section" style={{maxHeight: '78vh'}} fluid>
+                        {recommendationsData.map((player, index) => (
+                            <PlayerFaceCard key={index} player={player}>
+                                <Container className="d-flex flex-column  align-items-center p-0 m-0">
+                                    <p className='fw-medium me-1'>{player.operation_type}</p>
+                                </Container>
+                            </PlayerFaceCard>
+                        ))}
                     </Container>
 
                     :
@@ -40,7 +49,6 @@ export default function RecomendationSection() {
                         <p className="text-secondary">No hay recomendaciones</p>
                     </Container>
             }
-
         </Container>
     )
 }

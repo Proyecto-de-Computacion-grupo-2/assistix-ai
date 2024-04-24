@@ -64,3 +64,17 @@ export class Player {
         this.season_23_24 = season_23_24;
     }
 }
+
+export interface PlayerWithPointPrediction extends Player {
+    point_prediction: number;
+}
+
+export interface PlayerWithPricePrediction extends Player {
+    latest_prediction: number;
+    percentage_change: number;
+}
+
+export interface UserRecommendations extends Player {
+    operation_type: string;
+    expected_value_percentage: number;
+}
