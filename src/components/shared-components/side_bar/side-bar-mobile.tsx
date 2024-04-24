@@ -2,8 +2,13 @@ import {useState} from 'react';
 import {Container,Button,Offcanvas} from "react-bootstrap";
 import SideBarNavMoney from "./side-bar-nav-money.tsx";
 import logo from '../../../assets/images/misterLogo.png'
+import {LeagueUser} from "../../../models/league-user.ts";
 
-export default function SideBarMobile() {
+interface UserDetailsProps {
+    teamInfo: LeagueUser;
+}
+
+export default function SideBarMobile({teamInfo}: UserDetailsProps) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
@@ -24,7 +29,7 @@ export default function SideBarMobile() {
             </div>
             <Offcanvas show={show} onHide={handleClose}>
                 <Offcanvas.Header closeButton></Offcanvas.Header>
-                <Offcanvas.Body><SideBarNavMoney/></Offcanvas.Body>
+                <Offcanvas.Body><SideBarNavMoney teamInfo={teamInfo}/></Offcanvas.Body>
             </Offcanvas>
         </Container>
     )

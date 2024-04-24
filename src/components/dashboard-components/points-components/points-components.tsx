@@ -41,20 +41,6 @@ export default function PredictionComponent() {
         card.props.full_name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-    const [player, setPlayer] = useState<Player>();
-    const { id } = useParams();
-
-    useEffect(() => {
-        getPlayer(Number(id))
-            .then(player => {
-                console.log(player); // Log the player data to the console
-                setPlayer(player);
-            })
-            .catch(error => {
-                console.error(error);
-            })
-    }, []);
-
     return (
         <Container className="p-0 m-0 d-flex flex-column" fluid>
             <Container className="py-3 border-bottom m-0" fluid>

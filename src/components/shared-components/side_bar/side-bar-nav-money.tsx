@@ -2,22 +2,16 @@ import {Container} from "react-bootstrap";
 import SideBarComponent from "./side-bar-links.tsx";
 import clock from "../../../assets/images/clock.svg";
 import star_icon from "../../../assets/images/star.svg";
-import user_logo from '../../../assets/images/user-logo.png';
 import './side_bar.scss'
 import {NavLink} from "react-router-dom";
 import logo from "../../../assets/images/assistix-ai-logo.png";
+import {LeagueUser} from "../../../models/league-user.ts";
 
+interface UserDetailsProps {
+    teamInfo: LeagueUser;
+}
 
-function UserDetails() {
-
-    const teamInfo = {
-        name: "UA2C",
-        next_gameweek: "17:30:59",
-        current_balance: "17560860",
-        future_balance: "17560860",
-        maximum_debt: "42311110",
-        points: "748",
-    };
+function UserDetails({teamInfo} : UserDetailsProps) {
 
     return (
         <div>
@@ -26,33 +20,32 @@ function UserDetails() {
                     <p>Próxima jornada</p>
                     <div className='d-flex align-items-center'>
                         <img className='me-1' src={clock} alt='Clock icon'/>
-                        <p className='bold'>{teamInfo.next_gameweek}</p>
+                        <p className='fw-bold'>20</p>
                     </div>
                 </div>
             </div>
             <div className="mb-2">
                 <div>
                     <p>Saldo Actual</p>
-                    <span className='bold'>{teamInfo.current_balance} €</span>
+                    <span className='fw-bold'>{typeof teamInfo.current_balance === 'number' ? teamInfo.current_balance.toLocaleString('de-DE') : '0'} €</span>
                 </div>
             </div>
             <div className='mb-2'>
                 <div className="">
                     <p>Saldo futuro</p>
-                    <span className='bold'>{teamInfo.future_balance} €</span>
+                    <span className='fw-bold'>{typeof teamInfo.future_balance === 'number' ? teamInfo.future_balance.toLocaleString('de-DE') : '0'} €</span>
                 </div>
             </div>
             <div className='mb-2'>
                 <div>
                     <p>Deuda máxima</p>
-                    <span className='bold'>{teamInfo.maximum_debt} €</span>
+                    <span className='fw-bold'>{typeof teamInfo.maximum_debt === 'number' ? teamInfo.maximum_debt.toLocaleString('de-DE') : '0'} €</span>
                 </div>
             </div>
             <div className="d-flex mb-2 align-items-center">
-                <img className='me-1' style={{width: '40px', height: '40px'}} src={user_logo} alt='User icon'/>
-                <p className='bold me-2'>{teamInfo.name}</p>
+                <p className='fw-bold me-2'>{teamInfo.team_name}</p>
                 <img src={star_icon} alt='Star icon'/>
-                <span className='ms-1'>{teamInfo.points}</span>
+                <span className='fw-bold ms-1'>{teamInfo.team_points}</span>
             </div>
         </div>
     )
@@ -68,13 +61,13 @@ function AppName() {
     )
 }
 
-export default function SideBarNavMoney() {
+export default function SideBarNavMoney({teamInfo} : UserDetailsProps) {
 
     return (
         <Container className="h-100 m-0 p-1 bg-white rounded-4 d-flex flex-column justify-content-evenly" fluid>
             <AppName/>
             <SideBarComponent/>
-            <UserDetails/>
+            <UserDetails teamInfo={teamInfo}/>
         </Container>
     )
 }
