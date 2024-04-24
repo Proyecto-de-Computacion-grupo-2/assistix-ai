@@ -15,14 +15,13 @@ import '../styles/player-id.scss';
 import {PriceVariation} from "../models/price-variation.ts";
 import {getPlayerAbsences} from "../services/absence-service/admin-service.ts";
 import {Absence} from "../models/absence.ts";
-import AbsenceSection from "../components/player-id-components/absence/other-section.tsx";
+import AbsenceSection from "../components/player-id-components/absence/absence-section.tsx";
 
 export default function PlayerId() {
 
     const [playerData, setPlayerData] = useState<PlayerIdInformation>({} as PlayerIdInformation);
     const [predictionData, setPredictionData] = useState<PlayerLastPrediction>({} as PlayerLastPrediction);
     const [absencesData, setAbsencesData] = useState<Absence[]>([{} as Absence]);
-
     const [gamesData, setGamesData] = useState<Game[]>([{} as Game]);
     const [priceData, setPriceData] = useState<PriceVariation[]>([{} as PriceVariation]);
 
