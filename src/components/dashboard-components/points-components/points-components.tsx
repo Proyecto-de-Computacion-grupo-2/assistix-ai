@@ -1,10 +1,10 @@
 import {Container, Form} from "react-bootstrap";
 import PlayerFaceCard from "../../shared-components/player/player-face-card.tsx";
-import '../../../styles/dashboard-page.scss'
 import {useEffect, useState} from "react";
 import {getPlayersWithPointPrediction} from "../../../services/player-service/players-service.ts";
 import {ChatBotIcon} from "../../shared-components/icons/icons.tsx";
-import {PlayerWithPointPrediction} from "../../../models/player-with-prediction.ts";
+import {PlayerWithPointPrediction} from "../../../models/player.ts";
+import '../../../styles/dashboard-page.scss'
 
 export default function PredictionComponent() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -41,8 +41,8 @@ export default function PredictionComponent() {
             <Container className="flex-grow-1 px-1 scroll-section" style={{ maxHeight: '78vh' }}>
                 {filteredPlayers.map((player, index) => (
                     <PlayerFaceCard key={index} player={player}>
-                        <p className='fw-medium me-1'>{player.point_prediction}</p>
-                        <ChatBotIcon fill='' className=''/>
+                        <p className='fw-medium me-1' style={{color:'blue'}}>{player.point_prediction}</p>
+                        <ChatBotIcon fill='blue' className=''/>
                     </PlayerFaceCard>
                 ))}
             </Container>

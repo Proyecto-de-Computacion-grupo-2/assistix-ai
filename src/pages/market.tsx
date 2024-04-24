@@ -2,7 +2,7 @@ import {Row, Col, Container} from 'react-bootstrap';
 import PlayerGraph from "../components/shared-components/player/player-graph.tsx";
 import Layout from '../components/shared-components/layout/layout.tsx'
 import PlayerInMarket from "../components/market-components/market/PlayerInMarket.tsx";
-import RecomendationSection from '../components/dashboard-components/recomendation-section/recomendation.tsx';
+import RecomendationSection from '../components/shared-components/recomendation-section/recomendation.tsx';
 import '../styles/market.scss'
 
 export default function Market() {

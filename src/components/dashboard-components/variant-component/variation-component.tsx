@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import '../../../styles/index.scss'
-import RecomendationSection from "../recomendation-section/recomendation";
+import RecomendationSection from "../../shared-components/recomendation-section/recomendation";
 import PricesComponent from "../prices-component/prices-component";
 import StatsComponent from "../stats-component/stats-component";
 import PredictionComponent from "../points-components/points-components.tsx";

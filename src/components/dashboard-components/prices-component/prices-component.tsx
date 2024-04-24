@@ -3,7 +3,7 @@ import {Container, Form} from "react-bootstrap";
 import '../../../styles/dashboard-page.scss'
 import {TrendingDownIcon, TrendingUpIcon} from "../../shared-components/icons/icons.tsx";
 import PlayerFaceCard from "../../shared-components/player/player-face-card.tsx";
-import {PlayerWithPricePrediction} from "../../../models/player-with-prediction.ts";
+import {PlayerWithPricePrediction} from "../../../models/player.ts";
 import {getPlayersWithPricePrediction} from "../../../services/player-service/players-service.ts";
 
 export default function PricesComponent() {
