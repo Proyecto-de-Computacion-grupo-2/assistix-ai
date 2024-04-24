@@ -7,19 +7,23 @@ import {getPlayer, getPlayerLastPrediction, getPriceVariation} from "../services
 import {getGames} from "../services/game-service/game-service.ts";
 import Layout from "../components/shared-components/layout/layout.tsx";
 import PersonalCard from "../components/player-id-components/personal-card/personal-card.tsx";
-import OtherSection from "../components/player-id-components/other/other-section.tsx";
 import GameweeksStats from "../components/player-id-components/gameweeks-stats/gameweek-stats.tsx";
 import PredictionCircle from "../components/player-id-components/prediction-circle/prediction-circle.tsx";
 import ParlimentDonut from "../components/player-id-components/parliment-donut/parliment-donut.tsx";
 import PlayerGraph from "../components/shared-components/player/player-graph.tsx";
 import '../styles/player-id.scss';
 import {PriceVariation} from "../models/price-variation.ts";
+import {getPlayerAbsences} from "../services/absence-service/admin-service.ts";
+import {Absence} from "../models/absence.ts";
+import AbsenceSection from "../components/player-id-components/absence/other-section.tsx";
 
 export default function PlayerId() {
 
     const [playerData, setPlayerData] = useState<PlayerIdInformation>({} as PlayerIdInformation);
-    const [gamesData, setGamesData] = useState<Game[]>([{} as Game]);
     const [predictionData, setPredictionData] = useState<PlayerLastPrediction>({} as PlayerLastPrediction);
+    const [absencesData, setAbsencesData] = useState<Absence[]>([{} as Absence]);
+
+    const [gamesData, setGamesData] = useState<Game[]>([{} as Game]);
     const [priceData, setPriceData] = useState<PriceVariation[]>([{} as PriceVariation]);
 
     const {id} = useParams();
@@ -43,6 +47,14 @@ export default function PlayerId() {
                 console.error(error);
             });
 
+        getPlayerAbsences(playerId)
+            .then(absences => {
+                setAbsencesData(absences)
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
         getGames(playerId)
             .then(games => {
                 setGamesData(games);
@@ -54,7 +66,6 @@ export default function PlayerId() {
         getPriceVariation(playerId)
             .then(priceVariation => {
                 setPriceData(priceVariation);
-                console.log('priceVariation', priceVariation)
             })
             .catch(error => {
                 console.error(error);
@@ -79,9 +90,8 @@ export default function PlayerId() {
                                 </Container>
                             </Col>
                             <Col lg={6} sm={6} className="other-pad-personalized">
-                                <Container className="bg-white rounded-4 d-flex flex-grow-1 h-100"
-                                           style={{maxHeight: "40vh"}} fluid>
-                                    <OtherSection/>
+                                <Container className="bg-white rounded-4 d-flex flex-grow-1 h-100" style={{maxHeight: "40vh"}} fluid>
+                                    <AbsenceSection absences={absencesData} />
                                 </Container>
                             </Col>
                         </Row>
