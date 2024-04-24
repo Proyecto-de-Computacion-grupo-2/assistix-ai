@@ -8,7 +8,7 @@ import PlayerFaceCard from "../player/player-face-card.tsx";
 import {ChatBotIcon} from "../../shared-components/icons/icons.tsx";
 
 
-export default function RecomendationSection() {
+export default function RecommendationSection() {
     const [recommendationsData, setRecommendationsData] = useState<UserRecommendations[]>([]);
 
     useEffect(() => {

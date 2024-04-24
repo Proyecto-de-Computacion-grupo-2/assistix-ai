@@ -2,7 +2,7 @@ import {Row, Col, Container} from 'react-bootstrap';
 import PlayerGraph from "../components/shared-components/player/player-graph.tsx";
 import Layout from '../components/shared-components/layout/layout.tsx'
 import PlayerInMarket from "../components/market-components/market/PlayerInMarket.tsx";
-import RecomendationSection from '../components/shared-components/recomendation-section/recomendation.tsx';
+import RecommendationSection from '../components/shared-components/recomendation-section/recomendation.tsx';
 import '../styles/market.scss'
 
 export default function Market() {
@@ -20,7 +20,7 @@ export default function Market() {
                                 <PlayerGraph/>
                             </Row>
                             <Row className='p-0 m-0 flex-grow-1 w-100 bg-light rounded-4' style={{ maxHeight: '45vh', overflowY:'scroll' }}>
-                                <RecomendationSection/>
+                                <RecommendationSection/>
                             </Row>
                         </Container>
                     </Col>
