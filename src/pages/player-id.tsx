@@ -28,7 +28,7 @@ export default function PlayerId() {
             .catch(error => {
                 console.error(error);
             })
-    },);
+    },[]);
 
     const [gamesData, setGamesData] = useState<Game[]>([{} as Game]);
 
@@ -40,7 +40,7 @@ export default function PlayerId() {
             .catch(error => {
                 console.error(error);
             })
-    },);
+    },[]);
 
     const [priceData, setPriceData] = useState<PriceVariation[]>([{} as PriceVariation]);
 
@@ -53,7 +53,7 @@ export default function PlayerId() {
             .catch(error => {
                 console.error(error);
             })
-    },);
+    },[]);
 
     return (
         <Layout>
