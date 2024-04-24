@@ -4,6 +4,7 @@ import {Player} from "../../../models/player.ts";
 
 interface PlayerFaceCardProps {
     player: Player;
+    children: React.ReactNode;
 }
 
 function getPosition(position: number) {
@@ -19,14 +20,14 @@ function getPosition(position: number) {
     }
 }
 
-export default function PlayerFaceCard({ player }: PlayerFaceCardProps ) {
+export default function PlayerFaceCard({ player, children }: PlayerFaceCardProps ) {
 
     return (
         <Container className="container border-top border-bottom d-flex flex-row justify-content-between align-items-center py-1" fluid>
             <div className="d-flex flex-row justify-content-center align-items-center gap-2">
                 <div className='d-flex flex-column align-items-center ms-1 me-2 mt-1'>
-                    <p className='fw-bold mb-1 bg-dark rounded-2 text-white p-1'>{getPosition(player.position)}</p>
-                    <p className='fw-bold bg-dark rounded-2 text-white p-2'>{player.season_23_24}</p>
+                    <p className='fw-bold mb-1 bg-dark rounded-2 text-white text-center p-1' style={{height:'35px',width:'35px'}}>{getPosition(player.position)}</p>
+                    <p className='fw-bold bg-dark rounded-2 text-white p-1 text-center' style={{height:'35px',width:'35px'}}>{player.season_23_24}</p>
                 </div>
                 <div className='bg-light d-flex justify-content-center align-items-center rounded-4 border border-dark'
                      style={{height: '60px', width: '60px'}}>
@@ -36,13 +37,12 @@ export default function PlayerFaceCard({ player }: PlayerFaceCardProps ) {
                 <div className="d-flex flex-column justify-content-around">
                     <strong>{player.full_name}</strong>
                     <div className="d-flex flex-row gap-1">
-                        <p className='fw-medium'>{player.player_value}</p>
+                        <p className='fw-medium'>{player.player_value.toLocaleString('de-DE')} €</p>
                     </div>
                 </div>
             </div>
             <div className="d-flex flex-row gap-1">
-                <p className='fw-medium'>12</p>
-                <ChatBotIcon fill='' className=''/>
+                {children}
             </div>
         </Container>
     )

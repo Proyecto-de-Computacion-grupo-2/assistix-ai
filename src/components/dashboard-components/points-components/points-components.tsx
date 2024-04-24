@@ -4,6 +4,7 @@ import '../../../styles/dashboard-page.scss'
 import {useEffect, useState} from "react";
 import {Player} from "../../../models/player.ts";
 import getPlayers from "../../../services/player-service/players-service.ts";
+import {ChatBotIcon} from "../../shared-components/icons/icons.tsx";
 
 export default function PredictionComponent() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -39,7 +40,10 @@ export default function PredictionComponent() {
             </Container>
             <Container className="flex-grow-1 px-1 scroll-section" style={{ maxHeight: '78vh' }}>
                 {filteredPlayers.map((player, index) => (
-                    <PlayerFaceCard key={index} player={player} />
+                    <PlayerFaceCard key={index} player={player}>
+                        <p className='fw-medium'>12</p>
+                        <ChatBotIcon fill='' className=''/>
+                    </PlayerFaceCard>
                 ))}
             </Container>
         </Container>
