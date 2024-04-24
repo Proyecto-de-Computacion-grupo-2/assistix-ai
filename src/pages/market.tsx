@@ -19,7 +19,7 @@ export default function Market() {
                             <Row className='p-0 m-0 flex-grow-1 w-100 bg-white rounded-4 d-flex'>
                                 <PlayerGraph/>
                             </Row>
-                            <Row className='p-0 m-0 flex-grow-1 w-100 bg-light rounded-4'>
+                            <Row className='p-0 m-0 flex-grow-1 w-100 bg-light rounded-4' style={{ maxHeight: '45vh', overflowY:'scroll' }}>
                                 <RecomendationSection/>
                             </Row>
                         </Container>
