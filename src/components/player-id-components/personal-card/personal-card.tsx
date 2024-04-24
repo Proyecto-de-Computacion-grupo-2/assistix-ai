@@ -25,7 +25,8 @@ export default function PersonalCard({player}: PersonalCardProps) {
             <p className="text-secondary fw-bold p-2">Datos personales</p>
             <Row className="flex-grow-1">
                 <Col xs={4}>
-                    <img src={player.photo_body} width={180}></img>
+                    <img src={player.photo_body == null ? player.photo_body : player.photo_face} width={180}
+                         alt={player.full_name}/>
                 </Col>
                 <Col xs={8} className="d-flex flex-column">
                     <p className="fw-bold fs-3">{player.full_name}</p>
@@ -44,7 +45,7 @@ export default function PersonalCard({player}: PersonalCardProps) {
                         </Container>
                         <Container className="d-flex flex-row p-0 m-0 gap-2">
                             <p className="fw-bold text-secondary">Equipo:</p>
-                            <img src={player.team} width={40} height={40}></img>
+                            <img src={player.team} width={40} height={40} alt={player.full_name}/>
                         </Container>
                     </Container>
                 </Col>
