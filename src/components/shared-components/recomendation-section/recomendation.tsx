@@ -4,7 +4,7 @@ import '../../../styles/dashboard-page.scss'
 import {useEffect, useState} from "react";
 import {UserRecommendations} from "../../../models/player.ts";
 import {getPlayerRecommendations,} from "../../../services/player-service/players-service.ts";
-import PlayerFaceCard from "../../shared-components/player/player-face-card.tsx";
+import PlayerFaceCard from "../player/player-face-card.tsx";
 
 export default function RecomendationSection() {
     const [recommendationsData, setRecommendationsData] = useState<UserRecommendations[]>([]);
