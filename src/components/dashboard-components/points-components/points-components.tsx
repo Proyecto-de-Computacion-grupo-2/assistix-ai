@@ -3,7 +3,7 @@ import PlayerFaceCard from "../../shared-components/player/player-face-card.tsx"
 import '../../../styles/dashboard-page.scss'
 import {useEffect, useState} from "react";
 import {Player} from "../../../models/player.ts";
-import getPlayers from "../../../services/player-service/players-service.ts";
+import {getPlayers} from "../../../services/player-service/players-service.ts";
 import {ChatBotIcon} from "../../shared-components/icons/icons.tsx";
 
 export default function PredictionComponent() {
