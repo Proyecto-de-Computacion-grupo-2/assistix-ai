@@ -10,6 +10,10 @@ export default function PredictionComponent() {
     const [searchQuery, setSearchQuery] = useState('');
     const [players, setPlayers] = useState<PlayerWithPointPrediction[]>([]);
 
+    const filteredPlayers = players.filter(player =>
+        player.full_name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
     useEffect(() => {
         getPlayersWithPointPrediction()
             .then(players => {
@@ -19,10 +23,6 @@ export default function PredictionComponent() {
                 console.error(error);
             })
     }, []);
-
-    const filteredPlayers = players.filter(player =>
-        player.full_name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
 
     return (
         <Container className="p-0 m-0 d-flex flex-column" fluid>

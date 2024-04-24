@@ -1,49 +1,33 @@
+import {useEffect, useState} from "react";
 import {Container, Form} from "react-bootstrap";
-import PriceChangeCard from "./price-card.tsx";
-
 import '../../../styles/dashboard-page.scss'
-import {useState} from "react";
-import React from "react";
+import {TrendingDownIcon, TrendingUpIcon} from "../../shared-components/icons/icons.tsx";
+import PlayerFaceCard from "../../shared-components/player/player-face-card.tsx";
+import {PlayerWithPricePrediction} from "../../../models/player-with-prediction.ts";
+import {getPlayersWithPricePrediction} from "../../../services/player-service/players-service.ts";
 
 export default function PricesComponent() {
     const [searchQuery, setSearchQuery] = useState('');
-
-    const players = [
-        <PriceChangeCard up={true} full_name="John Doe" />,
-        <PriceChangeCard up={false} full_name="Alice Smith" />,
-        <PriceChangeCard up={true} full_name="Michael Johnson" />,
-        <PriceChangeCard up={false} full_name="Emily Brown" />,
-        <PriceChangeCard up={true} full_name="Daniel Lee" />,
-        <PriceChangeCard up={false} full_name="Olivia Taylor" />,
-        <PriceChangeCard up={true} full_name="William Martinez" />,
-        <PriceChangeCard up={false} full_name="Sophia Anderson" />,
-        <PriceChangeCard up={true} full_name="James Garcia" />,
-        <PriceChangeCard up={false} full_name="Emma Wilson" />,
-        <PriceChangeCard up={true} full_name="Alexander Hernandez" />,
-        <PriceChangeCard up={false} full_name="Ava Jackson" />,
-        <PriceChangeCard up={true} full_name="Benjamin White" />,
-        <PriceChangeCard up={false} full_name="Isabella Thompson" />,
-        <PriceChangeCard up={true} full_name="Lucas Moore" />,
-        <PriceChangeCard up={false} full_name="Mia Davis" />,
-        <PriceChangeCard up={true} full_name="Henry Clark" />,
-        <PriceChangeCard up={false} full_name="Charlotte Martin" />,
-        <PriceChangeCard up={true} full_name="Jacob Lewis" />,
-        <PriceChangeCard up={false} full_name="Amelia Hill" />,
-    ]
+    const [players, setPlayers] = useState<PlayerWithPricePrediction[]>([]);
 
     const filteredPlayers = players.filter(player =>
-        player.props.full_name.toLowerCase().includes(searchQuery.toLowerCase())
+        player.full_name.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
-    const filteredPriceChangeCards = players.filter(card =>
-        card.props.full_name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    useEffect(() => {
+        getPlayersWithPricePrediction()
+            .then(players => {
+                setPlayers(players);
+            })
+            .catch(error => {
+                console.error(error);
+            })
+    }, []);
 
     return (
         <Container className="p-0 m-0 d-flex flex-column" fluid>
             <Container className="py-3 border-bottom m-0" fluid>
                 <strong className="text-secondary">Predicción proximos precios</strong>
-                {/* todo: Add the search bar here*/}
                 <Container className='mt-5 mb-2' fluid>
                     <Form.Control
                         className='rounded-3 bg-light'
@@ -54,12 +38,15 @@ export default function PricesComponent() {
                     />
                 </Container>
             </Container>
-            <Container className="flex-grow-1 px-1 scroll-section" style={{ maxHeight: '78vh' }}>
+            <Container className="flex-grow-1 px-1 scroll-section" style={{maxHeight: '78vh'}}>
                 {filteredPlayers.map((player, index) => (
-                    <React.Fragment key={index}>
-                        {player}
-                        {filteredPriceChangeCards[index]}
-                    </React.Fragment>
+                    <PlayerFaceCard key={index} player={player}>
+                        <p className='fw-medium me-1'>{player.latest_prediction.toLocaleString('de-DE')} €</p>
+                        {player.percentage_change >= 0 ? <TrendingUpIcon fill='green'/> : <TrendingDownIcon fill='red'/>}
+                        {player.percentage_change >= 0 ?
+                            <p className='fw-medium me-1 text-success'>{player.percentage_change} %</p> :
+                            <p className='fw-medium me-1 text-danger'>{player.percentage_change} %</p>}
+                    </PlayerFaceCard>
                 ))}
             </Container>
         </Container>
