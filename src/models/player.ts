@@ -78,3 +78,8 @@ export interface UserRecommendations extends Player {
     operation_type: string;
     expected_value_percentage: number;
 }
+
+export interface PlayersInMarket extends Player {
+    sell_price: number;
+    is_in_market: boolean;
+}

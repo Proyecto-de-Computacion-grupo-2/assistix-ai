@@ -218,14 +218,6 @@ export const FootballIcon = ({ fill, className }: { fill: string, className: str
     )
 }
 
-export const HamburgerMenuIcon = ({ fill }: { fill: string }) => {
-    return (
-        <svg width="800px" height="800px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1920 1468.412v112.94H0v-112.94h1920Zm0-564.706v112.941H0V903.706h1920ZM1920 339v112.941H0V339h1920Z" fill="none" />
-        </svg>
-    )
-}
-
 export const RobotIcon = ({ fill, width, height }: { fill: string, width: string, height: string }) => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox="0 0 24 24" fill="none" stroke={fill} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
