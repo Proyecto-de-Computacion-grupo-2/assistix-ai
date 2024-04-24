@@ -41,8 +41,8 @@ export default function PredictionComponent() {
             <Container className="flex-grow-1 px-1 scroll-section" style={{ maxHeight: '78vh' }}>
                 {filteredPlayers.map((player, index) => (
                     <PlayerFaceCard key={index} player={player}>
-                        <p className='fw-medium me-1'>{player.point_prediction}</p>
-                        <ChatBotIcon fill='' className=''/>
+                        <p className='fw-medium me-1' style={{color:'blue'}}>{player.point_prediction}</p>
+                        <ChatBotIcon fill='blue' className=''/>
                     </PlayerFaceCard>
                 ))}
             </Container>

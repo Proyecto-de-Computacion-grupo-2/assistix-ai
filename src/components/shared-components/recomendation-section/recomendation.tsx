@@ -5,6 +5,8 @@ import {useEffect, useState} from "react";
 import {UserRecommendations} from "../../../models/player.ts";
 import {getPlayerRecommendations,} from "../../../services/player-service/players-service.ts";
 import PlayerFaceCard from "../player/player-face-card.tsx";
+import {ChatBotIcon} from "../../shared-components/icons/icons.tsx";
+
 
 export default function RecomendationSection() {
     const [recommendationsData, setRecommendationsData] = useState<UserRecommendations[]>([]);
@@ -36,9 +38,8 @@ export default function RecomendationSection() {
                     <Container className="flex-grow-1 px-1 scroll-section" style={{maxHeight: '78vh'}} fluid>
                         {recommendationsData.map((player, index) => (
                             <PlayerFaceCard key={index} player={player}>
-                                <Container className="d-flex flex-column  align-items-center p-0 m-0">
-                                    <p className='fw-medium me-1'>{player.operation_type}</p>
-                                </Container>
+                                <p className='fw-bold me-1' style={{color:'blue'}} >{player.operation_type}</p>
+                                <ChatBotIcon fill='blue' className=''/>
                             </PlayerFaceCard>
                         ))}
                     </Container>
