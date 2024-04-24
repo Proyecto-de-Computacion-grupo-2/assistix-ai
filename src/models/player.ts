@@ -88,3 +88,8 @@ export interface PlayerIdInformation extends Player {
     user_name: string;
     team: string;
 }
+
+export interface PlayerLastPrediction extends Player {
+    gameweek: number;
+    point_prediction: number;
+}
