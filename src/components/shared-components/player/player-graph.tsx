@@ -3,12 +3,6 @@ import { ChartComponent } from "../../market-components/chart/chart.tsx";
 import json from "./prueba.json";
 import { Container } from "react-bootstrap";
 import Ramanzani from "../../../assets/images/40090.png";
-import {PriceVariation} from "../../../models/price-variation.ts";
-
-
-interface PriceDataProps {
-    priceData: PriceVariation;
-}
 
 interface ChartData {
     time: string;
@@ -31,7 +25,7 @@ function convertFormat(input: InputFormat[]): ChartData[] {
     });
 }
 
-export default function PlayerGraph({priceData}) {
+export default function PlayerGraph() {
 
     const [data, setData] = useState<ChartData[]>([]);
     const [marketPrice, setMarketPrice] = useState('0');

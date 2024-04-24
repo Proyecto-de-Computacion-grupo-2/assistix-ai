@@ -1,9 +1,9 @@
 import axios from 'axios';
-import {Player} from '../../models/player';
+import {Player, PlayerIdInformation} from '../../models/player';
 import {PriceVariation} from "../../models/price-variation.ts";
 
-export async function getPlayer(id: number): Promise<Player> {
-    return axios.get<Player>(`${import.meta.env.VITE_API_URL}players/${id}`)
+export async function getPlayer(id: number): Promise<PlayerIdInformation> {
+    return axios.get<PlayerIdInformation>(`${import.meta.env.VITE_API_URL}players/${id}`)
         .then(
             response => {
                 return response.data;

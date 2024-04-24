@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
-import { Player } from "../models/player.ts";
+import {PlayerIdInformation} from "../models/player.ts";
 import { Game } from "../models/game.ts";
 import { getPlayer, getPriceVariation } from "../services/player-service/player-service.ts";
 import { getGames } from "../services/game-service/game-service.ts";
@@ -17,7 +17,7 @@ import { PriceVariation } from "../models/price-variation.ts";
 
 export default function PlayerId() {
 
-    const [playerData, setPlayerData] = useState<Player>({} as Player);
+    const [playerData, setPlayerData] = useState<PlayerIdInformation>({} as PlayerIdInformation);
     const { id } = useParams();
 
     useEffect(() => {
@@ -91,7 +91,7 @@ export default function PlayerId() {
                     </Col>
                     <Col lg={6} className="d-flex flex-column col-2-padding-personalized h-100">
                         <Row className="flex-grow-1 bg-white rounded-4 m-0 p-0">
-                            <PlayerGraph price_data={priceData} />
+                            <PlayerGraph/>
                         </Row>
                         <Row className="flex-grow-1 m-0 p-0 pt-1" style={{ maxHeight: "50vh" }}>
                             <GameweeksStats games={gamesData} />

@@ -83,3 +83,8 @@ export interface PlayersInMarket extends Player {
     sell_price: number;
     is_in_market: boolean;
 }
+
+export interface PlayerIdInformation extends Player {
+    user_name: string;
+    team: string;
+}

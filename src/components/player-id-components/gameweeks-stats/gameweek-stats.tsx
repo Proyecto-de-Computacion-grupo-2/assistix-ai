@@ -70,7 +70,7 @@ const columnHeaders2 = [
 ];
 
 interface GameProps {
-    games: Game;
+    games: Game[];
 }
 
 export default function GameweeksStats({games}: GameProps) {
