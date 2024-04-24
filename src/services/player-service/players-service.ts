@@ -1,6 +1,6 @@
 import axios from 'axios';
-import {Player} from '../../models/player';
-import {PlayerWithPointPrediction,PlayerWithPricePrediction} from '../../models/player-with-prediction';
+import { Player } from '../../models/player';
+import { PlayerWithPointPrediction, PlayerWithPricePrediction } from '../../models/player-with-prediction';
 
 export async function getPlayers(): Promise<Player[]> {
     return axios.get<Player[]>(`${import.meta.env.VITE_API_URL}players`)
@@ -8,9 +8,9 @@ export async function getPlayers(): Promise<Player[]> {
             response => {
                 return response.data;
             }).catch(error => {
-            console.error('Error fetching players', error);
-            return [];
-        })
+                console.error('Error fetching players', error);
+                return [];
+            })
 }
 
 export async function getPlayersWithPointPrediction(): Promise<PlayerWithPointPrediction[]> {
@@ -19,9 +19,9 @@ export async function getPlayersWithPointPrediction(): Promise<PlayerWithPointPr
             response => {
                 return response.data;
             }).catch(error => {
-            console.error('Error fetching players with point prediction', error);
-            return [];
-        })
+                console.error('Error fetching players with point prediction', error);
+                return [];
+            })
 }
 
 export async function getPlayersWithPricePrediction(): Promise<PlayerWithPricePrediction[]> {
@@ -30,7 +30,7 @@ export async function getPlayersWithPricePrediction(): Promise<PlayerWithPricePr
             response => {
                 return response.data;
             }).catch(error => {
-            console.error('Error fetching players with value prediction', error);
-            return [];
-        })
+                console.error('Error fetching players with value prediction', error);
+                return [];
+            })
 }
