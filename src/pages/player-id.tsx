@@ -32,7 +32,6 @@ export default function PlayerId() {
         getPlayer(playerId)
             .then(player => {
                 setPlayerData(player);
-                console.log('Player 124', player);
             })
             .catch(error => {
                 console.error(error);
