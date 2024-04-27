@@ -18,8 +18,8 @@ import '../styles/player-id.scss';
 
 export default function PlayerId() {
 
-    const [playerData, setPlayerData] = useState<PlayerIdInformation>({} as PlayerIdInformation);
-    const [predictionData, setPredictionData] = useState<PlayerLastPrediction>({} as PlayerLastPrediction);
+    const [playerData, setPlayerData] = useState<PlayerIdInformation | null>({} as PlayerIdInformation);
+    const [predictionData, setPredictionData] = useState<PlayerLastPrediction | null>({} as PlayerLastPrediction);
     const [absencesData, setAbsencesData] = useState<Absence[]>([{} as Absence]);
     const [gamesData, setGamesData] = useState<Game[]>([{} as Game]);
     const [streakData, setStreakData] = useState<Game[]>([{} as Game]);
@@ -107,7 +107,7 @@ export default function PlayerId() {
                     </Col>
                     <Col lg={6} className="d-flex flex-column col-2-padding-personalized h-100">
                         <Row className="flex-grow-1 bg-white rounded-4 m-0 p-0">
-                            {playerData.id_mundo_deportivo && <PlayerGraph player_id={playerData.id_mundo_deportivo}/>}
+                            {playerData && playerData.id_mundo_deportivo && <PlayerGraph player_id={playerData.id_mundo_deportivo}/>}
                         </Row>
                         <Row className="flex-grow-1 m-0 p-0 pt-1" style={{maxHeight: "50vh"}}>
                             <GameweeksStats games={gamesData}/>

@@ -12,7 +12,7 @@ function PlayerInfo({label, value}: { label: string, value: string }) {
     );
 }
 
-export default function PersonalCard({player}: { player: PlayerIdInformation }) {
+export default function PersonalCard({player}: { player: PlayerIdInformation | null }) {
 
     if (!player) {
         return <p>Loading...</p>;
