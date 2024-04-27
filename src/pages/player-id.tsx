@@ -25,7 +25,6 @@ export default function PlayerId() {
     const [absencesData, setAbsencesData] = useState<Absence[]>([{} as Absence]);
     const [gamesData, setGamesData] = useState<Game[]>([{} as Game]);
     const [streakData, setStreakData] = useState<Game[]>([{} as Game]);
-    const [priceData, setPriceData] = useState<PriceVariation[]>([{} as PriceVariation]);
 
     const {id} = useParams();
 
@@ -35,6 +34,7 @@ export default function PlayerId() {
         getPlayer(playerId)
             .then(player => {
                 setPlayerData(player);
+                console.log('Player 124', player);
             })
             .catch(error => {
                 console.error(error);
@@ -59,14 +59,6 @@ export default function PlayerId() {
         getGames(playerId)
             .then(games => {
                 setGamesData(games);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-
-        getPriceVariation(playerId)
-            .then(priceVariation => {
-                setPriceData(priceVariation);
             })
             .catch(error => {
                 console.error(error);
@@ -118,7 +110,7 @@ export default function PlayerId() {
                     </Col>
                     <Col lg={6} className="d-flex flex-column col-2-padding-personalized h-100">
                         <Row className="flex-grow-1 bg-white rounded-4 m-0 p-0">
-                            <PlayerGraph historic_values={priceData} player_photo={playerData.photo_face}/>
+                            {playerData.id_mundo_deportivo && <PlayerGraph player_id={playerData.id_mundo_deportivo}/>}
                         </Row>
                         <Row className="flex-grow-1 m-0 p-0 pt-1" style={{maxHeight: "50vh"}}>
                             <GameweeksStats games={gamesData}/>

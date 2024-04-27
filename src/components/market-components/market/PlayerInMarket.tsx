@@ -1,14 +1,18 @@
 import {Container} from 'react-bootstrap';
 import './players-in-market.scss'
 import PlayerFaceCard from "../../shared-components/player/player-face-card.tsx";
-import {Player} from "../../../models/player.ts";
+import {PlayersInMarket} from "../../../models/player.ts";
 
 
 interface PlayersInMarketProps {
-    players: Player[];
+    players: PlayersInMarket[];
 }
 
-export default function PlayerInMarket({players}: PlayersInMarketProps) {
+export default function PlayerInMarket({players, onPlayerClick}: { players: PlayersInMarketProps, onPlayerClick: PlayersInMarket }) {
+
+    function handlePlayerClick(player: PlayersInMarket) {
+        onPlayerClick(player);
+    }
 
     return (
         <Container className='scroll-section me-1 bg-white rounded-4 h-100 p-2 d-flex flex-column' fluid>
@@ -17,7 +21,7 @@ export default function PlayerInMarket({players}: PlayersInMarketProps) {
             </Container>
             <Container className="flex-grow-1 px-1 scroll-section" style={{maxHeight: '81vh'}} fluid>
                 {players.map((player, index) => (
-                    <PlayerFaceCard key={index} player={player}>
+                    <PlayerFaceCard key={index} player={player} onClick={() => handlePlayerClick(player)}>
                         <p className='fw-medium me-1'>Precio venta</p>
                         <p className='fw-bold'>{player.sell_price.toLocaleString('de-DE')} €</p>
                     </PlayerFaceCard>

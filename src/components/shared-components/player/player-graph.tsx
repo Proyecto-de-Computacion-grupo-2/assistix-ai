@@ -2,15 +2,13 @@ import {useEffect, useState} from "react";
 import {ChartComponent} from "../../market-components/chart/chart.tsx";
 import {Container} from "react-bootstrap";
 import {PriceVariation} from "../../../models/price-variation.ts";
-import {Player} from "../../../models/player.ts";
+import {PlayerIdInformation} from "../../../models/player.ts";
+import {getPlayer} from "../../../services/player-service/player-service.ts";
+import {getPriceVariation} from "../../../services/price-variation/price-variation-service.ts";
 
 interface ChartData {
     time: string;
     value: number;
-}
-
-interface PlayerGraphProps {
-    historic_values: PriceVariation[];
 }
 
 /*
@@ -63,23 +61,39 @@ function convertToChartData3(historic_values: PriceVariation[]): ChartData[] {
     });
 }
 
-export default function PlayerGraph({historic_values, player_photo}: {historic_values: PlayerGraphProps['historic_values'], player_photo: Player['photo_face']}) {
+export default function PlayerGraph({player_id}: { player_id: number }) {
     const [data, setData] = useState<ChartData[]>([]);
     //const [marketPrice, setMarketPrice] = useState('0');
     //const [variation, setVariation] = useState('0%');
-
-    function processData() {
-        //const data = convertFormat(json.points as InputFormat[]);
-        const data = convertToChartData3(historic_values as PriceVariation[]);
-        console.log('Hola value', data);
-        setData(data);
-        //setMarketPrice(`${(data[data.length - 1].value).toLocaleString('es-ES')} €`);
-        //setVariation(`${((data[data.length - 1].value - data[data.length - 2].value) / data[data.length - 2].value * 100).toFixed(2)}%`);
-    }
+    const [playerData, setPlayerData] = useState<PlayerIdInformation>({} as PlayerIdInformation);
+    const [priceData, setPriceData] = useState<PriceVariation[]>([{} as PriceVariation]);
 
     useEffect(() => {
-        processData();
-    }, [historic_values]);
+        const playerId = Number(player_id);
+
+        getPlayer(playerId)
+            .then(player => {
+                setPlayerData(player);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
+        getPriceVariation(playerId)
+            .then(priceVariation => {
+                setPriceData(priceVariation);
+                processData(priceVariation);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
+    }, []);
+
+    function processData(priceData: PriceVariation[]) {
+        const data = convertToChartData3(priceData);
+        setData(data);
+    }
 
     return (
         <Container className='p-2 h-100 d-flex flex-column' fluid>
@@ -96,7 +110,7 @@ export default function PlayerGraph({historic_values, player_photo}: {historic_v
                 <Container className='p-0 m-0 d-flex flex-column align-items-end'>
                     <div
                         className="player-container rounded-4 bg-dark my-2 mx-3 d-flex justify-content-center align-items-center">
-                        <img src={player_photo} alt="player" height={50} width={50}/>
+                        <img src={playerData.photo_face} alt="player" height={50} width={50}/>
                     </div>
                     {/*<p className='fs-5 bold me-4 text-success'>{variation}</p>*/}
                 </Container>
