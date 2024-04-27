@@ -69,11 +69,7 @@ const columnHeaders2 = [
     "Asistencias Esperadas"
 ];
 
-interface GameProps {
-    games: Game[];
-}
-
-export default function GameweeksStats({games}: GameProps) {
+export default function GameweeksStats({games}: { games: Game[] }) {
     return (
         <Container className="m-0 p-0 rounded-4 bg-white h-100" style={{overflowY: 'auto'}} fluid>
             <Container className="m-0 p-2 rounded-4" style={{maxHeight: "45vh", overflowY: 'auto'}} fluid>
@@ -91,7 +87,8 @@ export default function GameweeksStats({games}: GameProps) {
                         <tr key={index} className='text-center text-truncate'>
                             {Object.keys(game).map((key, index_2) => (
                                 key === 'team' || key === 'opposing_team' ?
-                                    <td key={index_2}><img src={game[key]} alt={key} style={{height: '40px', width: '40px'}}/></td> :
+                                    <td key={index_2}><img src={game[key]} alt={key}
+                                                           style={{height: '40px', width: '40px'}}/></td> :
                                     <td key={index_2}>{game[key]}</td>
                             ))}
                         </tr>

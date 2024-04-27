@@ -29,7 +29,7 @@ function mapIconToAbsenceType(absenceType: string) {
 function formatDate(dateString: string) {
     const date = new Date(dateString);
     const year = date.getFullYear();
-    const month = date.getMonth() + 1; // Months are zero-based
+    const month = date.getMonth() + 1;
     const day = date.getDate();
 
     return `${day}-${month}-${year}`;
@@ -41,7 +41,7 @@ function PlayerInjuryCard({absence}: AbsenceSectionProps) {
             <Col xs={4} sm={4} className="d-flex flex-column justify-content-center gap-1 p-1 align-items-center">
                 <img className="mx-auto d-block" src={mapIconToAbsenceType(absence.type_absence)}
                      alt={absence.type_absence} width={20}/>
-                <p className="small text-justify">{absence.description_absence}</p>
+                <p className="small text-center">{absence.description_absence}</p>
             </Col>
             <Col xs={4} sm={4} className='align-items-center'>
                 <p className="small text-center">{formatDate(absence.since)}</p>

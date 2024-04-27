@@ -42,9 +42,9 @@ export default function PersonalCard({player}: PersonalCardProps) {
                         <PlayerInfo label="Valor"
                                     value={typeof player.player_value === 'number' ? player.player_value.toLocaleString('de-DE') + ' €' : player.player_value + ' €'}/>
                         <PlayerInfo label="Propietario" value={player.user_name}/>
-                        <Container className="d-flex flex-row p-0 m-0 gap-2">
+                        <Container className="d-flex flex-row p-0 m-0 gap-2 align-items-center">
                             <p className="fw-bold text-secondary">Equipo:</p>
-                            <img src={player.team} width={40} height={40} alt={player.full_name}/>
+                            <img src={player.team} width={40} height={40} alt='Equipo perteneciente'/>
                         </Container>
                     </Container>
                 </Col>

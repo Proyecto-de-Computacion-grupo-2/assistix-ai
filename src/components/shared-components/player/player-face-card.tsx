@@ -15,7 +15,7 @@ function getPosition(position: number) {
     }
 }
 
-export default function PlayerFaceCard({player, children, onGraphClick}: { player: Player, children: React.ReactNode, onGraphClick: () => void }) {
+export default function PlayerFaceCard({player, children, onGraphClick}: { player: Player, children: React.ReactNode, onGraphClick?: () => void }) {
 
     return (
         <Container className="container border-top border-bottom d-flex flex-row justify-content-between align-items-center py-1" fluid>
