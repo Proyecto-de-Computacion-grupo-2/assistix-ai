@@ -1,60 +1,68 @@
 import ReactEcharts from 'echarts-for-react';
 import { Container } from "react-bootstrap";
+import {Game} from "../../../models/game.ts";
 
-const option = {
-    tooltip: {
-        trigger: 'item'
-    },
-    legend: {
-        top: '5%',
-        left: 'center',
-    },
-    series: [
-        {
-            name: 'Puntos',
-            type: 'pie',
-            radius: ['60%', '95%'],
-            center: ['50%', '70%'],
-            startAngle: 180,
-            endAngle: 360,
-            data: [
-                { value: 8, name: '22' },
-                { value: 8, name: '23' },
-                { value: 16, name: '24' }
-            ],
-            color: ['#349FB5', '#19CAD8', '#16EDC1'],
-        }
-    ],
-    graphic: [
-        {
-            type: 'text',
-            left: 'center',
-            bottom: '32%',
-            style: {
-                text: '32',
-                textAlign: 'center',
-                fill: '#000',
-                fontSize: 60,
-                fontWeight: 'bold',
-            },
+interface GamesProps {
+    streak: Game[];
+}
+
+export default function ParlimentDonut({streak}: { GamesProps }) {
+
+    const sum = streak.length >= 3 ? streak[0].mixed + streak[1].mixed + streak[2].mixed : 0;
+
+    const option = {
+        tooltip: {
+            trigger: 'item'
         },
-        {
-            type: 'text',
+        legend: {
+            top: '5%',
             left: 'center',
-            bottom: '27%',
-            style: {
-                text: 'Puntos totales',
-                textAlign: 'center',
-                fill: '#000',
-                fontSize: 16,
-                fontWeight: 'normal',
-            },
         },
-    ],
-};
+        series: [
+            {
+                name: 'Puntos',
+                type: 'pie',
+                radius: ['60%', '95%'],
+                center: ['50%', '70%'],
+                startAngle: 180,
+                endAngle: 360,
+                data: streak.length >= 3 ? [
+                    {value: streak[2].mixed, name: 'J' + streak[2].game_week},
+                    {value: streak[1].mixed, name: 'J' + streak[1].game_week},
+                    {value: streak[0].mixed, name: 'J' + streak[0].game_week}
+                ] : [],
+                color: ['#349FB5', '#19CAD8', '#16EDC1'],
+            }
+        ],
+        graphic: [
+            {
+                type: 'text',
+                left: 'center',
+                bottom: '32%',
+                style: {
+                    text: sum,
+                    textAlign: 'center',
+                    fill: '#000',
+                    fontSize: 60,
+                    fontWeight: 'bold',
+                },
+            },
+            {
+                type: 'text',
+                left: 'center',
+                bottom: '27%',
+                style: {
+                    text: 'Puntos totales',
+                    textAlign: 'center',
+                    fill: '#000',
+                    fontSize: 16,
+                    fontWeight: 'normal',
+                },
+            },
+        ],
+    };
 
 
-export default function ParlimentDonut() {
     return (
         <Container className="p-2 m-0" style={{ maxHeight: "40vh" }} fluid>
             <p className="fw-bold text-secondary">Racha jornadas</p>

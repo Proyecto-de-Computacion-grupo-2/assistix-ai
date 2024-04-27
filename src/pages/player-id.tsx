@@ -4,7 +4,7 @@ import {Col, Container, Row} from "react-bootstrap";
 import {PlayerIdInformation, PlayerLastPrediction} from "../models/player.ts";
 import {Game} from "../models/game.ts";
 import {getPlayer, getPlayerLastPrediction} from "../services/player-service/player-service.ts";
-import {getGames} from "../services/game-service/game-service.ts";
+import {getGames, getStreak} from "../services/game-service/game-service.ts";
 import Layout from "../components/shared-components/layout/layout.tsx";
 import PersonalCard from "../components/player-id-components/personal-card/personal-card.tsx";
 import GameweeksStats from "../components/player-id-components/gameweeks-stats/gameweek-stats.tsx";
@@ -24,6 +24,7 @@ export default function PlayerId() {
     const [predictionData, setPredictionData] = useState<PlayerLastPrediction>({} as PlayerLastPrediction);
     const [absencesData, setAbsencesData] = useState<Absence[]>([{} as Absence]);
     const [gamesData, setGamesData] = useState<Game[]>([{} as Game]);
+    const [streakData, setStreakData] = useState<Game[]>([{} as Game]);
     const [priceData, setPriceData] = useState<PriceVariation[]>([{} as PriceVariation]);
 
     const {id} = useParams();
@@ -70,6 +71,16 @@ export default function PlayerId() {
             .catch(error => {
                 console.error(error);
             });
+
+        getStreak(playerId)
+            .then(streak => {
+                setStreakData(streak);
+                console.log('STREAKKKKK ', streak)
+            })
+            .catch(error => {
+                console.error(error);
+            });
+
     }, []);
 
     return (
@@ -100,7 +111,7 @@ export default function PlayerId() {
                                 <Container
                                     className=" bg-white rounded-4 overflow-hidden p-0 d-flex justify-content-center"
                                     style={{maxHeight: "40vh"}} fluid>
-                                    <ParlimentDonut/>
+                                    <ParlimentDonut streak={streakData}/>
                                 </Container>
                             </Col>
                         </Row>
