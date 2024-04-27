@@ -6,7 +6,7 @@ interface GamesProps {
     streak: Game[];
 }
 
-export default function ParlimentDonut({streak}: { GamesProps }) {
+export default function ParlimentDonut({streak}: GamesProps) {
 
     const sum = streak.length >= 3 ? streak[0].mixed + streak[1].mixed + streak[2].mixed : 0;
 
