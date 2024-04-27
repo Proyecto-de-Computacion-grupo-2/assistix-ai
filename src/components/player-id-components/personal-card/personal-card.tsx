@@ -1,17 +1,7 @@
 import {Col, Container, Row} from "react-bootstrap";
-import './personal-card.scss';
 import {PlayerIdInformation} from "../../../models/player.ts";
-
-interface PersonalCardProps {
-    player: PlayerIdInformation;
-}
-
-const positionMap = {
-    1: 'PT',
-    2: 'DF',
-    3: 'MC',
-    4: 'DL'
-};
+import './personal-card.scss';
+import {format_position, format_player_value} from "../../shared-components/Utils.tsx";
 
 function PlayerInfo({label, value}: { label: string, value: string }) {
     return (
@@ -22,7 +12,7 @@ function PlayerInfo({label, value}: { label: string, value: string }) {
     );
 }
 
-export default function PersonalCard({player}: PersonalCardProps) {
+export default function PersonalCard({player}: { player: PlayerIdInformation }) {
 
     if (!player) {
         return <p>Loading...</p>;
@@ -38,9 +28,9 @@ export default function PersonalCard({player}: PersonalCardProps) {
                 <Col xs={8} className="d-flex flex-column">
                     <p className="fw-bold fs-3">{player.full_name}</p>
                     <Container className="d-flex flex-column p-0 m-0 justify-content-around flex-grow-1">
-                        <PlayerInfo label="Posición" value={positionMap[player.position as keyof typeof positionMap]}/>
+                        <PlayerInfo label="Posición" value={format_position(player.position)}/>
                         <PlayerInfo label="Valor"
-                                    value={typeof player.player_value === 'number' ? player.player_value.toLocaleString('de-DE') + ' €' : player.player_value + ' €'}/>
+                                    value={format_player_value(player.player_value)}/>
                         <PlayerInfo label="Propietario" value={player.user_name}/>
                         <Container className="d-flex flex-row p-0 m-0 gap-2 align-items-center">
                             <p className="fw-bold text-secondary">Equipo:</p>
