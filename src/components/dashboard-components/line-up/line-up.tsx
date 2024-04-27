@@ -17,8 +17,6 @@ export default function LineUp() {
     const [plantilla, setPlantilla] = useState<any>([] as PlayersUser[])
     const [lineUps, setLineUps] = useState<LineUps[]>([] as LineUps[])
 
-    console.log(lineUps)
-
     useEffect(() => {
         getUserPlayers(12705845)
             .then(players => {
@@ -37,8 +35,6 @@ export default function LineUp() {
             })
 
     }, [])
-
-    console.log(lineUps)
 
     const changePlantilla = (direction: string) => {
 
