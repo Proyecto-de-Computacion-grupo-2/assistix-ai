@@ -3,7 +3,7 @@ import {useParams} from "react-router-dom";
 import {Col, Container, Row} from "react-bootstrap";
 import {PlayerIdInformation, PlayerLastPrediction} from "../models/player.ts";
 import {Game} from "../models/game.ts";
-import {getPlayer, getPlayerLastPrediction, getPriceVariation} from "../services/player-service/player-service.ts";
+import {getPlayer, getPlayerLastPrediction} from "../services/player-service/player-service.ts";
 import {getGames} from "../services/game-service/game-service.ts";
 import Layout from "../components/shared-components/layout/layout.tsx";
 import PersonalCard from "../components/player-id-components/personal-card/personal-card.tsx";
@@ -16,6 +16,7 @@ import {PriceVariation} from "../models/price-variation.ts";
 import {getPlayerAbsences} from "../services/absence-service/admin-service.ts";
 import {Absence} from "../models/absence.ts";
 import AbsenceSection from "../components/player-id-components/absence/absence-section.tsx";
+import {getPriceVariation} from "../services/price-variation/price-variation-service.ts";
 
 export default function PlayerId() {
 
@@ -106,7 +107,7 @@ export default function PlayerId() {
                     </Col>
                     <Col lg={6} className="d-flex flex-column col-2-padding-personalized h-100">
                         <Row className="flex-grow-1 bg-white rounded-4 m-0 p-0">
-                            <PlayerGraph/>
+                            <PlayerGraph historic_values={priceData}/>
                         </Row>
                         <Row className="flex-grow-1 m-0 p-0 pt-1" style={{maxHeight: "50vh"}}>
                             <GameweeksStats games={gamesData}/>

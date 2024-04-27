@@ -1,46 +1,86 @@
-import { useEffect, useState } from "react";
-import { ChartComponent } from "../../market-components/chart/chart.tsx";
-import json from "./prueba.json";
-import { Container } from "react-bootstrap";
+import {useEffect, useState} from "react";
+import {ChartComponent} from "../../market-components/chart/chart.tsx";
+import {Container} from "react-bootstrap";
 import Ramanzani from "../../../assets/images/40090.png";
+import {PriceVariation} from "../../../models/price-variation.ts";
 
 interface ChartData {
     time: string;
     value: number;
 }
 
-interface InputFormat {
-    value: number;
-    date: string;
+interface PlayerGraphProps {
+    historic_values: PriceVariation[];
 }
 
-function convertFormat(input: InputFormat[]): ChartData[] {
-    return input.map(item => {
-        const date = new Date(Date.parse(item.date.replace(/(\d+) (\w+)/, "$2 $1, ")));
-        date.setHours(12); // Ajusta la hora a mediodía
+/*
+function convertToChartData2(historic_values: PriceVariation[]): ChartData[] {
+    console.log('HELLO',historic_values);
+    return historic_values.map(item => {
+        const date = new Date(item.price_day);
         return {
-            time: date.toISOString().split('T')[0],
-            value: item.value
+            value: item.price,
+            time: date
+        };
+    });
+}
+*/
+
+// AI SOLUTION, WILL DELETE THIS AND MAKE IT WORK LATER.
+function convertToChartData3(historic_values: PriceVariation[]): ChartData[] {
+    // Filter out items with duplicate price_day
+    const filteredHistoricValues = historic_values.filter((item, index, self) =>
+            index === self.findIndex((t) => (
+                t.price_day === item.price_day
+            ))
+    );
+
+    // Sort filteredHistoricValues by price_day in ascending order
+    const sortedHistoricValues = [...filteredHistoricValues].sort((a, b) => {
+        if (typeof a.price_day === 'string') {
+            return new Date(a.price_day).getTime() - new Date(b.price_day).getTime();
+        } else if (typeof a.price_day === 'number') {
+            return a.price_day - b.price_day;
+        }
+    });
+
+    return sortedHistoricValues.map(item => {
+        let formattedDate;
+        if (item.price_day) {
+            if (typeof item.price_day === 'string') {
+                formattedDate = item.price_day; // If price_day is already a string in "YYYY-MM-DD" format
+            } else if (typeof item.price_day === 'number') {
+                const date = new Date(item.price_day); // If price_day is a timestamp
+                formattedDate = `${date.getFullYear()}-${('0' + (date.getMonth() + 1)).slice(-2)}-${('0' + date.getDate()).slice(-2)}`;
+            }
+        } else {
+            formattedDate = "1970-01-01"; // Default value if price_day is undefined
+        }
+        return {
+            time: formattedDate,
+            value: item.price
         };
     });
 }
 
-export default function PlayerGraph() {
+export default function PlayerGraph({historic_values}: PlayerGraphProps) {
 
     const [data, setData] = useState<ChartData[]>([]);
-    const [marketPrice, setMarketPrice] = useState('0');
-    const [variation, setVariation] = useState('0%');
+    //const [marketPrice, setMarketPrice] = useState('0');
+    //const [variation, setVariation] = useState('0%');
 
     function processData() {
-        const data = convertFormat(json.points as InputFormat[]);
+        //const data = convertFormat(json.points as InputFormat[]);
+        const data = convertToChartData3(historic_values as PriceVariation[]);
+        console.log('Hola value', data);
         setData(data);
-        setMarketPrice(`${(data[data.length - 1].value).toLocaleString('es-ES')} €`);
-        setVariation(`${((data[data.length - 1].value - data[data.length - 2].value) / data[data.length - 2].value * 100).toFixed(2)}%`);
+        //setMarketPrice(`${(data[data.length - 1].value).toLocaleString('es-ES')} €`);
+        //setVariation(`${((data[data.length - 1].value - data[data.length - 2].value) / data[data.length - 2].value * 100).toFixed(2)}%`);
     }
 
     useEffect(() => {
         processData();
-    }, []);
+    }, [historic_values]);
 
     return (
         <Container className='p-2 h-100 d-flex flex-column' fluid>
@@ -50,20 +90,20 @@ export default function PlayerGraph() {
                     <Container className='d-flex flex-column p-0 m-0'>
                         <p className='fs-5 bold text-secondary'>PRECIO ACTUAL</p>
                         <Container className='d-flex flex-row p-0 m-0 gap-1'>
-                            <p className='fs-3 bold '>{marketPrice}</p>
+                            {/*<p className='fs-3 bold '>{marketPrice}</p>*/}
                         </Container>
                     </Container>
                 </Container>
                 <Container className='p-0 m-0 d-flex flex-column align-items-end'>
                     <div
                         className="player-container rounded-4 bg-dark my-2 mx-3 d-flex justify-content-center align-items-center">
-                        <img src={Ramanzani} alt="player" height={50} width={50} />
+                        <img src={Ramanzani} alt="player" height={50} width={50}/>
                     </div>
-                    <p className='fs-5 bold me-4 text-success'>{variation}</p>
+                    {/*<p className='fs-5 bold me-4 text-success'>{variation}</p>*/}
                 </Container>
             </Container>
             <Container className='flex-grow-1 p-0 m-0' fluid>
-                <ChartComponent data={data} />
+                <ChartComponent data={data}/>
             </Container>
         </Container>
     )
