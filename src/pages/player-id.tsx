@@ -100,8 +100,9 @@ export default function PlayerId() {
                                 </Container>
                             </Col>
                             <Col lg={6} sm={6} className="other-pad-personalized">
-                                <Container className="bg-white rounded-4 d-flex flex-grow-1 h-100" style={{maxHeight: "40vh"}} fluid>
-                                    <AbsenceSection absences={absencesData} />
+                                <Container className="bg-white rounded-4 d-flex flex-grow-1 h-100"
+                                           style={{maxHeight: "40vh"}} fluid>
+                                    <AbsenceSection absences={absencesData}/>
                                 </Container>
                             </Col>
                         </Row>
