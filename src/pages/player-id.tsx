@@ -75,7 +75,6 @@ export default function PlayerId() {
         getStreak(playerId)
             .then(streak => {
                 setStreakData(streak);
-                console.log('STREAKKKKK ', streak)
             })
             .catch(error => {
                 console.error(error);

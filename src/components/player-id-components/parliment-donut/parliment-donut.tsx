@@ -27,11 +27,10 @@ export default function ParlimentDonut({streak}: { GamesProps }) {
                 startAngle: 180,
                 endAngle: 360,
                 data: streak.length >= 3 ? [
-                    {value: streak[2].mixed, name: 'J' + streak[2].game_week},
-                    {value: streak[1].mixed, name: 'J' + streak[1].game_week},
-                    {value: streak[0].mixed, name: 'J' + streak[0].game_week}
+                    {value: Math.abs(streak[2].mixed), name: 'J' + streak[2].game_week, itemStyle: {color: streak[2].mixed < 0 ? 'red' : '#349FB5'}},
+                    {value: Math.abs(streak[1].mixed), name: 'J' + streak[1].game_week, itemStyle: {color: streak[1].mixed < 0 ? 'red' : '#19CAD8'}},
+                    {value: Math.abs(streak[0].mixed), name: 'J' + streak[0].game_week, itemStyle: {color: streak[0].mixed < 0 ? 'red' : '#16EDC1'}}
                 ] : [],
-                color: ['#349FB5', '#19CAD8', '#16EDC1'],
             }
         ],
         graphic: [
