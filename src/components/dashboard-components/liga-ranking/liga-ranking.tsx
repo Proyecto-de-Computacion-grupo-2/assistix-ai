@@ -1,8 +1,11 @@
-import { useState } from 'react'
-import { Carousel, Container } from 'react-bootstrap'
+import { useEffect, useState } from 'react'
+import { Carousel, Col, Container, Row } from 'react-bootstrap'
 
 import './liga-ranking.scss'
 import LocalLeague from './local-league/local-league'
+import { LeagueUser } from '../../../models/league-user';
+import getLeagueRanking from '../../../services/league-service/league-service';
+import { LefRow, RightRow } from '../../shared-components/icons/icons';
 
 
 export default function LeagueRanking() {
@@ -13,18 +16,60 @@ export default function LeagueRanking() {
         setIndex(selectedIndex);
     };
 
+    const [ranking, setRanking] = useState<LeagueUser[]>([] as LeagueUser[])
+    const [isLocalLeage, setIsLocalLeague] = useState<boolean>(false)
+    const [tabla, setTabla] = useState<JSX.Element>(<iframe id="sofa-standings-embed-36-52376"
+        src="https://widgets.sofascore.com/es-ES/embed/tournament/36/season/52376/standings/LaLiga?widgetTitle=LaLiga&showCompetitionLogo=true&v=2"
+        style={{ width: '100%', minHeight: '59vh' }} />)
+
+    useEffect(() => {
+        getLeagueRanking()
+            .then(ranking => {
+                setRanking(ranking)
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    })
+
+    const changeTable = (c: boolean) => {
+        if (!c) {
+            setTabla(<LocalLeague data={ranking} />)
+            setIsLocalLeague(true)
+        } else {
+            setTabla(<iframe id="sofa-standings-embed-36-52376"
+                src="https://widgets.sofascore.com/es-ES/embed/tournament/36/season/52376/standings/LaLiga?widgetTitle=LaLiga&showCompetitionLogo=true&v=2"
+                style={{ width: '100%', minHeight: '59vh' }} />)
+            setIsLocalLeague(false)
+        }
+
+    }
+
     return (
-        <Carousel activeIndex={index} onSelect={handleSelect} className='bg-white rounded-4 custom-margin right-custom-margin'>
-            <Carousel.Item>
-                <Container className='d-flex flex-column justify-content-center align-items-center m-0 p-0' style={{ width: '100%', minHeight: '60vh' }}>
-                    <LocalLeague />
-                </Container>
-            </Carousel.Item>
-            <Carousel.Item>
-                <iframe id="sofa-standings-embed-36-52376"
-                    src="https://widgets.sofascore.com/es-ES/embed/tournament/36/season/52376/standings/LaLiga?widgetTitle=LaLiga&showCompetitionLogo=true&v=2"
-                    style={{ width: '100%', minHeight: '59vh' }} />
-            </Carousel.Item>
-        </Carousel>
+        <Container className='p-0 m-0' style={{ minHeight: '60vh' }}>
+            <Row className='p-0 m-0 h-100'>
+                <Col sm={1} xs={1} className='d-flex justify-content-center align-items-center p-0'>
+                    <LefRow fill='#000' personalizedClass='custom-hover' action={() => changeTable(isLocalLeage)} />
+                </Col>
+                <Col sm={10} xs={10} className='p-0'>
+                    {tabla}
+                </Col>
+                <Col sm={1} xs={1} className='d-flex justify-content-center align-items-center p-0'>
+                    <RightRow fill='#000' personalizedClass='custom-hover' action={() => changeTable(isLocalLeage)} />
+                </Col>
+            </Row>
+        </Container>
+        // <Carousel activeIndex={index} onSelect={handleSelect} className='bg-white rounded-4 custom-margin right-custom-margin'>
+        //     <Carousel.Item>
+        //         <Container className='d-flex flex-column justify-content-center align-items-center m-0 p-0' style={{ width: '100%', minHeight: '40vh', maxHeight: '60vh' }}>
+        //             <LocalLeague data={ranking} />
+        //         </Container>
+        //     </Carousel.Item>
+        //     <Carousel.Item>
+        //         <iframe id="sofa-standings-embed-36-52376"
+        //             src="https://widgets.sofascore.com/es-ES/embed/tournament/36/season/52376/standings/LaLiga?widgetTitle=LaLiga&showCompetitionLogo=true&v=2"
+        //             style={{ width: '100%', minHeight: '59vh' }} />
+        //     </Carousel.Item>
+        // </Carousel>
     );
 }
