@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
 import {ChartComponent} from "../../market-components/chart/chart.tsx";
 import {Container} from "react-bootstrap";
-import Ramanzani from "../../../assets/images/40090.png";
 import {PriceVariation} from "../../../models/price-variation.ts";
+import {Player} from "../../../models/player.ts";
 
 interface ChartData {
     time: string;
@@ -63,8 +63,7 @@ function convertToChartData3(historic_values: PriceVariation[]): ChartData[] {
     });
 }
 
-export default function PlayerGraph({historic_values}: PlayerGraphProps) {
-
+export default function PlayerGraph({historic_values, player_photo}: {historic_values: PlayerGraphProps['historic_values'], player_photo: Player['photo_face']}) {
     const [data, setData] = useState<ChartData[]>([]);
     //const [marketPrice, setMarketPrice] = useState('0');
     //const [variation, setVariation] = useState('0%');
@@ -97,7 +96,7 @@ export default function PlayerGraph({historic_values}: PlayerGraphProps) {
                 <Container className='p-0 m-0 d-flex flex-column align-items-end'>
                     <div
                         className="player-container rounded-4 bg-dark my-2 mx-3 d-flex justify-content-center align-items-center">
-                        <img src={Ramanzani} alt="player" height={50} width={50}/>
+                        <img src={player_photo} alt="player" height={50} width={50}/>
                     </div>
                     {/*<p className='fs-5 bold me-4 text-success'>{variation}</p>*/}
                 </Container>

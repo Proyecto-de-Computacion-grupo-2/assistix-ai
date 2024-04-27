@@ -107,7 +107,7 @@ export default function PlayerId() {
                     </Col>
                     <Col lg={6} className="d-flex flex-column col-2-padding-personalized h-100">
                         <Row className="flex-grow-1 bg-white rounded-4 m-0 p-0">
-                            <PlayerGraph historic_values={priceData}/>
+                            <PlayerGraph historic_values={priceData} player_photo={playerData.photo_face}/>
                         </Row>
                         <Row className="flex-grow-1 m-0 p-0 pt-1" style={{maxHeight: "50vh"}}>
                             <GameweeksStats games={gamesData}/>
