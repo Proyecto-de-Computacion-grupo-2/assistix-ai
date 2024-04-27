@@ -3,15 +3,14 @@ import './players-in-market.scss'
 import PlayerFaceCard from "../../shared-components/player/player-face-card.tsx";
 import {PlayersInMarket} from "../../../models/player.ts";
 
+export default function PlayerInMarket({players, onPlayerClick}: {
+    players: PlayersInMarket[],
+    onPlayerClick: (player: PlayersInMarket) => void
+}) {
 
-interface PlayersInMarketProps {
-    players: PlayersInMarket[];
-}
-
-export default function PlayerInMarket({players, onPlayerClick}: { players: PlayersInMarketProps, onPlayerClick: PlayersInMarket }) {
-
-    function handlePlayerClick(player: PlayersInMarket) {
-        onPlayerClick(player);
+    function handleGraphClick(player: PlayersInMarket) {
+        const newPlayer = {...player};
+        onPlayerClick(newPlayer);
     }
 
     return (
@@ -21,7 +20,7 @@ export default function PlayerInMarket({players, onPlayerClick}: { players: Play
             </Container>
             <Container className="flex-grow-1 px-1 scroll-section" style={{maxHeight: '81vh'}} fluid>
                 {players.map((player, index) => (
-                    <PlayerFaceCard key={index} player={player} onClick={() => handlePlayerClick(player)}>
+                    <PlayerFaceCard key={index} player={player} onGraphClick={() => handleGraphClick(player)}>
                         <p className='fw-medium me-1'>Precio venta</p>
                         <p className='fw-bold'>{player.sell_price.toLocaleString('de-DE')} €</p>
                     </PlayerFaceCard>

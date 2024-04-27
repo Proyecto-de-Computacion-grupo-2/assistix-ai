@@ -1,8 +1,6 @@
 import {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {Col, Container, Row} from "react-bootstrap";
-import {PlayerIdInformation, PlayerLastPrediction} from "../models/player.ts";
-import {Game} from "../models/game.ts";
 import {getPlayer, getPlayerLastPrediction} from "../services/player-service/player-service.ts";
 import {getGames, getStreak} from "../services/game-service/game-service.ts";
 import Layout from "../components/shared-components/layout/layout.tsx";
@@ -11,12 +9,12 @@ import GameweeksStats from "../components/player-id-components/gameweeks-stats/g
 import PredictionCircle from "../components/player-id-components/prediction-circle/prediction-circle.tsx";
 import ParlimentDonut from "../components/player-id-components/parliment-donut/parliment-donut.tsx";
 import PlayerGraph from "../components/shared-components/player/player-graph.tsx";
-import '../styles/player-id.scss';
-import {PriceVariation} from "../models/price-variation.ts";
 import {getPlayerAbsences} from "../services/absence-service/admin-service.ts";
-import {Absence} from "../models/absence.ts";
 import AbsenceSection from "../components/player-id-components/absence/absence-section.tsx";
-import {getPriceVariation} from "../services/price-variation/price-variation-service.ts";
+import {PlayerIdInformation, PlayerLastPrediction} from "../models/player.ts";
+import {Game} from "../models/game.ts";
+import {Absence} from "../models/absence.ts";
+import '../styles/player-id.scss';
 
 export default function PlayerId() {
 

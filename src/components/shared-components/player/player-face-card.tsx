@@ -2,11 +2,6 @@ import {Container} from "react-bootstrap";
 import {Player} from "../../../models/player.ts";
 import {NavLink} from "react-router-dom";
 
-interface PlayerFaceCardProps {
-    player: Player;
-    children: React.ReactNode;
-}
-
 function getPosition(position: number) {
     switch (position) {
         case 1:
@@ -20,11 +15,11 @@ function getPosition(position: number) {
     }
 }
 
-export default function PlayerFaceCard({ player, children }: PlayerFaceCardProps ) {
+export default function PlayerFaceCard({player, children, onGraphClick}: { player: Player, children: React.ReactNode, onGraphClick: () => void }) {
 
     return (
-        <NavLink to={`/player/${player.id_mundo_deportivo}`} className='text-decoration-none text-dark'>
-            <Container className="container border-top border-bottom d-flex flex-row justify-content-between align-items-center py-1" fluid>
+        <Container className="container border-top border-bottom d-flex flex-row justify-content-between align-items-center py-1" fluid>
+            <NavLink to={`/player/${player.id_mundo_deportivo}`} className='text-decoration-none text-dark'>
                 <div className="d-flex flex-row justify-content-center align-items-center gap-2">
                     <div className='d-flex flex-column align-items-center ms-1 me-2 mt-1'>
                         <p className='fw-bold mb-1 bg-dark rounded-2 text-white text-center p-1' style={{height:'35px',width:'35px'}}>{getPosition(player.position)}</p>
@@ -42,10 +37,10 @@ export default function PlayerFaceCard({ player, children }: PlayerFaceCardProps
                         </div>
                     </div>
                 </div>
-                <div className="d-flex flex-row gap-1">
-                    {children}
-                </div>
-            </Container>
-        </NavLink>
+            </NavLink>
+            <div className="d-flex flex-row" onClick={onGraphClick}>
+                {children}
+            </div>
+        </Container>
     )
 }
