@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Carousel, Col, Container, Row } from 'react-bootstrap'
+import { Col, Container, Row } from 'react-bootstrap'
 
 import './liga-ranking.scss'
 import LocalLeague from './local-league/local-league'
@@ -9,12 +9,6 @@ import { LefRow, RightRow } from '../../shared-components/icons/icons';
 
 
 export default function LeagueRanking() {
-
-    const [index, setIndex] = useState(0);
-
-    const handleSelect = (selectedIndex: number) => {
-        setIndex(selectedIndex);
-    };
 
     const [ranking, setRanking] = useState<LeagueUser[]>([] as LeagueUser[])
     const [isLocalLeage, setIsLocalLeague] = useState<boolean>(false)
@@ -59,17 +53,5 @@ export default function LeagueRanking() {
                 </Col>
             </Row>
         </Container>
-        // <Carousel activeIndex={index} onSelect={handleSelect} className='bg-white rounded-4 custom-margin right-custom-margin'>
-        //     <Carousel.Item>
-        //         <Container className='d-flex flex-column justify-content-center align-items-center m-0 p-0' style={{ width: '100%', minHeight: '40vh', maxHeight: '60vh' }}>
-        //             <LocalLeague data={ranking} />
-        //         </Container>
-        //     </Carousel.Item>
-        //     <Carousel.Item>
-        //         <iframe id="sofa-standings-embed-36-52376"
-        //             src="https://widgets.sofascore.com/es-ES/embed/tournament/36/season/52376/standings/LaLiga?widgetTitle=LaLiga&showCompetitionLogo=true&v=2"
-        //             style={{ width: '100%', minHeight: '59vh' }} />
-        //     </Carousel.Item>
-        // </Carousel>
     );
 }

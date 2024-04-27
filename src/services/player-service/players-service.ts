@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Player, PlayersInMarket, PlayersUser, UserRecommendations } from '../../models/player';
+import { BestPlayer, Player, PlayersInMarket, PlayersUser, UserRecommendations } from '../../models/player';
 import { PlayerWithPointPrediction, PlayerWithPricePrediction } from '../../models/player';
 
 export async function getPlayers(): Promise<Player[]> {
@@ -83,6 +83,17 @@ export async function getRecommendationsLineUps(id: number): Promise<LineUps[]> 
                 return response.data;
             }).catch(error => {
                 console.error('Error fetching recommendations line ups', error);
+                return [];
+            })
+}
+
+export async function getBestPlayers(): Promise<BestPlayer[]> {
+    return axios.get<BestPlayer[]>(`${import.meta.env.VITE_API_URL}players_best`)
+        .then(
+            response => {
+                return response.data;
+            }).catch(error => {
+                console.error('Error fetching best players', error);
                 return [];
             })
 }

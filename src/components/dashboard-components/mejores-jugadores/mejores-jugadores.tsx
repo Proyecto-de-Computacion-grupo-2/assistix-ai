@@ -5,41 +5,35 @@ import BestPlayerCard from "./player-card";
 import bestPlayer from "../../../assets/images/best-player.jfif"
 
 import '../../../styles/dashboard-page.scss'
-
-const player = {
-    "players": [
-        {
-            name: 'Bellingham',
-            url: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png',
-            title: 'Mejor jugador fantasy'
-        },
-        {
-            name: 'Parejo',
-            url: 'https://assets-fantasy.llt-services.com/players/t449/p310/256x256/p310_t449_1_001_000.png',
-            title: 'Mejor jugador jornada'
-        },
-        {
-            name: 'Fermin',
-            url: 'https://assets-fantasy.llt-services.com/players/t178/p1715/256x256/p1715_t178_1_001_000.png',
-            title: 'Mejor jugador equipo'
-        },
-    ]
-}
-
+import { useEffect, useState } from "react";
+import { BestPlayer } from "../../../models/player";
+import { getBestPlayers } from "../../../services/player-service/players-service";
 
 export default function BestPlayers() {
+
+    const [data, setData] = useState<BestPlayer[]>([] as BestPlayer[])
+
+    useEffect(() => {
+        getBestPlayers()
+            .then(response => {
+                setData(response)
+            })
+            .catch(error => {
+                console.error('Error fetching best players', error)
+            })
+    }, [])
 
     return (
         <Container className="p-1 bg-white h-100 rounded-4 d-flex flex-column justify-content-center align-items-center custom-margin left-custom-margin" fluid>
             <Carousel className="flex-grow-1 h-100 w-100 m-0 p-0">
                 {
-                    player.players.map((player, index) => {
+                    data.map((player: BestPlayer, index: number) => {
                         return (
                             <Carousel.Item key={index} className="h-100">
                                 <img src={bestPlayer} width={'100%'} className="rounded-4 h-auto" style={{ maxHeight: '24vh' }} />
                                 <BestPlayerCard player={player} />
                                 <Carousel.Caption>
-                                    <strong className="text-white">{player.title}</strong>
+                                    <strong className="text-white">Mejor jugador #{index + 1}</strong>
                                 </Carousel.Caption>
                             </Carousel.Item>
                         )

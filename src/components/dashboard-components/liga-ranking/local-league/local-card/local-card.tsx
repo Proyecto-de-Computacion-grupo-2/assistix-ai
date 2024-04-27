@@ -19,7 +19,7 @@ export default function RankingCard({ team, position }: {
                 {team.team_points}
             </Col>
             <Col sm={3} xs={3} className="text-center p-0 m-0">
-                {team.team_value} M
+                {parseFloat((team.team_value / 1000000).toFixed(1))} M
             </Col>
         </Row>
     )

@@ -87,3 +87,8 @@ export interface PlayersInMarket extends Player {
 export interface PlayersUser extends Player {
     latest_game: number;
 }
+
+export interface BestPlayer extends Player {
+    game_week: number;
+    mixed: number;
+}
