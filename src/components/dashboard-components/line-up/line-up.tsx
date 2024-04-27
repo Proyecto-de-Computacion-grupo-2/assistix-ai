@@ -1,224 +1,55 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import BoxInfo from './box-info/box-info.tsx'
 import { LeftArrowIcon, RightArrowIcon } from '../../shared-components/icons/icons.tsx'
-import PlayerCard from '../player-card/player-card.tsx'
+import PlayerCard, { PredictionPlayerCard } from '../player-card/player-card.tsx'
 import './line-up.scss'
 import { Container } from 'react-bootstrap'
 
 import '../../../styles/dashboard-page.scss'
-
-const plantillas = [
-    {
-        goalkeeper: {
-            nombre: 'Herrera',
-            puntuation: 13,
-            img: 'https://assets-fantasy.llt-services.com/players/t450/p644/256x256/p644_t450_1_001_000.png'
-        },
-        defense: [
-            {
-                nombre: 'Lejeune',
-                puntuation: 16,
-                img: 'https://assets-fantasy.llt-services.com/players/t184/p1208/256x256/p1208_t184_1_001_000.png'
-            },
-            {
-                nombre: 'Copete',
-                puntuation: 14,
-                img: 'https://assets-fantasy.llt-services.com/players/t181/p1482/256x256/p1482_t181_1_001_000.png'
-            },
-            {
-                nombre: 'Mingueza',
-                puntuation: 14,
-                img: 'https://assets-fantasy.llt-services.com/players/t176/p991/256x256/p991_t176_1_001_000.png'
-            }
-        ],
-        midfield: [
-            {
-                nombre: 'Parejo',
-                puntuation: 19,
-                img: 'https://assets-fantasy.llt-services.com/players/t449/p310/256x256/p310_t449_1_001_000.png'
-            },
-            {
-                nombre: 'Bellingham',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-            },
-            {
-                nombre: 'Fran Perez',
-                puntuation: 12,
-                img: 'https://assets-fantasy.llt-services.com/players/t191/p1610/256x256/p1610_t191_1_001_000.png'
-            },
-            {
-                nombre: 'Fermin',
-                puntuation: 5,
-                img: 'https://assets-fantasy.llt-services.com/players/t178/p1715/256x256/p1715_t178_1_001_000.png'
-            },
-            {
-                nombre: 'Vermeeren',
-                puntuation: 1,
-                img: 'https://assets-fantasy.llt-services.com/players/t175/p1837/256x256/p1837_t175_1_001_000.png'
-            }
-        ],
-        attack: [
-            {
-                nombre: 'En-Nesyri',
-                puntuation: 15,
-                img: 'https://assets-fantasy.llt-services.com/players/t179/p415/256x256/p415_t179_1_001_000.png'
-            },
-            {
-                nombre: 'Sorloth',
-                puntuation: 18,
-                img: 'https://assets-fantasy.llt-services.com/players/t449/p1289/256x256/p1289_t449_1_001_000.png'
-            },
-            {
-                nombre: 'Morata',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t175/p1486/256x256/p1486_t175_1_001_000.png'
-            }
-        ]
-    },
-    {
-        goalkeeper: {
-            nombre: 'Bellingham',
-            puntuation: 10,
-            img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-        },
-        defense: [
-            {
-                nombre: 'Bellingham',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-            },
-            {
-                nombre: 'Bellingham',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-            },
-            {
-                nombre: 'Bellingham',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-            },
-            {
-                nombre: 'Bellingham',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-            }
-        ],
-        midfield: [
-            {
-                nombre: 'Bellingham',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-            },
-            {
-                nombre: 'Bellingham',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-            },
-            {
-                nombre: 'Bellingham',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-            },
-            {
-                nombre: 'Bellingham',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-            }
-        ],
-        attack: [
-            {
-                nombre: 'Bellingham',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-            },
-            {
-                nombre: 'Bellingham',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-            },
-        ]
-    },
-    {
-        goalkeeper: {
-            nombre: 'Bellingham',
-            puntuation: 10,
-            img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-        },
-        defense: [
-            {
-                nombre: 'Bellingham',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-            },
-            {
-                nombre: 'Bellingham',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-            }, {
-                nombre: 'Bellingham',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-            }, {
-                nombre: 'Bellingham',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-            }, {
-                nombre: 'Bellingham',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-            }
-        ],
-        midfield: [
-            {
-                nombre: 'Bellingham',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-            },
-            {
-                nombre: 'Bellingham',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-            },
-        ],
-        attack: [
-            {
-                nombre: 'Bellingham',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-            },
-            {
-                nombre: 'Bellingham',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-            },
-            {
-                nombre: 'Bellingham',
-                puntuation: 10,
-                img: 'https://assets-fantasy.llt-services.com/players/t186/p1678/256x256/p1678_t186_1_001_000.png'
-            },
-        ]
-    }
-]
+import { PlayerWithPointPrediction, PlayersUser } from '../../../models/player.ts'
+import { LineUps, getRecommendationsLineUps, getUserPlayers } from '../../../services/player-service/players-service.ts'
 
 export default function LineUp() {
 
-    const data = plantillas;
+    const types = ['Mi equipo', 'Fantasy', 'Max. puntos', 'Con mercado']
 
-    //TODO: Cambiar mi equipo por un grid de todos los jugadores que hay en la plantilla del usuario
-    const types = ['Mi equipo', 'Mejor plantilla', 'Max. puntos'] //Add mejor plantilla fantasy
+    const [currentPlantilla, setCurrentPlantilla] = useState<number>(0)
+    const [plantilla, setPlantilla] = useState<any>([] as PlayersUser[])
+    const [lineUps, setLineUps] = useState<LineUps[]>([] as LineUps[])
 
-    const [currentPlantilla, setCurrentPlantilla] = useState(0)
+    console.log(lineUps)
+
+    useEffect(() => {
+        getUserPlayers(12705845)
+            .then(players => {
+                setPlantilla(players);
+            })
+            .catch(error => {
+                console.error(error);
+            })
+
+        getRecommendationsLineUps(12705845)
+            .then(lineUps => {
+                setLineUps(lineUps);
+            })
+            .catch(error => {
+                console.error(error);
+            })
+
+    }, [])
+
+    console.log(lineUps)
 
     const changePlantilla = (direction: string) => {
+
         if (direction === 'left') {
             if (currentPlantilla === 0) {
-                setCurrentPlantilla(data.length - 1)
+                setCurrentPlantilla(types.length - 1)
             } else {
                 setCurrentPlantilla(currentPlantilla - 1)
             }
         } else {
-            if (currentPlantilla === data.length - 1) {
+            if (currentPlantilla === types.length - 1) {
                 setCurrentPlantilla(0)
             } else {
                 setCurrentPlantilla(currentPlantilla + 1)
@@ -226,7 +57,50 @@ export default function LineUp() {
         }
     }
 
-    const formation = data[currentPlantilla].defense.length + '-' + data[currentPlantilla].midfield.length + '-' + data[currentPlantilla].attack.length
+    const dataLineUp = (index: number) => {
+        switch (index) {
+            case 1:
+                return 2;
+            case 2:
+                return 0;
+            case 3:
+                return 1;
+            default:
+                return 0;
+        }
+    }
+
+    const getFormation = (lineUp: LineUps) => {
+        return lineUp.defense.length + '-' + lineUp.midfield.length + '-' + lineUp.attack.length
+    }
+
+    const getLineUpValue = (lineUp: LineUps) => {
+        let value = 0;
+        lineUp.defense.forEach((player: PlayerWithPointPrediction) => {
+            value += player.player_value
+        })
+        lineUp.midfield.forEach((player: PlayerWithPointPrediction) => {
+            value += player.player_value
+        })
+        lineUp.attack.forEach((player: PlayerWithPointPrediction) => {
+            value += player.player_value
+        })
+        value += lineUp.goalkeeper.player_value
+
+        return parseFloat((value / 1000000).toFixed(1))
+    }
+
+    const getPlantiilaValue = () => {
+        let value = 0;
+        plantilla.forEach((player: PlayersUser) => {
+            value += player.player_value
+        })
+        return parseFloat((value / 1000000).toFixed(1))
+    }
+
+    const getPlayerTypesLength = (id: number) => {
+        return plantilla.filter((player: PlayersUser) => player.position === id).length
+    }
 
     return (
 
@@ -242,62 +116,52 @@ export default function LineUp() {
                         {currentPlantilla === types.length - 1 ? types[0] : types[currentPlantilla + 1]}
                     </p>
                 </Container>
-                <Container className='futbol-campo rounded-4 shadow-lg flex-grow-1' fluid>
+                <Container className='futbol-campo rounded-4 shadow-lg flex-grow-1 d-flex justify-content-center' fluid>
                     {
                         currentPlantilla === 0 ?
-                            <Container className='d-flex flex-wrap justify-content-around h-100 flex-grow-1' fluid>
+                            <Container className='d-flex flex-wrap m-0 p-0 justify-content-center align-content-center' fluid>
                                 {
-                                    <PlayerCard player={data[currentPlantilla].goalkeeper} />
-                                }{
-                                    data[currentPlantilla].defense.map((p, index) => {
-                                        return <PlayerCard key={index} player={p} />
-                                    })
+                                    plantilla.length != 0 ?
+                                        plantilla.map((player: PlayersUser, index: number) => {
+                                            return <PlayerCard key={index} player={player} />
+                                        }) :
+                                        <p>No tienes jugadores en tu plantilla</p>
                                 }
-                                {
-                                    data[currentPlantilla].midfield.map((p, index) => {
-                                        return <PlayerCard key={index} player={p} />
-                                    })
-                                }
-                                {
-                                    data[currentPlantilla].attack.map((p, index) => {
-                                        return <PlayerCard key={index} player={p} />
-                                    })
-                                }
+                                <BoxInfo info={`${getPlantiilaValue()} M`} icon={<RightArrowIcon fill='black' />} bottom='10px' right='5px' />
                             </Container>
                             :
                             <Container className='custom-line-up  flex-grow-1'>
                                 <Container className='d-flex justify-content-center flex-wrap p-0 m-0' fluid>
-                                    {data[currentPlantilla].attack.map((player, index) => {
-                                        return <PlayerCard key={index} player={player} />
-                                    })
-                                    }
+                                    {lineUps[dataLineUp(currentPlantilla)].attack?.map((player: PlayerWithPointPrediction, index: number) => {
+                                        return <PredictionPlayerCard key={index} player={player} />
+                                    })}
                                 </Container>
                                 <Container className='d-flex  justify-content-center flex-wrap p-0 m-0' fluid>
-                                    {data[currentPlantilla].midfield.map((player, index) => {
-                                        return <PlayerCard key={index} player={player} />
+                                    {lineUps[dataLineUp(currentPlantilla)].midfield?.map((player: PlayerWithPointPrediction, index: number) => {
+                                        return <PredictionPlayerCard key={index} player={player} />
                                     })}
                                 </Container>
                                 <Container className='d-flex justify-content-center flex-wrap p-0 m-0' fluid>
-                                    {data[currentPlantilla].defense.map((player, index) => {
-                                        return <PlayerCard key={index} player={player} />
+                                    {lineUps[dataLineUp(currentPlantilla)].defense?.map((player: PlayerWithPointPrediction, index: number) => {
+                                        return <PredictionPlayerCard key={index} player={player} />
                                     })}
                                 </Container>
                                 <Container className='d-flex  justify-content-center flex-wrap p-0 m-0' fluid>
-                                    <PlayerCard player={data[currentPlantilla].goalkeeper} />
+                                    <PredictionPlayerCard player={lineUps[dataLineUp(currentPlantilla)].goalkeeper} />
                                 </Container>
-                                <BoxInfo info={formation} icon={<RightArrowIcon fill='black' />} bottom='10px' left='5px' />
-                                <BoxInfo info='93.5 M' icon={<RightArrowIcon fill='black' />} bottom='10px' right='5px' />
+                                <BoxInfo info={getFormation(lineUps[dataLineUp(currentPlantilla)])} icon={<RightArrowIcon fill='black' />} bottom='10px' left='5px' />
+                                <BoxInfo info={`${getLineUpValue(lineUps[dataLineUp(currentPlantilla)])} M`} icon={<RightArrowIcon fill='black' />} bottom='10px' right='5px' />
                             </Container>
                     }
 
                 </Container>
                 <Container className='d-flex justify-content-between align-items-center mt-2' fluid>
-                    <p className='fs-4 fw-medium w-50'>17 Jugadores</p>
+                    <p className='fs-4 fw-medium w-50'>{plantilla.length} Jugadores</p>
                     <Container className='d-flex justify-content-end align-items-center'>
-                        <p className='fs-5 mx-2 fw-medium text-danger'>PT <strong className='fs-4 text-black'>2</strong></p>
-                        <p className='fs-5 mx-2 fw-medium text-warning'>DF <strong className='fs-4 text-black'>5</strong></p>
-                        <p className='fs-5 mx-2 fw-medium text-danger-emphasis'>MC <strong className='fs-4 text-black'>5</strong></p>
-                        <p className='fs-5 mx-2 fw-medium text-primary'>DL <strong className='fs-4 text-black'>3</strong></p>
+                        <p className='fs-5 mx-2 fw-medium text-danger'>PT <strong className='fs-4 text-black'>{getPlayerTypesLength(1)}</strong></p>
+                        <p className='fs-5 mx-2 fw-medium text-warning'>DF <strong className='fs-4 text-black'>{getPlayerTypesLength(2)}</strong></p>
+                        <p className='fs-5 mx-2 fw-medium text-danger-emphasis'>MC <strong className='fs-4 text-black'>{getPlayerTypesLength(3)}</strong></p>
+                        <p className='fs-5 mx-2 fw-medium text-primary'>DL <strong className='fs-4 text-black'>{getPlayerTypesLength(4)}</strong></p>
                     </Container>
                 </Container>
             </Container>
