@@ -3,6 +3,7 @@ import {Card, Row, Container, Form} from 'react-bootstrap';
 import {Player} from "../../../models/player.ts";
 import {getPlayers} from "../../../services/player-service/players-service.ts";
 import './player-card-body.scss';
+import {NavLink} from "react-router-dom";
 
 function getPosition(position: number) {
     switch (position) {
@@ -26,7 +27,7 @@ function PlayerCardBody({photo_body, photo_face, full_name, position, player_val
     season_23_24: number
 }) {
     return (
-        <Card className='rounded-4 m-3' style={{width: '15rem'}}>
+        <Card className='rounded-4 m-3' style={{width: '15rem', maxHeight: '23vh'}}>
             <Card.Img className='bg-light rounded-5' variant="top" src={photo_body !== '0' ? photo_body : photo_face}/>
             <Card.Body>
                 <Card.Title className='fw-bold'>{full_name}</Card.Title>
@@ -72,7 +73,9 @@ export default function PlayersGrid() {
                            style={{maxHeight: '78vh', overflowY: 'scroll'}} fluid>
                     {
                         filteredPlayers.map((player, index) => (
-                            <PlayerCardBody key={index} {...player} />
+                            <NavLink to={`/player/${player.id_mundo_deportivo}`} className='text-decoration-none'>
+                                <PlayerCardBody key={index} {...player} />
+                            </NavLink>
                         ))
                     }
                 </Container>
