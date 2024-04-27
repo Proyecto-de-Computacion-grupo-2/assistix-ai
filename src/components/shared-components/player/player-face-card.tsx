@@ -38,7 +38,7 @@ export default function PlayerFaceCard({player, children, onGraphClick}: { playe
                     </div>
                 </div>
             </NavLink>
-            <div className="d-flex flex-row" onClick={onGraphClick}>
+            <div className="d-flex flex-row cursor-pointer" onClick={onGraphClick}>
                 {children}
             </div>
         </Container>
