@@ -8,6 +8,7 @@ import { Container } from 'react-bootstrap'
 import '../../../styles/dashboard-page.scss'
 import { PlayerWithPointPrediction, PlayersUser } from '../../../models/player.ts'
 import { LineUps, getRecommendationsLineUps, getUserPlayers } from '../../../services/player-service/players-service.ts'
+import NormalPlayerCard from '../player-card/player-card.tsx'
 
 export default function LineUp() {
 
@@ -119,7 +120,7 @@ export default function LineUp() {
                                 {
                                     plantilla.length != 0 ?
                                         plantilla.map((player: PlayersUser, index: number) => {
-                                            return <PlayerCard key={index} player={player} />
+                                            return <NormalPlayerCard key={index} player={player} />
                                         }) :
                                         <p>No tienes jugadores en tu plantilla</p>
                                 }
