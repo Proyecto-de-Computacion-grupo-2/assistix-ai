@@ -39,15 +39,21 @@ export default function PricesComponent() {
                 </Container>
             </Container>
             <Container className="flex-grow-1 px-1 scroll-section" style={{maxHeight: '78vh'}}>
-                {filteredPlayers.map((player, index) => (
-                    <PlayerFaceCard key={index} player={player}>
-                        <p className='fw-medium me-1'>{player.latest_prediction.toLocaleString('de-DE')} €</p>
-                        {player.percentage_change >= 0 ? <TrendingUpIcon fill='green'/> : <TrendingDownIcon fill='red'/>}
-                        {player.percentage_change >= 0 ?
-                            <p className='fw-medium me-1 text-success'>{player.percentage_change} %</p> :
-                            <p className='fw-medium me-1 text-danger'>{player.percentage_change} %</p>}
-                    </PlayerFaceCard>
-                ))}
+                {
+                    players.length > 0 ? (
+                        filteredPlayers.map((player, index) => (
+                            <PlayerFaceCard key={index} player={player}>
+                                <p className='fw-medium me-1'>{player.latest_prediction.toLocaleString('de-DE')} €</p>
+                                {player.percentage_change >= 0 ? <TrendingUpIcon fill='green'/> : <TrendingDownIcon fill='red'/>}
+                                {player.percentage_change >= 0 ?
+                                    <p className='fw-medium me-1 text-success'>{player.percentage_change} %</p> :
+                                    <p className='fw-medium me-1 text-danger'>{player.percentage_change} %</p>}
+                            </PlayerFaceCard>
+                        ))
+                    ): (
+                        <p className='mt-3 text-center'>No hay datos disponibles</p>
+                    )
+                }
             </Container>
         </Container>
     )

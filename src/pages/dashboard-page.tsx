@@ -9,6 +9,9 @@ import BestPlayers from '../components/dashboard-components/mejores-jugadores/me
 import LeagueRanking from "../components/dashboard-components/liga-ranking/liga-ranking.tsx";
 import NextGameweek from "../components/dashboard-components/proximas-jornadas/proximas-jornadas.tsx";
 
+/**
+ * @deprecated This component is deprecated and should not be used in new code.
+ */
 export default function DashboardPage() {
     return (
         <Layout>

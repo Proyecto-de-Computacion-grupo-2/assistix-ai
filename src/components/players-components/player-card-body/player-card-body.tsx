@@ -55,11 +55,15 @@ export default function PlayersGrid() {
                 <Container className='d-flex flex-wrap m-0 p-0 justify-content-center '
                            style={{maxHeight: '78vh', overflowY: 'scroll'}} fluid>
                     {
-                        filteredPlayers.map((player, index) => (
-                            <NavLink to={`/player/${player.id_mundo_deportivo}`} className='text-decoration-none'>
-                                <PlayerCardBody key={index} player={player}/>
-                            </NavLink>
-                        ))
+                        filteredPlayers.length > 0 ? (
+                            filteredPlayers.map((player, index) => (
+                                <NavLink to={`/player/${player.id_mundo_deportivo}`} className='text-decoration-none'>
+                                    <PlayerCardBody key={index} player={player}/>
+                                </NavLink>
+                            ))
+                        ) : (
+                            <h3>No hay datos disponibles</h3>
+                        )
                     }
                 </Container>
             </Row>

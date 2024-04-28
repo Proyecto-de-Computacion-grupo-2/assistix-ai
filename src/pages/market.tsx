@@ -27,8 +27,14 @@ export default function Market() {
         <Layout>
             <Container className='p-0 m-0'>
                 <Row className='p-0 m-0 h-100' fluid>
-                    <Col md={6} className='p-0'>
-                        <PlayerInMarket players={playersData} onPlayerClick={setSelectedPlayer}/>
+                    <Col md={6} className='p-0 bg-white rounded-4'>
+                        {
+                            playersData.length > 0 ? (
+                                <PlayerInMarket players={playersData} onPlayerClick={setSelectedPlayer}/>
+                            ) : (
+                                <p className='mt-3 text-center' >No hay datos disponibles</p>
+                            )
+                        }
                     </Col>
                     <Col md={6} className='p-0'>
                         <Container className='h-100 ms-1 p-0 d-flex flex-column gap-1 vertical-gap' fluid>
