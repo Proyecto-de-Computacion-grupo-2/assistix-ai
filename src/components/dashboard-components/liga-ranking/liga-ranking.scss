@@ -1,0 +1,9 @@
+.custom-hover {
+    cursor: pointer;
+
+    border-radius: 50px;
+
+    &:hover {
+        stroke: #0BF4CC;
+    }
+}

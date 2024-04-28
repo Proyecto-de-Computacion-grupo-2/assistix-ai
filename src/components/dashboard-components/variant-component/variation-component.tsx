@@ -6,16 +6,7 @@ import PricesComponent from "../prices-component/prices-component";
 import StatsComponent from "../stats-component/stats-component";
 import PredictionComponent from "../points-components/points-components.tsx";
 
-export function Hola() {
-    return <h1>Hola</h1>
-}
-
-export function Adios() {
-    return <h1>Adios</h1>
-}
-
 export default function VariationComponent() {
-
 
     const [component, setComponent] = useState(<RecomendationSection />)
     const [active, setActive] = useState(1)

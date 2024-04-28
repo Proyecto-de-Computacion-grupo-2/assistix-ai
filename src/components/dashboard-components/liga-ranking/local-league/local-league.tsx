@@ -1,82 +1,17 @@
 import { Col, Container, Row } from "react-bootstrap";
 import RankingCard from "./local-card/local-card";
 import misterLogo from '../../../../assets/images/misterLogo.png'
+import { LeagueUser } from "../../../../models/league-user";
 
-
-const tablaLocal = {
-    'table': [
-        {
-            'position': 1,
-            'name': 'admin',
-            'points': 975,
-            'value': 100
-        },
-        {
-            'position': 2,
-            'name': 'M31-G6-AcMilanesa',
-            'points': 956,
-            'value': 100
-        }, {
-            'position': 3,
-            'name': 'admin',
-            'points': 975,
-            'value': 100
-        },
-        {
-            'position': 4,
-            'name': 'M31-G6-AcMilanesa',
-            'points': 956,
-            'value': 100
-        },
-        {
-            'position': 5,
-            'name': 'admin',
-            'points': 975,
-            'value': 100
-        },
-        {
-            'position': 6,
-            'name': 'M31-G6-AcMilanesa',
-            'points': 956,
-            'value': 100
-        },
-        {
-            'position': 7,
-            'name': 'admin',
-            'points': 975,
-            'value': 100
-        },
-        {
-            'position': 8,
-            'name': 'M31-G6-AcMilanesa',
-            'points': 956,
-            'value': 100
-        }
-        ,
-        {
-            'position': 7,
-            'name': 'admin',
-            'points': 975,
-            'value': 100
-        },
-        {
-            'position': 8,
-            'name': 'M31-G6-AcMilanesa',
-            'points': 956,
-            'value': 100
-        }
-    ]
-}
-
-export default function LocalLeague() {
+export default function LocalLeague({ data }: { data: LeagueUser[] }) {
     return (
-        <Container className="h-100 p-0 d-flex align-items-center flex-column" fluid>
+        <Container className="h-100 p-0 d-flex align-items-center flex-column" fluid style={{ maxHeight: '60vh' }}>
             <Row className="h-auto d-flex justify-content-around border-bottom w-100" fluid>
                 <Container className='d-flex text-center mt-4 mb-4 fw-bold'>
                     <img src={misterLogo} width={30} height={30} className='me-2' />
                     <p>Mister Mundo Deportivo</p>
                 </Container>
-                <Col sm={5} xs={5} className="text-center p-0 m-0 fw-bold">
+                <Col sm={6} xs={6} className="ps-4 fw-bold">
                     # Equipo
                 </Col>
                 <Col sm={3} xs={3} className="text-center p-0 m-0 fw-bold">
@@ -89,9 +24,9 @@ export default function LocalLeague() {
             <Container className="flex-grow-1 px-1 scroll-section d-flex flex-column align-items-center"
                 style={{ maxHeight: '58vh' }}>
                 {
-                    tablaLocal.table.map((team, index) => {
+                    data.map((team, index) => {
                         return (
-                            <RankingCard team={team} key={index} />
+                            <RankingCard team={team} position={index + 1} key={index} />
                         )
                     })
                 }
