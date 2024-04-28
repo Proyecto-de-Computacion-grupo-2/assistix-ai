@@ -24,11 +24,13 @@ export default function LocalLeague({ data }: { data: LeagueUser[] }) {
             <Container className="flex-grow-1 px-1 scroll-section d-flex flex-column align-items-center"
                 style={{ maxHeight: '58vh' }}>
                 {
-                    data.map((team, index) => {
-                        return (
-                            <RankingCard team={team} position={index + 1} key={index} />
-                        )
-                    })
+                    data.length > 0 ?
+                        data.map((team, index) => {
+                            return (
+                                <RankingCard team={team} position={index + 1} key={index} />
+                            )
+                        }) :
+                        <p className='text-secondary'>No hay datos disponibles</p>
                 }
             </Container>
         </Container>
