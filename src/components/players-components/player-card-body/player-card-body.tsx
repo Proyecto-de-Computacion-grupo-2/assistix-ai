@@ -3,35 +3,19 @@ import {Card, Row, Container, Form} from 'react-bootstrap';
 import {Player} from "../../../models/player.ts";
 import {getPlayers} from "../../../services/player-service/players-service.ts";
 import './player-card-body.scss';
+import {NavLink} from "react-router-dom";
+import {format_position, format_player_value} from "../../shared-components/Utils.tsx";
 
-function getPosition(position: number) {
-    switch (position) {
-        case 1:
-            return 'PT';
-        case 2:
-            return 'DF';
-        case 3:
-            return 'MC';
-        case 4:
-            return 'DL';
-    }
-}
-
-function PlayerCardBody({photo_body, photo_face, full_name, position, player_value, season_23_24}: {
-    photo_body: string,
-    photo_face: string,
-    full_name: string,
-    position: number,
-    player_value: number,
-    season_23_24: number
-}) {
+function PlayerCardBody({player}: { player: Player }) {
     return (
-        <Card className='rounded-4 m-3' style={{width: '15rem'}}>
-            <Card.Img className='bg-light rounded-5' variant="top" src={photo_body !== '0' ? photo_body : photo_face}/>
+        <Card className='rounded-4 m-3' style={{width: '15rem', maxHeight: '37vh'}}>
+            <Card.Img className='bg-light rounded-5' variant="top"
+                      src={player.photo_body !== '0' ? player.photo_body : player.photo_face}/>
             <Card.Body>
-                <Card.Title className='fw-bold'>{full_name}</Card.Title>
-                <Card.Subtitle className='fw-bold'><p>{getPosition(position)}</p> {player_value.toLocaleString('de-DE')} €</Card.Subtitle>
-                <Card.Text className='fw-bold'>{season_23_24} puntos</Card.Text>
+                <Card.Title className='fw-bold'>{player.full_name}</Card.Title>
+                <Card.Subtitle className='fw-bold'>
+                    <p>{format_position(player.position)}</p> {format_player_value(player.player_value)}</Card.Subtitle>
+                <Card.Text className='fw-bold'>{player.season_23_24} puntos</Card.Text>
             </Card.Body>
         </Card>
     );
@@ -72,7 +56,9 @@ export default function PlayersGrid() {
                            style={{maxHeight: '78vh', overflowY: 'scroll'}} fluid>
                     {
                         filteredPlayers.map((player, index) => (
-                            <PlayerCardBody key={index} {...player} />
+                            <NavLink to={`/player/${player.id_mundo_deportivo}`} className='text-decoration-none'>
+                                <PlayerCardBody key={index} player={player}/>
+                            </NavLink>
                         ))
                     }
                 </Container>

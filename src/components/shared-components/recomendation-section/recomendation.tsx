@@ -5,10 +5,10 @@ import {useEffect, useState} from "react";
 import {UserRecommendations} from "../../../models/player.ts";
 import {getPlayerRecommendations,} from "../../../services/player-service/players-service.ts";
 import PlayerFaceCard from "../player/player-face-card.tsx";
-import {ChatBotIcon} from "../../shared-components/icons/icons.tsx";
+import {ChatBotIcon} from "../icons/icons.tsx";
 
 
-export default function RecomendationSection() {
+export default function RecommendationSection() {
     const [recommendationsData, setRecommendationsData] = useState<UserRecommendations[]>([]);
 
     useEffect(() => {
@@ -30,8 +30,9 @@ export default function RecomendationSection() {
 
     return (
         <Container className="p-0 m-0 d-flex flex-column" fluid>
-            <Container className="py-3 border-bottom m-0" fluid>
+            <Container className="py-3 border-bottom m-0 align-items-center" fluid>
                 <strong className="text-secondary">Recomendaciones Assistix AI</strong>
+                <ChatBotIcon fill={'gray'} className='ms-2'/>
             </Container>
             {
                 no_recommendations ?
