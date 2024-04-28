@@ -66,7 +66,7 @@ export class Player {
 }
 
 export interface PlayerWithPointPrediction extends Player {
-    point_prediction: number;
+    prediction: number;
 }
 
 export interface PlayerWithPricePrediction extends Player {
@@ -82,6 +82,15 @@ export interface UserRecommendations extends Player {
 export interface PlayersInMarket extends Player {
     sell_price: number;
     is_in_market: boolean;
+}
+
+export interface PlayersUser extends Player {
+    latest_game: number;
+}
+
+export interface BestPlayer extends Player {
+    game_week: number;
+    mixed: number;
 }
 
 export interface PlayerIdInformation extends Player {

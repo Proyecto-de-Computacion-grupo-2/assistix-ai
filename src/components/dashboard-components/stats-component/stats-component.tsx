@@ -4,7 +4,7 @@ import BestPlayers from "../mejores-jugadores/mejores-jugadores";
 
 export default function StatsComponent() {
     return (
-        <Container className="p-0 m-0 d-flex flex-column flex-grow-1" fluid>
+        <Container className="p-0 m-0 d-flex flex-column flex-grow-1" style={{ maxHeight: '40vh' }} fluid>
             <Row className="p-0 m-0 flex-grow-1">
                 <LeagueRanking />
             </Row>
