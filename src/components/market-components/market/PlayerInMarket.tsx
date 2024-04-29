@@ -21,7 +21,7 @@ export default function PlayerInMarket({players, onPlayerClick}: {
             <Container className="flex-grow-1 px-1 scroll-section" style={{maxHeight: '81vh'}} fluid>
                 {players.map((player, index) => (
                     <PlayerFaceCard key={index} player={player} onGraphClick={() => handleGraphClick(player)}>
-                        <p className='fw-medium me-1'>Precio venta</p>
+                        <p className='fw-medium me-1' title='Click para mostrar historial de precios'>Precio venta</p>
                         <p className='fw-bold'>{player.sell_price.toLocaleString('de-DE')} €</p>
                     </PlayerFaceCard>
                 ))}

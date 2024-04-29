@@ -40,12 +40,11 @@ export default function RecommendationSection() {
                     <Container className="flex-grow-1 px-1 scroll-section" style={{maxHeight: '78vh'}} fluid>
                         {recommendationsData.map((player, index) => (
                             <PlayerFaceCard key={index} player={player}>
-                                <p className='fw-bold me-1' style={{color:'blue'}} >{player.operation_type}</p>
+                                <p className='fw-bold me-1' style={{color: 'blue'}}>{player.operation_type}</p>
                                 <ChatBotIcon fill='blue' className=''/>
                             </PlayerFaceCard>
                         ))}
                     </Container>
-
                     :
                     <LoadingSpinner/>
             }
