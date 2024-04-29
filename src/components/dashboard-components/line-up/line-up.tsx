@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import BoxInfo from './box-info/box-info.tsx'
 import { LeftArrowIcon, RightArrowIcon } from '../../shared-components/icons/icons.tsx'
-import PlayerCard, { PredictionPlayerCard } from '../player-card/player-card.tsx'
+import { PredictionPlayerCard } from '../player-card/player-card.tsx'
 import './line-up.scss'
 import { Container } from 'react-bootstrap'
 
