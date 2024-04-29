@@ -1,4 +1,4 @@
-import { Container, Row, Col, Navbar } from 'react-bootstrap';
+import {Container, Row, Col, Navbar} from 'react-bootstrap';
 import {LeagueUser} from "../../../models/league-user.ts";
 import star_icon from '../../../assets/images/star.svg';
 import clock from '../../../assets/images/clock.svg';
@@ -8,7 +8,7 @@ interface HeaderProps {
     teamInfo: LeagueUser;
 }
 
-export default function Header({ teamInfo } : HeaderProps) {
+export default function Header({teamInfo}: HeaderProps) {
     return (
         <Navbar className="header rounded-4 py-3">
             <Container fluid>
@@ -18,26 +18,29 @@ export default function Header({ teamInfo } : HeaderProps) {
                             <p>Próxima jornada</p>
                             <div className='d-flex align-items-center'>
                                 <img className='me-1' src={clock} alt='Clock icon'/>
-                                <p className='fw-bold'>20</p>
+                                <p className='fw-bold'>03/05/2024</p>
                             </div>
                         </div>
                     </Col>
                     <Col className="text-center">
                         <div>
                             <p>Saldo Actual</p>
-                            <span className='fw-bold'>{typeof teamInfo.current_balance === 'number' ? teamInfo.current_balance.toLocaleString('de-DE') : '0'} €</span>
+                            <span
+                                className='fw-bold'>{typeof teamInfo.current_balance === 'number' ? teamInfo.current_balance.toLocaleString('de-DE') : '0'} €</span>
                         </div>
                     </Col>
                     <Col className='text-center'>
                         <div>
-                        <p>Saldo futuro</p>
-                            <span className='fw-bold'>{typeof teamInfo.future_balance === 'number' ? teamInfo.future_balance.toLocaleString('de-DE') : '0'} €</span>
+                            <p>Saldo futuro</p>
+                            <span
+                                className='fw-bold'>{typeof teamInfo.future_balance === 'number' ? teamInfo.future_balance.toLocaleString('de-DE') : '0'} €</span>
                         </div>
                     </Col>
                     <Col className='text-center'>
                         <div>
                             <p>Deuda máxima</p>
-                            <span className='fw-bold'>{typeof teamInfo.maximum_debt === 'number' ? teamInfo.maximum_debt.toLocaleString('de-DE') : '0'} €</span>
+                            <span
+                                className='fw-bold'>{typeof teamInfo.maximum_debt === 'number' ? teamInfo.maximum_debt.toLocaleString('de-DE') : '0'} €</span>
                         </div>
                     </Col>
                     <Col className="d-flex align-items-center">

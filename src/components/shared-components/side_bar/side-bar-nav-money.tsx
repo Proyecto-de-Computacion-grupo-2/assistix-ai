@@ -20,7 +20,7 @@ function UserDetails({teamInfo} : UserDetailsProps) {
                     <p>Próxima jornada</p>
                     <div className='d-flex align-items-center'>
                         <img className='me-1' src={clock} alt='Clock icon'/>
-                        <p className='fw-bold'>20</p>
+                        <p className='fw-bold'>03/05/2024</p>
                     </div>
                 </div>
             </div>
