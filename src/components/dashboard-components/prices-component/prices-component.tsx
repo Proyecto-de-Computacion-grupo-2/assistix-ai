@@ -5,6 +5,7 @@ import {TrendingDownIcon, TrendingUpIcon} from "../../shared-components/icons/ic
 import PlayerFaceCard from "../../shared-components/player/player-face-card.tsx";
 import {PlayerWithPricePrediction} from "../../../models/player.ts";
 import {getPlayersWithPricePrediction} from "../../../services/player-service/players-service.ts";
+import {LoadingSpinner} from "../../shared-components/Utils.tsx";
 
 export default function PricesComponent() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -51,7 +52,7 @@ export default function PricesComponent() {
                             </PlayerFaceCard>
                         ))
                     ): (
-                        <p className='mt-3 text-center'>Cargando...</p>
+                        <LoadingSpinner/>
                     )
                 }
             </Container>

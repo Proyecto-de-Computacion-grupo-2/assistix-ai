@@ -5,6 +5,7 @@ import {getPlayersWithPointPrediction} from "../../../services/player-service/pl
 import {ChatBotIcon} from "../../shared-components/icons/icons.tsx";
 import {PlayerWithPointPrediction} from "../../../models/player.ts";
 import '../../../styles/dashboard-page.scss'
+import {LoadingSpinner} from "../../shared-components/Utils.tsx";
 
 export default function PredictionComponent() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -48,7 +49,7 @@ export default function PredictionComponent() {
                             </PlayerFaceCard>
                         ))
                     ):(
-                        <p className='mt-3 text-center'>Cargando...</p>
+                        <LoadingSpinner/>
                     )
                 }
             </Container>
