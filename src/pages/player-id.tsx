@@ -23,98 +23,88 @@ export default function PlayerId() {
     const [absencesData, setAbsencesData] = useState<Absence[]>([{} as Absence]);
     const [gamesData, setGamesData] = useState<Game[]>([{} as Game]);
     const [streakData, setStreakData] = useState<Game[]>([{} as Game]);
+    const [isLoading, setIsLoading] = useState(true);
+
 
     const {id} = useParams();
 
     useEffect(() => {
         const playerId = Number(id);
 
-        getPlayer(playerId)
-            .then(player => {
-                setPlayerData(player);
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        setIsLoading(true);
 
-        getPlayerLastPrediction(playerId)
-            .then(prediction => {
-                setPredictionData(prediction);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-
-        getPlayerAbsences(playerId)
-            .then(absences => {
-                setAbsencesData(absences)
-            })
-            .catch(error => {
-                console.error(error);
-            });
-
-        getGames(playerId)
-            .then(games => {
-                setGamesData(games);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-
-        getStreak(playerId)
-            .then(streak => {
-                setStreakData(streak);
-            })
-            .catch(error => {
-                console.error(error);
-            });
+        Promise.all([
+            getPlayer(playerId),
+            getPlayerLastPrediction(playerId),
+            getPlayerAbsences(playerId),
+            getGames(playerId),
+            getStreak(playerId)
+        ]).then(([player, prediction, absences, games, streak]) => {
+            setPlayerData(player);
+            setPredictionData(prediction);
+            setAbsencesData(absences);
+            setGamesData(games);
+            setStreakData(streak);
+            setIsLoading(false);
+        }).catch(error => {
+            console.error(error);
+            setIsLoading(false);
+        });
 
     }, []);
 
     return (
         <Layout>
-            <Container className="h-100 p-0" fluid>
-                <Row className="p-0 m-0 personalized-height ">
-                    <Col lg={6} sm={12} className="d-flex flex-column h-100">
-                        <Row className="flex-grow-1 player-id p-0">
-                            <Container className="flex-grow-1 player-id p-0" fluid>
-                                <PersonalCard player={playerData}/>
-                            </Container>
-                        </Row>
-                        <Row className="d-flex py-1 p-0 personalized-row-heigth">
-                            <Col lg={6} sm={6} className="prediction-pad-personalized">
-                                <Container className="h-100 d-flex justify-content-center bg-white rounded-4 space"
-                                           style={{maxHeight: "40vh"}} fluid>
-                                    <PredictionCircle prediction={predictionData}/>
-                                </Container>
+            {
+                isLoading ? (
+                    <Container className="d-flex bg-white justify-content-center align-items-center h-100 rounded-4">
+                        <h2>Cargando...</h2>
+                    </Container>
+                ):(
+                    <Container className="h-100 p-0" fluid>
+                        <Row className="p-0 m-0 personalized-height ">
+                            <Col lg={6} sm={12} className="d-flex flex-column h-100">
+                                <Row className="flex-grow-1 player-id p-0">
+                                    <Container className="flex-grow-1 player-id p-0" fluid>
+                                        <PersonalCard player={playerData}/>
+                                    </Container>
+                                </Row>
+                                <Row className="d-flex py-1 p-0 personalized-row-heigth">
+                                    <Col lg={6} sm={6} className="prediction-pad-personalized">
+                                        <Container className="h-100 d-flex justify-content-center bg-white rounded-4 space"
+                                                   style={{maxHeight: "40vh"}} fluid>
+                                            <PredictionCircle prediction={predictionData}/>
+                                        </Container>
+                                    </Col>
+                                    <Col lg={6} sm={6} className="other-pad-personalized">
+                                        <Container className="bg-white rounded-4 d-flex flex-grow-1 h-100"
+                                                   style={{maxHeight: "40vh"}} fluid>
+                                            <AbsenceSection absences={absencesData}/>
+                                        </Container>
+                                    </Col>
+                                </Row>
+                                <Row className="d-flex p-0 p-0 personalized-row-heigth">
+                                    <Col lg={12} xs={12} className="d-flex p-0">
+                                        <Container
+                                            className=" bg-white rounded-4 overflow-hidden p-0 d-flex justify-content-center"
+                                            style={{maxHeight: "40vh"}} fluid>
+                                            <ParlimentDonut streak={streakData}/>
+                                        </Container>
+                                    </Col>
+                                </Row>
                             </Col>
-                            <Col lg={6} sm={6} className="other-pad-personalized">
-                                <Container className="bg-white rounded-4 d-flex flex-grow-1 h-100"
-                                           style={{maxHeight: "40vh"}} fluid>
-                                    <AbsenceSection absences={absencesData}/>
-                                </Container>
+                            <Col lg={6} className="d-flex flex-column col-2-padding-personalized h-100">
+                                <Row className="flex-grow-1 bg-white rounded-4 m-0 p-0">
+                                    {playerData && playerData.id_mundo_deportivo && <PlayerGraph player_id={playerData.id_mundo_deportivo}/>}
+                                </Row>
+                                <Row className="flex-grow-1 m-0 p-0 pt-1" style={{maxHeight: "50vh"}}>
+                                    <GameweeksStats games={gamesData}/>
+                                </Row>
                             </Col>
                         </Row>
-                        <Row className="d-flex p-0 p-0 personalized-row-heigth">
-                            <Col lg={12} xs={12} className="d-flex p-0">
-                                <Container
-                                    className=" bg-white rounded-4 overflow-hidden p-0 d-flex justify-content-center"
-                                    style={{maxHeight: "40vh"}} fluid>
-                                    <ParlimentDonut streak={streakData}/>
-                                </Container>
-                            </Col>
-                        </Row>
-                    </Col>
-                    <Col lg={6} className="d-flex flex-column col-2-padding-personalized h-100">
-                        <Row className="flex-grow-1 bg-white rounded-4 m-0 p-0">
-                            {playerData && playerData.id_mundo_deportivo && <PlayerGraph player_id={playerData.id_mundo_deportivo}/>}
-                        </Row>
-                        <Row className="flex-grow-1 m-0 p-0 pt-1" style={{maxHeight: "50vh"}}>
-                            <GameweeksStats games={gamesData}/>
-                        </Row>
-                    </Col>
-                </Row>
-            </Container>
+                    </Container>
+                )
+            }
         </Layout>
     )
 }
