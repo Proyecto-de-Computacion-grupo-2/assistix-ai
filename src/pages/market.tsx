@@ -7,6 +7,7 @@ import '../styles/market.scss'
 import {useEffect, useState} from "react";
 import {PlayersInMarket} from "../models/player.ts";
 import {getPlayersInMarket} from "../services/player-service/players-service.ts";
+import {LoadingSpinner} from "../components/shared-components/Utils.tsx";
 
 export default function Market() {
 
@@ -32,7 +33,7 @@ export default function Market() {
                             playersData.length > 0 ? (
                                 <PlayerInMarket players={playersData} onPlayerClick={setSelectedPlayer}/>
                             ) : (
-                                <p className='mt-3 text-center' >No hay datos disponibles</p>
+                                <LoadingSpinner/>
                             )
                         }
                     </Col>

@@ -6,6 +6,7 @@ import {UserRecommendations} from "../../../models/player.ts";
 import {getPlayerRecommendations,} from "../../../services/player-service/players-service.ts";
 import PlayerFaceCard from "../player/player-face-card.tsx";
 import {ChatBotIcon} from "../icons/icons.tsx";
+import {LoadingSpinner} from "../Utils.tsx";
 
 
 export default function RecommendationSection() {
@@ -46,10 +47,7 @@ export default function RecommendationSection() {
                     </Container>
 
                     :
-
-                    <Container className="flex-grow-1 px-1 scroll-section h-100 d-flex flex-column justify-content-center align-items-center" fluid>
-                        <p className="text-secondary">No hay recomendaciones</p>
-                    </Container>
+                    <LoadingSpinner/>
             }
         </Container>
     )

@@ -4,7 +4,7 @@ import {Player} from "../../../models/player.ts";
 import {getPlayers} from "../../../services/player-service/players-service.ts";
 import './player-card-body.scss';
 import {NavLink} from "react-router-dom";
-import {format_position, format_player_value} from "../../shared-components/Utils.tsx";
+import {format_position, format_player_value, LoadingSpinner} from "../../shared-components/Utils.tsx";
 
 function PlayerCardBody({player}: { player: Player }) {
     return (
@@ -62,7 +62,7 @@ export default function PlayersGrid() {
                                 </NavLink>
                             ))
                         ) : (
-                            <h3>Cargando...</h3>
+                            <LoadingSpinner/>
                         )
                     }
                 </Container>

@@ -15,6 +15,7 @@ import {PlayerIdInformation, PlayerLastPrediction} from "../models/player.ts";
 import {Game} from "../models/game.ts";
 import {Absence} from "../models/absence.ts";
 import '../styles/player-id.scss';
+import {LoadingSpinner} from "../components/shared-components/Utils.tsx";
 
 export default function PlayerId() {
 
@@ -58,7 +59,7 @@ export default function PlayerId() {
             {
                 isLoading ? (
                     <Container className="d-flex bg-white justify-content-center align-items-center h-100 rounded-4">
-                        <h2>Cargando...</h2>
+                        <LoadingSpinner/>
                     </Container>
                 ):(
                     <Container className="h-100 p-0" fluid>
