@@ -51,7 +51,7 @@ export default function PricesComponent() {
                             </PlayerFaceCard>
                         ))
                     ): (
-                        <p className='mt-3 text-center'>No hay datos disponibles</p>
+                        <p className='mt-3 text-center'>Cargando...</p>
                     )
                 }
             </Container>

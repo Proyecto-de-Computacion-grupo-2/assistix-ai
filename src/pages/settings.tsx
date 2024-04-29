@@ -9,5 +9,4 @@ export default function Settings() {
             <Setting/>
         </Layout>
     )
-
 }

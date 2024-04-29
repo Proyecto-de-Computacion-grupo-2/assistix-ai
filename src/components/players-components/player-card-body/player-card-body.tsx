@@ -62,7 +62,7 @@ export default function PlayersGrid() {
                                 </NavLink>
                             ))
                         ) : (
-                            <h3>No hay datos disponibles</h3>
+                            <h3>Cargando...</h3>
                         )
                     }
                 </Container>
