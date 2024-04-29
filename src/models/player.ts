@@ -66,7 +66,7 @@ export class Player {
 }
 
 export interface PlayerWithPointPrediction extends Player {
-    point_prediction: number;
+    prediction: number;
 }
 
 export interface PlayerWithPricePrediction extends Player {

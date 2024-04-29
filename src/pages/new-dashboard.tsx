@@ -8,10 +8,10 @@ export default function NewDashboard() {
         <Layout>
             <Container className="p-0 m-0" fluid>
                 <Row className='p-0 m-0 h-100' fluid>
-                    <Col xs={12} sm={12} md={6} className="p-0 mb-sm-1 mb-md-0">
+                    <Col xs={12} sm={12} lg={6} className="p-0 mb-sm-1 mb-md-0">
                         <VariationComponent />
                     </Col>
-                    <Col xs={12} sm={12} md={6} className="p-0 mt-sm-1 mt-md-0">
+                    <Col xs={12} sm={12} lg={6} className="p-0 mt-sm-1 mt-md-0">
                         <LineUp />
                     </Col>
                 </Row>

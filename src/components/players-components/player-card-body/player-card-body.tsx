@@ -1,16 +1,16 @@
-import {useEffect, useState} from 'react'; // Step 1
-import {Card, Row, Container, Form} from 'react-bootstrap';
-import {Player} from "../../../models/player.ts";
-import {getPlayers} from "../../../services/player-service/players-service.ts";
+import { useEffect, useState } from 'react'; // Step 1
+import { Card, Row, Container, Form } from 'react-bootstrap';
+import { Player } from "../../../models/player.ts";
+import { getPlayers } from "../../../services/player-service/players-service.ts";
 import './player-card-body.scss';
-import {NavLink} from "react-router-dom";
-import {format_position, format_player_value, LoadingSpinner} from "../../shared-components/Utils.tsx";
+import { NavLink } from "react-router-dom";
+import { format_position, format_player_value, LoadingSpinner } from "../../shared-components/Utils.tsx";
 
-function PlayerCardBody({player}: { player: Player }) {
+function PlayerCardBody({ player }: { player: Player }) {
     return (
-        <Card className='rounded-4 m-3' style={{width: '15rem', maxHeight: '37vh'}}>
+        <Card className='rounded-4 m-3' style={{ width: '15rem', maxHeight: '50vh' }}>
             <Card.Img className='bg-light rounded-5' variant="top"
-                      src={player.photo_body !== '0' ? player.photo_body : player.photo_face}/>
+                src={player.photo_body !== '0' ? player.photo_body : player.photo_face} />
             <Card.Body>
                 <Card.Title className='fw-bold'>{player.full_name}</Card.Title>
                 <Card.Subtitle className='fw-bold'>
@@ -53,16 +53,16 @@ export default function PlayersGrid() {
                     />
                 </Container>
                 <Container className='d-flex flex-wrap m-0 p-0 justify-content-center '
-                           style={{maxHeight: '78vh', overflowY: 'scroll'}} fluid>
+                    style={{ maxHeight: '78vh', overflowY: 'scroll' }} fluid>
                     {
                         filteredPlayers.length > 0 ? (
                             filteredPlayers.map((player, index) => (
                                 <NavLink to={`/player/${player.id_mundo_deportivo}`} className='text-decoration-none'>
-                                    <PlayerCardBody key={index} player={player}/>
+                                    <PlayerCardBody key={index} player={player} />
                                 </NavLink>
                             ))
                         ) : (
-                            <LoadingSpinner/>
+                            <LoadingSpinner />
                         )
                     }
                 </Container>

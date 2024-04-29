@@ -13,7 +13,7 @@ export default function NormalPlayerCard({ player }: {
         <div className="player-card">
             <NavLink to={`/player/${player.id_mundo_deportivo}`}>
                 <div className="player-img" style={{ backgroundImage: `url(${photo})` }} />
-                <p className='text-truncate text-black'>{player?.full_name}</p>
+                <p className='text-truncate text-black px-1'>{player?.full_name}</p>
                 <div className="puntuation-container text-black">
                     {player.latest_game}
                 </div>
@@ -32,7 +32,7 @@ export function PredictionPlayerCard({ player }: {
         <div className="player-card">
             <NavLink to={`/player/${player.id_mundo_deportivo}`}>
                 <div className="player-img" style={{ backgroundImage: `url(${photo})` }} />
-                <p className='text-truncate text-black'>{player.full_name}</p>
+                <p className='text-truncate text-black px-1'>{player.full_name}</p>
                 <div className="puntuation-container text-black">
                     <p className='text-truncate'>{player.prediction}</p>
                 </div>
@@ -49,7 +49,7 @@ export function RankingPlayerCard({ player }: { player: BestPlayer }) {
         <div className="player-card">
             <NavLink to={`/player/${player.id_mundo_deportivo}`}>
                 <div className="player-img" style={{ backgroundImage: `url(${photo})` }} />
-                <p className='text-truncate text-black'>{player.full_name}</p>
+                <p className='text-truncate text-black px-1'>{player.full_name}</p>
                 <div className="puntuation-container text-black">
                     <p className='text-truncate'>{player.mixed}</p>
                 </div>

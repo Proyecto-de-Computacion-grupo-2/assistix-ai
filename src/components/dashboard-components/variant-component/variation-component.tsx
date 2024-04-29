@@ -37,7 +37,7 @@ export default function VariationComponent() {
     }
 
     const style = (c: boolean) => {
-        return c ? 'fw-bold cursor-pointer' : 'cursor-pointer'
+        return c ? 'fw-bold cursor-pointer text-truncate' : 'cursor-pointer text-truncate'
     }
 
     return (
