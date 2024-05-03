@@ -3,6 +3,7 @@ import {LeagueUser} from "../../../models/league-user.ts";
 import star_icon from '../../../assets/images/star.svg';
 import './header.scss'
 import {FigureSoccer} from "../icons/icons.tsx";
+import {format_player_value} from "../Utils.tsx";
 
 export default function Header({teamInfo}: { teamInfo: LeagueUser }) {
     return (
@@ -22,21 +23,21 @@ export default function Header({teamInfo}: { teamInfo: LeagueUser }) {
                         <div>
                             <p>Saldo Actual</p>
                             <span
-                                className='fw-bold'>{typeof teamInfo.current_balance === 'number' ? teamInfo.current_balance.toLocaleString('de-DE') : '0'} €</span>
+                                className='fw-bold'>{format_player_value(teamInfo.current_balance)}</span>
                         </div>
                     </Col>
                     <Col className='text-center'>
                         <div>
                             <p>Saldo futuro</p>
                             <span
-                                className='fw-bold'>{typeof teamInfo.future_balance === 'number' ? teamInfo.future_balance.toLocaleString('de-DE') : '0'} €</span>
+                                className='fw-bold'>{format_player_value(teamInfo.future_balance)}</span>
                         </div>
                     </Col>
                     <Col className='text-center'>
                         <div>
                             <p>Deuda máxima</p>
                             <span
-                                className='fw-bold'>{typeof teamInfo.maximum_debt === 'number' ? teamInfo.maximum_debt.toLocaleString('de-DE') : '0'} €</span>
+                                className='fw-bold'>{format_player_value(teamInfo.maximum_debt)}</span>
                         </div>
                     </Col>
                     <Col className="d-flex align-items-center">

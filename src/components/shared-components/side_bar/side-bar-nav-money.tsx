@@ -6,8 +6,9 @@ import {NavLink} from "react-router-dom";
 import logo from "../../../assets/images/assistix-ai-logo.png";
 import {LeagueUser} from "../../../models/league-user.ts";
 import {FigureSoccer} from "../icons/icons.tsx";
+import {format_player_value} from "../Utils.tsx";
 
-function UserDetails({teamInfo} : { teamInfo: LeagueUser}) {
+function UserDetails({teamInfo}: { teamInfo: LeagueUser }) {
 
     return (
         <div>
@@ -23,19 +24,19 @@ function UserDetails({teamInfo} : { teamInfo: LeagueUser}) {
             <div className="mb-2">
                 <div>
                     <p>Saldo Actual</p>
-                    <span className='fw-bold'>{typeof teamInfo.current_balance === 'number' ? teamInfo.current_balance.toLocaleString('de-DE') : '0'} €</span>
+                    <span className='fw-bold'>{format_player_value(teamInfo.current_balance)}</span>
                 </div>
             </div>
             <div className='mb-2'>
                 <div className="">
                     <p>Saldo futuro</p>
-                    <span className='fw-bold'>{typeof teamInfo.future_balance === 'number' ? teamInfo.future_balance.toLocaleString('de-DE') : '0'} €</span>
+                    <span className='fw-bold'>{format_player_value(teamInfo.future_balance)}</span>
                 </div>
             </div>
             <div className='mb-2'>
                 <div>
                     <p>Deuda máxima</p>
-                    <span className='fw-bold'>{typeof teamInfo.maximum_debt === 'number' ? teamInfo.maximum_debt.toLocaleString('de-DE') : '0'} €</span>
+                    <span className='fw-bold'>{format_player_value(teamInfo.maximum_debt)}</span>
                 </div>
             </div>
             <div className="d-flex mb-2 align-items-center">
