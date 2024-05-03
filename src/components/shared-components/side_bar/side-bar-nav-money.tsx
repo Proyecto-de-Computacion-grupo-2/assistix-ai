@@ -1,26 +1,22 @@
 import {Container} from "react-bootstrap";
 import SideBarComponent from "./side-bar-links.tsx";
-import clock from "../../../assets/images/clock.svg";
 import star_icon from "../../../assets/images/star.svg";
 import './side_bar.scss'
 import {NavLink} from "react-router-dom";
 import logo from "../../../assets/images/assistix-ai-logo.png";
 import {LeagueUser} from "../../../models/league-user.ts";
+import {FigureSoccer} from "../icons/icons.tsx";
 
-interface UserDetailsProps {
-    teamInfo: LeagueUser;
-}
-
-function UserDetails({teamInfo} : UserDetailsProps) {
+function UserDetails({teamInfo} : { teamInfo: LeagueUser}) {
 
     return (
         <div>
             <div className="align-items-center mt-4 mb-2">
                 <div className="">
-                    <p>Próxima jornada</p>
+                    <p>Jugadores en el Equipo</p>
                     <div className='d-flex align-items-center'>
-                        <img className='me-1' src={clock} alt='Clock icon'/>
-                        <p className='fw-bold'>03/05/2024</p>
+                        <FigureSoccer fill='black' className=''/>
+                        <p className='fw-bold ms-2'>{teamInfo.team_players}</p>
                     </div>
                 </div>
             </div>
@@ -61,7 +57,7 @@ function AppName() {
     )
 }
 
-export default function SideBarNavMoney({teamInfo} : UserDetailsProps) {
+export default function SideBarNavMoney({teamInfo}: { teamInfo: LeagueUser }) {
 
     return (
         <Container className="h-100 m-0 p-1 bg-white rounded-4 d-flex flex-column justify-content-evenly" fluid>

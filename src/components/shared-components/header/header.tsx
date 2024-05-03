@@ -1,24 +1,20 @@
 import {Container, Row, Col, Navbar} from 'react-bootstrap';
 import {LeagueUser} from "../../../models/league-user.ts";
 import star_icon from '../../../assets/images/star.svg';
-import clock from '../../../assets/images/clock.svg';
 import './header.scss'
+import {FigureSoccer} from "../icons/icons.tsx";
 
-interface HeaderProps {
-    teamInfo: LeagueUser;
-}
-
-export default function Header({teamInfo}: HeaderProps) {
+export default function Header({teamInfo}: { teamInfo: LeagueUser }) {
     return (
         <Navbar className="header rounded-4 py-3">
             <Container fluid>
                 <Row className="w-100 d-flex align-items-center">
                     <Col className="text-center">
                         <div className="d-flex flex-column align-items-center">
-                            <p>Próxima jornada</p>
+                            <p>Jugadores en el Equipo</p>
                             <div className='d-flex align-items-center'>
-                                <img className='me-1' src={clock} alt='Clock icon'/>
-                                <p className='fw-bold'>03/05/2024</p>
+                                <FigureSoccer fill='black' className=''/>
+                                <p className='fw-bold ms-2'>{teamInfo.team_players}</p>
                             </div>
                         </div>
                     </Col>
