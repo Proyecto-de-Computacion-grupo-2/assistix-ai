@@ -1,4 +1,4 @@
-import api from "../api-interceptor.js";
+import api from "../api-interceptor.ts";
 import {LeagueUser} from "../../models/league-user.ts";
 
 export async function getPlayingUsers(): Promise<LeagueUser[]> {

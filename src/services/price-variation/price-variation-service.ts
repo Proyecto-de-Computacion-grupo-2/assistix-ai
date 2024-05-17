@@ -1,5 +1,5 @@
 import {PriceVariation} from "../../models/price-variation.ts";
-import api from "../api-interceptor.js";
+import api from "../api-interceptor.ts";
 
 export async function getPriceVariation(id: number): Promise<PriceVariation[]> {
     return api.get<PriceVariation[]>(`${import.meta.env.VITE_API_URL}players/value/${id}`)

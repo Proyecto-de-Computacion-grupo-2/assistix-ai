@@ -1,4 +1,4 @@
-import api from "../api-interceptor.js";
+import api from "../api-interceptor.ts";
 import {Game} from "../../models/game.ts";
 
 export async function getGames(id: number): Promise<Game[]> {

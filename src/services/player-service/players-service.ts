@@ -1,4 +1,4 @@
-import api from "../api-interceptor.js";
+import api from "../api-interceptor.ts";
 import { BestPlayer, Player, PlayersInMarket, PlayersUser, UserRecommendations } from '../../models/player';
 import { PlayerWithPointPrediction, PlayerWithPricePrediction } from '../../models/player';
 

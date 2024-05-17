@@ -1,4 +1,4 @@
-import api from "../api-interceptor.js";
+import api from "../api-interceptor.ts";
 import {PlayerIdInformation, PlayerLastPrediction} from '../../models/player';
 
 export async function getPlayer(id: number): Promise<PlayerIdInformation | null> {

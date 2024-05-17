@@ -1,4 +1,4 @@
-import api from "../api-interceptor.js";
+import api from "../api-interceptor.ts";
 import {Absence} from "../../models/absence.ts";
 
 export async function getPlayerAbsences(id: number): Promise<Absence[]> {
