@@ -9,7 +9,7 @@ import GameweeksStats from "../components/player-id-components/gameweeks-stats/g
 import PredictionCircle from "../components/player-id-components/prediction-circle/prediction-circle.tsx";
 import ParlimentDonut from "../components/player-id-components/parliment-donut/parliment-donut.tsx";
 import PlayerGraph from "../components/shared-components/player/player-graph.tsx";
-import {getPlayerAbsences} from "../services/absence-service/admin-service.ts";
+import {getPlayerAbsences} from "../services/absence-service/absence-service.ts";
 import AbsenceSection from "../components/player-id-components/absence/absence-section.tsx";
 import {PlayerIdInformation, PlayerLastPrediction} from "../models/player.ts";
 import {Game} from "../models/game.ts";
