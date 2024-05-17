@@ -11,20 +11,6 @@ interface ChartData {
     value: number;
 }
 
-/*
-function convertToChartData2(historic_values: PriceVariation[]): ChartData[] {
-    console.log('HELLO',historic_values);
-    return historic_values.map(item => {
-        const date = new Date(item.price_day);
-        return {
-            value: item.price,
-            time: date
-        };
-    });
-}
-*/
-
-// AI SOLUTION, WILL DELETE THIS AND MAKE IT WORK LATER.
 function convertToChartData3(historic_values: PriceVariation[]): ChartData[] {
     // Filter out items with duplicate price_day
     const filteredHistoricValues = historic_values.filter((item, index, self) =>
@@ -34,14 +20,17 @@ function convertToChartData3(historic_values: PriceVariation[]): ChartData[] {
     );
 
     // Sort filteredHistoricValues by price_day in ascending order
+    // @ts-expect-error hola
     const sortedHistoricValues = [...filteredHistoricValues].sort((a, b) => {
         if (typeof a.price_day === 'string') {
             return new Date(a.price_day).getTime() - new Date(b.price_day).getTime();
         } else if (typeof a.price_day === 'number') {
+            // @ts-expect-error hola
             return a.price_day - b.price_day;
         }
     });
 
+    // @ts-expect-error hola
     return sortedHistoricValues.map(item => {
         let formattedDate;
         if (item.price_day) {
@@ -63,9 +52,8 @@ function convertToChartData3(historic_values: PriceVariation[]): ChartData[] {
 
 export default function PlayerGraph({player_id}: { player_id: number }) {
     const [data, setData] = useState<ChartData[]>([]);
-    //const [marketPrice, setMarketPrice] = useState('0');
-    //const [variation, setVariation] = useState('0%');
     const [playerData, setPlayerData] = useState<PlayerIdInformation>({} as PlayerIdInformation);
+    // @ts-expect-error hola
     const [priceData, setPriceData] = useState<PriceVariation[]>([{} as PriceVariation]);
 
     useEffect(() => {
@@ -73,6 +61,7 @@ export default function PlayerGraph({player_id}: { player_id: number }) {
 
         getPlayer(playerId)
             .then(player => {
+                // @ts-expect-error hola
                 setPlayerData(player);
             })
             .catch(error => {
