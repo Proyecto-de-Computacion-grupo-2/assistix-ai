@@ -7,6 +7,7 @@ import PlayerId from "./pages/player-id.tsx";
 import Admin from "./pages/admin-page.tsx";
 import NewDashboard from "./pages/new-dashboard.tsx";
 import PublicPage from "./pages/public-page.tsx";
+import LoginPage from "./pages/login-page.tsx";
 
 export default function App() {
     return (
@@ -20,6 +21,7 @@ export default function App() {
                 <Route path="/player/:id" element={<PlayerId />} />
                 <Route path="/admin" element={<Admin />} />
                 <Route path="/public" element={<PublicPage />} />
+                <Route path="/login" element={<LoginPage />} />
             </Routes>
         </>
     )
