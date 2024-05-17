@@ -1,8 +1,8 @@
 import {PriceVariation} from "../../models/price-variation.ts";
-import axios from "axios";
+import api from "../api-interceptor.js";
 
 export async function getPriceVariation(id: number): Promise<PriceVariation[]> {
-    return axios.get<PriceVariation[]>(`${import.meta.env.VITE_API_URL}players/value/${id}`)
+    return api.get<PriceVariation[]>(`${import.meta.env.VITE_API_URL}players/value/${id}`)
         .then(
             response => {
                 return response.data;

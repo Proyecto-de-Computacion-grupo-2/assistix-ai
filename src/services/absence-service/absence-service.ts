@@ -1,8 +1,8 @@
-import axios from 'axios';
+import api from "../api-interceptor.js";
 import {Absence} from "../../models/absence.ts";
 
 export async function getPlayerAbsences(id: number): Promise<Absence[]> {
-    return axios.get<Absence[]>(`${import.meta.env.VITE_API_URL}players/absence/${id}`)
+    return api.get<Absence[]>(`${import.meta.env.VITE_API_URL}players/absence/${id}`)
         .then(
             response => {
                 return response.data;

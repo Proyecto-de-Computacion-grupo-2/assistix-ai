@@ -1,8 +1,8 @@
-import axios from 'axios';
+import api from "../api-interceptor.js";
 import {PlayerIdInformation, PlayerLastPrediction} from '../../models/player';
 
 export async function getPlayer(id: number): Promise<PlayerIdInformation | null> {
-    return axios.get<PlayerIdInformation>(`${import.meta.env.VITE_API_URL}players/${id}`)
+    return api.get<PlayerIdInformation>(`${import.meta.env.VITE_API_URL}players/${id}`)
         .then(
             response => {
                 return response.data;
@@ -13,7 +13,7 @@ export async function getPlayer(id: number): Promise<PlayerIdInformation | null>
 }
 
 export async function getPlayerLastPrediction(id: number): Promise<PlayerLastPrediction | null> {
-    return axios.get<PlayerLastPrediction>(`${import.meta.env.VITE_API_URL}players/next_prediction/${id}`)
+    return api.get<PlayerLastPrediction>(`${import.meta.env.VITE_API_URL}players/next_prediction/${id}`)
         .then(
             response => {
                 return response.data;
