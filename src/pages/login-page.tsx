@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 import {getAuthToken} from "../services/auth-service/auth-service.ts";
 import assistixLogo from '../assets/images/assistix-ai-logo.png'
 import '../styles/login-page.scss'
@@ -8,13 +9,15 @@ export default function LoginPage() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+
 
     const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const authResponse = await getAuthToken(email, password);
         if (authResponse) {
             localStorage.setItem('jwtToken', authResponse.access_token);
-            alert('Exito.');
+            navigate('/');
         } else {
             alert('Error. Usuario o contraseña incorrectos');
         }
