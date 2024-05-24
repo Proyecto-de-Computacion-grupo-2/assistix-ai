@@ -14,6 +14,7 @@ export default function LoginPage() {
         const authResponse = await getAuthToken(email, password);
         if (authResponse) {
             localStorage.setItem('jwtToken', authResponse.access_token);
+            alert('Exito.');
         } else {
             alert('Error. Usuario o contraseña incorrectos');
         }
