@@ -1,7 +1,9 @@
+import {useNavigate} from "react-router-dom";
 import { Accordion, Form, Button } from 'react-bootstrap';
 import { ReactElement } from 'react';
 import { FigureSoccer, MarketIcon, EmailIcon, BellIcon, MessageIcon, FootballIcon } from '../shared-components/icons/icons';
 import './setting.scss';
+
 
 interface NotificationOptionProps {
     icon: ReactElement;
@@ -65,6 +67,13 @@ const NotificationCategory: React.FC<NotificationCategoryProps> = ({eventKey, ti
 );
 
 const Settings: React.FC = () => {
+
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        localStorage.removeItem('jwtToken');
+        localStorage.removeItem('role');
+        navigate('/login');
+    };
 
     const categories: Category[] = [
         {
@@ -158,7 +167,7 @@ const Settings: React.FC = () => {
                 ))}
             </Accordion>
             <div className="d-grid m-5">
-                <Button variant="dark" size="lg" className='rounded-4'>
+                <Button variant="dark" size="lg" className='rounded-4' onClick={handleLogout}>
                     Cerrar Sessión
                 </Button>
             </div>

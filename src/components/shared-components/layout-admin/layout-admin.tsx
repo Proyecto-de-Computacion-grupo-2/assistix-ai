@@ -7,7 +7,7 @@ export default function LayoutAdmin({children}: { children: ReactElement}) {
     return (
         <Container fluid>
             <Row>
-                <HeaderAdmin admin_name='Jose.'/>
+                <HeaderAdmin/>
                 {children}
             </Row>
         </Container>

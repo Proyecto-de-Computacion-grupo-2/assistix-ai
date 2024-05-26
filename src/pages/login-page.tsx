@@ -25,11 +25,9 @@ export default function LoginPage() {
         if (authResponse) {
             const token = authResponse.access_token;
 
-            // Decode the token and extract the role
             const decodedToken = parseJwt(token);
             const role = decodedToken.admin ? 'admin' : 'user';
 
-            // Store the token and role in local storage
             localStorage.setItem('jwtToken', token);
             localStorage.setItem('role', role);
 
