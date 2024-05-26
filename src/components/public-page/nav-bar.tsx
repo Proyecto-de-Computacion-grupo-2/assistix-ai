@@ -24,6 +24,7 @@ function PublicNav() {
                         <Nav.Link href="#home">Inicio</Nav.Link>
                         <Nav.Link href="#product">Producto</Nav.Link>
                         <Nav.Link href="#more-info">Ventajas</Nav.Link>
+                        <Nav.Link href="#prices">Precios</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
                 <button className="btn btn-primary">Iniciar sesión</button>
