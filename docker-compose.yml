@@ -5,11 +5,12 @@ services:
     ports:
       - 8082:80
     networks:
-      - app-network
+      - back-end_app-network
     volumes:
       - ./dist/:/var/www
       - ./nginx/conf.d/:/etc/nginx/conf.d/
 
 networks:
-  app-network:
+  back-end_app-network :
     driver: bridge
+    external: true
