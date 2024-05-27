@@ -20,6 +20,7 @@ export default function App() {
     return (
         <>
             <Routes>
+                <Route path="*" element={<Navigate to="/"/>}/>
                 <Route path="/" element={role === 'user' ? <NewDashboard /> : <Navigate to='/login' />} />
                 <Route path="/assistant" element={role === 'user' ? <Assistant /> : <Navigate to='/login' />} />
                 <Route path="/market" element={role === 'user' ? <Market /> : <Navigate to='/login' />} />
