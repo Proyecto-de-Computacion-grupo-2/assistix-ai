@@ -1,7 +1,16 @@
 import { Button } from 'react-bootstrap';
+import {useNavigate} from "react-router-dom";
 import './setting.scss';
 
 const Settings: React.FC = () => {
+
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        localStorage.removeItem('jwtToken');
+        localStorage.removeItem('role');
+        navigate('/login');
+    };
+
     return (
         <main className='p-5 rounded-4 bg-white'>
             <h2>Configuración</h2>
