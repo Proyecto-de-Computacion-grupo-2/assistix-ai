@@ -1,29 +1,45 @@
-import { useState } from "react";
-import { getAuthToken } from "../services/auth-service/auth-service.ts";
+import {useState} from "react";
+import {useNavigate} from "react-router-dom";
+import {getAuthToken} from "../services/auth-service/auth-service.ts";
 import assistixLogo from '../assets/images/assistix-ai-logo.png'
 import '../styles/login-page.scss'
 import { Container, Row } from "react-bootstrap";
 import { InformationIcon } from "../components/shared-components/icons/icons.tsx";
 
+function parseJwt(token: string) {
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+    return JSON.parse(jsonPayload);
+}
 
 export default function LoginPage() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [userId, setUserId] = useState('');
-
     const [isLogin, setIsLogin] = useState(true);
-
     const [message, setMessage] = useState('');
     const [description, setDescription] = useState('');
     const [nameButton, setNameButton] = useState('');
     const [isError, setIsError] = useState(false);
+    const navigate = useNavigate();
 
     const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const authResponse = await getAuthToken(email, password);
         if (authResponse) {
-            localStorage.setItem('jwtToken', authResponse.access_token);
+            const token = authResponse.access_token;
+
+            const decodedToken = parseJwt(token);
+            const role = decodedToken.admin ? 'admin' : 'user';
+
+            localStorage.setItem('jwtToken', token);
+            localStorage.setItem('role', role);
+
+            navigate('/');
         } else {
             setIsError(true);
             setMessage('Error');
