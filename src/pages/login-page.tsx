@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
-import {getAuthToken} from "../services/auth-service/auth-service.ts";
+import {getAuthToken, setRegister} from "../services/auth-service/auth-service.ts";
 import assistixLogo from '../assets/images/assistix-ai-logo.png'
 import '../styles/login-page.scss'
 import {Container, Row} from "react-bootstrap";
@@ -66,7 +66,7 @@ export default function LoginPage() {
 
     const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        const authResponse = await getAuthToken(id_user, email, password);
+        const authResponse = await getAuthToken(email, password);
         if (authResponse) {
             const token = authResponse.access_token;
 
@@ -87,13 +87,19 @@ export default function LoginPage() {
 
     const handleRegister = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        const register = await setRegister(id_user, email, password);
 
-        //Simular error para ver que funcione bien el pop-up
-        setIsError(true);
-        setMessage('Error');
-        setDescription('Error al registrar usuario');
-        setNameButton('Aceptar');
-        //TODO: Implementar el registro de usuario
+        if (register) {
+            setMessage('Éxito');
+            setDescription('Usuario registrado correctamente');
+            setNameButton('Aceptar');
+            navigate('/login');
+        } else {
+            setIsError(true);
+            setMessage('Error');
+            setDescription('Error al registrar usuario');
+            setNameButton('Aceptar');
+        }
     }
 
     const handleFormStatus = () => {
