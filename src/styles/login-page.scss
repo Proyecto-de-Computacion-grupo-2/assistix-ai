@@ -26,6 +26,32 @@
     text-decoration: underline;
 }
 
+.personalized-position {
+    position: relative;
+}
+
+.personalized-position>svg {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.personalized-position>svg:hover {
+    cursor: pointer;
+    stroke: #4EB3A4;
+}
+
+.personalized-pop-up {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: rgb(0, 0, 0, 0.5);
+
+    z-index: 1000;
+}
+
 @include media-breakpoint-up(xs) {
     .personalized-width {
         width: 90% !important;
@@ -48,56 +74,4 @@
     .personalized-width {
         width: 30% !important;
     }
-}
-
-
-
-.login-container {
-    width: 30%;
-    height: 70%;
-
-    background-color: white;
-
-    border-radius: 20px;
-
-    min-width: 400px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.login-container img {
-    width: 200px;
-    height: 200px;
-
-    margin: 20px;
-}
-
-.login-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    gap: 1rem;
-
-    margin-top: 4vh;
-}
-
-.login-form button {
-    padding: 1vh 2vw;
-    border: none;
-
-    background-color: $button_hover_color;
-    color: black;
-
-    font-size: 1rem;
-    border-radius: 10px;
-}
-
-.login-form input {
-    padding: 1vh 2vw;
-    border: 1px solid #000;
-
-    border-radius: 10px;
 }
