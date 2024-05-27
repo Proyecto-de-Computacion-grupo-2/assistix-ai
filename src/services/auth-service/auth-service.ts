@@ -4,9 +4,10 @@ interface AuthResponse {
     access_token: string;
 }
 
-export async function getAuthToken(email: string, password: string): Promise<AuthResponse | null> {
+export async function getAuthToken(id_user:number ,email: string, password: string): Promise<AuthResponse | null> {
     try {
         const response = await axios.post(`${import.meta.env.VITE_API_URL}auth/login`, {
+            id_user,
             email,
             password
         });

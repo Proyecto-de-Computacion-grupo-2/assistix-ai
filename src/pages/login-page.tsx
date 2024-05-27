@@ -19,7 +19,7 @@ export default function LoginPage() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [userId, setUserId] = useState('');
+    const [id_user, setUserId] = useState(0);
     const [isLogin, setIsLogin] = useState(true);
     const [message, setMessage] = useState('');
     const [description, setDescription] = useState('');
@@ -29,7 +29,7 @@ export default function LoginPage() {
 
     const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        const authResponse = await getAuthToken(email, password);
+        const authResponse = await getAuthToken(id_user,email, password);
         if (authResponse) {
             const token = authResponse.access_token;
 
@@ -96,13 +96,13 @@ export default function LoginPage() {
                                 !isLogin &&
                                 <>
                                     <label className="form-label user-select-none">Id usuario</label>
-                                    <input type="userId" className="form-control mb-2" placeholder="Ingrese su id de usuario" value={userId} onChange={(e) => setUserId(e.target.value)} />
+                                    <input required type='number' className="form-control mb-2" placeholder="Ingrese su id de usuario" value={id_user} onChange={(e) => setUserId(e.target.value)}/>
                                 </>
                             }
                             <label className="form-label user-select-none">Correo electrónico</label>
-                            <input type="email" className="form-control mb-2" placeholder="Ingrese su correo" value={email} onChange={(e) => setEmail(e.target.value)} />
+                            <input required type="email" className="form-control mb-2" placeholder="Ingrese su correo" value={email} onChange={(e) => setEmail(e.target.value)} />
                             <label className="form-label user-select-none">Contraseña</label>
-                            <input type="password" className="form-control mb-4" placeholder="Ingrese su contraseña" value={password} onChange={(e) => setPassword(e.target.value)} />
+                            <input required type="password" className="form-control mb-4" placeholder="Ingrese su contraseña" value={password} onChange={(e) => setPassword(e.target.value)} />
                             <button type='submit' className="btn btn-primary user-select-none mb-4">{isLogin ? 'Iniciar sesión' : 'Registrarse'}</button>
                         </form>
                         <p className="personalized-text user-select-none" onClick={handleFormStatus}>{isLogin ? '¿No tienes cuenta?' : '¿Ya tienes cuenta?'} <span>{isLogin ? 'Registrate aquí' : 'Inicia sesión aquí'}</span></p>
