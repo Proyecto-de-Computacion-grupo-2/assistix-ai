@@ -65,22 +65,30 @@ export default function LoginPage() {
     const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const authResponse = await getAuthToken(email, password);
+
         if (authResponse) {
-            const token = authResponse.access_token;
+            if (!authResponse.error) {
+                const token = authResponse.access_token;
 
-            const decodedToken = parseJwt(token);
+                const decodedToken = parseJwt(token);
 
-            const role = decodedToken.admin ? 'admin' : 'user';
-            const id_user = decodedToken.id_user;
+                const role = decodedToken.admin ? 'admin' : 'user';
+                const id_user = decodedToken.id_user;
 
-            localStorage.setItem('jwtToken', token);
-            localStorage.setItem('role', role);
-            localStorage.setItem('id_user', id_user);
-            window.location.reload();
+                localStorage.setItem('jwtToken', token);
+                localStorage.setItem('role', role);
+                localStorage.setItem('id_user', id_user);
+                window.location.reload();
+            } else {
+                setIsError(true);
+                setMessage('Error');
+                setDescription(authResponse.error);
+                setNameButton('Aceptar');
+            }
         } else {
             setIsError(true);
             setMessage('Error');
-            setDescription('Usuario o contraseña incorrectos');
+            setDescription('Autentificación fallida. Intenta otra vez.');
             setNameButton('Aceptar');
         }
     };
@@ -90,14 +98,23 @@ export default function LoginPage() {
         const register = await setRegister(id_user, email, password);
 
         if (register) {
-            setMessage('Éxito');
-            setDescription('Usuario registrado correctamente');
-            setNameButton('Aceptar');
-            window.location.reload();
+
+            if (!register.error) {
+                setMessage('Éxito');
+                setDescription('Usuario registrado correctamente');
+                setNameButton('Aceptar');
+                window.location.reload();
+            } else {
+                setIsError(true);
+                setMessage('Error');
+                setDescription(register.error);
+                setNameButton('Aceptar');
+            }
+
         } else {
             setIsError(true);
             setMessage('Error');
-            setDescription('Error al registrar usuario');
+            setDescription('Sin respuesta. Prueba otra vez.');
             setNameButton('Aceptar');
         }
     }
