@@ -69,10 +69,13 @@ export default function LoginPage() {
             const token = authResponse.access_token;
 
             const decodedToken = parseJwt(token);
+
             const role = decodedToken.admin ? 'admin' : 'user';
+            const id_user = decodedToken.id_user;
 
             localStorage.setItem('jwtToken', token);
             localStorage.setItem('role', role);
+            localStorage.setItem('id_user', id_user);
             window.location.reload();
         } else {
             setIsError(true);

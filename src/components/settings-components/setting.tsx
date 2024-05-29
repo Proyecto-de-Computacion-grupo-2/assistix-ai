@@ -6,6 +6,7 @@ const Settings: React.FC = () => {
     const handleLogout = () => {
         localStorage.removeItem('jwtToken');
         localStorage.removeItem('role');
+        localStorage.removeItem('id_user');
         window.location.reload();
     };
 

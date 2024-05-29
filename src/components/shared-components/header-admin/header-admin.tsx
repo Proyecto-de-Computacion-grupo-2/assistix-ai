@@ -7,6 +7,7 @@ export default function HeaderAdmin() {
     const handleLogout = () => {
         localStorage.removeItem('jwtToken');
         localStorage.removeItem('role');
+        localStorage.removeItem('id_user');
         window.location.reload();
     };
 
