@@ -1,4 +1,5 @@
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
 import {getAuthToken, setRegister} from "../services/auth-service/auth-service.ts";
 import assistixLogo from '../assets/images/assistix-ai-logo.png'
 import '../styles/login-page.scss'
@@ -61,26 +62,25 @@ export default function LoginPage() {
     const [description, setDescription] = useState('');
     const [nameButton, setNameButton] = useState('');
     const [isError, setIsError] = useState(false);
+    const navigate = useNavigate();
 
     const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const authResponse = await getAuthToken(email, password);
-        if (authResponse) {
+        console.log(authResponse.error)
+        if (authResponse && !authResponse.error) {
             const token = authResponse.access_token;
 
             const decodedToken = parseJwt(token);
-
             const role = decodedToken.admin ? 'admin' : 'user';
-            const id_user = decodedToken.id_user;
 
             localStorage.setItem('jwtToken', token);
             localStorage.setItem('role', role);
-            localStorage.setItem('id_user', id_user);
-            window.location.reload();
+
+            navigate('/');
         } else {
-            setIsError(true);
             setMessage('Error');
-            setDescription('Usuario o contraseña incorrectos');
+            setDescription(authResponse.error);
             setNameButton('Aceptar');
         }
     };
@@ -88,16 +88,15 @@ export default function LoginPage() {
     const handleRegister = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         const register = await setRegister(id_user, email, password);
-
-        if (register) {
+        console.log(register)
+        if (register && !register.error) {
             setMessage('Éxito');
             setDescription('Usuario registrado correctamente');
             setNameButton('Aceptar');
-            window.location.reload();
+            navigate('/login');
         } else {
-            setIsError(true);
             setMessage('Error');
-            setDescription('Error al registrar usuario');
+            setDescription(register.error);
             setNameButton('Aceptar');
         }
     }
