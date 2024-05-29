@@ -17,9 +17,11 @@ export default function LineUp() {
     const [currentPlantilla, setCurrentPlantilla] = useState<number>(0)
     const [plantilla, setPlantilla] = useState<any>([] as PlayersUser[])
     const [lineUps, setLineUps] = useState<LineUps[]>([] as LineUps[])
+    const id_user = localStorage.getItem('id_user');
+
 
     useEffect(() => {
-        getUserPlayers(12705845)
+        getUserPlayers(Number(id_user))
             .then(players => {
                 setPlantilla(players);
             })
@@ -27,7 +29,7 @@ export default function LineUp() {
                 console.error(error);
             })
 
-        getRecommendationsLineUps(12705845)
+        getRecommendationsLineUps(Number(id_user))
             .then(lineUps => {
                 setLineUps(lineUps);
             })

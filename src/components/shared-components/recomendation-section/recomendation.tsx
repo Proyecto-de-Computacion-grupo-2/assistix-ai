@@ -11,9 +11,10 @@ import { LoadingSpinner } from "../Utils.tsx";
 
 export default function RecommendationSection() {
     const [recommendationsData, setRecommendationsData] = useState<UserRecommendations[]>([]);
+    const id_user = localStorage.getItem('id_user');
 
     useEffect(() => {
-        getPlayerRecommendations(Number(12705845))
+        getPlayerRecommendations(Number(id_user))
             .then(recommendations => {
                 setRecommendationsData(recommendations);
             })
