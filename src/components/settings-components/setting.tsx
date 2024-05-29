@@ -1,14 +1,12 @@
 import { Button } from 'react-bootstrap';
-import {useNavigate} from "react-router-dom";
 import './setting.scss';
 
 const Settings: React.FC = () => {
 
-    const navigate = useNavigate();
     const handleLogout = () => {
         localStorage.removeItem('jwtToken');
         localStorage.removeItem('role');
-        navigate('/login');
+        window.location.reload();
     };
 
     return (

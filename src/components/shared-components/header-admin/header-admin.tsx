@@ -1,15 +1,13 @@
 import {Button, Col, Container, Navbar, Row} from "react-bootstrap";
 import logo from "../../../assets/images/assistix-ai-logo.png";
-import {useNavigate} from "react-router-dom";
 
 
 export default function HeaderAdmin() {
 
-    const navigate = useNavigate();
     const handleLogout = () => {
         localStorage.removeItem('jwtToken');
         localStorage.removeItem('role');
-        navigate('/login');
+        window.location.reload();
     };
 
     return (

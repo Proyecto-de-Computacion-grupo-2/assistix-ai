@@ -1,5 +1,4 @@
 import {useState} from "react";
-import {useNavigate} from "react-router-dom";
 import {getAuthToken, setRegister} from "../services/auth-service/auth-service.ts";
 import assistixLogo from '../assets/images/assistix-ai-logo.png'
 import '../styles/login-page.scss'
@@ -62,7 +61,6 @@ export default function LoginPage() {
     const [description, setDescription] = useState('');
     const [nameButton, setNameButton] = useState('');
     const [isError, setIsError] = useState(false);
-    const navigate = useNavigate();
 
     const handleLogin = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -75,8 +73,7 @@ export default function LoginPage() {
 
             localStorage.setItem('jwtToken', token);
             localStorage.setItem('role', role);
-
-            navigate('/');
+            window.location.reload();
         } else {
             setIsError(true);
             setMessage('Error');
@@ -93,7 +90,7 @@ export default function LoginPage() {
             setMessage('Éxito');
             setDescription('Usuario registrado correctamente');
             setNameButton('Aceptar');
-            navigate('/login');
+            window.location.reload();
         } else {
             setIsError(true);
             setMessage('Error');
