@@ -4,13 +4,6 @@ services:
     restart: unless-stopped
     ports:
       - 8082:80
-    networks:
-      - back-end_app-network
     volumes:
       - ./dist/:/var/www
       - ./nginx/conf.d/:/etc/nginx/conf.d/
-
-networks:
-  back-end_app-network :
-    driver: bridge
-    external: true
