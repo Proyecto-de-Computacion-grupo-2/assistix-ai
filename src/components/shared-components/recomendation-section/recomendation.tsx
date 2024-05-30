@@ -47,7 +47,10 @@ export default function RecommendationSection() {
                         ))}
                     </Container>
                     :
-                    <LoadingSpinner />
+                    <div>
+                        <LoadingSpinner />
+                        <div className='mt-3 text-center'>Estamos generando tus recomendaciones. Por favor, vuelve más tarde para verlas.</div>
+                    </div>
             }
         </Container>
     )
