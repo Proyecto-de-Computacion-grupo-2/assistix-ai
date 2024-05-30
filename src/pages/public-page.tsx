@@ -9,8 +9,16 @@ import PublicNav from "../components/public-page/nav-bar";
 
 import bgVideo from "../assets/video/bgVideo.mp4"
 import Footer from "../components/public-page/footer";
+import {useNavigate} from "react-router-dom";
 
 export default function PublicPage() {
+
+    const navigate = useNavigate();
+
+    const handleLogin = () => {
+        navigate('/login');
+    }
+
     return (
         <Container className="h-auto p-0 bg-white" fluid>
             <Container id="home" className="h-auto vh-100 p-0" fluid>
@@ -28,10 +36,10 @@ export default function PublicPage() {
                         Además, cuenta con un <span className="span-personalized">chatbot</span> que nos ayudará a
                         resolver nuestras dudas en tiempo real.
                     </p>
-                    <button className="btn btn-primary my-3">Iniciar sesión</button>
+                    <button className="btn btn-primary my-3" onClick={handleLogin}>Iniciar sesión</button>
                 </Container>
             </Container>
-            <PublicNav />
+            <PublicNav action={handleLogin}/>
             <Container
                 className="h-auto bg-dark d-flex flex-column justify-content-center align-items-center personalized-padding"
                 fluid id="product">
@@ -53,7 +61,7 @@ export default function PublicPage() {
                         </p>
                     </Col>
                     <Col className="m-0 px-2 p-0 d-flex justify-content-center align-items-center" sm={12}>
-                        <button className="btn btn-primary my-3">Comienza a jugar</button>
+                        <button className="btn btn-primary my-3" onClick={handleLogin}>Comienza a jugar</button>
                     </Col>
                 </Row>
             </Container>
@@ -94,7 +102,7 @@ export default function PublicPage() {
                         </p>
                     </Col>
                     <Col className="m-0 px-2 p-0 d-flex justify-content-center align-items-center" sm={12}>
-                        <button className="btn btn-primary mt-4">Únete ya</button>
+                        <button className="btn btn-primary mt-4" onClick={handleLogin}>Únete ya</button>
                     </Col>
                 </Row>
             </Container>
@@ -115,7 +123,7 @@ export default function PublicPage() {
                                     Predicciones de puntos de tu plantilla <br />
                                 </p>
                             </>
-                            <button className="btn btn-primary mt-4 w-50">Comenzar</button>
+                            <button className="btn btn-primary mt-4 w-50" onClick={handleLogin}>Comenzar</button>
                         </Container>
                     </Col>
                     <Col className="m-0 px-2 p-0 d-flex flex-column gap-2 align-items-center" sm={12} lg={4}>

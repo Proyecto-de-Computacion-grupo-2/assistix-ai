@@ -4,7 +4,8 @@ import Navbar from 'react-bootstrap/Navbar';
 
 import logoAssistixAI from '../../assets/images/assistix-ai-logo.png'
 
-function PublicNav() {
+function PublicNav({action}: { action: () => void }) {
+
     return (
         <Navbar expand="lg" className="bg-body-secondary" sticky='top'>
             <Container>
@@ -27,7 +28,7 @@ function PublicNav() {
                         <Nav.Link href="#prices">Precios</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
-                <button className="btn btn-primary">Iniciar sesión</button>
+                <button className="btn btn-primary" onClick={action}>Iniciar sesión</button>
             </Container>
         </Navbar>
     );
