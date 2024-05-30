@@ -103,7 +103,9 @@ export default function LoginPage() {
                 setMessage('Éxito');
                 setDescription('Usuario registrado correctamente');
                 setNameButton('Aceptar');
-                window.location.reload();
+                setTimeout(function () {
+                    window.location.reload();
+                }, 2000);
             } else {
                 setIsError(true);
                 setMessage('Error');

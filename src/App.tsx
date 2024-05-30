@@ -21,7 +21,7 @@ export default function App() {
         <>
             <Routes>
                 <Route path="*" element={<Navigate to="/"/>}/>
-                <Route path="/" element={role === 'user' ? <NewDashboard /> : <Navigate to='/login' />} />
+                <Route path="/" element={role === 'user' ? <NewDashboard /> : <Navigate to='/public' />} />
                 <Route path="/assistant" element={role === 'user' ? <Assistant /> : <Navigate to='/login' />} />
                 <Route path="/market" element={role === 'user' ? <Market /> : <Navigate to='/login' />} />
                 <Route path="/players" element={role === 'user' ? <Players /> : <Navigate to='/login' />} />
