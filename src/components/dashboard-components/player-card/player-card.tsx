@@ -34,7 +34,7 @@ export function PredictionPlayerCard({ player }: {
                 <div className="player-img" style={{ backgroundImage: `url(${photo})` }} />
                 <p className='text-truncate text-black px-1'>{player.full_name}</p>
                 <div className="puntuation-container text-black">
-                    <p className='text-truncate'>{player.prediction}</p>
+                    <p className='text-truncate'>{player.point_prediction}</p>
                 </div>
             </NavLink>
         </div>
