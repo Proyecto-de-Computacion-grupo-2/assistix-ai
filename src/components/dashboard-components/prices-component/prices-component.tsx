@@ -5,7 +5,7 @@ import {TrendingDownIcon, TrendingUpIcon} from "../../shared-components/icons/ic
 import PlayerFaceCard from "../../shared-components/player/player-face-card.tsx";
 import {PlayerWithPricePrediction} from "../../../models/player.ts";
 import {getPlayersWithPricePrediction} from "../../../services/player-service/players-service.ts";
-import {LoadingSpinner} from "../../shared-components/Utils.tsx";
+import {format_player_value, LoadingSpinner} from "../../shared-components/Utils.tsx";
 
 export default function PricesComponent() {
     const [searchQuery, setSearchQuery] = useState('');
@@ -44,14 +44,15 @@ export default function PricesComponent() {
                     players.length > 0 ? (
                         filteredPlayers.map((player, index) => (
                             <PlayerFaceCard key={index} player={player}>
-                                <p className='fw-medium me-1'>{player.latest_prediction.toLocaleString('de-DE')} €</p>
-                                {player.percentage_change >= 0 ? <TrendingUpIcon fill='green'/> : <TrendingDownIcon fill='red'/>}
+                                <p className='fw-medium me-1'>{format_player_value(player.latest_prediction)}</p>
+                                {player.percentage_change >= 0 ? <TrendingUpIcon fill='green'/> :
+                                    <TrendingDownIcon fill='red'/>}
                                 {player.percentage_change >= 0 ?
                                     <p className='fw-medium me-1 text-success'>{player.percentage_change} %</p> :
                                     <p className='fw-medium me-1 text-danger'>{player.percentage_change} %</p>}
                             </PlayerFaceCard>
                         ))
-                    ): (
+                    ) : (
                         <LoadingSpinner/>
                     )
                 }

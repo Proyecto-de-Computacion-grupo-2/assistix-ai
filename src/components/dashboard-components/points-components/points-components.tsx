@@ -39,16 +39,16 @@ export default function PredictionComponent() {
                     />
                 </Container>
             </Container>
-            <Container className="flex-grow-1 px-1 scroll-section" style={{ maxHeight: '78vh' }}>
+            <Container className="flex-grow-1 px-1 scroll-section" style={{maxHeight: '78vh'}}>
                 {
                     players.length > 0 ? (
                         filteredPlayers.map((player, index) => (
                             <PlayerFaceCard key={index} player={player}>
-                                <p className='fw-medium me-1' style={{color:'blue'}}>{player.prediction}</p>
+                                <p className='fw-medium me-1' style={{color: 'blue'}}>{player.point_prediction}</p>
                                 <ChatBotIcon fill='blue' className=''/>
                             </PlayerFaceCard>
                         ))
-                    ):(
+                    ) : (
                         <LoadingSpinner/>
                     )
                 }
