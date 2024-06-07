@@ -25,9 +25,10 @@ export default function Layout({ children }: { children: ReactElement }) {
 
     const isTablet = useIsTablet();
     const [teamData,setTeamData] = useState<LeagueUser>( {} as LeagueUser);
+    const id_user = localStorage.getItem('id_user');
 
     useEffect(() => {
-        getUserMoneyDetails(12705845)
+        getUserMoneyDetails(Number(id_user))
             .then(teamData => {
                 setTeamData(teamData);
             })

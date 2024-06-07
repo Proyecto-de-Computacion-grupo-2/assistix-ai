@@ -17,9 +17,11 @@ export default function LineUp() {
     const [currentPlantilla, setCurrentPlantilla] = useState<number>(0)
     const [plantilla, setPlantilla] = useState<any>([] as PlayersUser[])
     const [lineUps, setLineUps] = useState<LineUps[]>([] as LineUps[])
+    const id_user = localStorage.getItem('id_user');
+
 
     useEffect(() => {
-        getUserPlayers(12705845)
+        getUserPlayers(Number(id_user))
             .then(players => {
                 setPlantilla(players);
             })
@@ -27,7 +29,7 @@ export default function LineUp() {
                 console.error(error);
             })
 
-        getRecommendationsLineUps(12705845)
+        getRecommendationsLineUps(Number(id_user))
             .then(lineUps => {
                 setLineUps(lineUps);
             })
@@ -130,33 +132,38 @@ export default function LineUp() {
                                                     plantilla.map((player: PlayersUser, index: number) => {
                                                         return <NormalPlayerCard key={index} player={player} />
                                                     }) :
-                                                    <p>No tienes jugadores en tu plantilla</p>
+                                                    <p className='fs-4 fw-bold text-white'>No tienes jugadores en tu plantilla</p>
                                             }
                                             <BoxInfo info={`${getPlantiilaValue()} M`} icon={<RightArrowIcon fill='black' />} bottom='10px' right='5px' />
                                         </Container>
                                         :
-                                        <Container className='custom-line-up  flex-grow-1'>
-                                            <Container className='d-flex justify-content-center flex-wrap p-0 m-0' fluid>
-                                                {lineUps[dataLineUp(currentPlantilla)].attack?.map((player: PlayerWithPointPrediction, index: number) => {
-                                                    return <PredictionPlayerCard key={index} player={player} />
-                                                })}
+                                        lineUps[dataLineUp(currentPlantilla)].attack.length === 0 ||  lineUps[dataLineUp(currentPlantilla)].midfield.length === 0 || lineUps[dataLineUp(currentPlantilla)].defense.length === 0 ?
+                                            <Container className='m-0 p-0 h-100 w-100 d-flex justify-content-center align-items-center'>
+                                                <p className='fs-4 fw-bold text-white'>No tienes jugadores en tu plantilla</p>
                                             </Container>
-                                            <Container className='d-flex  justify-content-center flex-wrap p-0 m-0' fluid>
-                                                {lineUps[dataLineUp(currentPlantilla)].midfield?.map((player: PlayerWithPointPrediction, index: number) => {
-                                                    return <PredictionPlayerCard key={index} player={player} />
-                                                })}
+                                            :
+                                            <Container className='custom-line-up  flex-grow-1'>
+                                                <Container className='d-flex justify-content-center flex-wrap p-0 m-0' fluid>
+                                                    {lineUps[dataLineUp(currentPlantilla)].attack?.map((player: PlayerWithPointPrediction, index: number) => {
+                                                        return <PredictionPlayerCard key={index} player={player} />
+                                                    })}
+                                                </Container>
+                                                <Container className='d-flex  justify-content-center flex-wrap p-0 m-0' fluid>
+                                                    {lineUps[dataLineUp(currentPlantilla)].midfield?.map((player: PlayerWithPointPrediction, index: number) => {
+                                                        return <PredictionPlayerCard key={index} player={player} />
+                                                    })}
+                                                </Container>
+                                                <Container className='d-flex justify-content-center flex-wrap p-0 m-0' fluid>
+                                                    {lineUps[dataLineUp(currentPlantilla)].defense?.map((player: PlayerWithPointPrediction, index: number) => {
+                                                        return <PredictionPlayerCard key={index} player={player} />
+                                                    })}
+                                                </Container>
+                                                <Container className='d-flex  justify-content-center flex-wrap p-0 m-0' fluid>
+                                                    <PredictionPlayerCard player={lineUps[dataLineUp(currentPlantilla)].goalkeeper} />
+                                                </Container>
+                                                <BoxInfo info={getFormation(lineUps[dataLineUp(currentPlantilla)])} icon={<RightArrowIcon fill='black' />} bottom='10px' left='5px' />
+                                                <BoxInfo info={`${getLineUpValue(lineUps[dataLineUp(currentPlantilla)])} M`} icon={<RightArrowIcon fill='black' />} bottom='10px' right='5px' />
                                             </Container>
-                                            <Container className='d-flex justify-content-center flex-wrap p-0 m-0' fluid>
-                                                {lineUps[dataLineUp(currentPlantilla)].defense?.map((player: PlayerWithPointPrediction, index: number) => {
-                                                    return <PredictionPlayerCard key={index} player={player} />
-                                                })}
-                                            </Container>
-                                            <Container className='d-flex  justify-content-center flex-wrap p-0 m-0' fluid>
-                                                <PredictionPlayerCard player={lineUps[dataLineUp(currentPlantilla)].goalkeeper} />
-                                            </Container>
-                                            <BoxInfo info={getFormation(lineUps[dataLineUp(currentPlantilla)])} icon={<RightArrowIcon fill='black' />} bottom='10px' left='5px' />
-                                            <BoxInfo info={`${getLineUpValue(lineUps[dataLineUp(currentPlantilla)])} M`} icon={<RightArrowIcon fill='black' />} bottom='10px' right='5px' />
-                                        </Container>
                                 }
 
                             </Container>

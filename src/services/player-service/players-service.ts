@@ -1,9 +1,9 @@
-import axios from 'axios';
+import api from "../api-interceptor.ts";
 import { BestPlayer, Player, PlayersInMarket, PlayersUser, UserRecommendations } from '../../models/player';
 import { PlayerWithPointPrediction, PlayerWithPricePrediction } from '../../models/player';
 
 export async function getPlayers(): Promise<Player[]> {
-    return axios.get<Player[]>(`${import.meta.env.VITE_API_URL}players`)
+    return api.get<Player[]>(`${import.meta.env.VITE_API_URL}players`)
         .then(
             response => {
                 return response.data;
@@ -14,7 +14,7 @@ export async function getPlayers(): Promise<Player[]> {
 }
 
 export async function getPlayersWithPointPrediction(): Promise<PlayerWithPointPrediction[]> {
-    return axios.get<PlayerWithPointPrediction[]>(`${import.meta.env.VITE_API_URL}players_prediction/points`)
+    return api.get<PlayerWithPointPrediction[]>(`${import.meta.env.VITE_API_URL}players_prediction/points`)
         .then(
             response => {
                 return response.data;
@@ -25,7 +25,7 @@ export async function getPlayersWithPointPrediction(): Promise<PlayerWithPointPr
 }
 
 export async function getPlayersWithPricePrediction(): Promise<PlayerWithPricePrediction[]> {
-    return axios.get<PlayerWithPricePrediction[]>(`${import.meta.env.VITE_API_URL}players_prediction/value`)
+    return api.get<PlayerWithPricePrediction[]>(`${import.meta.env.VITE_API_URL}players_prediction/value`)
         .then(
             response => {
                 return response.data;
@@ -36,7 +36,7 @@ export async function getPlayersWithPricePrediction(): Promise<PlayerWithPricePr
 }
 
 export async function getPlayerRecommendations(id: number): Promise<UserRecommendations[]> {
-    return axios.get<UserRecommendations[]>(`${import.meta.env.VITE_API_URL}user_recommendation/${id}`)
+    return api.get<UserRecommendations[]>(`${import.meta.env.VITE_API_URL}user_recommendation/${id}`)
         .then(
             response => {
                 return response.data;
@@ -47,7 +47,7 @@ export async function getPlayerRecommendations(id: number): Promise<UserRecommen
 }
 
 export async function getPlayersInMarket(): Promise<PlayersInMarket[]> {
-    return axios.get<PlayersInMarket[]>(`${import.meta.env.VITE_API_URL}players_market`)
+    return api.get<PlayersInMarket[]>(`${import.meta.env.VITE_API_URL}players_market`)
         .then(
             response => {
                 return response.data;
@@ -58,7 +58,7 @@ export async function getPlayersInMarket(): Promise<PlayersInMarket[]> {
 }
 
 export async function getUserPlayers(id: number): Promise<PlayersUser[]> {
-    return axios.get<PlayersUser[]>(`${import.meta.env.VITE_API_URL}players_user/${id}`)
+    return api.get<PlayersUser[]>(`${import.meta.env.VITE_API_URL}players_user/${id}`)
         .then(
             response => {
                 return response.data;
@@ -77,7 +77,7 @@ export type LineUps = {
 }
 
 export async function getRecommendationsLineUps(id: number): Promise<LineUps[]> {
-    return axios.get<LineUps[]>(`${import.meta.env.VITE_API_URL}user_recommendation/lineup/${id}`)
+    return api.get<LineUps[]>(`${import.meta.env.VITE_API_URL}user_recommendation/lineup/${id}`)
         .then(
             response => {
                 return response.data;
@@ -88,7 +88,7 @@ export async function getRecommendationsLineUps(id: number): Promise<LineUps[]> 
 }
 
 export async function getBestPlayers(): Promise<BestPlayer[]> {
-    return axios.get<BestPlayer[]>(`${import.meta.env.VITE_API_URL}players_best`)
+    return api.get<BestPlayer[]>(`${import.meta.env.VITE_API_URL}players_best`)
         .then(
             response => {
                 return response.data;

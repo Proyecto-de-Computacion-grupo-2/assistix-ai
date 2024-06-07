@@ -1,30 +1,36 @@
-# React + TypeScript + Vite
+# Project Setup Guide
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Getting Started with React
 
-Currently, two official plugins are available:
+This guide will walk you through setting up your React project step-by-step.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Prerequisites
 
-## Expanding the ESLint configuration
+- Ensure you have Node.js installed on your local machine. You can download it from [Node.js](https://nodejs.org/).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Step 1: Install Dependencies
 
-- Configure the top-level `parserOptions` property like this:
+Open your terminal and navigate to the project directory. Install the necessary Node packages by running:
 
-```js
-export default {
-  // absence rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Step 2: Create a .env File for API Configuration
+
+Open the project with your favorite IDE and create a .env file in the root directory. This file should contain the following content:
+
+VITE_API_URL="http://127.0.0.1:8000/api/"
+
+	•	This URL is obtained by running the php artisan serve command in the Laravel backend, plus adding the final /api/
+
+### Step 3: Run the Development Server
+
+To start the development server, run the following command in your terminal:
+
+```bash
+npm run dev
+```
+### Important
+	•	Make sure your Laravel backend is running to ensure the API requests from your React application work correctly.
+	•	If you encounter any issues, check the console for error messages and ensure all configurations are set up correctly.

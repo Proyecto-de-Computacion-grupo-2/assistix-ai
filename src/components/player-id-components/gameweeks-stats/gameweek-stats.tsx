@@ -70,6 +70,7 @@ const columnHeaders2 = [
 ];
 
 export default function GameweeksStats({games}: { games: Game[] }) {
+
     return (
         <Container className="m-0 p-0 rounded-4 bg-white h-100" style={{overflowY: 'auto'}} fluid>
             <Container className="m-0 p-2 rounded-4" style={{maxHeight: "45vh", overflowY: 'auto'}} fluid>
@@ -89,6 +90,7 @@ export default function GameweeksStats({games}: { games: Game[] }) {
                                 key === 'team' || key === 'opposing_team' ?
                                     <td key={index_2}><img src={game[key]} alt={key}
                                                            style={{height: '40px', width: '40px'}}/></td> :
+                                    // @ts-expect-error ignore this line, the game is a key.
                                     <td key={index_2}>{game[key]}</td>
                             ))}
                         </tr>
